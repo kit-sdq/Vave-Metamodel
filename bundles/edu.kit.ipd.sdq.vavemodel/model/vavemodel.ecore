@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="vavemodel" nsURI="edu.kit.ipd.sdq.vavemodel" nsPrefix="vavemodel">
+  <eClassifiers xsi:type="ecore:EClass" name="System">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="constraints" upperBound="-1"
+        eType="#//Constraints" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rootNode" lowerBound="1"
+        eType="#//Variant" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Variant">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="variationpoint" lowerBound="1"
+        eType="#//VariationPoint" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="initialVersion" eType="#//Version"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Constraints"/>
+  <eClassifiers xsi:type="ecore:EClass" name="VariationPoint">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//GroupType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="variant" lowerBound="1"
+        upperBound="-1" eType="#//Variant" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="cardinality" upperBound="-1"
+        eType="#//Cardinality" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="GroupType">
+    <eLiterals name="XOR"/>
+    <eLiterals name="OR" value="1"/>
+    <eLiterals name="XORNONE" value="2"/>
+    <eLiterals name="ORNONE" value="3"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="VP_Constraint_VP" eSuperTypes="#//Constraints"/>
+  <eClassifiers xsi:type="ecore:EClass" name="V_Constraint_VP" eSuperTypes="#//Constraints"/>
+  <eClassifiers xsi:type="ecore:EClass" name="V_Constraint_V" eSuperTypes="#//Constraints"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Version">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="predecessor" eType="#//Version"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="successor" upperBound="-1"
+        eType="#//Version"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="deltamodule" lowerBound="1"
+        upperBound="-1" eType="#//DeltaModule" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="versionID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DeltaModule"/>
+  <eClassifiers xsi:type="ecore:EClass" name="VP_Depends_VP" eSuperTypes="#//VP_Constraint_VP"/>
+  <eClassifiers xsi:type="ecore:EClass" name="VP_Excludes_VP" eSuperTypes="#//VP_Constraint_VP"/>
+  <eClassifiers xsi:type="ecore:EClass" name="V_Depends_VP" eSuperTypes="#//V_Constraint_VP"/>
+  <eClassifiers xsi:type="ecore:EClass" name="V_Excludes_VP" eSuperTypes="#//V_Constraint_VP"/>
+  <eClassifiers xsi:type="ecore:EClass" name="V_Depends_V" eSuperTypes="#//V_Constraint_V"/>
+  <eClassifiers xsi:type="ecore:EClass" name="V_Excludes_V" eSuperTypes="#//V_Constraint_V"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Cardinality">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="min" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="max" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+</ecore:EPackage>
