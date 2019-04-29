@@ -77,13 +77,22 @@ public interface VavemodelPackage extends EPackage {
 	int SYSTEM__CONSTRAINTS = 0;
 
 	/**
-	 * The feature id for the '<em><b>Root Node</b></em>' containment reference.
+	 * The feature id for the '<em><b>Variant</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SYSTEM__ROOT_NODE = 1;
+	int SYSTEM__VARIANT = 1;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYSTEM__NAME = 2;
 
 	/**
 	 * The number of structural features of the '<em>System</em>' class.
@@ -92,7 +101,7 @@ public interface VavemodelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SYSTEM_FEATURE_COUNT = 2;
+	int SYSTEM_FEATURE_COUNT = 3;
 
 	/**
 	 * The number of operations of the '<em>System</em>' class.
@@ -123,7 +132,7 @@ public interface VavemodelPackage extends EPackage {
 	int VARIANT__NAME = 0;
 
 	/**
-	 * The feature id for the '<em><b>Variationpoint</b></em>' containment reference.
+	 * The feature id for the '<em><b>Variationpoint</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -132,7 +141,7 @@ public interface VavemodelPackage extends EPackage {
 	int VARIANT__VARIATIONPOINT = 1;
 
 	/**
-	 * The feature id for the '<em><b>Initial Version</b></em>' reference.
+	 * The feature id for the '<em><b>Initial Version</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -141,13 +150,31 @@ public interface VavemodelPackage extends EPackage {
 	int VARIANT__INITIAL_VERSION = 2;
 
 	/**
+	 * The feature id for the '<em><b>Is Core</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VARIANT__IS_CORE = 3;
+
+	/**
+	 * The feature id for the '<em><b>Is Root</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VARIANT__IS_ROOT = 4;
+
+	/**
 	 * The number of structural features of the '<em>Variant</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VARIANT_FEATURE_COUNT = 3;
+	int VARIANT_FEATURE_COUNT = 5;
 
 	/**
 	 * The number of operations of the '<em>Variant</em>' class.
@@ -710,15 +737,26 @@ public interface VavemodelPackage extends EPackage {
 	EReference getSystem_Constraints();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link vavemodel.System#getRootNode <em>Root Node</em>}'.
+	 * Returns the meta object for the containment reference list '{@link vavemodel.System#getVariant <em>Variant</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Root Node</em>'.
-	 * @see vavemodel.System#getRootNode()
+	 * @return the meta object for the containment reference list '<em>Variant</em>'.
+	 * @see vavemodel.System#getVariant()
 	 * @see #getSystem()
 	 * @generated
 	 */
-	EReference getSystem_RootNode();
+	EReference getSystem_Variant();
+
+	/**
+	 * Returns the meta object for the attribute '{@link vavemodel.System#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see vavemodel.System#getName()
+	 * @see #getSystem()
+	 * @generated
+	 */
+	EAttribute getSystem_Name();
 
 	/**
 	 * Returns the meta object for class '{@link vavemodel.Variant <em>Variant</em>}'.
@@ -742,10 +780,10 @@ public interface VavemodelPackage extends EPackage {
 	EAttribute getVariant_Name();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link vavemodel.Variant#getVariationpoint <em>Variationpoint</em>}'.
+	 * Returns the meta object for the containment reference list '{@link vavemodel.Variant#getVariationpoint <em>Variationpoint</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Variationpoint</em>'.
+	 * @return the meta object for the containment reference list '<em>Variationpoint</em>'.
 	 * @see vavemodel.Variant#getVariationpoint()
 	 * @see #getVariant()
 	 * @generated
@@ -753,15 +791,37 @@ public interface VavemodelPackage extends EPackage {
 	EReference getVariant_Variationpoint();
 
 	/**
-	 * Returns the meta object for the reference '{@link vavemodel.Variant#getInitialVersion <em>Initial Version</em>}'.
+	 * Returns the meta object for the containment reference '{@link vavemodel.Variant#getInitialVersion <em>Initial Version</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Initial Version</em>'.
+	 * @return the meta object for the containment reference '<em>Initial Version</em>'.
 	 * @see vavemodel.Variant#getInitialVersion()
 	 * @see #getVariant()
 	 * @generated
 	 */
 	EReference getVariant_InitialVersion();
+
+	/**
+	 * Returns the meta object for the attribute '{@link vavemodel.Variant#isIsCore <em>Is Core</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Is Core</em>'.
+	 * @see vavemodel.Variant#isIsCore()
+	 * @see #getVariant()
+	 * @generated
+	 */
+	EAttribute getVariant_IsCore();
+
+	/**
+	 * Returns the meta object for the attribute '{@link vavemodel.Variant#isIsRoot <em>Is Root</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Is Root</em>'.
+	 * @see vavemodel.Variant#isIsRoot()
+	 * @see #getVariant()
+	 * @generated
+	 */
+	EAttribute getVariant_IsRoot();
 
 	/**
 	 * Returns the meta object for class '{@link vavemodel.Constraints <em>Constraints</em>}'.
@@ -1086,12 +1146,20 @@ public interface VavemodelPackage extends EPackage {
 		EReference SYSTEM__CONSTRAINTS = eINSTANCE.getSystem_Constraints();
 
 		/**
-		 * The meta object literal for the '<em><b>Root Node</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Variant</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference SYSTEM__ROOT_NODE = eINSTANCE.getSystem_RootNode();
+		EReference SYSTEM__VARIANT = eINSTANCE.getSystem_Variant();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SYSTEM__NAME = eINSTANCE.getSystem_Name();
 
 		/**
 		 * The meta object literal for the '{@link vavemodel.impl.VariantImpl <em>Variant</em>}' class.
@@ -1112,7 +1180,7 @@ public interface VavemodelPackage extends EPackage {
 		EAttribute VARIANT__NAME = eINSTANCE.getVariant_Name();
 
 		/**
-		 * The meta object literal for the '<em><b>Variationpoint</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Variationpoint</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1120,12 +1188,28 @@ public interface VavemodelPackage extends EPackage {
 		EReference VARIANT__VARIATIONPOINT = eINSTANCE.getVariant_Variationpoint();
 
 		/**
-		 * The meta object literal for the '<em><b>Initial Version</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Initial Version</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference VARIANT__INITIAL_VERSION = eINSTANCE.getVariant_InitialVersion();
+
+		/**
+		 * The meta object literal for the '<em><b>Is Core</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute VARIANT__IS_CORE = eINSTANCE.getVariant_IsCore();
+
+		/**
+		 * The meta object literal for the '<em><b>Is Root</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute VARIANT__IS_ROOT = eINSTANCE.getVariant_IsRoot();
 
 		/**
 		 * The meta object literal for the '{@link vavemodel.impl.ConstraintsImpl <em>Constraints</em>}' class.

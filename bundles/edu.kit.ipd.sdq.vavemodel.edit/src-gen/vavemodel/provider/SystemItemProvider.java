@@ -13,12 +13,14 @@ import org.eclipse.emf.common.util.ResourceLocator;
 
 import org.eclipse.emf.ecore.EStructuralFeature;
 
+import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
@@ -60,8 +62,31 @@ public class SystemItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addNamePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Name feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addNamePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_System_name_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_System_name_feature", "_UI_System_type"),
+				 VavemodelPackage.Literals.SYSTEM__NAME,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
@@ -77,7 +102,7 @@ public class SystemItemProvider
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(VavemodelPackage.Literals.SYSTEM__CONSTRAINTS);
-			childrenFeatures.add(VavemodelPackage.Literals.SYSTEM__ROOT_NODE);
+			childrenFeatures.add(VavemodelPackage.Literals.SYSTEM__VARIANT);
 		}
 		return childrenFeatures;
 	}
@@ -114,7 +139,10 @@ public class SystemItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_System_type");
+		String label = ((vavemodel.System)object).getName();
+		return label == null || label.length() == 0 ?
+			getString("_UI_System_type") :
+			getString("_UI_System_type") + " " + label;
 	}
 
 
@@ -130,8 +158,11 @@ public class SystemItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(vavemodel.System.class)) {
+			case VavemodelPackage.SYSTEM__NAME:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
 			case VavemodelPackage.SYSTEM__CONSTRAINTS:
-			case VavemodelPackage.SYSTEM__ROOT_NODE:
+			case VavemodelPackage.SYSTEM__VARIANT:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -201,7 +232,7 @@ public class SystemItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(VavemodelPackage.Literals.SYSTEM__ROOT_NODE,
+				(VavemodelPackage.Literals.SYSTEM__VARIANT,
 				 VavemodelFactory.eINSTANCE.createVariant()));
 	}
 

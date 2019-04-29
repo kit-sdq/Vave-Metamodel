@@ -16,7 +16,8 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link vavemodel.System#getConstraints <em>Constraints</em>}</li>
- *   <li>{@link vavemodel.System#getRootNode <em>Root Node</em>}</li>
+ *   <li>{@link vavemodel.System#getVariant <em>Variant</em>}</li>
+ *   <li>{@link vavemodel.System#getName <em>Name</em>}</li>
  * </ul>
  *
  * @see vavemodel.VavemodelPackage#getSystem()
@@ -41,29 +42,45 @@ public interface System extends EObject {
 	EList<Constraints> getConstraints();
 
 	/**
-	 * Returns the value of the '<em><b>Root Node</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Variant</b></em>' containment reference list.
+	 * The list contents are of type {@link vavemodel.Variant}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Root Node</em>' containment reference isn't clear,
+	 * If the meaning of the '<em>Variant</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Root Node</em>' containment reference.
-	 * @see #setRootNode(Variant)
-	 * @see vavemodel.VavemodelPackage#getSystem_RootNode()
+	 * @return the value of the '<em>Variant</em>' containment reference list.
+	 * @see vavemodel.VavemodelPackage#getSystem_Variant()
 	 * @model containment="true" required="true"
 	 * @generated
 	 */
-	Variant getRootNode();
+	EList<Variant> getVariant();
 
 	/**
-	 * Sets the value of the '{@link vavemodel.System#getRootNode <em>Root Node</em>}' containment reference.
+	 * Returns the value of the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Name</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Root Node</em>' containment reference.
-	 * @see #getRootNode()
+	 * @return the value of the '<em>Name</em>' attribute.
+	 * @see #setName(String)
+	 * @see vavemodel.VavemodelPackage#getSystem_Name()
+	 * @model
 	 * @generated
 	 */
-	void setRootNode(Variant value);
+	String getName();
+
+	/**
+	 * Sets the value of the '{@link vavemodel.System#getName <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Name</em>' attribute.
+	 * @see #getName()
+	 * @generated
+	 */
+	void setName(String value);
 
 } // System

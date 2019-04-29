@@ -64,7 +64,8 @@ public class VariantItemProvider
 			super.getPropertyDescriptors(object);
 
 			addNamePropertyDescriptor(object);
-			addInitialVersionPropertyDescriptor(object);
+			addIsCorePropertyDescriptor(object);
+			addIsRootPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -92,23 +93,45 @@ public class VariantItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Initial Version feature.
+	 * This adds a property descriptor for the Is Core feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addInitialVersionPropertyDescriptor(Object object) {
+	protected void addIsCorePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Variant_initialVersion_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Variant_initialVersion_feature", "_UI_Variant_type"),
-				 VavemodelPackage.Literals.VARIANT__INITIAL_VERSION,
+				 getString("_UI_Variant_isCore_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Variant_isCore_feature", "_UI_Variant_type"),
+				 VavemodelPackage.Literals.VARIANT__IS_CORE,
 				 true,
 				 false,
-				 true,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
 				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Is Root feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addIsRootPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Variant_isRoot_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Variant_isRoot_feature", "_UI_Variant_type"),
+				 VavemodelPackage.Literals.VARIANT__IS_ROOT,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -126,6 +149,7 @@ public class VariantItemProvider
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(VavemodelPackage.Literals.VARIANT__VARIATIONPOINT);
+			childrenFeatures.add(VavemodelPackage.Literals.VARIANT__INITIAL_VERSION);
 		}
 		return childrenFeatures;
 	}
@@ -182,9 +206,12 @@ public class VariantItemProvider
 
 		switch (notification.getFeatureID(Variant.class)) {
 			case VavemodelPackage.VARIANT__NAME:
+			case VavemodelPackage.VARIANT__IS_CORE:
+			case VavemodelPackage.VARIANT__IS_ROOT:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case VavemodelPackage.VARIANT__VARIATIONPOINT:
+			case VavemodelPackage.VARIANT__INITIAL_VERSION:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -206,6 +233,11 @@ public class VariantItemProvider
 			(createChildParameter
 				(VavemodelPackage.Literals.VARIANT__VARIATIONPOINT,
 				 VavemodelFactory.eINSTANCE.createVariationPoint()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(VavemodelPackage.Literals.VARIANT__INITIAL_VERSION,
+				 VavemodelFactory.eINSTANCE.createVersion()));
 	}
 
 	/**

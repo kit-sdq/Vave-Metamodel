@@ -31,7 +31,8 @@ import vavemodel.VavemodelPackage;
  * </p>
  * <ul>
  *   <li>{@link vavemodel.impl.SystemImpl#getConstraints <em>Constraints</em>}</li>
- *   <li>{@link vavemodel.impl.SystemImpl#getRootNode <em>Root Node</em>}</li>
+ *   <li>{@link vavemodel.impl.SystemImpl#getVariant <em>Variant</em>}</li>
+ *   <li>{@link vavemodel.impl.SystemImpl#getName <em>Name</em>}</li>
  * </ul>
  *
  * @generated
@@ -48,14 +49,34 @@ public class SystemImpl extends MinimalEObjectImpl.Container implements vavemode
 	protected EList<Constraints> constraints;
 
 	/**
-	 * The cached value of the '{@link #getRootNode() <em>Root Node</em>}' containment reference.
+	 * The cached value of the '{@link #getVariant() <em>Variant</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getRootNode()
+	 * @see #getVariant()
 	 * @generated
 	 * @ordered
 	 */
-	protected Variant rootNode;
+	protected EList<Variant> variant;
+
+	/**
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String NAME_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String name = NAME_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -95,23 +116,11 @@ public class SystemImpl extends MinimalEObjectImpl.Container implements vavemode
 	 * @generated
 	 */
 	@Override
-	public Variant getRootNode() {
-		return rootNode;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetRootNode(Variant newRootNode, NotificationChain msgs) {
-		Variant oldRootNode = rootNode;
-		rootNode = newRootNode;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, VavemodelPackage.SYSTEM__ROOT_NODE, oldRootNode, newRootNode);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+	public EList<Variant> getVariant() {
+		if (variant == null) {
+			variant = new EObjectContainmentEList<Variant>(Variant.class, this, VavemodelPackage.SYSTEM__VARIANT);
 		}
-		return msgs;
+		return variant;
 	}
 
 	/**
@@ -120,18 +129,21 @@ public class SystemImpl extends MinimalEObjectImpl.Container implements vavemode
 	 * @generated
 	 */
 	@Override
-	public void setRootNode(Variant newRootNode) {
-		if (newRootNode != rootNode) {
-			NotificationChain msgs = null;
-			if (rootNode != null)
-				msgs = ((InternalEObject)rootNode).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - VavemodelPackage.SYSTEM__ROOT_NODE, null, msgs);
-			if (newRootNode != null)
-				msgs = ((InternalEObject)newRootNode).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - VavemodelPackage.SYSTEM__ROOT_NODE, null, msgs);
-			msgs = basicSetRootNode(newRootNode, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, VavemodelPackage.SYSTEM__ROOT_NODE, newRootNode, newRootNode));
+	public String getName() {
+		return name;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setName(String newName) {
+		String oldName = name;
+		name = newName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, VavemodelPackage.SYSTEM__NAME, oldName, name));
 	}
 
 	/**
@@ -144,8 +156,8 @@ public class SystemImpl extends MinimalEObjectImpl.Container implements vavemode
 		switch (featureID) {
 			case VavemodelPackage.SYSTEM__CONSTRAINTS:
 				return ((InternalEList<?>)getConstraints()).basicRemove(otherEnd, msgs);
-			case VavemodelPackage.SYSTEM__ROOT_NODE:
-				return basicSetRootNode(null, msgs);
+			case VavemodelPackage.SYSTEM__VARIANT:
+				return ((InternalEList<?>)getVariant()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -160,8 +172,10 @@ public class SystemImpl extends MinimalEObjectImpl.Container implements vavemode
 		switch (featureID) {
 			case VavemodelPackage.SYSTEM__CONSTRAINTS:
 				return getConstraints();
-			case VavemodelPackage.SYSTEM__ROOT_NODE:
-				return getRootNode();
+			case VavemodelPackage.SYSTEM__VARIANT:
+				return getVariant();
+			case VavemodelPackage.SYSTEM__NAME:
+				return getName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -179,8 +193,12 @@ public class SystemImpl extends MinimalEObjectImpl.Container implements vavemode
 				getConstraints().clear();
 				getConstraints().addAll((Collection<? extends Constraints>)newValue);
 				return;
-			case VavemodelPackage.SYSTEM__ROOT_NODE:
-				setRootNode((Variant)newValue);
+			case VavemodelPackage.SYSTEM__VARIANT:
+				getVariant().clear();
+				getVariant().addAll((Collection<? extends Variant>)newValue);
+				return;
+			case VavemodelPackage.SYSTEM__NAME:
+				setName((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -197,8 +215,11 @@ public class SystemImpl extends MinimalEObjectImpl.Container implements vavemode
 			case VavemodelPackage.SYSTEM__CONSTRAINTS:
 				getConstraints().clear();
 				return;
-			case VavemodelPackage.SYSTEM__ROOT_NODE:
-				setRootNode((Variant)null);
+			case VavemodelPackage.SYSTEM__VARIANT:
+				getVariant().clear();
+				return;
+			case VavemodelPackage.SYSTEM__NAME:
+				setName(NAME_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -214,10 +235,28 @@ public class SystemImpl extends MinimalEObjectImpl.Container implements vavemode
 		switch (featureID) {
 			case VavemodelPackage.SYSTEM__CONSTRAINTS:
 				return constraints != null && !constraints.isEmpty();
-			case VavemodelPackage.SYSTEM__ROOT_NODE:
-				return rootNode != null;
+			case VavemodelPackage.SYSTEM__VARIANT:
+				return variant != null && !variant.isEmpty();
+			case VavemodelPackage.SYSTEM__NAME:
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuilder result = new StringBuilder(super.toString());
+		result.append(" (name: ");
+		result.append(name);
+		result.append(')');
+		return result.toString();
 	}
 
 } //SystemImpl

@@ -250,8 +250,18 @@ public class VavemodelPackageImpl extends EPackageImpl implements VavemodelPacka
 	 * @generated
 	 */
 	@Override
-	public EReference getSystem_RootNode() {
+	public EReference getSystem_Variant() {
 		return (EReference)systemEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getSystem_Name() {
+		return (EAttribute)systemEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -292,6 +302,26 @@ public class VavemodelPackageImpl extends EPackageImpl implements VavemodelPacka
 	@Override
 	public EReference getVariant_InitialVersion() {
 		return (EReference)variantEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getVariant_IsCore() {
+		return (EAttribute)variantEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getVariant_IsRoot() {
+		return (EAttribute)variantEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -595,12 +625,15 @@ public class VavemodelPackageImpl extends EPackageImpl implements VavemodelPacka
 		// Create classes and their features
 		systemEClass = createEClass(SYSTEM);
 		createEReference(systemEClass, SYSTEM__CONSTRAINTS);
-		createEReference(systemEClass, SYSTEM__ROOT_NODE);
+		createEReference(systemEClass, SYSTEM__VARIANT);
+		createEAttribute(systemEClass, SYSTEM__NAME);
 
 		variantEClass = createEClass(VARIANT);
 		createEAttribute(variantEClass, VARIANT__NAME);
 		createEReference(variantEClass, VARIANT__VARIATIONPOINT);
 		createEReference(variantEClass, VARIANT__INITIAL_VERSION);
+		createEAttribute(variantEClass, VARIANT__IS_CORE);
+		createEAttribute(variantEClass, VARIANT__IS_ROOT);
 
 		constraintsEClass = createEClass(CONSTRAINTS);
 
@@ -688,12 +721,15 @@ public class VavemodelPackageImpl extends EPackageImpl implements VavemodelPacka
 		// Initialize classes, features, and operations; add parameters
 		initEClass(systemEClass, vavemodel.System.class, "System", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getSystem_Constraints(), this.getConstraints(), null, "constraints", null, 0, -1, vavemodel.System.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getSystem_RootNode(), this.getVariant(), null, "rootNode", null, 1, 1, vavemodel.System.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSystem_Variant(), this.getVariant(), null, "variant", null, 1, -1, vavemodel.System.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSystem_Name(), ecorePackage.getEString(), "name", null, 0, 1, vavemodel.System.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(variantEClass, Variant.class, "Variant", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getVariant_Name(), ecorePackage.getEString(), "name", null, 0, 1, Variant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getVariant_Variationpoint(), this.getVariationPoint(), null, "variationpoint", null, 1, 1, Variant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getVariant_InitialVersion(), this.getVersion(), null, "initialVersion", null, 0, 1, Variant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getVariant_Variationpoint(), this.getVariationPoint(), null, "variationpoint", null, 1, -1, Variant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getVariant_InitialVersion(), this.getVersion(), null, "initialVersion", null, 1, 1, Variant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getVariant_IsCore(), ecorePackage.getEBoolean(), "isCore", null, 0, 1, Variant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getVariant_IsRoot(), ecorePackage.getEBoolean(), "isRoot", null, 0, 1, Variant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(constraintsEClass, Constraints.class, "Constraints", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
