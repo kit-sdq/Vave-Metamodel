@@ -215,7 +215,7 @@ public interface VavemodelPackage extends EPackage {
 	int VARIATION_POINT__VARIANT = 1;
 
 	/**
-	 * The feature id for the '<em><b>Cardinality</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Cardinality</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -354,7 +354,7 @@ public interface VavemodelPackage extends EPackage {
 	int VERSION__SUCCESSOR = 1;
 
 	/**
-	 * The feature id for the '<em><b>Deltamodule</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Deltamodule</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -400,13 +400,31 @@ public interface VavemodelPackage extends EPackage {
 	int DELTA_MODULE = 8;
 
 	/**
+	 * The feature id for the '<em><b>Delta Module ID</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DELTA_MODULE__DELTA_MODULE_ID = 0;
+
+	/**
+	 * The feature id for the '<em><b>Change</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DELTA_MODULE__CHANGE = 1;
+
+	/**
 	 * The number of structural features of the '<em>Delta Module</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DELTA_MODULE_FEATURE_COUNT = 0;
+	int DELTA_MODULE_FEATURE_COUNT = 2;
 
 	/**
 	 * The number of operations of the '<em>Delta Module</em>' class.
@@ -632,6 +650,34 @@ public interface VavemodelPackage extends EPackage {
 	int CARDINALITY_OPERATION_COUNT = 0;
 
 	/**
+	 * The meta object id for the '{@link vavemodel.impl.ChangeImpl <em>Change</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see vavemodel.impl.ChangeImpl
+	 * @see vavemodel.impl.VavemodelPackageImpl#getChange()
+	 * @generated
+	 */
+	int CHANGE = 16;
+
+	/**
+	 * The number of structural features of the '<em>Change</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CHANGE_FEATURE_COUNT = 0;
+
+	/**
+	 * The number of operations of the '<em>Change</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CHANGE_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link vavemodel.GroupType <em>Group Type</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -639,7 +685,7 @@ public interface VavemodelPackage extends EPackage {
 	 * @see vavemodel.impl.VavemodelPackageImpl#getGroupType()
 	 * @generated
 	 */
-	int GROUP_TYPE = 16;
+	int GROUP_TYPE = 17;
 
 
 	/**
@@ -760,10 +806,10 @@ public interface VavemodelPackage extends EPackage {
 	EReference getVariationPoint_Variant();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link vavemodel.VariationPoint#getCardinality <em>Cardinality</em>}'.
+	 * Returns the meta object for the containment reference '{@link vavemodel.VariationPoint#getCardinality <em>Cardinality</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Cardinality</em>'.
+	 * @return the meta object for the containment reference '<em>Cardinality</em>'.
 	 * @see vavemodel.VariationPoint#getCardinality()
 	 * @see #getVariationPoint()
 	 * @generated
@@ -833,10 +879,10 @@ public interface VavemodelPackage extends EPackage {
 	EReference getVersion_Successor();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link vavemodel.Version#getDeltamodule <em>Deltamodule</em>}'.
+	 * Returns the meta object for the containment reference '{@link vavemodel.Version#getDeltamodule <em>Deltamodule</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Deltamodule</em>'.
+	 * @return the meta object for the containment reference '<em>Deltamodule</em>'.
 	 * @see vavemodel.Version#getDeltamodule()
 	 * @see #getVersion()
 	 * @generated
@@ -863,6 +909,28 @@ public interface VavemodelPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getDeltaModule();
+
+	/**
+	 * Returns the meta object for the attribute '{@link vavemodel.DeltaModule#getDeltaModuleID <em>Delta Module ID</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Delta Module ID</em>'.
+	 * @see vavemodel.DeltaModule#getDeltaModuleID()
+	 * @see #getDeltaModule()
+	 * @generated
+	 */
+	EAttribute getDeltaModule_DeltaModuleID();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link vavemodel.DeltaModule#getChange <em>Change</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Change</em>'.
+	 * @see vavemodel.DeltaModule#getChange()
+	 * @see #getDeltaModule()
+	 * @generated
+	 */
+	EReference getDeltaModule_Change();
 
 	/**
 	 * Returns the meta object for class '{@link vavemodel.VP_Depends_VP <em>VP Depends VP</em>}'.
@@ -955,6 +1023,16 @@ public interface VavemodelPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getCardinality_Max();
+
+	/**
+	 * Returns the meta object for class '{@link vavemodel.Change <em>Change</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Change</em>'.
+	 * @see vavemodel.Change
+	 * @generated
+	 */
+	EClass getChange();
 
 	/**
 	 * Returns the meta object for enum '{@link vavemodel.GroupType <em>Group Type</em>}'.
@@ -1086,7 +1164,7 @@ public interface VavemodelPackage extends EPackage {
 		EReference VARIATION_POINT__VARIANT = eINSTANCE.getVariationPoint_Variant();
 
 		/**
-		 * The meta object literal for the '<em><b>Cardinality</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Cardinality</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1150,7 +1228,7 @@ public interface VavemodelPackage extends EPackage {
 		EReference VERSION__SUCCESSOR = eINSTANCE.getVersion_Successor();
 
 		/**
-		 * The meta object literal for the '<em><b>Deltamodule</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Deltamodule</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1174,6 +1252,22 @@ public interface VavemodelPackage extends EPackage {
 		 * @generated
 		 */
 		EClass DELTA_MODULE = eINSTANCE.getDeltaModule();
+
+		/**
+		 * The meta object literal for the '<em><b>Delta Module ID</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DELTA_MODULE__DELTA_MODULE_ID = eINSTANCE.getDeltaModule_DeltaModuleID();
+
+		/**
+		 * The meta object literal for the '<em><b>Change</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DELTA_MODULE__CHANGE = eINSTANCE.getDeltaModule_Change();
 
 		/**
 		 * The meta object literal for the '{@link vavemodel.impl.VP_Depends_VPImpl <em>VP Depends VP</em>}' class.
@@ -1260,6 +1354,16 @@ public interface VavemodelPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute CARDINALITY__MAX = eINSTANCE.getCardinality_Max();
+
+		/**
+		 * The meta object literal for the '{@link vavemodel.impl.ChangeImpl <em>Change</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see vavemodel.impl.ChangeImpl
+		 * @see vavemodel.impl.VavemodelPackageImpl#getChange()
+		 * @generated
+		 */
+		EClass CHANGE = eINSTANCE.getChange();
 
 		/**
 		 * The meta object literal for the '{@link vavemodel.GroupType <em>Group Type</em>}' enum.

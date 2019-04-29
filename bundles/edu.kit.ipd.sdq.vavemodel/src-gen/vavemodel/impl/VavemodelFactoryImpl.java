@@ -12,6 +12,7 @@ import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
 import vavemodel.Cardinality;
+import vavemodel.Change;
 import vavemodel.Constraints;
 import vavemodel.DeltaModule;
 import vavemodel.GroupType;
@@ -90,6 +91,7 @@ public class VavemodelFactoryImpl extends EFactoryImpl implements VavemodelFacto
 			case VavemodelPackage.VDEPENDS_V: return createV_Depends_V();
 			case VavemodelPackage.VEXCLUDES_V: return createV_Excludes_V();
 			case VavemodelPackage.CARDINALITY: return createCardinality();
+			case VavemodelPackage.CHANGE: return createChange();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -299,6 +301,17 @@ public class VavemodelFactoryImpl extends EFactoryImpl implements VavemodelFacto
 	public Cardinality createCardinality() {
 		CardinalityImpl cardinality = new CardinalityImpl();
 		return cardinality;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Change createChange() {
+		ChangeImpl change = new ChangeImpl();
+		return change;
 	}
 
 	/**

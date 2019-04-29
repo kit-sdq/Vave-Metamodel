@@ -18,7 +18,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//GroupType"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="variant" lowerBound="1"
         upperBound="-1" eType="#//Variant" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="cardinality" upperBound="-1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="cardinality" lowerBound="1"
         eType="#//Cardinality" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="GroupType">
@@ -35,10 +35,14 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="successor" upperBound="-1"
         eType="#//Version"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="deltamodule" lowerBound="1"
-        upperBound="-1" eType="#//DeltaModule" containment="true"/>
+        eType="#//DeltaModule" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="versionID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="DeltaModule"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DeltaModule">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="deltaModuleID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="change" lowerBound="1"
+        upperBound="-1" eType="#//Change" containment="true"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="VP_Depends_VP" eSuperTypes="#//VP_Constraint_VP"/>
   <eClassifiers xsi:type="ecore:EClass" name="VP_Excludes_VP" eSuperTypes="#//VP_Constraint_VP"/>
   <eClassifiers xsi:type="ecore:EClass" name="V_Depends_VP" eSuperTypes="#//V_Constraint_VP"/>
@@ -49,4 +53,5 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="min" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="max" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Change"/>
 </ecore:EPackage>

@@ -8,6 +8,7 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
 
 import vavemodel.Cardinality;
+import vavemodel.Change;
 import vavemodel.Constraints;
 import vavemodel.DeltaModule;
 import vavemodel.VP_Constraint_VP;
@@ -189,6 +190,12 @@ public class VavemodelSwitch<T> extends Switch<T> {
 			case VavemodelPackage.CARDINALITY: {
 				Cardinality cardinality = (Cardinality)theEObject;
 				T result = caseCardinality(cardinality);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case VavemodelPackage.CHANGE: {
+				Change change = (Change)theEObject;
+				T result = caseChange(change);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -433,6 +440,21 @@ public class VavemodelSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseCardinality(Cardinality object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Change</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Change</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseChange(Change object) {
 		return null;
 	}
 

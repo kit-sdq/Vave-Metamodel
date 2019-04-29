@@ -14,11 +14,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
-import org.eclipse.emf.ecore.util.InternalEList;
-
 import vavemodel.DeltaModule;
 import vavemodel.VavemodelPackage;
 import vavemodel.Version;
@@ -61,14 +57,14 @@ public class VersionImpl extends MinimalEObjectImpl.Container implements Version
 	protected EList<Version> successor;
 
 	/**
-	 * The cached value of the '{@link #getDeltamodule() <em>Deltamodule</em>}' containment reference list.
+	 * The cached value of the '{@link #getDeltamodule() <em>Deltamodule</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getDeltamodule()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<DeltaModule> deltamodule;
+	protected DeltaModule deltamodule;
 
 	/**
 	 * The default value of the '{@link #getVersionID() <em>Version ID</em>}' attribute.
@@ -168,11 +164,43 @@ public class VersionImpl extends MinimalEObjectImpl.Container implements Version
 	 * @generated
 	 */
 	@Override
-	public EList<DeltaModule> getDeltamodule() {
-		if (deltamodule == null) {
-			deltamodule = new EObjectContainmentEList<DeltaModule>(DeltaModule.class, this, VavemodelPackage.VERSION__DELTAMODULE);
-		}
+	public DeltaModule getDeltamodule() {
 		return deltamodule;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetDeltamodule(DeltaModule newDeltamodule, NotificationChain msgs) {
+		DeltaModule oldDeltamodule = deltamodule;
+		deltamodule = newDeltamodule;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, VavemodelPackage.VERSION__DELTAMODULE, oldDeltamodule, newDeltamodule);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setDeltamodule(DeltaModule newDeltamodule) {
+		if (newDeltamodule != deltamodule) {
+			NotificationChain msgs = null;
+			if (deltamodule != null)
+				msgs = ((InternalEObject)deltamodule).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - VavemodelPackage.VERSION__DELTAMODULE, null, msgs);
+			if (newDeltamodule != null)
+				msgs = ((InternalEObject)newDeltamodule).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - VavemodelPackage.VERSION__DELTAMODULE, null, msgs);
+			msgs = basicSetDeltamodule(newDeltamodule, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, VavemodelPackage.VERSION__DELTAMODULE, newDeltamodule, newDeltamodule));
 	}
 
 	/**
@@ -207,7 +235,7 @@ public class VersionImpl extends MinimalEObjectImpl.Container implements Version
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case VavemodelPackage.VERSION__DELTAMODULE:
-				return ((InternalEList<?>)getDeltamodule()).basicRemove(otherEnd, msgs);
+				return basicSetDeltamodule(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -250,8 +278,7 @@ public class VersionImpl extends MinimalEObjectImpl.Container implements Version
 				getSuccessor().addAll((Collection<? extends Version>)newValue);
 				return;
 			case VavemodelPackage.VERSION__DELTAMODULE:
-				getDeltamodule().clear();
-				getDeltamodule().addAll((Collection<? extends DeltaModule>)newValue);
+				setDeltamodule((DeltaModule)newValue);
 				return;
 			case VavemodelPackage.VERSION__VERSION_ID:
 				setVersionID((Double)newValue);
@@ -275,7 +302,7 @@ public class VersionImpl extends MinimalEObjectImpl.Container implements Version
 				getSuccessor().clear();
 				return;
 			case VavemodelPackage.VERSION__DELTAMODULE:
-				getDeltamodule().clear();
+				setDeltamodule((DeltaModule)null);
 				return;
 			case VavemodelPackage.VERSION__VERSION_ID:
 				setVersionID(VERSION_ID_EDEFAULT);
@@ -297,7 +324,7 @@ public class VersionImpl extends MinimalEObjectImpl.Container implements Version
 			case VavemodelPackage.VERSION__SUCCESSOR:
 				return successor != null && !successor.isEmpty();
 			case VavemodelPackage.VERSION__DELTAMODULE:
-				return deltamodule != null && !deltamodule.isEmpty();
+				return deltamodule != null;
 			case VavemodelPackage.VERSION__VERSION_ID:
 				return versionID != VERSION_ID_EDEFAULT;
 		}

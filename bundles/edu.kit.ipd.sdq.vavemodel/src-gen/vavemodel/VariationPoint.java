@@ -71,19 +71,29 @@ public interface VariationPoint extends EObject {
 	EList<Variant> getVariant();
 
 	/**
-	 * Returns the value of the '<em><b>Cardinality</b></em>' containment reference list.
-	 * The list contents are of type {@link vavemodel.Cardinality}.
+	 * Returns the value of the '<em><b>Cardinality</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Cardinality</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Cardinality</em>' containment reference list.
+	 * @return the value of the '<em>Cardinality</em>' containment reference.
+	 * @see #setCardinality(Cardinality)
 	 * @see vavemodel.VavemodelPackage#getVariationPoint_Cardinality()
-	 * @model containment="true"
+	 * @model containment="true" required="true"
 	 * @generated
 	 */
-	EList<Cardinality> getCardinality();
+	Cardinality getCardinality();
+
+	/**
+	 * Sets the value of the '{@link vavemodel.VariationPoint#getCardinality <em>Cardinality</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Cardinality</em>' containment reference.
+	 * @see #getCardinality()
+	 * @generated
+	 */
+	void setCardinality(Cardinality value);
 
 } // VariationPoint

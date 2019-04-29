@@ -440,6 +440,29 @@ public class VavemodelItemProviderAdapterFactory extends VavemodelAdapterFactory
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link vavemodel.Change} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ChangeItemProvider changeItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link vavemodel.Change}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createChangeAdapter() {
+		if (changeItemProvider == null) {
+			changeItemProvider = new ChangeItemProvider(this);
+		}
+
+		return changeItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -560,6 +583,7 @@ public class VavemodelItemProviderAdapterFactory extends VavemodelAdapterFactory
 		if (v_Depends_VItemProvider != null) v_Depends_VItemProvider.dispose();
 		if (v_Excludes_VItemProvider != null) v_Excludes_VItemProvider.dispose();
 		if (cardinalityItemProvider != null) cardinalityItemProvider.dispose();
+		if (changeItemProvider != null) changeItemProvider.dispose();
 	}
 
 }

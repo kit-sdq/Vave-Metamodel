@@ -37,7 +37,10 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference vavemodel.ecore#//Version/deltamodule"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vavemodel.ecore#//Version/versionID"/>
     </genClasses>
-    <genClasses ecoreClass="vavemodel.ecore#//DeltaModule"/>
+    <genClasses ecoreClass="vavemodel.ecore#//DeltaModule">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vavemodel.ecore#//DeltaModule/deltaModuleID"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference vavemodel.ecore#//DeltaModule/change"/>
+    </genClasses>
     <genClasses ecoreClass="vavemodel.ecore#//VP_Depends_VP"/>
     <genClasses ecoreClass="vavemodel.ecore#//VP_Excludes_VP"/>
     <genClasses ecoreClass="vavemodel.ecore#//V_Depends_VP"/>
@@ -48,5 +51,6 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vavemodel.ecore#//Cardinality/min"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vavemodel.ecore#//Cardinality/max"/>
     </genClasses>
+    <genClasses ecoreClass="vavemodel.ecore#//Change"/>
   </genPackages>
 </genmodel:GenModel>

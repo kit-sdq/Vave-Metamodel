@@ -10,6 +10,7 @@ import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 import org.eclipse.emf.ecore.EObject;
 
 import vavemodel.Cardinality;
+import vavemodel.Change;
 import vavemodel.Constraints;
 import vavemodel.DeltaModule;
 import vavemodel.VP_Constraint_VP;
@@ -145,6 +146,10 @@ public class VavemodelAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseCardinality(Cardinality object) {
 				return createCardinalityAdapter();
+			}
+			@Override
+			public Adapter caseChange(Change object) {
+				return createChangeAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -387,6 +392,20 @@ public class VavemodelAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createCardinalityAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link vavemodel.Change <em>Change</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see vavemodel.Change
+	 * @generated
+	 */
+	public Adapter createChangeAdapter() {
 		return null;
 	}
 

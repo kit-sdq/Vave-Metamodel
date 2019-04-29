@@ -69,20 +69,30 @@ public interface Version extends EObject {
 	EList<Version> getSuccessor();
 
 	/**
-	 * Returns the value of the '<em><b>Deltamodule</b></em>' containment reference list.
-	 * The list contents are of type {@link vavemodel.DeltaModule}.
+	 * Returns the value of the '<em><b>Deltamodule</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Deltamodule</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Deltamodule</em>' containment reference list.
+	 * @return the value of the '<em>Deltamodule</em>' containment reference.
+	 * @see #setDeltamodule(DeltaModule)
 	 * @see vavemodel.VavemodelPackage#getVersion_Deltamodule()
 	 * @model containment="true" required="true"
 	 * @generated
 	 */
-	EList<DeltaModule> getDeltamodule();
+	DeltaModule getDeltamodule();
+
+	/**
+	 * Sets the value of the '{@link vavemodel.Version#getDeltamodule <em>Deltamodule</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Deltamodule</em>' containment reference.
+	 * @see #getDeltamodule()
+	 * @generated
+	 */
+	void setDeltamodule(DeltaModule value);
 
 	/**
 	 * Returns the value of the '<em><b>Version ID</b></em>' attribute.
