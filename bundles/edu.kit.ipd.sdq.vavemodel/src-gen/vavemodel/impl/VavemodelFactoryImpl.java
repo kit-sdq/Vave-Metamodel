@@ -13,18 +13,15 @@ import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
 import vavemodel.Cardinality;
 import vavemodel.Change;
-import vavemodel.Constraints;
+import vavemodel.Conjunction;
+import vavemodel.Constraint;
 import vavemodel.DeltaModule;
+import vavemodel.Disjunction;
+import vavemodel.Equivalence;
 import vavemodel.GroupType;
-import vavemodel.VP_Constraint_VP;
-import vavemodel.VP_Depends_VP;
-import vavemodel.VP_Excludes_VP;
-import vavemodel.V_Constraint_V;
-import vavemodel.V_Constraint_VP;
-import vavemodel.V_Depends_V;
-import vavemodel.V_Depends_VP;
-import vavemodel.V_Excludes_V;
-import vavemodel.V_Excludes_VP;
+import vavemodel.Implication;
+import vavemodel.Not;
+import vavemodel.Variable;
 import vavemodel.Variant;
 import vavemodel.VariationPoint;
 import vavemodel.VavemodelFactory;
@@ -77,21 +74,18 @@ public class VavemodelFactoryImpl extends EFactoryImpl implements VavemodelFacto
 		switch (eClass.getClassifierID()) {
 			case VavemodelPackage.SYSTEM: return createSystem();
 			case VavemodelPackage.VARIANT: return createVariant();
-			case VavemodelPackage.CONSTRAINTS: return createConstraints();
+			case VavemodelPackage.CONSTRAINT: return createConstraint();
 			case VavemodelPackage.VARIATION_POINT: return createVariationPoint();
-			case VavemodelPackage.VP_CONSTRAINT_VP: return createVP_Constraint_VP();
-			case VavemodelPackage.VCONSTRAINT_VP: return createV_Constraint_VP();
-			case VavemodelPackage.VCONSTRAINT_V: return createV_Constraint_V();
 			case VavemodelPackage.VERSION: return createVersion();
-			case VavemodelPackage.DELTA_MODULE: return createDeltaModule();
-			case VavemodelPackage.VP_DEPENDS_VP: return createVP_Depends_VP();
-			case VavemodelPackage.VP_EXCLUDES_VP: return createVP_Excludes_VP();
-			case VavemodelPackage.VDEPENDS_VP: return createV_Depends_VP();
-			case VavemodelPackage.VEXCLUDES_VP: return createV_Excludes_VP();
-			case VavemodelPackage.VDEPENDS_V: return createV_Depends_V();
-			case VavemodelPackage.VEXCLUDES_V: return createV_Excludes_V();
 			case VavemodelPackage.CARDINALITY: return createCardinality();
+			case VavemodelPackage.DELTA_MODULE: return createDeltaModule();
 			case VavemodelPackage.CHANGE: return createChange();
+			case VavemodelPackage.VARIABLE: return createVariable();
+			case VavemodelPackage.IMPLICATION: return createImplication();
+			case VavemodelPackage.DISJUNCTION: return createDisjunction();
+			case VavemodelPackage.EQUIVALENCE: return createEquivalence();
+			case VavemodelPackage.CONJUNCTION: return createConjunction();
+			case VavemodelPackage.NOT: return createNot();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -155,9 +149,9 @@ public class VavemodelFactoryImpl extends EFactoryImpl implements VavemodelFacto
 	 * @generated
 	 */
 	@Override
-	public Constraints createConstraints() {
-		ConstraintsImpl constraints = new ConstraintsImpl();
-		return constraints;
+	public Constraint createConstraint() {
+		ConstraintImpl constraint = new ConstraintImpl();
+		return constraint;
 	}
 
 	/**
@@ -169,39 +163,6 @@ public class VavemodelFactoryImpl extends EFactoryImpl implements VavemodelFacto
 	public VariationPoint createVariationPoint() {
 		VariationPointImpl variationPoint = new VariationPointImpl();
 		return variationPoint;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public VP_Constraint_VP createVP_Constraint_VP() {
-		VP_Constraint_VPImpl vP_Constraint_VP = new VP_Constraint_VPImpl();
-		return vP_Constraint_VP;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public V_Constraint_VP createV_Constraint_VP() {
-		V_Constraint_VPImpl v_Constraint_VP = new V_Constraint_VPImpl();
-		return v_Constraint_VP;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public V_Constraint_V createV_Constraint_V() {
-		V_Constraint_VImpl v_Constraint_V = new V_Constraint_VImpl();
-		return v_Constraint_V;
 	}
 
 	/**
@@ -232,72 +193,6 @@ public class VavemodelFactoryImpl extends EFactoryImpl implements VavemodelFacto
 	 * @generated
 	 */
 	@Override
-	public VP_Depends_VP createVP_Depends_VP() {
-		VP_Depends_VPImpl vP_Depends_VP = new VP_Depends_VPImpl();
-		return vP_Depends_VP;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public VP_Excludes_VP createVP_Excludes_VP() {
-		VP_Excludes_VPImpl vP_Excludes_VP = new VP_Excludes_VPImpl();
-		return vP_Excludes_VP;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public V_Depends_VP createV_Depends_VP() {
-		V_Depends_VPImpl v_Depends_VP = new V_Depends_VPImpl();
-		return v_Depends_VP;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public V_Excludes_VP createV_Excludes_VP() {
-		V_Excludes_VPImpl v_Excludes_VP = new V_Excludes_VPImpl();
-		return v_Excludes_VP;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public V_Depends_V createV_Depends_V() {
-		V_Depends_VImpl v_Depends_V = new V_Depends_VImpl();
-		return v_Depends_V;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public V_Excludes_V createV_Excludes_V() {
-		V_Excludes_VImpl v_Excludes_V = new V_Excludes_VImpl();
-		return v_Excludes_V;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public Cardinality createCardinality() {
 		CardinalityImpl cardinality = new CardinalityImpl();
 		return cardinality;
@@ -312,6 +207,72 @@ public class VavemodelFactoryImpl extends EFactoryImpl implements VavemodelFacto
 	public Change createChange() {
 		ChangeImpl change = new ChangeImpl();
 		return change;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Variable createVariable() {
+		VariableImpl variable = new VariableImpl();
+		return variable;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Implication createImplication() {
+		ImplicationImpl implication = new ImplicationImpl();
+		return implication;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Disjunction createDisjunction() {
+		DisjunctionImpl disjunction = new DisjunctionImpl();
+		return disjunction;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Equivalence createEquivalence() {
+		EquivalenceImpl equivalence = new EquivalenceImpl();
+		return equivalence;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Conjunction createConjunction() {
+		ConjunctionImpl conjunction = new ConjunctionImpl();
+		return conjunction;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Not createNot() {
+		NotImpl not = new NotImpl();
+		return not;
 	}
 
 	/**

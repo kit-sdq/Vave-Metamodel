@@ -15,7 +15,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link vavemodel.System#getConstraints <em>Constraints</em>}</li>
+ *   <li>{@link vavemodel.System#getConstraint <em>Constraint</em>}</li>
  *   <li>{@link vavemodel.System#getVariant <em>Variant</em>}</li>
  *   <li>{@link vavemodel.System#getName <em>Name</em>}</li>
  * </ul>
@@ -26,20 +26,20 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface System extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Constraints</b></em>' containment reference list.
-	 * The list contents are of type {@link vavemodel.Constraints}.
+	 * Returns the value of the '<em><b>Constraint</b></em>' containment reference list.
+	 * The list contents are of type {@link vavemodel.Constraint}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Constraints</em>' containment reference list isn't clear,
+	 * If the meaning of the '<em>Constraint</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Constraints</em>' containment reference list.
-	 * @see vavemodel.VavemodelPackage#getSystem_Constraints()
+	 * @return the value of the '<em>Constraint</em>' containment reference list.
+	 * @see vavemodel.VavemodelPackage#getSystem_Constraint()
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<Constraints> getConstraints();
+	EList<Constraint> getConstraint();
 
 	/**
 	 * Returns the value of the '<em><b>Variant</b></em>' containment reference list.

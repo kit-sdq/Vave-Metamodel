@@ -41,7 +41,7 @@ public class DeltaModuleImpl extends MinimalEObjectImpl.Container implements Del
 	 * @generated
 	 * @ordered
 	 */
-	protected static final int DELTA_MODULE_ID_EDEFAULT = 0;
+	protected static final double DELTA_MODULE_ID_EDEFAULT = 0.0;
 	/**
 	 * The cached value of the '{@link #getDeltaModuleID() <em>Delta Module ID</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -50,7 +50,7 @@ public class DeltaModuleImpl extends MinimalEObjectImpl.Container implements Del
 	 * @generated
 	 * @ordered
 	 */
-	protected int deltaModuleID = DELTA_MODULE_ID_EDEFAULT;
+	protected double deltaModuleID = DELTA_MODULE_ID_EDEFAULT;
 	/**
 	 * The cached value of the '{@link #getChange() <em>Change</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -86,7 +86,7 @@ public class DeltaModuleImpl extends MinimalEObjectImpl.Container implements Del
 	 * @generated
 	 */
 	@Override
-	public int getDeltaModuleID() {
+	public double getDeltaModuleID() {
 		return deltaModuleID;
 	}
 
@@ -96,8 +96,8 @@ public class DeltaModuleImpl extends MinimalEObjectImpl.Container implements Del
 	 * @generated
 	 */
 	@Override
-	public void setDeltaModuleID(int newDeltaModuleID) {
-		int oldDeltaModuleID = deltaModuleID;
+	public void setDeltaModuleID(double newDeltaModuleID) {
+		double oldDeltaModuleID = deltaModuleID;
 		deltaModuleID = newDeltaModuleID;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, VavemodelPackage.DELTA_MODULE__DELTA_MODULE_ID, oldDeltaModuleID, deltaModuleID));
@@ -156,7 +156,7 @@ public class DeltaModuleImpl extends MinimalEObjectImpl.Container implements Del
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case VavemodelPackage.DELTA_MODULE__DELTA_MODULE_ID:
-				setDeltaModuleID((Integer)newValue);
+				setDeltaModuleID((Double)newValue);
 				return;
 			case VavemodelPackage.DELTA_MODULE__CHANGE:
 				getChange().clear();

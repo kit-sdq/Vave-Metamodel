@@ -18,7 +18,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
-import vavemodel.Constraints;
+import vavemodel.Constraint;
 import vavemodel.Variant;
 import vavemodel.VavemodelPackage;
 
@@ -30,7 +30,7 @@ import vavemodel.VavemodelPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link vavemodel.impl.SystemImpl#getConstraints <em>Constraints</em>}</li>
+ *   <li>{@link vavemodel.impl.SystemImpl#getConstraint <em>Constraint</em>}</li>
  *   <li>{@link vavemodel.impl.SystemImpl#getVariant <em>Variant</em>}</li>
  *   <li>{@link vavemodel.impl.SystemImpl#getName <em>Name</em>}</li>
  * </ul>
@@ -39,14 +39,14 @@ import vavemodel.VavemodelPackage;
  */
 public class SystemImpl extends MinimalEObjectImpl.Container implements vavemodel.System {
 	/**
-	 * The cached value of the '{@link #getConstraints() <em>Constraints</em>}' containment reference list.
+	 * The cached value of the '{@link #getConstraint() <em>Constraint</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getConstraints()
+	 * @see #getConstraint()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Constraints> constraints;
+	protected EList<Constraint> constraint;
 
 	/**
 	 * The cached value of the '{@link #getVariant() <em>Variant</em>}' containment reference list.
@@ -103,11 +103,11 @@ public class SystemImpl extends MinimalEObjectImpl.Container implements vavemode
 	 * @generated
 	 */
 	@Override
-	public EList<Constraints> getConstraints() {
-		if (constraints == null) {
-			constraints = new EObjectContainmentEList<Constraints>(Constraints.class, this, VavemodelPackage.SYSTEM__CONSTRAINTS);
+	public EList<Constraint> getConstraint() {
+		if (constraint == null) {
+			constraint = new EObjectContainmentEList<Constraint>(Constraint.class, this, VavemodelPackage.SYSTEM__CONSTRAINT);
 		}
-		return constraints;
+		return constraint;
 	}
 
 	/**
@@ -154,8 +154,8 @@ public class SystemImpl extends MinimalEObjectImpl.Container implements vavemode
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case VavemodelPackage.SYSTEM__CONSTRAINTS:
-				return ((InternalEList<?>)getConstraints()).basicRemove(otherEnd, msgs);
+			case VavemodelPackage.SYSTEM__CONSTRAINT:
+				return ((InternalEList<?>)getConstraint()).basicRemove(otherEnd, msgs);
 			case VavemodelPackage.SYSTEM__VARIANT:
 				return ((InternalEList<?>)getVariant()).basicRemove(otherEnd, msgs);
 		}
@@ -170,8 +170,8 @@ public class SystemImpl extends MinimalEObjectImpl.Container implements vavemode
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case VavemodelPackage.SYSTEM__CONSTRAINTS:
-				return getConstraints();
+			case VavemodelPackage.SYSTEM__CONSTRAINT:
+				return getConstraint();
 			case VavemodelPackage.SYSTEM__VARIANT:
 				return getVariant();
 			case VavemodelPackage.SYSTEM__NAME:
@@ -189,9 +189,9 @@ public class SystemImpl extends MinimalEObjectImpl.Container implements vavemode
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case VavemodelPackage.SYSTEM__CONSTRAINTS:
-				getConstraints().clear();
-				getConstraints().addAll((Collection<? extends Constraints>)newValue);
+			case VavemodelPackage.SYSTEM__CONSTRAINT:
+				getConstraint().clear();
+				getConstraint().addAll((Collection<? extends Constraint>)newValue);
 				return;
 			case VavemodelPackage.SYSTEM__VARIANT:
 				getVariant().clear();
@@ -212,8 +212,8 @@ public class SystemImpl extends MinimalEObjectImpl.Container implements vavemode
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case VavemodelPackage.SYSTEM__CONSTRAINTS:
-				getConstraints().clear();
+			case VavemodelPackage.SYSTEM__CONSTRAINT:
+				getConstraint().clear();
 				return;
 			case VavemodelPackage.SYSTEM__VARIANT:
 				getVariant().clear();
@@ -233,8 +233,8 @@ public class SystemImpl extends MinimalEObjectImpl.Container implements vavemode
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case VavemodelPackage.SYSTEM__CONSTRAINTS:
-				return constraints != null && !constraints.isEmpty();
+			case VavemodelPackage.SYSTEM__CONSTRAINT:
+				return constraint != null && !constraint.isEmpty();
 			case VavemodelPackage.SYSTEM__VARIANT:
 				return variant != null && !variant.isEmpty();
 			case VavemodelPackage.SYSTEM__NAME:

@@ -9,19 +9,20 @@ import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 
 import org.eclipse.emf.ecore.EObject;
 
+import vavemodel.BinaryExpression;
 import vavemodel.Cardinality;
 import vavemodel.Change;
-import vavemodel.Constraints;
+import vavemodel.Conjunction;
+import vavemodel.Constraint;
 import vavemodel.DeltaModule;
-import vavemodel.VP_Constraint_VP;
-import vavemodel.VP_Depends_VP;
-import vavemodel.VP_Excludes_VP;
-import vavemodel.V_Constraint_V;
-import vavemodel.V_Constraint_VP;
-import vavemodel.V_Depends_V;
-import vavemodel.V_Depends_VP;
-import vavemodel.V_Excludes_V;
-import vavemodel.V_Excludes_VP;
+import vavemodel.Disjunction;
+import vavemodel.Equivalence;
+import vavemodel.Expression;
+import vavemodel.Implication;
+import vavemodel.Not;
+import vavemodel.Term;
+import vavemodel.UnaryExpression;
+import vavemodel.Variable;
 import vavemodel.Variant;
 import vavemodel.VariationPoint;
 import vavemodel.VavemodelPackage;
@@ -92,64 +93,68 @@ public class VavemodelAdapterFactory extends AdapterFactoryImpl {
 				return createVariantAdapter();
 			}
 			@Override
-			public Adapter caseConstraints(Constraints object) {
-				return createConstraintsAdapter();
+			public Adapter caseConstraint(Constraint object) {
+				return createConstraintAdapter();
 			}
 			@Override
 			public Adapter caseVariationPoint(VariationPoint object) {
 				return createVariationPointAdapter();
 			}
 			@Override
-			public Adapter caseVP_Constraint_VP(VP_Constraint_VP object) {
-				return createVP_Constraint_VPAdapter();
-			}
-			@Override
-			public Adapter caseV_Constraint_VP(V_Constraint_VP object) {
-				return createV_Constraint_VPAdapter();
-			}
-			@Override
-			public Adapter caseV_Constraint_V(V_Constraint_V object) {
-				return createV_Constraint_VAdapter();
-			}
-			@Override
 			public Adapter caseVersion(Version object) {
 				return createVersionAdapter();
-			}
-			@Override
-			public Adapter caseDeltaModule(DeltaModule object) {
-				return createDeltaModuleAdapter();
-			}
-			@Override
-			public Adapter caseVP_Depends_VP(VP_Depends_VP object) {
-				return createVP_Depends_VPAdapter();
-			}
-			@Override
-			public Adapter caseVP_Excludes_VP(VP_Excludes_VP object) {
-				return createVP_Excludes_VPAdapter();
-			}
-			@Override
-			public Adapter caseV_Depends_VP(V_Depends_VP object) {
-				return createV_Depends_VPAdapter();
-			}
-			@Override
-			public Adapter caseV_Excludes_VP(V_Excludes_VP object) {
-				return createV_Excludes_VPAdapter();
-			}
-			@Override
-			public Adapter caseV_Depends_V(V_Depends_V object) {
-				return createV_Depends_VAdapter();
-			}
-			@Override
-			public Adapter caseV_Excludes_V(V_Excludes_V object) {
-				return createV_Excludes_VAdapter();
 			}
 			@Override
 			public Adapter caseCardinality(Cardinality object) {
 				return createCardinalityAdapter();
 			}
 			@Override
+			public Adapter caseDeltaModule(DeltaModule object) {
+				return createDeltaModuleAdapter();
+			}
+			@Override
 			public Adapter caseChange(Change object) {
 				return createChangeAdapter();
+			}
+			@Override
+			public Adapter caseVariable(Variable object) {
+				return createVariableAdapter();
+			}
+			@Override
+			public Adapter caseExpression(Expression object) {
+				return createExpressionAdapter();
+			}
+			@Override
+			public Adapter caseTerm(Term object) {
+				return createTermAdapter();
+			}
+			@Override
+			public Adapter caseBinaryExpression(BinaryExpression object) {
+				return createBinaryExpressionAdapter();
+			}
+			@Override
+			public Adapter caseUnaryExpression(UnaryExpression object) {
+				return createUnaryExpressionAdapter();
+			}
+			@Override
+			public Adapter caseImplication(Implication object) {
+				return createImplicationAdapter();
+			}
+			@Override
+			public Adapter caseDisjunction(Disjunction object) {
+				return createDisjunctionAdapter();
+			}
+			@Override
+			public Adapter caseEquivalence(Equivalence object) {
+				return createEquivalenceAdapter();
+			}
+			@Override
+			public Adapter caseConjunction(Conjunction object) {
+				return createConjunctionAdapter();
+			}
+			@Override
+			public Adapter caseNot(Not object) {
+				return createNotAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -200,16 +205,16 @@ public class VavemodelAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link vavemodel.Constraints <em>Constraints</em>}'.
+	 * Creates a new adapter for an object of class '{@link vavemodel.Constraint <em>Constraint</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see vavemodel.Constraints
+	 * @see vavemodel.Constraint
 	 * @generated
 	 */
-	public Adapter createConstraintsAdapter() {
+	public Adapter createConstraintAdapter() {
 		return null;
 	}
 
@@ -224,48 +229,6 @@ public class VavemodelAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createVariationPointAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link vavemodel.VP_Constraint_VP <em>VP Constraint VP</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see vavemodel.VP_Constraint_VP
-	 * @generated
-	 */
-	public Adapter createVP_Constraint_VPAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link vavemodel.V_Constraint_VP <em>VConstraint VP</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see vavemodel.V_Constraint_VP
-	 * @generated
-	 */
-	public Adapter createV_Constraint_VPAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link vavemodel.V_Constraint_V <em>VConstraint V</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see vavemodel.V_Constraint_V
-	 * @generated
-	 */
-	public Adapter createV_Constraint_VAdapter() {
 		return null;
 	}
 
@@ -298,90 +261,6 @@ public class VavemodelAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link vavemodel.VP_Depends_VP <em>VP Depends VP</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see vavemodel.VP_Depends_VP
-	 * @generated
-	 */
-	public Adapter createVP_Depends_VPAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link vavemodel.VP_Excludes_VP <em>VP Excludes VP</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see vavemodel.VP_Excludes_VP
-	 * @generated
-	 */
-	public Adapter createVP_Excludes_VPAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link vavemodel.V_Depends_VP <em>VDepends VP</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see vavemodel.V_Depends_VP
-	 * @generated
-	 */
-	public Adapter createV_Depends_VPAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link vavemodel.V_Excludes_VP <em>VExcludes VP</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see vavemodel.V_Excludes_VP
-	 * @generated
-	 */
-	public Adapter createV_Excludes_VPAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link vavemodel.V_Depends_V <em>VDepends V</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see vavemodel.V_Depends_V
-	 * @generated
-	 */
-	public Adapter createV_Depends_VAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link vavemodel.V_Excludes_V <em>VExcludes V</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see vavemodel.V_Excludes_V
-	 * @generated
-	 */
-	public Adapter createV_Excludes_VAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link vavemodel.Cardinality <em>Cardinality</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -406,6 +285,146 @@ public class VavemodelAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createChangeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link vavemodel.Variable <em>Variable</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see vavemodel.Variable
+	 * @generated
+	 */
+	public Adapter createVariableAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link vavemodel.Expression <em>Expression</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see vavemodel.Expression
+	 * @generated
+	 */
+	public Adapter createExpressionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link vavemodel.Term <em>Term</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see vavemodel.Term
+	 * @generated
+	 */
+	public Adapter createTermAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link vavemodel.BinaryExpression <em>Binary Expression</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see vavemodel.BinaryExpression
+	 * @generated
+	 */
+	public Adapter createBinaryExpressionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link vavemodel.UnaryExpression <em>Unary Expression</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see vavemodel.UnaryExpression
+	 * @generated
+	 */
+	public Adapter createUnaryExpressionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link vavemodel.Implication <em>Implication</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see vavemodel.Implication
+	 * @generated
+	 */
+	public Adapter createImplicationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link vavemodel.Disjunction <em>Disjunction</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see vavemodel.Disjunction
+	 * @generated
+	 */
+	public Adapter createDisjunctionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link vavemodel.Equivalence <em>Equivalence</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see vavemodel.Equivalence
+	 * @generated
+	 */
+	public Adapter createEquivalenceAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link vavemodel.Conjunction <em>Conjunction</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see vavemodel.Conjunction
+	 * @generated
+	 */
+	public Adapter createConjunctionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link vavemodel.Not <em>Not</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see vavemodel.Not
+	 * @generated
+	 */
+	public Adapter createNotAdapter() {
 		return null;
 	}
 

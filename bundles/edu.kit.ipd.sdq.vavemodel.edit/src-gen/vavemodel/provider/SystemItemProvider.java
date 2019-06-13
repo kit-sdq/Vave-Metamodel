@@ -101,7 +101,7 @@ public class SystemItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(VavemodelPackage.Literals.SYSTEM__CONSTRAINTS);
+			childrenFeatures.add(VavemodelPackage.Literals.SYSTEM__CONSTRAINT);
 			childrenFeatures.add(VavemodelPackage.Literals.SYSTEM__VARIANT);
 		}
 		return childrenFeatures;
@@ -161,7 +161,7 @@ public class SystemItemProvider
 			case VavemodelPackage.SYSTEM__NAME:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case VavemodelPackage.SYSTEM__CONSTRAINTS:
+			case VavemodelPackage.SYSTEM__CONSTRAINT:
 			case VavemodelPackage.SYSTEM__VARIANT:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
@@ -182,53 +182,8 @@ public class SystemItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(VavemodelPackage.Literals.SYSTEM__CONSTRAINTS,
-				 VavemodelFactory.eINSTANCE.createConstraints()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(VavemodelPackage.Literals.SYSTEM__CONSTRAINTS,
-				 VavemodelFactory.eINSTANCE.createVP_Constraint_VP()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(VavemodelPackage.Literals.SYSTEM__CONSTRAINTS,
-				 VavemodelFactory.eINSTANCE.createV_Constraint_VP()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(VavemodelPackage.Literals.SYSTEM__CONSTRAINTS,
-				 VavemodelFactory.eINSTANCE.createV_Constraint_V()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(VavemodelPackage.Literals.SYSTEM__CONSTRAINTS,
-				 VavemodelFactory.eINSTANCE.createVP_Depends_VP()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(VavemodelPackage.Literals.SYSTEM__CONSTRAINTS,
-				 VavemodelFactory.eINSTANCE.createVP_Excludes_VP()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(VavemodelPackage.Literals.SYSTEM__CONSTRAINTS,
-				 VavemodelFactory.eINSTANCE.createV_Depends_VP()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(VavemodelPackage.Literals.SYSTEM__CONSTRAINTS,
-				 VavemodelFactory.eINSTANCE.createV_Excludes_VP()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(VavemodelPackage.Literals.SYSTEM__CONSTRAINTS,
-				 VavemodelFactory.eINSTANCE.createV_Depends_V()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(VavemodelPackage.Literals.SYSTEM__CONSTRAINTS,
-				 VavemodelFactory.eINSTANCE.createV_Excludes_V()));
+				(VavemodelPackage.Literals.SYSTEM__CONSTRAINT,
+				 VavemodelFactory.eINSTANCE.createConstraint()));
 
 		newChildDescriptors.add
 			(createChildParameter

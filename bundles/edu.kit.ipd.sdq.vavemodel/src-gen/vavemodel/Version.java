@@ -17,8 +17,8 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link vavemodel.Version#getPredecessor <em>Predecessor</em>}</li>
  *   <li>{@link vavemodel.Version#getSuccessor <em>Successor</em>}</li>
- *   <li>{@link vavemodel.Version#getDeltamodule <em>Deltamodule</em>}</li>
  *   <li>{@link vavemodel.Version#getVersionID <em>Version ID</em>}</li>
+ *   <li>{@link vavemodel.Version#getDeltamodule <em>Deltamodule</em>}</li>
  * </ul>
  *
  * @see vavemodel.VavemodelPackage#getVersion()

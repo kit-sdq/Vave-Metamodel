@@ -7,19 +7,20 @@ import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.util.Switch;
 
+import vavemodel.BinaryExpression;
 import vavemodel.Cardinality;
 import vavemodel.Change;
-import vavemodel.Constraints;
+import vavemodel.Conjunction;
+import vavemodel.Constraint;
 import vavemodel.DeltaModule;
-import vavemodel.VP_Constraint_VP;
-import vavemodel.VP_Depends_VP;
-import vavemodel.VP_Excludes_VP;
-import vavemodel.V_Constraint_V;
-import vavemodel.V_Constraint_VP;
-import vavemodel.V_Depends_V;
-import vavemodel.V_Depends_VP;
-import vavemodel.V_Excludes_V;
-import vavemodel.V_Excludes_VP;
+import vavemodel.Disjunction;
+import vavemodel.Equivalence;
+import vavemodel.Expression;
+import vavemodel.Implication;
+import vavemodel.Not;
+import vavemodel.Term;
+import vavemodel.UnaryExpression;
+import vavemodel.Variable;
 import vavemodel.Variant;
 import vavemodel.VariationPoint;
 import vavemodel.VavemodelPackage;
@@ -94,9 +95,9 @@ public class VavemodelSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case VavemodelPackage.CONSTRAINTS: {
-				Constraints constraints = (Constraints)theEObject;
-				T result = caseConstraints(constraints);
+			case VavemodelPackage.CONSTRAINT: {
+				Constraint constraint = (Constraint)theEObject;
+				T result = caseConstraint(constraint);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -106,84 +107,9 @@ public class VavemodelSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case VavemodelPackage.VP_CONSTRAINT_VP: {
-				VP_Constraint_VP vP_Constraint_VP = (VP_Constraint_VP)theEObject;
-				T result = caseVP_Constraint_VP(vP_Constraint_VP);
-				if (result == null) result = caseConstraints(vP_Constraint_VP);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case VavemodelPackage.VCONSTRAINT_VP: {
-				V_Constraint_VP v_Constraint_VP = (V_Constraint_VP)theEObject;
-				T result = caseV_Constraint_VP(v_Constraint_VP);
-				if (result == null) result = caseConstraints(v_Constraint_VP);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case VavemodelPackage.VCONSTRAINT_V: {
-				V_Constraint_V v_Constraint_V = (V_Constraint_V)theEObject;
-				T result = caseV_Constraint_V(v_Constraint_V);
-				if (result == null) result = caseConstraints(v_Constraint_V);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case VavemodelPackage.VERSION: {
 				Version version = (Version)theEObject;
 				T result = caseVersion(version);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case VavemodelPackage.DELTA_MODULE: {
-				DeltaModule deltaModule = (DeltaModule)theEObject;
-				T result = caseDeltaModule(deltaModule);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case VavemodelPackage.VP_DEPENDS_VP: {
-				VP_Depends_VP vP_Depends_VP = (VP_Depends_VP)theEObject;
-				T result = caseVP_Depends_VP(vP_Depends_VP);
-				if (result == null) result = caseVP_Constraint_VP(vP_Depends_VP);
-				if (result == null) result = caseConstraints(vP_Depends_VP);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case VavemodelPackage.VP_EXCLUDES_VP: {
-				VP_Excludes_VP vP_Excludes_VP = (VP_Excludes_VP)theEObject;
-				T result = caseVP_Excludes_VP(vP_Excludes_VP);
-				if (result == null) result = caseVP_Constraint_VP(vP_Excludes_VP);
-				if (result == null) result = caseConstraints(vP_Excludes_VP);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case VavemodelPackage.VDEPENDS_VP: {
-				V_Depends_VP v_Depends_VP = (V_Depends_VP)theEObject;
-				T result = caseV_Depends_VP(v_Depends_VP);
-				if (result == null) result = caseV_Constraint_VP(v_Depends_VP);
-				if (result == null) result = caseConstraints(v_Depends_VP);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case VavemodelPackage.VEXCLUDES_VP: {
-				V_Excludes_VP v_Excludes_VP = (V_Excludes_VP)theEObject;
-				T result = caseV_Excludes_VP(v_Excludes_VP);
-				if (result == null) result = caseV_Constraint_VP(v_Excludes_VP);
-				if (result == null) result = caseConstraints(v_Excludes_VP);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case VavemodelPackage.VDEPENDS_V: {
-				V_Depends_V v_Depends_V = (V_Depends_V)theEObject;
-				T result = caseV_Depends_V(v_Depends_V);
-				if (result == null) result = caseV_Constraint_V(v_Depends_V);
-				if (result == null) result = caseConstraints(v_Depends_V);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case VavemodelPackage.VEXCLUDES_V: {
-				V_Excludes_V v_Excludes_V = (V_Excludes_V)theEObject;
-				T result = caseV_Excludes_V(v_Excludes_V);
-				if (result == null) result = caseV_Constraint_V(v_Excludes_V);
-				if (result == null) result = caseConstraints(v_Excludes_V);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -193,9 +119,97 @@ public class VavemodelSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case VavemodelPackage.DELTA_MODULE: {
+				DeltaModule deltaModule = (DeltaModule)theEObject;
+				T result = caseDeltaModule(deltaModule);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case VavemodelPackage.CHANGE: {
 				Change change = (Change)theEObject;
 				T result = caseChange(change);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case VavemodelPackage.VARIABLE: {
+				Variable variable = (Variable)theEObject;
+				T result = caseVariable(variable);
+				if (result == null) result = caseExpression(variable);
+				if (result == null) result = caseTerm(variable);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case VavemodelPackage.EXPRESSION: {
+				Expression expression = (Expression)theEObject;
+				T result = caseExpression(expression);
+				if (result == null) result = caseTerm(expression);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case VavemodelPackage.TERM: {
+				Term term = (Term)theEObject;
+				T result = caseTerm(term);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case VavemodelPackage.BINARY_EXPRESSION: {
+				BinaryExpression binaryExpression = (BinaryExpression)theEObject;
+				T result = caseBinaryExpression(binaryExpression);
+				if (result == null) result = caseExpression(binaryExpression);
+				if (result == null) result = caseTerm(binaryExpression);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case VavemodelPackage.UNARY_EXPRESSION: {
+				UnaryExpression unaryExpression = (UnaryExpression)theEObject;
+				T result = caseUnaryExpression(unaryExpression);
+				if (result == null) result = caseExpression(unaryExpression);
+				if (result == null) result = caseTerm(unaryExpression);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case VavemodelPackage.IMPLICATION: {
+				Implication implication = (Implication)theEObject;
+				T result = caseImplication(implication);
+				if (result == null) result = caseBinaryExpression(implication);
+				if (result == null) result = caseExpression(implication);
+				if (result == null) result = caseTerm(implication);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case VavemodelPackage.DISJUNCTION: {
+				Disjunction disjunction = (Disjunction)theEObject;
+				T result = caseDisjunction(disjunction);
+				if (result == null) result = caseBinaryExpression(disjunction);
+				if (result == null) result = caseExpression(disjunction);
+				if (result == null) result = caseTerm(disjunction);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case VavemodelPackage.EQUIVALENCE: {
+				Equivalence equivalence = (Equivalence)theEObject;
+				T result = caseEquivalence(equivalence);
+				if (result == null) result = caseBinaryExpression(equivalence);
+				if (result == null) result = caseExpression(equivalence);
+				if (result == null) result = caseTerm(equivalence);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case VavemodelPackage.CONJUNCTION: {
+				Conjunction conjunction = (Conjunction)theEObject;
+				T result = caseConjunction(conjunction);
+				if (result == null) result = caseBinaryExpression(conjunction);
+				if (result == null) result = caseExpression(conjunction);
+				if (result == null) result = caseTerm(conjunction);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case VavemodelPackage.NOT: {
+				Not not = (Not)theEObject;
+				T result = caseNot(not);
+				if (result == null) result = caseUnaryExpression(not);
+				if (result == null) result = caseExpression(not);
+				if (result == null) result = caseTerm(not);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -234,17 +248,17 @@ public class VavemodelSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Constraints</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Constraint</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Constraints</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Constraint</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseConstraints(Constraints object) {
+	public T caseConstraint(Constraint object) {
 		return null;
 	}
 
@@ -260,51 +274,6 @@ public class VavemodelSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseVariationPoint(VariationPoint object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>VP Constraint VP</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>VP Constraint VP</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseVP_Constraint_VP(VP_Constraint_VP object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>VConstraint VP</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>VConstraint VP</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseV_Constraint_VP(V_Constraint_VP object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>VConstraint V</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>VConstraint V</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseV_Constraint_V(V_Constraint_V object) {
 		return null;
 	}
 
@@ -339,96 +308,6 @@ public class VavemodelSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>VP Depends VP</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>VP Depends VP</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseVP_Depends_VP(VP_Depends_VP object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>VP Excludes VP</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>VP Excludes VP</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseVP_Excludes_VP(VP_Excludes_VP object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>VDepends VP</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>VDepends VP</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseV_Depends_VP(V_Depends_VP object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>VExcludes VP</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>VExcludes VP</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseV_Excludes_VP(V_Excludes_VP object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>VDepends V</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>VDepends V</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseV_Depends_V(V_Depends_V object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>VExcludes V</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>VExcludes V</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseV_Excludes_V(V_Excludes_V object) {
-		return null;
-	}
-
-	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Cardinality</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -455,6 +334,156 @@ public class VavemodelSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseChange(Change object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Variable</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Variable</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseVariable(Variable object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Expression</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Expression</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseExpression(Expression object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Term</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Term</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseTerm(Term object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Binary Expression</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Binary Expression</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseBinaryExpression(BinaryExpression object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Unary Expression</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Unary Expression</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseUnaryExpression(UnaryExpression object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Implication</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Implication</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseImplication(Implication object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Disjunction</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Disjunction</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseDisjunction(Disjunction object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Equivalence</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Equivalence</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEquivalence(Equivalence object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Conjunction</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Conjunction</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseConjunction(Conjunction object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Not</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Not</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseNot(Not object) {
 		return null;
 	}
 

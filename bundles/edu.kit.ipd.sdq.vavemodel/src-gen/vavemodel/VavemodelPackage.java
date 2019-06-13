@@ -68,13 +68,13 @@ public interface VavemodelPackage extends EPackage {
 	int SYSTEM = 0;
 
 	/**
-	 * The feature id for the '<em><b>Constraints</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Constraint</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SYSTEM__CONSTRAINTS = 0;
+	int SYSTEM__CONSTRAINT = 0;
 
 	/**
 	 * The feature id for the '<em><b>Variant</b></em>' containment reference list.
@@ -186,32 +186,41 @@ public interface VavemodelPackage extends EPackage {
 	int VARIANT_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link vavemodel.impl.ConstraintsImpl <em>Constraints</em>}' class.
+	 * The meta object id for the '{@link vavemodel.impl.ConstraintImpl <em>Constraint</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see vavemodel.impl.ConstraintsImpl
-	 * @see vavemodel.impl.VavemodelPackageImpl#getConstraints()
+	 * @see vavemodel.impl.ConstraintImpl
+	 * @see vavemodel.impl.VavemodelPackageImpl#getConstraint()
 	 * @generated
 	 */
-	int CONSTRAINTS = 2;
+	int CONSTRAINT = 2;
 
 	/**
-	 * The number of structural features of the '<em>Constraints</em>' class.
+	 * The feature id for the '<em><b>Expression</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONSTRAINTS_FEATURE_COUNT = 0;
+	int CONSTRAINT__EXPRESSION = 0;
 
 	/**
-	 * The number of operations of the '<em>Constraints</em>' class.
+	 * The number of structural features of the '<em>Constraint</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONSTRAINTS_OPERATION_COUNT = 0;
+	int CONSTRAINT_FEATURE_COUNT = 1;
+
+	/**
+	 * The number of operations of the '<em>Constraint</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONSTRAINT_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link vavemodel.impl.VariationPointImpl <em>Variation Point</em>}' class.
@@ -269,90 +278,6 @@ public interface VavemodelPackage extends EPackage {
 	int VARIATION_POINT_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link vavemodel.impl.VP_Constraint_VPImpl <em>VP Constraint VP</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see vavemodel.impl.VP_Constraint_VPImpl
-	 * @see vavemodel.impl.VavemodelPackageImpl#getVP_Constraint_VP()
-	 * @generated
-	 */
-	int VP_CONSTRAINT_VP = 4;
-
-	/**
-	 * The number of structural features of the '<em>VP Constraint VP</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VP_CONSTRAINT_VP_FEATURE_COUNT = CONSTRAINTS_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>VP Constraint VP</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VP_CONSTRAINT_VP_OPERATION_COUNT = CONSTRAINTS_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link vavemodel.impl.V_Constraint_VPImpl <em>VConstraint VP</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see vavemodel.impl.V_Constraint_VPImpl
-	 * @see vavemodel.impl.VavemodelPackageImpl#getV_Constraint_VP()
-	 * @generated
-	 */
-	int VCONSTRAINT_VP = 5;
-
-	/**
-	 * The number of structural features of the '<em>VConstraint VP</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VCONSTRAINT_VP_FEATURE_COUNT = CONSTRAINTS_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>VConstraint VP</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VCONSTRAINT_VP_OPERATION_COUNT = CONSTRAINTS_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link vavemodel.impl.V_Constraint_VImpl <em>VConstraint V</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see vavemodel.impl.V_Constraint_VImpl
-	 * @see vavemodel.impl.VavemodelPackageImpl#getV_Constraint_V()
-	 * @generated
-	 */
-	int VCONSTRAINT_V = 6;
-
-	/**
-	 * The number of structural features of the '<em>VConstraint V</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VCONSTRAINT_V_FEATURE_COUNT = CONSTRAINTS_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>VConstraint V</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VCONSTRAINT_V_OPERATION_COUNT = CONSTRAINTS_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link vavemodel.impl.VersionImpl <em>Version</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -360,7 +285,7 @@ public interface VavemodelPackage extends EPackage {
 	 * @see vavemodel.impl.VavemodelPackageImpl#getVersion()
 	 * @generated
 	 */
-	int VERSION = 7;
+	int VERSION = 4;
 
 	/**
 	 * The feature id for the '<em><b>Predecessor</b></em>' reference.
@@ -381,22 +306,22 @@ public interface VavemodelPackage extends EPackage {
 	int VERSION__SUCCESSOR = 1;
 
 	/**
-	 * The feature id for the '<em><b>Deltamodule</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VERSION__DELTAMODULE = 2;
-
-	/**
 	 * The feature id for the '<em><b>Version ID</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VERSION__VERSION_ID = 3;
+	int VERSION__VERSION_ID = 2;
+
+	/**
+	 * The feature id for the '<em><b>Deltamodule</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VERSION__DELTAMODULE = 3;
 
 	/**
 	 * The number of structural features of the '<em>Version</em>' class.
@@ -424,211 +349,7 @@ public interface VavemodelPackage extends EPackage {
 	 * @see vavemodel.impl.VavemodelPackageImpl#getDeltaModule()
 	 * @generated
 	 */
-	int DELTA_MODULE = 8;
-
-	/**
-	 * The feature id for the '<em><b>Delta Module ID</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DELTA_MODULE__DELTA_MODULE_ID = 0;
-
-	/**
-	 * The feature id for the '<em><b>Change</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DELTA_MODULE__CHANGE = 1;
-
-	/**
-	 * The number of structural features of the '<em>Delta Module</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DELTA_MODULE_FEATURE_COUNT = 2;
-
-	/**
-	 * The number of operations of the '<em>Delta Module</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DELTA_MODULE_OPERATION_COUNT = 0;
-
-	/**
-	 * The meta object id for the '{@link vavemodel.impl.VP_Depends_VPImpl <em>VP Depends VP</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see vavemodel.impl.VP_Depends_VPImpl
-	 * @see vavemodel.impl.VavemodelPackageImpl#getVP_Depends_VP()
-	 * @generated
-	 */
-	int VP_DEPENDS_VP = 9;
-
-	/**
-	 * The number of structural features of the '<em>VP Depends VP</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VP_DEPENDS_VP_FEATURE_COUNT = VP_CONSTRAINT_VP_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>VP Depends VP</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VP_DEPENDS_VP_OPERATION_COUNT = VP_CONSTRAINT_VP_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link vavemodel.impl.VP_Excludes_VPImpl <em>VP Excludes VP</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see vavemodel.impl.VP_Excludes_VPImpl
-	 * @see vavemodel.impl.VavemodelPackageImpl#getVP_Excludes_VP()
-	 * @generated
-	 */
-	int VP_EXCLUDES_VP = 10;
-
-	/**
-	 * The number of structural features of the '<em>VP Excludes VP</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VP_EXCLUDES_VP_FEATURE_COUNT = VP_CONSTRAINT_VP_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>VP Excludes VP</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VP_EXCLUDES_VP_OPERATION_COUNT = VP_CONSTRAINT_VP_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link vavemodel.impl.V_Depends_VPImpl <em>VDepends VP</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see vavemodel.impl.V_Depends_VPImpl
-	 * @see vavemodel.impl.VavemodelPackageImpl#getV_Depends_VP()
-	 * @generated
-	 */
-	int VDEPENDS_VP = 11;
-
-	/**
-	 * The number of structural features of the '<em>VDepends VP</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VDEPENDS_VP_FEATURE_COUNT = VCONSTRAINT_VP_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>VDepends VP</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VDEPENDS_VP_OPERATION_COUNT = VCONSTRAINT_VP_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link vavemodel.impl.V_Excludes_VPImpl <em>VExcludes VP</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see vavemodel.impl.V_Excludes_VPImpl
-	 * @see vavemodel.impl.VavemodelPackageImpl#getV_Excludes_VP()
-	 * @generated
-	 */
-	int VEXCLUDES_VP = 12;
-
-	/**
-	 * The number of structural features of the '<em>VExcludes VP</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VEXCLUDES_VP_FEATURE_COUNT = VCONSTRAINT_VP_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>VExcludes VP</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VEXCLUDES_VP_OPERATION_COUNT = VCONSTRAINT_VP_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link vavemodel.impl.V_Depends_VImpl <em>VDepends V</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see vavemodel.impl.V_Depends_VImpl
-	 * @see vavemodel.impl.VavemodelPackageImpl#getV_Depends_V()
-	 * @generated
-	 */
-	int VDEPENDS_V = 13;
-
-	/**
-	 * The number of structural features of the '<em>VDepends V</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VDEPENDS_V_FEATURE_COUNT = VCONSTRAINT_V_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>VDepends V</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VDEPENDS_V_OPERATION_COUNT = VCONSTRAINT_V_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link vavemodel.impl.V_Excludes_VImpl <em>VExcludes V</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see vavemodel.impl.V_Excludes_VImpl
-	 * @see vavemodel.impl.VavemodelPackageImpl#getV_Excludes_V()
-	 * @generated
-	 */
-	int VEXCLUDES_V = 14;
-
-	/**
-	 * The number of structural features of the '<em>VExcludes V</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VEXCLUDES_V_FEATURE_COUNT = VCONSTRAINT_V_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>VExcludes V</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VEXCLUDES_V_OPERATION_COUNT = VCONSTRAINT_V_OPERATION_COUNT + 0;
+	int DELTA_MODULE = 6;
 
 	/**
 	 * The meta object id for the '{@link vavemodel.impl.CardinalityImpl <em>Cardinality</em>}' class.
@@ -638,7 +359,7 @@ public interface VavemodelPackage extends EPackage {
 	 * @see vavemodel.impl.VavemodelPackageImpl#getCardinality()
 	 * @generated
 	 */
-	int CARDINALITY = 15;
+	int CARDINALITY = 5;
 
 	/**
 	 * The feature id for the '<em><b>Min</b></em>' attribute.
@@ -677,6 +398,42 @@ public interface VavemodelPackage extends EPackage {
 	int CARDINALITY_OPERATION_COUNT = 0;
 
 	/**
+	 * The feature id for the '<em><b>Delta Module ID</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DELTA_MODULE__DELTA_MODULE_ID = 0;
+
+	/**
+	 * The feature id for the '<em><b>Change</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DELTA_MODULE__CHANGE = 1;
+
+	/**
+	 * The number of structural features of the '<em>Delta Module</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DELTA_MODULE_FEATURE_COUNT = 2;
+
+	/**
+	 * The number of operations of the '<em>Delta Module</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DELTA_MODULE_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link vavemodel.impl.ChangeImpl <em>Change</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -684,7 +441,7 @@ public interface VavemodelPackage extends EPackage {
 	 * @see vavemodel.impl.VavemodelPackageImpl#getChange()
 	 * @generated
 	 */
-	int CHANGE = 16;
+	int CHANGE = 7;
 
 	/**
 	 * The number of structural features of the '<em>Change</em>' class.
@@ -705,6 +462,358 @@ public interface VavemodelPackage extends EPackage {
 	int CHANGE_OPERATION_COUNT = 0;
 
 	/**
+	 * The meta object id for the '{@link vavemodel.Term <em>Term</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see vavemodel.Term
+	 * @see vavemodel.impl.VavemodelPackageImpl#getTerm()
+	 * @generated
+	 */
+	int TERM = 10;
+
+	/**
+	 * The number of structural features of the '<em>Term</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TERM_FEATURE_COUNT = 0;
+
+	/**
+	 * The number of operations of the '<em>Term</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TERM_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link vavemodel.impl.ExpressionImpl <em>Expression</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see vavemodel.impl.ExpressionImpl
+	 * @see vavemodel.impl.VavemodelPackageImpl#getExpression()
+	 * @generated
+	 */
+	int EXPRESSION = 9;
+
+	/**
+	 * The number of structural features of the '<em>Expression</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXPRESSION_FEATURE_COUNT = TERM_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Expression</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXPRESSION_OPERATION_COUNT = TERM_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link vavemodel.impl.VariableImpl <em>Variable</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see vavemodel.impl.VariableImpl
+	 * @see vavemodel.impl.VavemodelPackageImpl#getVariable()
+	 * @generated
+	 */
+	int VARIABLE = 8;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VARIABLE__NAME = EXPRESSION_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Variable</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VARIABLE_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Variable</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VARIABLE_OPERATION_COUNT = EXPRESSION_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link vavemodel.impl.BinaryExpressionImpl <em>Binary Expression</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see vavemodel.impl.BinaryExpressionImpl
+	 * @see vavemodel.impl.VavemodelPackageImpl#getBinaryExpression()
+	 * @generated
+	 */
+	int BINARY_EXPRESSION = 11;
+
+	/**
+	 * The feature id for the '<em><b>Term</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BINARY_EXPRESSION__TERM = EXPRESSION_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Binary Expression</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BINARY_EXPRESSION_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Binary Expression</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BINARY_EXPRESSION_OPERATION_COUNT = EXPRESSION_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link vavemodel.impl.UnaryExpressionImpl <em>Unary Expression</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see vavemodel.impl.UnaryExpressionImpl
+	 * @see vavemodel.impl.VavemodelPackageImpl#getUnaryExpression()
+	 * @generated
+	 */
+	int UNARY_EXPRESSION = 12;
+
+	/**
+	 * The feature id for the '<em><b>Term</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNARY_EXPRESSION__TERM = EXPRESSION_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Unary Expression</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNARY_EXPRESSION_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Unary Expression</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNARY_EXPRESSION_OPERATION_COUNT = EXPRESSION_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link vavemodel.impl.ImplicationImpl <em>Implication</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see vavemodel.impl.ImplicationImpl
+	 * @see vavemodel.impl.VavemodelPackageImpl#getImplication()
+	 * @generated
+	 */
+	int IMPLICATION = 13;
+
+	/**
+	 * The feature id for the '<em><b>Term</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMPLICATION__TERM = BINARY_EXPRESSION__TERM;
+
+	/**
+	 * The number of structural features of the '<em>Implication</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMPLICATION_FEATURE_COUNT = BINARY_EXPRESSION_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Implication</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMPLICATION_OPERATION_COUNT = BINARY_EXPRESSION_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link vavemodel.impl.DisjunctionImpl <em>Disjunction</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see vavemodel.impl.DisjunctionImpl
+	 * @see vavemodel.impl.VavemodelPackageImpl#getDisjunction()
+	 * @generated
+	 */
+	int DISJUNCTION = 14;
+
+	/**
+	 * The feature id for the '<em><b>Term</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISJUNCTION__TERM = BINARY_EXPRESSION__TERM;
+
+	/**
+	 * The number of structural features of the '<em>Disjunction</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISJUNCTION_FEATURE_COUNT = BINARY_EXPRESSION_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Disjunction</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISJUNCTION_OPERATION_COUNT = BINARY_EXPRESSION_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link vavemodel.impl.EquivalenceImpl <em>Equivalence</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see vavemodel.impl.EquivalenceImpl
+	 * @see vavemodel.impl.VavemodelPackageImpl#getEquivalence()
+	 * @generated
+	 */
+	int EQUIVALENCE = 15;
+
+	/**
+	 * The feature id for the '<em><b>Term</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EQUIVALENCE__TERM = BINARY_EXPRESSION__TERM;
+
+	/**
+	 * The number of structural features of the '<em>Equivalence</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EQUIVALENCE_FEATURE_COUNT = BINARY_EXPRESSION_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Equivalence</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EQUIVALENCE_OPERATION_COUNT = BINARY_EXPRESSION_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link vavemodel.impl.ConjunctionImpl <em>Conjunction</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see vavemodel.impl.ConjunctionImpl
+	 * @see vavemodel.impl.VavemodelPackageImpl#getConjunction()
+	 * @generated
+	 */
+	int CONJUNCTION = 16;
+
+	/**
+	 * The feature id for the '<em><b>Term</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONJUNCTION__TERM = BINARY_EXPRESSION__TERM;
+
+	/**
+	 * The number of structural features of the '<em>Conjunction</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONJUNCTION_FEATURE_COUNT = BINARY_EXPRESSION_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Conjunction</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONJUNCTION_OPERATION_COUNT = BINARY_EXPRESSION_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link vavemodel.impl.NotImpl <em>Not</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see vavemodel.impl.NotImpl
+	 * @see vavemodel.impl.VavemodelPackageImpl#getNot()
+	 * @generated
+	 */
+	int NOT = 17;
+
+	/**
+	 * The feature id for the '<em><b>Term</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NOT__TERM = UNARY_EXPRESSION__TERM;
+
+	/**
+	 * The number of structural features of the '<em>Not</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NOT_FEATURE_COUNT = UNARY_EXPRESSION_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Not</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NOT_OPERATION_COUNT = UNARY_EXPRESSION_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link vavemodel.GroupType <em>Group Type</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -712,7 +821,7 @@ public interface VavemodelPackage extends EPackage {
 	 * @see vavemodel.impl.VavemodelPackageImpl#getGroupType()
 	 * @generated
 	 */
-	int GROUP_TYPE = 17;
+	int GROUP_TYPE = 18;
 
 
 	/**
@@ -726,15 +835,15 @@ public interface VavemodelPackage extends EPackage {
 	EClass getSystem();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link vavemodel.System#getConstraints <em>Constraints</em>}'.
+	 * Returns the meta object for the containment reference list '{@link vavemodel.System#getConstraint <em>Constraint</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Constraints</em>'.
-	 * @see vavemodel.System#getConstraints()
+	 * @return the meta object for the containment reference list '<em>Constraint</em>'.
+	 * @see vavemodel.System#getConstraint()
 	 * @see #getSystem()
 	 * @generated
 	 */
-	EReference getSystem_Constraints();
+	EReference getSystem_Constraint();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link vavemodel.System#getVariant <em>Variant</em>}'.
@@ -824,14 +933,25 @@ public interface VavemodelPackage extends EPackage {
 	EAttribute getVariant_IsRoot();
 
 	/**
-	 * Returns the meta object for class '{@link vavemodel.Constraints <em>Constraints</em>}'.
+	 * Returns the meta object for class '{@link vavemodel.Constraint <em>Constraint</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Constraints</em>'.
-	 * @see vavemodel.Constraints
+	 * @return the meta object for class '<em>Constraint</em>'.
+	 * @see vavemodel.Constraint
 	 * @generated
 	 */
-	EClass getConstraints();
+	EClass getConstraint();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link vavemodel.Constraint#getExpression <em>Expression</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Expression</em>'.
+	 * @see vavemodel.Constraint#getExpression()
+	 * @see #getConstraint()
+	 * @generated
+	 */
+	EReference getConstraint_Expression();
 
 	/**
 	 * Returns the meta object for class '{@link vavemodel.VariationPoint <em>Variation Point</em>}'.
@@ -875,36 +995,6 @@ public interface VavemodelPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getVariationPoint_Cardinality();
-
-	/**
-	 * Returns the meta object for class '{@link vavemodel.VP_Constraint_VP <em>VP Constraint VP</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>VP Constraint VP</em>'.
-	 * @see vavemodel.VP_Constraint_VP
-	 * @generated
-	 */
-	EClass getVP_Constraint_VP();
-
-	/**
-	 * Returns the meta object for class '{@link vavemodel.V_Constraint_VP <em>VConstraint VP</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>VConstraint VP</em>'.
-	 * @see vavemodel.V_Constraint_VP
-	 * @generated
-	 */
-	EClass getV_Constraint_VP();
-
-	/**
-	 * Returns the meta object for class '{@link vavemodel.V_Constraint_V <em>VConstraint V</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>VConstraint V</em>'.
-	 * @see vavemodel.V_Constraint_V
-	 * @generated
-	 */
-	EClass getV_Constraint_V();
 
 	/**
 	 * Returns the meta object for class '{@link vavemodel.Version <em>Version</em>}'.
@@ -993,66 +1083,6 @@ public interface VavemodelPackage extends EPackage {
 	EReference getDeltaModule_Change();
 
 	/**
-	 * Returns the meta object for class '{@link vavemodel.VP_Depends_VP <em>VP Depends VP</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>VP Depends VP</em>'.
-	 * @see vavemodel.VP_Depends_VP
-	 * @generated
-	 */
-	EClass getVP_Depends_VP();
-
-	/**
-	 * Returns the meta object for class '{@link vavemodel.VP_Excludes_VP <em>VP Excludes VP</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>VP Excludes VP</em>'.
-	 * @see vavemodel.VP_Excludes_VP
-	 * @generated
-	 */
-	EClass getVP_Excludes_VP();
-
-	/**
-	 * Returns the meta object for class '{@link vavemodel.V_Depends_VP <em>VDepends VP</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>VDepends VP</em>'.
-	 * @see vavemodel.V_Depends_VP
-	 * @generated
-	 */
-	EClass getV_Depends_VP();
-
-	/**
-	 * Returns the meta object for class '{@link vavemodel.V_Excludes_VP <em>VExcludes VP</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>VExcludes VP</em>'.
-	 * @see vavemodel.V_Excludes_VP
-	 * @generated
-	 */
-	EClass getV_Excludes_VP();
-
-	/**
-	 * Returns the meta object for class '{@link vavemodel.V_Depends_V <em>VDepends V</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>VDepends V</em>'.
-	 * @see vavemodel.V_Depends_V
-	 * @generated
-	 */
-	EClass getV_Depends_V();
-
-	/**
-	 * Returns the meta object for class '{@link vavemodel.V_Excludes_V <em>VExcludes V</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>VExcludes V</em>'.
-	 * @see vavemodel.V_Excludes_V
-	 * @generated
-	 */
-	EClass getV_Excludes_V();
-
-	/**
 	 * Returns the meta object for class '{@link vavemodel.Cardinality <em>Cardinality</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1093,6 +1123,139 @@ public interface VavemodelPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getChange();
+
+	/**
+	 * Returns the meta object for class '{@link vavemodel.Variable <em>Variable</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Variable</em>'.
+	 * @see vavemodel.Variable
+	 * @generated
+	 */
+	EClass getVariable();
+
+	/**
+	 * Returns the meta object for the reference '{@link vavemodel.Variable#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Name</em>'.
+	 * @see vavemodel.Variable#getName()
+	 * @see #getVariable()
+	 * @generated
+	 */
+	EReference getVariable_Name();
+
+	/**
+	 * Returns the meta object for class '{@link vavemodel.Expression <em>Expression</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Expression</em>'.
+	 * @see vavemodel.Expression
+	 * @generated
+	 */
+	EClass getExpression();
+
+	/**
+	 * Returns the meta object for class '{@link vavemodel.Term <em>Term</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Term</em>'.
+	 * @see vavemodel.Term
+	 * @generated
+	 */
+	EClass getTerm();
+
+	/**
+	 * Returns the meta object for class '{@link vavemodel.BinaryExpression <em>Binary Expression</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Binary Expression</em>'.
+	 * @see vavemodel.BinaryExpression
+	 * @generated
+	 */
+	EClass getBinaryExpression();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link vavemodel.BinaryExpression#getTerm <em>Term</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Term</em>'.
+	 * @see vavemodel.BinaryExpression#getTerm()
+	 * @see #getBinaryExpression()
+	 * @generated
+	 */
+	EReference getBinaryExpression_Term();
+
+	/**
+	 * Returns the meta object for class '{@link vavemodel.UnaryExpression <em>Unary Expression</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Unary Expression</em>'.
+	 * @see vavemodel.UnaryExpression
+	 * @generated
+	 */
+	EClass getUnaryExpression();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link vavemodel.UnaryExpression#getTerm <em>Term</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Term</em>'.
+	 * @see vavemodel.UnaryExpression#getTerm()
+	 * @see #getUnaryExpression()
+	 * @generated
+	 */
+	EReference getUnaryExpression_Term();
+
+	/**
+	 * Returns the meta object for class '{@link vavemodel.Implication <em>Implication</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Implication</em>'.
+	 * @see vavemodel.Implication
+	 * @generated
+	 */
+	EClass getImplication();
+
+	/**
+	 * Returns the meta object for class '{@link vavemodel.Disjunction <em>Disjunction</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Disjunction</em>'.
+	 * @see vavemodel.Disjunction
+	 * @generated
+	 */
+	EClass getDisjunction();
+
+	/**
+	 * Returns the meta object for class '{@link vavemodel.Equivalence <em>Equivalence</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Equivalence</em>'.
+	 * @see vavemodel.Equivalence
+	 * @generated
+	 */
+	EClass getEquivalence();
+
+	/**
+	 * Returns the meta object for class '{@link vavemodel.Conjunction <em>Conjunction</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Conjunction</em>'.
+	 * @see vavemodel.Conjunction
+	 * @generated
+	 */
+	EClass getConjunction();
+
+	/**
+	 * Returns the meta object for class '{@link vavemodel.Not <em>Not</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Not</em>'.
+	 * @see vavemodel.Not
+	 * @generated
+	 */
+	EClass getNot();
 
 	/**
 	 * Returns the meta object for enum '{@link vavemodel.GroupType <em>Group Type</em>}'.
@@ -1138,12 +1301,12 @@ public interface VavemodelPackage extends EPackage {
 		EClass SYSTEM = eINSTANCE.getSystem();
 
 		/**
-		 * The meta object literal for the '<em><b>Constraints</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Constraint</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference SYSTEM__CONSTRAINTS = eINSTANCE.getSystem_Constraints();
+		EReference SYSTEM__CONSTRAINT = eINSTANCE.getSystem_Constraint();
 
 		/**
 		 * The meta object literal for the '<em><b>Variant</b></em>' containment reference list feature.
@@ -1212,14 +1375,22 @@ public interface VavemodelPackage extends EPackage {
 		EAttribute VARIANT__IS_ROOT = eINSTANCE.getVariant_IsRoot();
 
 		/**
-		 * The meta object literal for the '{@link vavemodel.impl.ConstraintsImpl <em>Constraints</em>}' class.
+		 * The meta object literal for the '{@link vavemodel.impl.ConstraintImpl <em>Constraint</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see vavemodel.impl.ConstraintsImpl
-		 * @see vavemodel.impl.VavemodelPackageImpl#getConstraints()
+		 * @see vavemodel.impl.ConstraintImpl
+		 * @see vavemodel.impl.VavemodelPackageImpl#getConstraint()
 		 * @generated
 		 */
-		EClass CONSTRAINTS = eINSTANCE.getConstraints();
+		EClass CONSTRAINT = eINSTANCE.getConstraint();
+
+		/**
+		 * The meta object literal for the '<em><b>Expression</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CONSTRAINT__EXPRESSION = eINSTANCE.getConstraint_Expression();
 
 		/**
 		 * The meta object literal for the '{@link vavemodel.impl.VariationPointImpl <em>Variation Point</em>}' class.
@@ -1254,36 +1425,6 @@ public interface VavemodelPackage extends EPackage {
 		 * @generated
 		 */
 		EReference VARIATION_POINT__CARDINALITY = eINSTANCE.getVariationPoint_Cardinality();
-
-		/**
-		 * The meta object literal for the '{@link vavemodel.impl.VP_Constraint_VPImpl <em>VP Constraint VP</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see vavemodel.impl.VP_Constraint_VPImpl
-		 * @see vavemodel.impl.VavemodelPackageImpl#getVP_Constraint_VP()
-		 * @generated
-		 */
-		EClass VP_CONSTRAINT_VP = eINSTANCE.getVP_Constraint_VP();
-
-		/**
-		 * The meta object literal for the '{@link vavemodel.impl.V_Constraint_VPImpl <em>VConstraint VP</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see vavemodel.impl.V_Constraint_VPImpl
-		 * @see vavemodel.impl.VavemodelPackageImpl#getV_Constraint_VP()
-		 * @generated
-		 */
-		EClass VCONSTRAINT_VP = eINSTANCE.getV_Constraint_VP();
-
-		/**
-		 * The meta object literal for the '{@link vavemodel.impl.V_Constraint_VImpl <em>VConstraint V</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see vavemodel.impl.V_Constraint_VImpl
-		 * @see vavemodel.impl.VavemodelPackageImpl#getV_Constraint_V()
-		 * @generated
-		 */
-		EClass VCONSTRAINT_V = eINSTANCE.getV_Constraint_V();
 
 		/**
 		 * The meta object literal for the '{@link vavemodel.impl.VersionImpl <em>Version</em>}' class.
@@ -1354,66 +1495,6 @@ public interface VavemodelPackage extends EPackage {
 		EReference DELTA_MODULE__CHANGE = eINSTANCE.getDeltaModule_Change();
 
 		/**
-		 * The meta object literal for the '{@link vavemodel.impl.VP_Depends_VPImpl <em>VP Depends VP</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see vavemodel.impl.VP_Depends_VPImpl
-		 * @see vavemodel.impl.VavemodelPackageImpl#getVP_Depends_VP()
-		 * @generated
-		 */
-		EClass VP_DEPENDS_VP = eINSTANCE.getVP_Depends_VP();
-
-		/**
-		 * The meta object literal for the '{@link vavemodel.impl.VP_Excludes_VPImpl <em>VP Excludes VP</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see vavemodel.impl.VP_Excludes_VPImpl
-		 * @see vavemodel.impl.VavemodelPackageImpl#getVP_Excludes_VP()
-		 * @generated
-		 */
-		EClass VP_EXCLUDES_VP = eINSTANCE.getVP_Excludes_VP();
-
-		/**
-		 * The meta object literal for the '{@link vavemodel.impl.V_Depends_VPImpl <em>VDepends VP</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see vavemodel.impl.V_Depends_VPImpl
-		 * @see vavemodel.impl.VavemodelPackageImpl#getV_Depends_VP()
-		 * @generated
-		 */
-		EClass VDEPENDS_VP = eINSTANCE.getV_Depends_VP();
-
-		/**
-		 * The meta object literal for the '{@link vavemodel.impl.V_Excludes_VPImpl <em>VExcludes VP</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see vavemodel.impl.V_Excludes_VPImpl
-		 * @see vavemodel.impl.VavemodelPackageImpl#getV_Excludes_VP()
-		 * @generated
-		 */
-		EClass VEXCLUDES_VP = eINSTANCE.getV_Excludes_VP();
-
-		/**
-		 * The meta object literal for the '{@link vavemodel.impl.V_Depends_VImpl <em>VDepends V</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see vavemodel.impl.V_Depends_VImpl
-		 * @see vavemodel.impl.VavemodelPackageImpl#getV_Depends_V()
-		 * @generated
-		 */
-		EClass VDEPENDS_V = eINSTANCE.getV_Depends_V();
-
-		/**
-		 * The meta object literal for the '{@link vavemodel.impl.V_Excludes_VImpl <em>VExcludes V</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see vavemodel.impl.V_Excludes_VImpl
-		 * @see vavemodel.impl.VavemodelPackageImpl#getV_Excludes_V()
-		 * @generated
-		 */
-		EClass VEXCLUDES_V = eINSTANCE.getV_Excludes_V();
-
-		/**
 		 * The meta object literal for the '{@link vavemodel.impl.CardinalityImpl <em>Cardinality</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1448,6 +1529,130 @@ public interface VavemodelPackage extends EPackage {
 		 * @generated
 		 */
 		EClass CHANGE = eINSTANCE.getChange();
+
+		/**
+		 * The meta object literal for the '{@link vavemodel.impl.VariableImpl <em>Variable</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see vavemodel.impl.VariableImpl
+		 * @see vavemodel.impl.VavemodelPackageImpl#getVariable()
+		 * @generated
+		 */
+		EClass VARIABLE = eINSTANCE.getVariable();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference VARIABLE__NAME = eINSTANCE.getVariable_Name();
+
+		/**
+		 * The meta object literal for the '{@link vavemodel.impl.ExpressionImpl <em>Expression</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see vavemodel.impl.ExpressionImpl
+		 * @see vavemodel.impl.VavemodelPackageImpl#getExpression()
+		 * @generated
+		 */
+		EClass EXPRESSION = eINSTANCE.getExpression();
+
+		/**
+		 * The meta object literal for the '{@link vavemodel.Term <em>Term</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see vavemodel.Term
+		 * @see vavemodel.impl.VavemodelPackageImpl#getTerm()
+		 * @generated
+		 */
+		EClass TERM = eINSTANCE.getTerm();
+
+		/**
+		 * The meta object literal for the '{@link vavemodel.impl.BinaryExpressionImpl <em>Binary Expression</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see vavemodel.impl.BinaryExpressionImpl
+		 * @see vavemodel.impl.VavemodelPackageImpl#getBinaryExpression()
+		 * @generated
+		 */
+		EClass BINARY_EXPRESSION = eINSTANCE.getBinaryExpression();
+
+		/**
+		 * The meta object literal for the '<em><b>Term</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference BINARY_EXPRESSION__TERM = eINSTANCE.getBinaryExpression_Term();
+
+		/**
+		 * The meta object literal for the '{@link vavemodel.impl.UnaryExpressionImpl <em>Unary Expression</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see vavemodel.impl.UnaryExpressionImpl
+		 * @see vavemodel.impl.VavemodelPackageImpl#getUnaryExpression()
+		 * @generated
+		 */
+		EClass UNARY_EXPRESSION = eINSTANCE.getUnaryExpression();
+
+		/**
+		 * The meta object literal for the '<em><b>Term</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference UNARY_EXPRESSION__TERM = eINSTANCE.getUnaryExpression_Term();
+
+		/**
+		 * The meta object literal for the '{@link vavemodel.impl.ImplicationImpl <em>Implication</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see vavemodel.impl.ImplicationImpl
+		 * @see vavemodel.impl.VavemodelPackageImpl#getImplication()
+		 * @generated
+		 */
+		EClass IMPLICATION = eINSTANCE.getImplication();
+
+		/**
+		 * The meta object literal for the '{@link vavemodel.impl.DisjunctionImpl <em>Disjunction</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see vavemodel.impl.DisjunctionImpl
+		 * @see vavemodel.impl.VavemodelPackageImpl#getDisjunction()
+		 * @generated
+		 */
+		EClass DISJUNCTION = eINSTANCE.getDisjunction();
+
+		/**
+		 * The meta object literal for the '{@link vavemodel.impl.EquivalenceImpl <em>Equivalence</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see vavemodel.impl.EquivalenceImpl
+		 * @see vavemodel.impl.VavemodelPackageImpl#getEquivalence()
+		 * @generated
+		 */
+		EClass EQUIVALENCE = eINSTANCE.getEquivalence();
+
+		/**
+		 * The meta object literal for the '{@link vavemodel.impl.ConjunctionImpl <em>Conjunction</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see vavemodel.impl.ConjunctionImpl
+		 * @see vavemodel.impl.VavemodelPackageImpl#getConjunction()
+		 * @generated
+		 */
+		EClass CONJUNCTION = eINSTANCE.getConjunction();
+
+		/**
+		 * The meta object literal for the '{@link vavemodel.impl.NotImpl <em>Not</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see vavemodel.impl.NotImpl
+		 * @see vavemodel.impl.VavemodelPackageImpl#getNot()
+		 * @generated
+		 */
+		EClass NOT = eINSTANCE.getNot();
 
 		/**
 		 * The meta object literal for the '{@link vavemodel.GroupType <em>Group Type</em>}' enum.

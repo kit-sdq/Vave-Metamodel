@@ -63,7 +63,7 @@ public interface Variant extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Variationpoint</em>' containment reference list.
 	 * @see vavemodel.VavemodelPackage#getVariant_Variationpoint()
-	 * @model containment="true" required="true"
+	 * @model containment="true"
 	 * @generated
 	 */
 	EList<VariationPoint> getVariationpoint();

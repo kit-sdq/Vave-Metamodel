@@ -33,12 +33,12 @@ public interface DeltaModule extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Delta Module ID</em>' attribute.
-	 * @see #setDeltaModuleID(int)
+	 * @see #setDeltaModuleID(double)
 	 * @see vavemodel.VavemodelPackage#getDeltaModule_DeltaModuleID()
 	 * @model
 	 * @generated
 	 */
-	int getDeltaModuleID();
+	double getDeltaModuleID();
 
 	/**
 	 * Sets the value of the '{@link vavemodel.DeltaModule#getDeltaModuleID <em>Delta Module ID</em>}' attribute.
@@ -48,7 +48,7 @@ public interface DeltaModule extends EObject {
 	 * @see #getDeltaModuleID()
 	 * @generated
 	 */
-	void setDeltaModuleID(int value);
+	void setDeltaModuleID(double value);
 
 	/**
 	 * Returns the value of the '<em><b>Change</b></em>' containment reference list.

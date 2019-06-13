@@ -40,13 +40,13 @@ public interface VavemodelFactory extends EFactory {
 	Variant createVariant();
 
 	/**
-	 * Returns a new object of class '<em>Constraints</em>'.
+	 * Returns a new object of class '<em>Constraint</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Constraints</em>'.
+	 * @return a new object of class '<em>Constraint</em>'.
 	 * @generated
 	 */
-	Constraints createConstraints();
+	Constraint createConstraint();
 
 	/**
 	 * Returns a new object of class '<em>Variation Point</em>'.
@@ -56,33 +56,6 @@ public interface VavemodelFactory extends EFactory {
 	 * @generated
 	 */
 	VariationPoint createVariationPoint();
-
-	/**
-	 * Returns a new object of class '<em>VP Constraint VP</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>VP Constraint VP</em>'.
-	 * @generated
-	 */
-	VP_Constraint_VP createVP_Constraint_VP();
-
-	/**
-	 * Returns a new object of class '<em>VConstraint VP</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>VConstraint VP</em>'.
-	 * @generated
-	 */
-	V_Constraint_VP createV_Constraint_VP();
-
-	/**
-	 * Returns a new object of class '<em>VConstraint V</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>VConstraint V</em>'.
-	 * @generated
-	 */
-	V_Constraint_V createV_Constraint_V();
 
 	/**
 	 * Returns a new object of class '<em>Version</em>'.
@@ -103,60 +76,6 @@ public interface VavemodelFactory extends EFactory {
 	DeltaModule createDeltaModule();
 
 	/**
-	 * Returns a new object of class '<em>VP Depends VP</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>VP Depends VP</em>'.
-	 * @generated
-	 */
-	VP_Depends_VP createVP_Depends_VP();
-
-	/**
-	 * Returns a new object of class '<em>VP Excludes VP</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>VP Excludes VP</em>'.
-	 * @generated
-	 */
-	VP_Excludes_VP createVP_Excludes_VP();
-
-	/**
-	 * Returns a new object of class '<em>VDepends VP</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>VDepends VP</em>'.
-	 * @generated
-	 */
-	V_Depends_VP createV_Depends_VP();
-
-	/**
-	 * Returns a new object of class '<em>VExcludes VP</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>VExcludes VP</em>'.
-	 * @generated
-	 */
-	V_Excludes_VP createV_Excludes_VP();
-
-	/**
-	 * Returns a new object of class '<em>VDepends V</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>VDepends V</em>'.
-	 * @generated
-	 */
-	V_Depends_V createV_Depends_V();
-
-	/**
-	 * Returns a new object of class '<em>VExcludes V</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>VExcludes V</em>'.
-	 * @generated
-	 */
-	V_Excludes_V createV_Excludes_V();
-
-	/**
 	 * Returns a new object of class '<em>Cardinality</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -173,6 +92,60 @@ public interface VavemodelFactory extends EFactory {
 	 * @generated
 	 */
 	Change createChange();
+
+	/**
+	 * Returns a new object of class '<em>Variable</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Variable</em>'.
+	 * @generated
+	 */
+	Variable createVariable();
+
+	/**
+	 * Returns a new object of class '<em>Implication</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Implication</em>'.
+	 * @generated
+	 */
+	Implication createImplication();
+
+	/**
+	 * Returns a new object of class '<em>Disjunction</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Disjunction</em>'.
+	 * @generated
+	 */
+	Disjunction createDisjunction();
+
+	/**
+	 * Returns a new object of class '<em>Equivalence</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Equivalence</em>'.
+	 * @generated
+	 */
+	Equivalence createEquivalence();
+
+	/**
+	 * Returns a new object of class '<em>Conjunction</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Conjunction</em>'.
+	 * @generated
+	 */
+	Conjunction createConjunction();
+
+	/**
+	 * Returns a new object of class '<em>Not</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Not</em>'.
+	 * @generated
+	 */
+	Not createNot();
 
 	/**
 	 * Returns the package supported by this factory.

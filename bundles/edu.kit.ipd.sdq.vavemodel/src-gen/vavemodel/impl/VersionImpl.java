@@ -29,8 +29,8 @@ import vavemodel.Version;
  * <ul>
  *   <li>{@link vavemodel.impl.VersionImpl#getPredecessor <em>Predecessor</em>}</li>
  *   <li>{@link vavemodel.impl.VersionImpl#getSuccessor <em>Successor</em>}</li>
- *   <li>{@link vavemodel.impl.VersionImpl#getDeltamodule <em>Deltamodule</em>}</li>
  *   <li>{@link vavemodel.impl.VersionImpl#getVersionID <em>Version ID</em>}</li>
+ *   <li>{@link vavemodel.impl.VersionImpl#getDeltamodule <em>Deltamodule</em>}</li>
  * </ul>
  *
  * @generated
@@ -57,16 +57,6 @@ public class VersionImpl extends MinimalEObjectImpl.Container implements Version
 	protected EList<Version> successor;
 
 	/**
-	 * The cached value of the '{@link #getDeltamodule() <em>Deltamodule</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDeltamodule()
-	 * @generated
-	 * @ordered
-	 */
-	protected DeltaModule deltamodule;
-
-	/**
 	 * The default value of the '{@link #getVersionID() <em>Version ID</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -85,6 +75,16 @@ public class VersionImpl extends MinimalEObjectImpl.Container implements Version
 	 * @ordered
 	 */
 	protected double versionID = VERSION_ID_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getDeltamodule() <em>Deltamodule</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDeltamodule()
+	 * @generated
+	 * @ordered
+	 */
+	protected DeltaModule deltamodule;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -253,10 +253,10 @@ public class VersionImpl extends MinimalEObjectImpl.Container implements Version
 				return basicGetPredecessor();
 			case VavemodelPackage.VERSION__SUCCESSOR:
 				return getSuccessor();
-			case VavemodelPackage.VERSION__DELTAMODULE:
-				return getDeltamodule();
 			case VavemodelPackage.VERSION__VERSION_ID:
 				return getVersionID();
+			case VavemodelPackage.VERSION__DELTAMODULE:
+				return getDeltamodule();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -277,11 +277,11 @@ public class VersionImpl extends MinimalEObjectImpl.Container implements Version
 				getSuccessor().clear();
 				getSuccessor().addAll((Collection<? extends Version>)newValue);
 				return;
-			case VavemodelPackage.VERSION__DELTAMODULE:
-				setDeltamodule((DeltaModule)newValue);
-				return;
 			case VavemodelPackage.VERSION__VERSION_ID:
 				setVersionID((Double)newValue);
+				return;
+			case VavemodelPackage.VERSION__DELTAMODULE:
+				setDeltamodule((DeltaModule)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -301,11 +301,11 @@ public class VersionImpl extends MinimalEObjectImpl.Container implements Version
 			case VavemodelPackage.VERSION__SUCCESSOR:
 				getSuccessor().clear();
 				return;
-			case VavemodelPackage.VERSION__DELTAMODULE:
-				setDeltamodule((DeltaModule)null);
-				return;
 			case VavemodelPackage.VERSION__VERSION_ID:
 				setVersionID(VERSION_ID_EDEFAULT);
+				return;
+			case VavemodelPackage.VERSION__DELTAMODULE:
+				setDeltamodule((DeltaModule)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -323,10 +323,10 @@ public class VersionImpl extends MinimalEObjectImpl.Container implements Version
 				return predecessor != null;
 			case VavemodelPackage.VERSION__SUCCESSOR:
 				return successor != null && !successor.isEmpty();
-			case VavemodelPackage.VERSION__DELTAMODULE:
-				return deltamodule != null;
 			case VavemodelPackage.VERSION__VERSION_ID:
 				return versionID != VERSION_ID_EDEFAULT;
+			case VavemodelPackage.VERSION__DELTAMODULE:
+				return deltamodule != null;
 		}
 		return super.eIsSet(featureID);
 	}
