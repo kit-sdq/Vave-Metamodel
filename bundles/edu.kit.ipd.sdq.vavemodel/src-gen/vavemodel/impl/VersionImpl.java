@@ -14,7 +14,9 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+
 import vavemodel.DeltaModule;
 import vavemodel.VavemodelPackage;
 import vavemodel.Version;
@@ -164,6 +166,29 @@ public class VersionImpl extends MinimalEObjectImpl.Container implements Version
 	 * @generated
 	 */
 	@Override
+	public double getVersionID() {
+		return versionID;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setVersionID(double newVersionID) {
+		double oldVersionID = versionID;
+		versionID = newVersionID;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, VavemodelPackage.VERSION__VERSION_ID, oldVersionID, versionID));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public DeltaModule getDeltamodule() {
 		return deltamodule;
 	}
@@ -201,29 +226,6 @@ public class VersionImpl extends MinimalEObjectImpl.Container implements Version
 		}
 		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, VavemodelPackage.VERSION__DELTAMODULE, newDeltamodule, newDeltamodule));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public double getVersionID() {
-		return versionID;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setVersionID(double newVersionID) {
-		double oldVersionID = versionID;
-		versionID = newVersionID;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, VavemodelPackage.VERSION__VERSION_ID, oldVersionID, versionID));
 	}
 
 	/**

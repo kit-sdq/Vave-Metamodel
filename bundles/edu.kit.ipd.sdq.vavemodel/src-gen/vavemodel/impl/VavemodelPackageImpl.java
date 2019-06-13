@@ -78,14 +78,14 @@ public class VavemodelPackageImpl extends EPackageImpl implements VavemodelPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass deltaModuleEClass = null;
+	private EClass cardinalityEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass cardinalityEClass = null;
+	private EClass deltaModuleEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -428,16 +428,6 @@ public class VavemodelPackageImpl extends EPackageImpl implements VavemodelPacka
 	 * @generated
 	 */
 	@Override
-	public EReference getVersion_Deltamodule() {
-		return (EReference)versionEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EAttribute getVersion_VersionID() {
 		return (EAttribute)versionEClass.getEStructuralFeatures().get(2);
 	}
@@ -448,28 +438,8 @@ public class VavemodelPackageImpl extends EPackageImpl implements VavemodelPacka
 	 * @generated
 	 */
 	@Override
-	public EClass getDeltaModule() {
-		return deltaModuleEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getDeltaModule_DeltaModuleID() {
-		return (EAttribute)deltaModuleEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getDeltaModule_Change() {
-		return (EReference)deltaModuleEClass.getEStructuralFeatures().get(1);
+	public EReference getVersion_Deltamodule() {
+		return (EReference)versionEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -500,6 +470,36 @@ public class VavemodelPackageImpl extends EPackageImpl implements VavemodelPacka
 	@Override
 	public EAttribute getCardinality_Max() {
 		return (EAttribute)cardinalityEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getDeltaModule() {
+		return deltaModuleEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getDeltaModule_DeltaModuleID() {
+		return (EAttribute)deltaModuleEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getDeltaModule_Change() {
+		return (EReference)deltaModuleEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**

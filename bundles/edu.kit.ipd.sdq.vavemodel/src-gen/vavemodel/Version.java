@@ -69,32 +69,6 @@ public interface Version extends EObject {
 	EList<Version> getSuccessor();
 
 	/**
-	 * Returns the value of the '<em><b>Deltamodule</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Deltamodule</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Deltamodule</em>' containment reference.
-	 * @see #setDeltamodule(DeltaModule)
-	 * @see vavemodel.VavemodelPackage#getVersion_Deltamodule()
-	 * @model containment="true" required="true"
-	 * @generated
-	 */
-	DeltaModule getDeltamodule();
-
-	/**
-	 * Sets the value of the '{@link vavemodel.Version#getDeltamodule <em>Deltamodule</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Deltamodule</em>' containment reference.
-	 * @see #getDeltamodule()
-	 * @generated
-	 */
-	void setDeltamodule(DeltaModule value);
-
-	/**
 	 * Returns the value of the '<em><b>Version ID</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -119,5 +93,31 @@ public interface Version extends EObject {
 	 * @generated
 	 */
 	void setVersionID(double value);
+
+	/**
+	 * Returns the value of the '<em><b>Deltamodule</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Deltamodule</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Deltamodule</em>' containment reference.
+	 * @see #setDeltamodule(DeltaModule)
+	 * @see vavemodel.VavemodelPackage#getVersion_Deltamodule()
+	 * @model containment="true" required="true"
+	 * @generated
+	 */
+	DeltaModule getDeltamodule();
+
+	/**
+	 * Sets the value of the '{@link vavemodel.Version#getDeltamodule <em>Deltamodule</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Deltamodule</em>' containment reference.
+	 * @see #getDeltamodule()
+	 * @generated
+	 */
+	void setDeltamodule(DeltaModule value);
 
 } // Version

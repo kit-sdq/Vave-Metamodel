@@ -3,17 +3,21 @@
 package vavemodel.impl;
 
 import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.common.util.EList;
+
+import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
+
 import vavemodel.Change;
 import vavemodel.DeltaModule;
 import vavemodel.VavemodelPackage;
@@ -42,6 +46,7 @@ public class DeltaModuleImpl extends MinimalEObjectImpl.Container implements Del
 	 * @ordered
 	 */
 	protected static final double DELTA_MODULE_ID_EDEFAULT = 0.0;
+
 	/**
 	 * The cached value of the '{@link #getDeltaModuleID() <em>Delta Module ID</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -51,6 +56,7 @@ public class DeltaModuleImpl extends MinimalEObjectImpl.Container implements Del
 	 * @ordered
 	 */
 	protected double deltaModuleID = DELTA_MODULE_ID_EDEFAULT;
+
 	/**
 	 * The cached value of the '{@link #getChange() <em>Change</em>}' containment reference list.
 	 * <!-- begin-user-doc -->

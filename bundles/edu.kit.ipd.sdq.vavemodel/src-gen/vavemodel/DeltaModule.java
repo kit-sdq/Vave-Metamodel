@@ -3,6 +3,7 @@
 package vavemodel;
 
 import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -23,7 +24,6 @@ import org.eclipse.emf.ecore.EObject;
  * @generated
  */
 public interface DeltaModule extends EObject {
-
 	/**
 	 * Returns the value of the '<em><b>Delta Module ID</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -65,4 +65,5 @@ public interface DeltaModule extends EObject {
 	 * @generated
 	 */
 	EList<Change> getChange();
+
 } // DeltaModule

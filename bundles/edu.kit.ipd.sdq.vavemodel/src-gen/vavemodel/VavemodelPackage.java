@@ -342,16 +342,6 @@ public interface VavemodelPackage extends EPackage {
 	int VERSION_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link vavemodel.impl.DeltaModuleImpl <em>Delta Module</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see vavemodel.impl.DeltaModuleImpl
-	 * @see vavemodel.impl.VavemodelPackageImpl#getDeltaModule()
-	 * @generated
-	 */
-	int DELTA_MODULE = 6;
-
-	/**
 	 * The meta object id for the '{@link vavemodel.impl.CardinalityImpl <em>Cardinality</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -396,6 +386,16 @@ public interface VavemodelPackage extends EPackage {
 	 * @ordered
 	 */
 	int CARDINALITY_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link vavemodel.impl.DeltaModuleImpl <em>Delta Module</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see vavemodel.impl.DeltaModuleImpl
+	 * @see vavemodel.impl.VavemodelPackageImpl#getDeltaModule()
+	 * @generated
+	 */
+	int DELTA_MODULE = 6;
 
 	/**
 	 * The feature id for the '<em><b>Delta Module ID</b></em>' attribute.
@@ -1029,17 +1029,6 @@ public interface VavemodelPackage extends EPackage {
 	EReference getVersion_Successor();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link vavemodel.Version#getDeltamodule <em>Deltamodule</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Deltamodule</em>'.
-	 * @see vavemodel.Version#getDeltamodule()
-	 * @see #getVersion()
-	 * @generated
-	 */
-	EReference getVersion_Deltamodule();
-
-	/**
 	 * Returns the meta object for the attribute '{@link vavemodel.Version#getVersionID <em>Version ID</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1051,36 +1040,15 @@ public interface VavemodelPackage extends EPackage {
 	EAttribute getVersion_VersionID();
 
 	/**
-	 * Returns the meta object for class '{@link vavemodel.DeltaModule <em>Delta Module</em>}'.
+	 * Returns the meta object for the containment reference '{@link vavemodel.Version#getDeltamodule <em>Deltamodule</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Delta Module</em>'.
-	 * @see vavemodel.DeltaModule
+	 * @return the meta object for the containment reference '<em>Deltamodule</em>'.
+	 * @see vavemodel.Version#getDeltamodule()
+	 * @see #getVersion()
 	 * @generated
 	 */
-	EClass getDeltaModule();
-
-	/**
-	 * Returns the meta object for the attribute '{@link vavemodel.DeltaModule#getDeltaModuleID <em>Delta Module ID</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Delta Module ID</em>'.
-	 * @see vavemodel.DeltaModule#getDeltaModuleID()
-	 * @see #getDeltaModule()
-	 * @generated
-	 */
-	EAttribute getDeltaModule_DeltaModuleID();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link vavemodel.DeltaModule#getChange <em>Change</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Change</em>'.
-	 * @see vavemodel.DeltaModule#getChange()
-	 * @see #getDeltaModule()
-	 * @generated
-	 */
-	EReference getDeltaModule_Change();
+	EReference getVersion_Deltamodule();
 
 	/**
 	 * Returns the meta object for class '{@link vavemodel.Cardinality <em>Cardinality</em>}'.
@@ -1113,6 +1081,38 @@ public interface VavemodelPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getCardinality_Max();
+
+	/**
+	 * Returns the meta object for class '{@link vavemodel.DeltaModule <em>Delta Module</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Delta Module</em>'.
+	 * @see vavemodel.DeltaModule
+	 * @generated
+	 */
+	EClass getDeltaModule();
+
+	/**
+	 * Returns the meta object for the attribute '{@link vavemodel.DeltaModule#getDeltaModuleID <em>Delta Module ID</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Delta Module ID</em>'.
+	 * @see vavemodel.DeltaModule#getDeltaModuleID()
+	 * @see #getDeltaModule()
+	 * @generated
+	 */
+	EAttribute getDeltaModule_DeltaModuleID();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link vavemodel.DeltaModule#getChange <em>Change</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Change</em>'.
+	 * @see vavemodel.DeltaModule#getChange()
+	 * @see #getDeltaModule()
+	 * @generated
+	 */
+	EReference getDeltaModule_Change();
 
 	/**
 	 * Returns the meta object for class '{@link vavemodel.Change <em>Change</em>}'.
@@ -1453,14 +1453,6 @@ public interface VavemodelPackage extends EPackage {
 		EReference VERSION__SUCCESSOR = eINSTANCE.getVersion_Successor();
 
 		/**
-		 * The meta object literal for the '<em><b>Deltamodule</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference VERSION__DELTAMODULE = eINSTANCE.getVersion_Deltamodule();
-
-		/**
 		 * The meta object literal for the '<em><b>Version ID</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1469,30 +1461,12 @@ public interface VavemodelPackage extends EPackage {
 		EAttribute VERSION__VERSION_ID = eINSTANCE.getVersion_VersionID();
 
 		/**
-		 * The meta object literal for the '{@link vavemodel.impl.DeltaModuleImpl <em>Delta Module</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see vavemodel.impl.DeltaModuleImpl
-		 * @see vavemodel.impl.VavemodelPackageImpl#getDeltaModule()
-		 * @generated
-		 */
-		EClass DELTA_MODULE = eINSTANCE.getDeltaModule();
-
-		/**
-		 * The meta object literal for the '<em><b>Delta Module ID</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Deltamodule</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute DELTA_MODULE__DELTA_MODULE_ID = eINSTANCE.getDeltaModule_DeltaModuleID();
-
-		/**
-		 * The meta object literal for the '<em><b>Change</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference DELTA_MODULE__CHANGE = eINSTANCE.getDeltaModule_Change();
+		EReference VERSION__DELTAMODULE = eINSTANCE.getVersion_Deltamodule();
 
 		/**
 		 * The meta object literal for the '{@link vavemodel.impl.CardinalityImpl <em>Cardinality</em>}' class.
@@ -1519,6 +1493,32 @@ public interface VavemodelPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute CARDINALITY__MAX = eINSTANCE.getCardinality_Max();
+
+		/**
+		 * The meta object literal for the '{@link vavemodel.impl.DeltaModuleImpl <em>Delta Module</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see vavemodel.impl.DeltaModuleImpl
+		 * @see vavemodel.impl.VavemodelPackageImpl#getDeltaModule()
+		 * @generated
+		 */
+		EClass DELTA_MODULE = eINSTANCE.getDeltaModule();
+
+		/**
+		 * The meta object literal for the '<em><b>Delta Module ID</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DELTA_MODULE__DELTA_MODULE_ID = eINSTANCE.getDeltaModule_DeltaModuleID();
+
+		/**
+		 * The meta object literal for the '<em><b>Change</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DELTA_MODULE__CHANGE = eINSTANCE.getDeltaModule_Change();
 
 		/**
 		 * The meta object literal for the '{@link vavemodel.impl.ChangeImpl <em>Change</em>}' class.

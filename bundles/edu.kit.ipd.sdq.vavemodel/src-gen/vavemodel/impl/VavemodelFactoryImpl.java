@@ -182,9 +182,9 @@ public class VavemodelFactoryImpl extends EFactoryImpl implements VavemodelFacto
 	 * @generated
 	 */
 	@Override
-	public DeltaModule createDeltaModule() {
-		DeltaModuleImpl deltaModule = new DeltaModuleImpl();
-		return deltaModule;
+	public Cardinality createCardinality() {
+		CardinalityImpl cardinality = new CardinalityImpl();
+		return cardinality;
 	}
 
 	/**
@@ -193,9 +193,9 @@ public class VavemodelFactoryImpl extends EFactoryImpl implements VavemodelFacto
 	 * @generated
 	 */
 	@Override
-	public Cardinality createCardinality() {
-		CardinalityImpl cardinality = new CardinalityImpl();
-		return cardinality;
+	public DeltaModule createDeltaModule() {
+		DeltaModuleImpl deltaModule = new DeltaModuleImpl();
+		return deltaModule;
 	}
 
 	/**

@@ -3,6 +3,7 @@
 package vavemodel;
 
 import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -57,7 +58,7 @@ public interface Variant extends EObject {
 	 * The list contents are of type {@link vavemodel.VariationPoint}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Variationpoint</em>' containment reference isn't clear,
+	 * If the meaning of the '<em>Variationpoint</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
