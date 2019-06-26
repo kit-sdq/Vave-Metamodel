@@ -22,8 +22,6 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vavemodel.ecore#//Variant/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference vavemodel.ecore#//Variant/variationpoint"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference vavemodel.ecore#//Variant/initialVersion"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vavemodel.ecore#//Variant/isCore"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vavemodel.ecore#//Variant/isRoot"/>
     </genClasses>
     <genClasses ecoreClass="vavemodel.ecore#//Constraint">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference vavemodel.ecore#//Constraint/expression"/>
@@ -31,17 +29,12 @@
     <genClasses ecoreClass="vavemodel.ecore#//VariationPoint">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vavemodel.ecore#//VariationPoint/type"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference vavemodel.ecore#//VariationPoint/variant"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference vavemodel.ecore#//VariationPoint/cardinality"/>
     </genClasses>
     <genClasses ecoreClass="vavemodel.ecore#//Version">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference vavemodel.ecore#//Version/predecessor"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference vavemodel.ecore#//Version/successor"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vavemodel.ecore#//Version/versionID"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference vavemodel.ecore#//Version/deltamodule"/>
-    </genClasses>
-    <genClasses ecoreClass="vavemodel.ecore#//Cardinality">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vavemodel.ecore#//Cardinality/min"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vavemodel.ecore#//Cardinality/max"/>
     </genClasses>
     <genClasses ecoreClass="vavemodel.ecore#//DeltaModule">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vavemodel.ecore#//DeltaModule/deltaModuleID"/>

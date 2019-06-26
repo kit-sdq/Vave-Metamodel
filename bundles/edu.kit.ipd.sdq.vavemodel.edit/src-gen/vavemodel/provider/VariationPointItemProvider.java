@@ -104,7 +104,6 @@ public class VariationPointItemProvider
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(VavemodelPackage.Literals.VARIATION_POINT__VARIANT);
-			childrenFeatures.add(VavemodelPackage.Literals.VARIATION_POINT__CARDINALITY);
 		}
 		return childrenFeatures;
 	}
@@ -165,7 +164,6 @@ public class VariationPointItemProvider
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case VavemodelPackage.VARIATION_POINT__VARIANT:
-			case VavemodelPackage.VARIATION_POINT__CARDINALITY:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -187,11 +185,6 @@ public class VariationPointItemProvider
 			(createChildParameter
 				(VavemodelPackage.Literals.VARIATION_POINT__VARIANT,
 				 VavemodelFactory.eINSTANCE.createVariant()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(VavemodelPackage.Literals.VARIATION_POINT__CARDINALITY,
-				 VavemodelFactory.eINSTANCE.createCardinality()));
 	}
 
 	/**

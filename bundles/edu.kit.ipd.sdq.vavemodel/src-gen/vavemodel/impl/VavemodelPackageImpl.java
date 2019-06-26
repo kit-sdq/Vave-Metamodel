@@ -11,7 +11,6 @@ import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import vavemodel.BinaryExpression;
-import vavemodel.Cardinality;
 import vavemodel.Change;
 import vavemodel.Conjunction;
 import vavemodel.Constraint;
@@ -72,13 +71,6 @@ public class VavemodelPackageImpl extends EPackageImpl implements VavemodelPacka
 	 * @generated
 	 */
 	private EClass versionEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass cardinalityEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -318,26 +310,6 @@ public class VavemodelPackageImpl extends EPackageImpl implements VavemodelPacka
 	 * @generated
 	 */
 	@Override
-	public EAttribute getVariant_IsCore() {
-		return (EAttribute)variantEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getVariant_IsRoot() {
-		return (EAttribute)variantEClass.getEStructuralFeatures().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EClass getConstraint() {
 		return constraintEClass;
 	}
@@ -388,16 +360,6 @@ public class VavemodelPackageImpl extends EPackageImpl implements VavemodelPacka
 	 * @generated
 	 */
 	@Override
-	public EReference getVariationPoint_Cardinality() {
-		return (EReference)variationPointEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EClass getVersion() {
 		return versionEClass;
 	}
@@ -440,36 +402,6 @@ public class VavemodelPackageImpl extends EPackageImpl implements VavemodelPacka
 	@Override
 	public EReference getVersion_Deltamodule() {
 		return (EReference)versionEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EClass getCardinality() {
-		return cardinalityEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getCardinality_Min() {
-		return (EAttribute)cardinalityEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getCardinality_Max() {
-		return (EAttribute)cardinalityEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -690,8 +622,6 @@ public class VavemodelPackageImpl extends EPackageImpl implements VavemodelPacka
 		createEAttribute(variantEClass, VARIANT__NAME);
 		createEReference(variantEClass, VARIANT__VARIATIONPOINT);
 		createEReference(variantEClass, VARIANT__INITIAL_VERSION);
-		createEAttribute(variantEClass, VARIANT__IS_CORE);
-		createEAttribute(variantEClass, VARIANT__IS_ROOT);
 
 		constraintEClass = createEClass(CONSTRAINT);
 		createEReference(constraintEClass, CONSTRAINT__EXPRESSION);
@@ -699,17 +629,12 @@ public class VavemodelPackageImpl extends EPackageImpl implements VavemodelPacka
 		variationPointEClass = createEClass(VARIATION_POINT);
 		createEAttribute(variationPointEClass, VARIATION_POINT__TYPE);
 		createEReference(variationPointEClass, VARIATION_POINT__VARIANT);
-		createEReference(variationPointEClass, VARIATION_POINT__CARDINALITY);
 
 		versionEClass = createEClass(VERSION);
 		createEReference(versionEClass, VERSION__PREDECESSOR);
 		createEReference(versionEClass, VERSION__SUCCESSOR);
 		createEAttribute(versionEClass, VERSION__VERSION_ID);
 		createEReference(versionEClass, VERSION__DELTAMODULE);
-
-		cardinalityEClass = createEClass(CARDINALITY);
-		createEAttribute(cardinalityEClass, CARDINALITY__MIN);
-		createEAttribute(cardinalityEClass, CARDINALITY__MAX);
 
 		deltaModuleEClass = createEClass(DELTA_MODULE);
 		createEAttribute(deltaModuleEClass, DELTA_MODULE__DELTA_MODULE_ID);
@@ -792,8 +717,6 @@ public class VavemodelPackageImpl extends EPackageImpl implements VavemodelPacka
 		initEAttribute(getVariant_Name(), ecorePackage.getEString(), "name", null, 0, 1, Variant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getVariant_Variationpoint(), this.getVariationPoint(), null, "variationpoint", null, 0, -1, Variant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getVariant_InitialVersion(), this.getVersion(), null, "initialVersion", null, 1, 1, Variant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getVariant_IsCore(), ecorePackage.getEBoolean(), "isCore", null, 0, 1, Variant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getVariant_IsRoot(), ecorePackage.getEBoolean(), "isRoot", null, 0, 1, Variant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(constraintEClass, Constraint.class, "Constraint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getConstraint_Expression(), this.getExpression(), null, "expression", null, 1, 1, Constraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -801,17 +724,12 @@ public class VavemodelPackageImpl extends EPackageImpl implements VavemodelPacka
 		initEClass(variationPointEClass, VariationPoint.class, "VariationPoint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getVariationPoint_Type(), this.getGroupType(), "type", null, 0, 1, VariationPoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getVariationPoint_Variant(), this.getVariant(), null, "variant", null, 1, -1, VariationPoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getVariationPoint_Cardinality(), this.getCardinality(), null, "cardinality", null, 1, 1, VariationPoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(versionEClass, Version.class, "Version", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getVersion_Predecessor(), this.getVersion(), null, "predecessor", null, 0, 1, Version.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getVersion_Successor(), this.getVersion(), null, "successor", null, 0, -1, Version.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getVersion_VersionID(), ecorePackage.getEDouble(), "versionID", null, 0, 1, Version.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getVersion_Deltamodule(), this.getDeltaModule(), null, "deltamodule", null, 1, 1, Version.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(cardinalityEClass, Cardinality.class, "Cardinality", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getCardinality_Min(), ecorePackage.getEInt(), "min", null, 0, 1, Cardinality.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getCardinality_Max(), ecorePackage.getEInt(), "max", null, 0, 1, Cardinality.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(deltaModuleEClass, DeltaModule.class, "DeltaModule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getDeltaModule_DeltaModuleID(), ecorePackage.getEDouble(), "deltaModuleID", null, 0, 1, DeltaModule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

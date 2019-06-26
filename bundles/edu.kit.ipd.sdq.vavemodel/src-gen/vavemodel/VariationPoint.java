@@ -17,7 +17,6 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link vavemodel.VariationPoint#getType <em>Type</em>}</li>
  *   <li>{@link vavemodel.VariationPoint#getVariant <em>Variant</em>}</li>
- *   <li>{@link vavemodel.VariationPoint#getCardinality <em>Cardinality</em>}</li>
  * </ul>
  *
  * @see vavemodel.VavemodelPackage#getVariationPoint()
@@ -69,31 +68,5 @@ public interface VariationPoint extends EObject {
 	 * @generated
 	 */
 	EList<Variant> getVariant();
-
-	/**
-	 * Returns the value of the '<em><b>Cardinality</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Cardinality</em>' containment reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Cardinality</em>' containment reference.
-	 * @see #setCardinality(Cardinality)
-	 * @see vavemodel.VavemodelPackage#getVariationPoint_Cardinality()
-	 * @model containment="true" required="true"
-	 * @generated
-	 */
-	Cardinality getCardinality();
-
-	/**
-	 * Sets the value of the '{@link vavemodel.VariationPoint#getCardinality <em>Cardinality</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Cardinality</em>' containment reference.
-	 * @see #getCardinality()
-	 * @generated
-	 */
-	void setCardinality(Cardinality value);
 
 } // VariationPoint

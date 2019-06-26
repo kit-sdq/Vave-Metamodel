@@ -10,7 +10,6 @@ import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 import org.eclipse.emf.ecore.EObject;
 
 import vavemodel.BinaryExpression;
-import vavemodel.Cardinality;
 import vavemodel.Change;
 import vavemodel.Conjunction;
 import vavemodel.Constraint;
@@ -103,10 +102,6 @@ public class VavemodelAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseVersion(Version object) {
 				return createVersionAdapter();
-			}
-			@Override
-			public Adapter caseCardinality(Cardinality object) {
-				return createCardinalityAdapter();
 			}
 			@Override
 			public Adapter caseDeltaModule(DeltaModule object) {
@@ -243,20 +238,6 @@ public class VavemodelAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createVersionAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link vavemodel.Cardinality <em>Cardinality</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see vavemodel.Cardinality
-	 * @generated
-	 */
-	public Adapter createCardinalityAdapter() {
 		return null;
 	}
 

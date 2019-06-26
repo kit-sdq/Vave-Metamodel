@@ -67,15 +67,6 @@ public interface VavemodelFactory extends EFactory {
 	Version createVersion();
 
 	/**
-	 * Returns a new object of class '<em>Cardinality</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Cardinality</em>'.
-	 * @generated
-	 */
-	Cardinality createCardinality();
-
-	/**
 	 * Returns a new object of class '<em>Delta Module</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

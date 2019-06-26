@@ -11,7 +11,6 @@ import org.eclipse.emf.ecore.impl.EFactoryImpl;
 
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
-import vavemodel.Cardinality;
 import vavemodel.Change;
 import vavemodel.Conjunction;
 import vavemodel.Constraint;
@@ -77,7 +76,6 @@ public class VavemodelFactoryImpl extends EFactoryImpl implements VavemodelFacto
 			case VavemodelPackage.CONSTRAINT: return createConstraint();
 			case VavemodelPackage.VARIATION_POINT: return createVariationPoint();
 			case VavemodelPackage.VERSION: return createVersion();
-			case VavemodelPackage.CARDINALITY: return createCardinality();
 			case VavemodelPackage.DELTA_MODULE: return createDeltaModule();
 			case VavemodelPackage.CHANGE: return createChange();
 			case VavemodelPackage.VARIABLE: return createVariable();
@@ -174,17 +172,6 @@ public class VavemodelFactoryImpl extends EFactoryImpl implements VavemodelFacto
 	public Version createVersion() {
 		VersionImpl version = new VersionImpl();
 		return version;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Cardinality createCardinality() {
-		CardinalityImpl cardinality = new CardinalityImpl();
-		return cardinality;
 	}
 
 	/**

@@ -18,7 +18,6 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
-import vavemodel.Cardinality;
 import vavemodel.GroupType;
 import vavemodel.Variant;
 import vavemodel.VariationPoint;
@@ -34,7 +33,6 @@ import vavemodel.VavemodelPackage;
  * <ul>
  *   <li>{@link vavemodel.impl.VariationPointImpl#getType <em>Type</em>}</li>
  *   <li>{@link vavemodel.impl.VariationPointImpl#getVariant <em>Variant</em>}</li>
- *   <li>{@link vavemodel.impl.VariationPointImpl#getCardinality <em>Cardinality</em>}</li>
  * </ul>
  *
  * @generated
@@ -69,16 +67,6 @@ public class VariationPointImpl extends MinimalEObjectImpl.Container implements 
 	 * @ordered
 	 */
 	protected EList<Variant> variant;
-
-	/**
-	 * The cached value of the '{@link #getCardinality() <em>Cardinality</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCardinality()
-	 * @generated
-	 * @ordered
-	 */
-	protected Cardinality cardinality;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -141,57 +129,10 @@ public class VariationPointImpl extends MinimalEObjectImpl.Container implements 
 	 * @generated
 	 */
 	@Override
-	public Cardinality getCardinality() {
-		return cardinality;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetCardinality(Cardinality newCardinality, NotificationChain msgs) {
-		Cardinality oldCardinality = cardinality;
-		cardinality = newCardinality;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, VavemodelPackage.VARIATION_POINT__CARDINALITY, oldCardinality, newCardinality);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setCardinality(Cardinality newCardinality) {
-		if (newCardinality != cardinality) {
-			NotificationChain msgs = null;
-			if (cardinality != null)
-				msgs = ((InternalEObject)cardinality).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - VavemodelPackage.VARIATION_POINT__CARDINALITY, null, msgs);
-			if (newCardinality != null)
-				msgs = ((InternalEObject)newCardinality).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - VavemodelPackage.VARIATION_POINT__CARDINALITY, null, msgs);
-			msgs = basicSetCardinality(newCardinality, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, VavemodelPackage.VARIATION_POINT__CARDINALITY, newCardinality, newCardinality));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case VavemodelPackage.VARIATION_POINT__VARIANT:
 				return ((InternalEList<?>)getVariant()).basicRemove(otherEnd, msgs);
-			case VavemodelPackage.VARIATION_POINT__CARDINALITY:
-				return basicSetCardinality(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -208,8 +149,6 @@ public class VariationPointImpl extends MinimalEObjectImpl.Container implements 
 				return getType();
 			case VavemodelPackage.VARIATION_POINT__VARIANT:
 				return getVariant();
-			case VavemodelPackage.VARIATION_POINT__CARDINALITY:
-				return getCardinality();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -230,9 +169,6 @@ public class VariationPointImpl extends MinimalEObjectImpl.Container implements 
 				getVariant().clear();
 				getVariant().addAll((Collection<? extends Variant>)newValue);
 				return;
-			case VavemodelPackage.VARIATION_POINT__CARDINALITY:
-				setCardinality((Cardinality)newValue);
-				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -251,9 +187,6 @@ public class VariationPointImpl extends MinimalEObjectImpl.Container implements 
 			case VavemodelPackage.VARIATION_POINT__VARIANT:
 				getVariant().clear();
 				return;
-			case VavemodelPackage.VARIATION_POINT__CARDINALITY:
-				setCardinality((Cardinality)null);
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -270,8 +203,6 @@ public class VariationPointImpl extends MinimalEObjectImpl.Container implements 
 				return type != TYPE_EDEFAULT;
 			case VavemodelPackage.VARIATION_POINT__VARIANT:
 				return variant != null && !variant.isEmpty();
-			case VavemodelPackage.VARIATION_POINT__CARDINALITY:
-				return cardinality != null;
 		}
 		return super.eIsSet(featureID);
 	}

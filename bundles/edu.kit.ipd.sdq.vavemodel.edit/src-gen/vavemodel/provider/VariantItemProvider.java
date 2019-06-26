@@ -64,8 +64,6 @@ public class VariantItemProvider
 			super.getPropertyDescriptors(object);
 
 			addNamePropertyDescriptor(object);
-			addIsCorePropertyDescriptor(object);
-			addIsRootPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -88,50 +86,6 @@ public class VariantItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Is Core feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addIsCorePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Variant_isCore_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Variant_isCore_feature", "_UI_Variant_type"),
-				 VavemodelPackage.Literals.VARIANT__IS_CORE,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Is Root feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addIsRootPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Variant_isRoot_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Variant_isRoot_feature", "_UI_Variant_type"),
-				 VavemodelPackage.Literals.VARIANT__IS_ROOT,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -206,8 +160,6 @@ public class VariantItemProvider
 
 		switch (notification.getFeatureID(Variant.class)) {
 			case VavemodelPackage.VARIANT__NAME:
-			case VavemodelPackage.VARIANT__IS_CORE:
-			case VavemodelPackage.VARIANT__IS_ROOT:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case VavemodelPackage.VARIANT__VARIATIONPOINT:

@@ -14,8 +14,6 @@
         eType="#//VariationPoint" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="initialVersion" lowerBound="1"
         eType="#//Version" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isCore" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isRoot" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Constraint">
     <eStructuralFeatures xsi:type="ecore:EReference" name="expression" lowerBound="1"
@@ -25,8 +23,6 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//GroupType"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="variant" lowerBound="1"
         upperBound="-1" eType="#//Variant" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="cardinality" lowerBound="1"
-        eType="#//Cardinality" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="GroupType">
     <eLiterals name="XOR"/>
@@ -41,10 +37,6 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="versionID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="deltamodule" lowerBound="1"
         eType="#//DeltaModule" containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Cardinality">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="min" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="max" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DeltaModule">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="deltaModuleID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>

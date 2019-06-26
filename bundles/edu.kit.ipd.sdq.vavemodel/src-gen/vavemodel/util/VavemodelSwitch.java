@@ -8,7 +8,6 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
 
 import vavemodel.BinaryExpression;
-import vavemodel.Cardinality;
 import vavemodel.Change;
 import vavemodel.Conjunction;
 import vavemodel.Constraint;
@@ -110,12 +109,6 @@ public class VavemodelSwitch<T> extends Switch<T> {
 			case VavemodelPackage.VERSION: {
 				Version version = (Version)theEObject;
 				T result = caseVersion(version);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case VavemodelPackage.CARDINALITY: {
-				Cardinality cardinality = (Cardinality)theEObject;
-				T result = caseCardinality(cardinality);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -289,21 +282,6 @@ public class VavemodelSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseVersion(Version object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Cardinality</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Cardinality</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseCardinality(Cardinality object) {
 		return null;
 	}
 

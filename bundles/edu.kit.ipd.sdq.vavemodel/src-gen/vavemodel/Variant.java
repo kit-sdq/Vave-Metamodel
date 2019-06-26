@@ -18,8 +18,6 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link vavemodel.Variant#getName <em>Name</em>}</li>
  *   <li>{@link vavemodel.Variant#getVariationpoint <em>Variationpoint</em>}</li>
  *   <li>{@link vavemodel.Variant#getInitialVersion <em>Initial Version</em>}</li>
- *   <li>{@link vavemodel.Variant#isIsCore <em>Is Core</em>}</li>
- *   <li>{@link vavemodel.Variant#isIsRoot <em>Is Root</em>}</li>
  * </ul>
  *
  * @see vavemodel.VavemodelPackage#getVariant()
@@ -94,57 +92,5 @@ public interface Variant extends EObject {
 	 * @generated
 	 */
 	void setInitialVersion(Version value);
-
-	/**
-	 * Returns the value of the '<em><b>Is Core</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Is Core</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Is Core</em>' attribute.
-	 * @see #setIsCore(boolean)
-	 * @see vavemodel.VavemodelPackage#getVariant_IsCore()
-	 * @model
-	 * @generated
-	 */
-	boolean isIsCore();
-
-	/**
-	 * Sets the value of the '{@link vavemodel.Variant#isIsCore <em>Is Core</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Is Core</em>' attribute.
-	 * @see #isIsCore()
-	 * @generated
-	 */
-	void setIsCore(boolean value);
-
-	/**
-	 * Returns the value of the '<em><b>Is Root</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Is Root</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Is Root</em>' attribute.
-	 * @see #setIsRoot(boolean)
-	 * @see vavemodel.VavemodelPackage#getVariant_IsRoot()
-	 * @model
-	 * @generated
-	 */
-	boolean isIsRoot();
-
-	/**
-	 * Sets the value of the '{@link vavemodel.Variant#isIsRoot <em>Is Root</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Is Root</em>' attribute.
-	 * @see #isIsRoot()
-	 * @generated
-	 */
-	void setIsRoot(boolean value);
 
 } // Variant

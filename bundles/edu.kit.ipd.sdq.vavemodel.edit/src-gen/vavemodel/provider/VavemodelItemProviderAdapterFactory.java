@@ -210,29 +210,6 @@ public class VavemodelItemProviderAdapterFactory extends VavemodelAdapterFactory
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link vavemodel.Cardinality} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected CardinalityItemProvider cardinalityItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link vavemodel.Cardinality}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createCardinalityAdapter() {
-		if (cardinalityItemProvider == null) {
-			cardinalityItemProvider = new CardinalityItemProvider(this);
-		}
-
-		return cardinalityItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link vavemodel.Change} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -503,7 +480,6 @@ public class VavemodelItemProviderAdapterFactory extends VavemodelAdapterFactory
 		if (constraintItemProvider != null) constraintItemProvider.dispose();
 		if (variationPointItemProvider != null) variationPointItemProvider.dispose();
 		if (versionItemProvider != null) versionItemProvider.dispose();
-		if (cardinalityItemProvider != null) cardinalityItemProvider.dispose();
 		if (deltaModuleItemProvider != null) deltaModuleItemProvider.dispose();
 		if (changeItemProvider != null) changeItemProvider.dispose();
 		if (variableItemProvider != null) variableItemProvider.dispose();

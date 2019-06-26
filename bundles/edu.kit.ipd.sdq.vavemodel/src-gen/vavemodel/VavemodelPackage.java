@@ -150,31 +150,13 @@ public interface VavemodelPackage extends EPackage {
 	int VARIANT__INITIAL_VERSION = 2;
 
 	/**
-	 * The feature id for the '<em><b>Is Core</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VARIANT__IS_CORE = 3;
-
-	/**
-	 * The feature id for the '<em><b>Is Root</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VARIANT__IS_ROOT = 4;
-
-	/**
 	 * The number of structural features of the '<em>Variant</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VARIANT_FEATURE_COUNT = 5;
+	int VARIANT_FEATURE_COUNT = 3;
 
 	/**
 	 * The number of operations of the '<em>Variant</em>' class.
@@ -251,22 +233,13 @@ public interface VavemodelPackage extends EPackage {
 	int VARIATION_POINT__VARIANT = 1;
 
 	/**
-	 * The feature id for the '<em><b>Cardinality</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VARIATION_POINT__CARDINALITY = 2;
-
-	/**
 	 * The number of structural features of the '<em>Variation Point</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VARIATION_POINT_FEATURE_COUNT = 3;
+	int VARIATION_POINT_FEATURE_COUNT = 2;
 
 	/**
 	 * The number of operations of the '<em>Variation Point</em>' class.
@@ -342,52 +315,6 @@ public interface VavemodelPackage extends EPackage {
 	int VERSION_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link vavemodel.impl.CardinalityImpl <em>Cardinality</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see vavemodel.impl.CardinalityImpl
-	 * @see vavemodel.impl.VavemodelPackageImpl#getCardinality()
-	 * @generated
-	 */
-	int CARDINALITY = 5;
-
-	/**
-	 * The feature id for the '<em><b>Min</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CARDINALITY__MIN = 0;
-
-	/**
-	 * The feature id for the '<em><b>Max</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CARDINALITY__MAX = 1;
-
-	/**
-	 * The number of structural features of the '<em>Cardinality</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CARDINALITY_FEATURE_COUNT = 2;
-
-	/**
-	 * The number of operations of the '<em>Cardinality</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CARDINALITY_OPERATION_COUNT = 0;
-
-	/**
 	 * The meta object id for the '{@link vavemodel.impl.DeltaModuleImpl <em>Delta Module</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -395,7 +322,7 @@ public interface VavemodelPackage extends EPackage {
 	 * @see vavemodel.impl.VavemodelPackageImpl#getDeltaModule()
 	 * @generated
 	 */
-	int DELTA_MODULE = 6;
+	int DELTA_MODULE = 5;
 
 	/**
 	 * The feature id for the '<em><b>Delta Module ID</b></em>' attribute.
@@ -441,7 +368,7 @@ public interface VavemodelPackage extends EPackage {
 	 * @see vavemodel.impl.VavemodelPackageImpl#getChange()
 	 * @generated
 	 */
-	int CHANGE = 7;
+	int CHANGE = 6;
 
 	/**
 	 * The number of structural features of the '<em>Change</em>' class.
@@ -469,7 +396,7 @@ public interface VavemodelPackage extends EPackage {
 	 * @see vavemodel.impl.VavemodelPackageImpl#getTerm()
 	 * @generated
 	 */
-	int TERM = 10;
+	int TERM = 9;
 
 	/**
 	 * The number of structural features of the '<em>Term</em>' class.
@@ -497,7 +424,7 @@ public interface VavemodelPackage extends EPackage {
 	 * @see vavemodel.impl.VavemodelPackageImpl#getExpression()
 	 * @generated
 	 */
-	int EXPRESSION = 9;
+	int EXPRESSION = 8;
 
 	/**
 	 * The number of structural features of the '<em>Expression</em>' class.
@@ -525,7 +452,7 @@ public interface VavemodelPackage extends EPackage {
 	 * @see vavemodel.impl.VavemodelPackageImpl#getVariable()
 	 * @generated
 	 */
-	int VARIABLE = 8;
+	int VARIABLE = 7;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' reference.
@@ -562,7 +489,7 @@ public interface VavemodelPackage extends EPackage {
 	 * @see vavemodel.impl.VavemodelPackageImpl#getBinaryExpression()
 	 * @generated
 	 */
-	int BINARY_EXPRESSION = 11;
+	int BINARY_EXPRESSION = 10;
 
 	/**
 	 * The feature id for the '<em><b>Term</b></em>' containment reference list.
@@ -599,7 +526,7 @@ public interface VavemodelPackage extends EPackage {
 	 * @see vavemodel.impl.VavemodelPackageImpl#getUnaryExpression()
 	 * @generated
 	 */
-	int UNARY_EXPRESSION = 12;
+	int UNARY_EXPRESSION = 11;
 
 	/**
 	 * The feature id for the '<em><b>Term</b></em>' containment reference.
@@ -636,7 +563,7 @@ public interface VavemodelPackage extends EPackage {
 	 * @see vavemodel.impl.VavemodelPackageImpl#getImplication()
 	 * @generated
 	 */
-	int IMPLICATION = 13;
+	int IMPLICATION = 12;
 
 	/**
 	 * The feature id for the '<em><b>Term</b></em>' containment reference list.
@@ -673,7 +600,7 @@ public interface VavemodelPackage extends EPackage {
 	 * @see vavemodel.impl.VavemodelPackageImpl#getDisjunction()
 	 * @generated
 	 */
-	int DISJUNCTION = 14;
+	int DISJUNCTION = 13;
 
 	/**
 	 * The feature id for the '<em><b>Term</b></em>' containment reference list.
@@ -710,7 +637,7 @@ public interface VavemodelPackage extends EPackage {
 	 * @see vavemodel.impl.VavemodelPackageImpl#getEquivalence()
 	 * @generated
 	 */
-	int EQUIVALENCE = 15;
+	int EQUIVALENCE = 14;
 
 	/**
 	 * The feature id for the '<em><b>Term</b></em>' containment reference list.
@@ -747,7 +674,7 @@ public interface VavemodelPackage extends EPackage {
 	 * @see vavemodel.impl.VavemodelPackageImpl#getConjunction()
 	 * @generated
 	 */
-	int CONJUNCTION = 16;
+	int CONJUNCTION = 15;
 
 	/**
 	 * The feature id for the '<em><b>Term</b></em>' containment reference list.
@@ -784,7 +711,7 @@ public interface VavemodelPackage extends EPackage {
 	 * @see vavemodel.impl.VavemodelPackageImpl#getNot()
 	 * @generated
 	 */
-	int NOT = 17;
+	int NOT = 16;
 
 	/**
 	 * The feature id for the '<em><b>Term</b></em>' containment reference.
@@ -821,7 +748,7 @@ public interface VavemodelPackage extends EPackage {
 	 * @see vavemodel.impl.VavemodelPackageImpl#getGroupType()
 	 * @generated
 	 */
-	int GROUP_TYPE = 18;
+	int GROUP_TYPE = 17;
 
 
 	/**
@@ -911,28 +838,6 @@ public interface VavemodelPackage extends EPackage {
 	EReference getVariant_InitialVersion();
 
 	/**
-	 * Returns the meta object for the attribute '{@link vavemodel.Variant#isIsCore <em>Is Core</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Is Core</em>'.
-	 * @see vavemodel.Variant#isIsCore()
-	 * @see #getVariant()
-	 * @generated
-	 */
-	EAttribute getVariant_IsCore();
-
-	/**
-	 * Returns the meta object for the attribute '{@link vavemodel.Variant#isIsRoot <em>Is Root</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Is Root</em>'.
-	 * @see vavemodel.Variant#isIsRoot()
-	 * @see #getVariant()
-	 * @generated
-	 */
-	EAttribute getVariant_IsRoot();
-
-	/**
 	 * Returns the meta object for class '{@link vavemodel.Constraint <em>Constraint</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -984,17 +889,6 @@ public interface VavemodelPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getVariationPoint_Variant();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link vavemodel.VariationPoint#getCardinality <em>Cardinality</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Cardinality</em>'.
-	 * @see vavemodel.VariationPoint#getCardinality()
-	 * @see #getVariationPoint()
-	 * @generated
-	 */
-	EReference getVariationPoint_Cardinality();
 
 	/**
 	 * Returns the meta object for class '{@link vavemodel.Version <em>Version</em>}'.
@@ -1049,38 +943,6 @@ public interface VavemodelPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getVersion_Deltamodule();
-
-	/**
-	 * Returns the meta object for class '{@link vavemodel.Cardinality <em>Cardinality</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Cardinality</em>'.
-	 * @see vavemodel.Cardinality
-	 * @generated
-	 */
-	EClass getCardinality();
-
-	/**
-	 * Returns the meta object for the attribute '{@link vavemodel.Cardinality#getMin <em>Min</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Min</em>'.
-	 * @see vavemodel.Cardinality#getMin()
-	 * @see #getCardinality()
-	 * @generated
-	 */
-	EAttribute getCardinality_Min();
-
-	/**
-	 * Returns the meta object for the attribute '{@link vavemodel.Cardinality#getMax <em>Max</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Max</em>'.
-	 * @see vavemodel.Cardinality#getMax()
-	 * @see #getCardinality()
-	 * @generated
-	 */
-	EAttribute getCardinality_Max();
 
 	/**
 	 * Returns the meta object for class '{@link vavemodel.DeltaModule <em>Delta Module</em>}'.
@@ -1359,22 +1221,6 @@ public interface VavemodelPackage extends EPackage {
 		EReference VARIANT__INITIAL_VERSION = eINSTANCE.getVariant_InitialVersion();
 
 		/**
-		 * The meta object literal for the '<em><b>Is Core</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute VARIANT__IS_CORE = eINSTANCE.getVariant_IsCore();
-
-		/**
-		 * The meta object literal for the '<em><b>Is Root</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute VARIANT__IS_ROOT = eINSTANCE.getVariant_IsRoot();
-
-		/**
 		 * The meta object literal for the '{@link vavemodel.impl.ConstraintImpl <em>Constraint</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1419,14 +1265,6 @@ public interface VavemodelPackage extends EPackage {
 		EReference VARIATION_POINT__VARIANT = eINSTANCE.getVariationPoint_Variant();
 
 		/**
-		 * The meta object literal for the '<em><b>Cardinality</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference VARIATION_POINT__CARDINALITY = eINSTANCE.getVariationPoint_Cardinality();
-
-		/**
 		 * The meta object literal for the '{@link vavemodel.impl.VersionImpl <em>Version</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1467,32 +1305,6 @@ public interface VavemodelPackage extends EPackage {
 		 * @generated
 		 */
 		EReference VERSION__DELTAMODULE = eINSTANCE.getVersion_Deltamodule();
-
-		/**
-		 * The meta object literal for the '{@link vavemodel.impl.CardinalityImpl <em>Cardinality</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see vavemodel.impl.CardinalityImpl
-		 * @see vavemodel.impl.VavemodelPackageImpl#getCardinality()
-		 * @generated
-		 */
-		EClass CARDINALITY = eINSTANCE.getCardinality();
-
-		/**
-		 * The meta object literal for the '<em><b>Min</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute CARDINALITY__MIN = eINSTANCE.getCardinality_Min();
-
-		/**
-		 * The meta object literal for the '<em><b>Max</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute CARDINALITY__MAX = eINSTANCE.getCardinality_Max();
 
 		/**
 		 * The meta object literal for the '{@link vavemodel.impl.DeltaModuleImpl <em>Delta Module</em>}' class.

@@ -34,8 +34,6 @@ import vavemodel.Version;
  *   <li>{@link vavemodel.impl.VariantImpl#getName <em>Name</em>}</li>
  *   <li>{@link vavemodel.impl.VariantImpl#getVariationpoint <em>Variationpoint</em>}</li>
  *   <li>{@link vavemodel.impl.VariantImpl#getInitialVersion <em>Initial Version</em>}</li>
- *   <li>{@link vavemodel.impl.VariantImpl#isIsCore <em>Is Core</em>}</li>
- *   <li>{@link vavemodel.impl.VariantImpl#isIsRoot <em>Is Root</em>}</li>
  * </ul>
  *
  * @generated
@@ -80,46 +78,6 @@ public class VariantImpl extends MinimalEObjectImpl.Container implements Variant
 	 * @ordered
 	 */
 	protected Version initialVersion;
-
-	/**
-	 * The default value of the '{@link #isIsCore() <em>Is Core</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isIsCore()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final boolean IS_CORE_EDEFAULT = false;
-
-	/**
-	 * The cached value of the '{@link #isIsCore() <em>Is Core</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isIsCore()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean isCore = IS_CORE_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #isIsRoot() <em>Is Root</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isIsRoot()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final boolean IS_ROOT_EDEFAULT = false;
-
-	/**
-	 * The cached value of the '{@link #isIsRoot() <em>Is Root</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isIsRoot()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean isRoot = IS_ROOT_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -227,52 +185,6 @@ public class VariantImpl extends MinimalEObjectImpl.Container implements Variant
 	 * @generated
 	 */
 	@Override
-	public boolean isIsCore() {
-		return isCore;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setIsCore(boolean newIsCore) {
-		boolean oldIsCore = isCore;
-		isCore = newIsCore;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, VavemodelPackage.VARIANT__IS_CORE, oldIsCore, isCore));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean isIsRoot() {
-		return isRoot;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setIsRoot(boolean newIsRoot) {
-		boolean oldIsRoot = isRoot;
-		isRoot = newIsRoot;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, VavemodelPackage.VARIANT__IS_ROOT, oldIsRoot, isRoot));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case VavemodelPackage.VARIANT__VARIATIONPOINT:
@@ -297,10 +209,6 @@ public class VariantImpl extends MinimalEObjectImpl.Container implements Variant
 				return getVariationpoint();
 			case VavemodelPackage.VARIANT__INITIAL_VERSION:
 				return getInitialVersion();
-			case VavemodelPackage.VARIANT__IS_CORE:
-				return isIsCore();
-			case VavemodelPackage.VARIANT__IS_ROOT:
-				return isIsRoot();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -324,12 +232,6 @@ public class VariantImpl extends MinimalEObjectImpl.Container implements Variant
 			case VavemodelPackage.VARIANT__INITIAL_VERSION:
 				setInitialVersion((Version)newValue);
 				return;
-			case VavemodelPackage.VARIANT__IS_CORE:
-				setIsCore((Boolean)newValue);
-				return;
-			case VavemodelPackage.VARIANT__IS_ROOT:
-				setIsRoot((Boolean)newValue);
-				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -351,12 +253,6 @@ public class VariantImpl extends MinimalEObjectImpl.Container implements Variant
 			case VavemodelPackage.VARIANT__INITIAL_VERSION:
 				setInitialVersion((Version)null);
 				return;
-			case VavemodelPackage.VARIANT__IS_CORE:
-				setIsCore(IS_CORE_EDEFAULT);
-				return;
-			case VavemodelPackage.VARIANT__IS_ROOT:
-				setIsRoot(IS_ROOT_EDEFAULT);
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -375,10 +271,6 @@ public class VariantImpl extends MinimalEObjectImpl.Container implements Variant
 				return variationpoint != null && !variationpoint.isEmpty();
 			case VavemodelPackage.VARIANT__INITIAL_VERSION:
 				return initialVersion != null;
-			case VavemodelPackage.VARIANT__IS_CORE:
-				return isCore != IS_CORE_EDEFAULT;
-			case VavemodelPackage.VARIANT__IS_ROOT:
-				return isRoot != IS_ROOT_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -395,10 +287,6 @@ public class VariantImpl extends MinimalEObjectImpl.Container implements Variant
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (name: ");
 		result.append(name);
-		result.append(", isCore: ");
-		result.append(isCore);
-		result.append(", isRoot: ");
-		result.append(isRoot);
 		result.append(')');
 		return result.toString();
 	}
