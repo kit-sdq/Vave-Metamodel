@@ -334,13 +334,13 @@ public interface VavemodelPackage extends EPackage {
 	int DELTA_MODULE__DELTA_MODULE_ID = 0;
 
 	/**
-	 * The feature id for the '<em><b>Change</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Diff</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DELTA_MODULE__CHANGE = 1;
+	int DELTA_MODULE__DIFF = 1;
 
 	/**
 	 * The number of structural features of the '<em>Delta Module</em>' class.
@@ -361,34 +361,6 @@ public interface VavemodelPackage extends EPackage {
 	int DELTA_MODULE_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link vavemodel.impl.ChangeImpl <em>Change</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see vavemodel.impl.ChangeImpl
-	 * @see vavemodel.impl.VavemodelPackageImpl#getChange()
-	 * @generated
-	 */
-	int CHANGE = 6;
-
-	/**
-	 * The number of structural features of the '<em>Change</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CHANGE_FEATURE_COUNT = 0;
-
-	/**
-	 * The number of operations of the '<em>Change</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CHANGE_OPERATION_COUNT = 0;
-
-	/**
 	 * The meta object id for the '{@link vavemodel.Term <em>Term</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -396,7 +368,7 @@ public interface VavemodelPackage extends EPackage {
 	 * @see vavemodel.impl.VavemodelPackageImpl#getTerm()
 	 * @generated
 	 */
-	int TERM = 9;
+	int TERM = 8;
 
 	/**
 	 * The number of structural features of the '<em>Term</em>' class.
@@ -424,7 +396,7 @@ public interface VavemodelPackage extends EPackage {
 	 * @see vavemodel.impl.VavemodelPackageImpl#getExpression()
 	 * @generated
 	 */
-	int EXPRESSION = 8;
+	int EXPRESSION = 7;
 
 	/**
 	 * The number of structural features of the '<em>Expression</em>' class.
@@ -452,7 +424,7 @@ public interface VavemodelPackage extends EPackage {
 	 * @see vavemodel.impl.VavemodelPackageImpl#getVariable()
 	 * @generated
 	 */
-	int VARIABLE = 7;
+	int VARIABLE = 6;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' reference.
@@ -489,7 +461,7 @@ public interface VavemodelPackage extends EPackage {
 	 * @see vavemodel.impl.VavemodelPackageImpl#getBinaryExpression()
 	 * @generated
 	 */
-	int BINARY_EXPRESSION = 10;
+	int BINARY_EXPRESSION = 9;
 
 	/**
 	 * The feature id for the '<em><b>Term</b></em>' containment reference list.
@@ -526,7 +498,7 @@ public interface VavemodelPackage extends EPackage {
 	 * @see vavemodel.impl.VavemodelPackageImpl#getUnaryExpression()
 	 * @generated
 	 */
-	int UNARY_EXPRESSION = 11;
+	int UNARY_EXPRESSION = 10;
 
 	/**
 	 * The feature id for the '<em><b>Term</b></em>' containment reference.
@@ -563,7 +535,7 @@ public interface VavemodelPackage extends EPackage {
 	 * @see vavemodel.impl.VavemodelPackageImpl#getImplication()
 	 * @generated
 	 */
-	int IMPLICATION = 12;
+	int IMPLICATION = 11;
 
 	/**
 	 * The feature id for the '<em><b>Term</b></em>' containment reference list.
@@ -600,7 +572,7 @@ public interface VavemodelPackage extends EPackage {
 	 * @see vavemodel.impl.VavemodelPackageImpl#getDisjunction()
 	 * @generated
 	 */
-	int DISJUNCTION = 13;
+	int DISJUNCTION = 12;
 
 	/**
 	 * The feature id for the '<em><b>Term</b></em>' containment reference list.
@@ -637,7 +609,7 @@ public interface VavemodelPackage extends EPackage {
 	 * @see vavemodel.impl.VavemodelPackageImpl#getEquivalence()
 	 * @generated
 	 */
-	int EQUIVALENCE = 14;
+	int EQUIVALENCE = 13;
 
 	/**
 	 * The feature id for the '<em><b>Term</b></em>' containment reference list.
@@ -674,7 +646,7 @@ public interface VavemodelPackage extends EPackage {
 	 * @see vavemodel.impl.VavemodelPackageImpl#getConjunction()
 	 * @generated
 	 */
-	int CONJUNCTION = 15;
+	int CONJUNCTION = 14;
 
 	/**
 	 * The feature id for the '<em><b>Term</b></em>' containment reference list.
@@ -711,7 +683,7 @@ public interface VavemodelPackage extends EPackage {
 	 * @see vavemodel.impl.VavemodelPackageImpl#getNot()
 	 * @generated
 	 */
-	int NOT = 16;
+	int NOT = 15;
 
 	/**
 	 * The feature id for the '<em><b>Term</b></em>' containment reference.
@@ -748,7 +720,7 @@ public interface VavemodelPackage extends EPackage {
 	 * @see vavemodel.impl.VavemodelPackageImpl#getGroupType()
 	 * @generated
 	 */
-	int GROUP_TYPE = 17;
+	int GROUP_TYPE = 16;
 
 
 	/**
@@ -966,25 +938,15 @@ public interface VavemodelPackage extends EPackage {
 	EAttribute getDeltaModule_DeltaModuleID();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link vavemodel.DeltaModule#getChange <em>Change</em>}'.
+	 * Returns the meta object for the containment reference list '{@link vavemodel.DeltaModule#getDiff <em>Diff</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Change</em>'.
-	 * @see vavemodel.DeltaModule#getChange()
+	 * @return the meta object for the containment reference list '<em>Diff</em>'.
+	 * @see vavemodel.DeltaModule#getDiff()
 	 * @see #getDeltaModule()
 	 * @generated
 	 */
-	EReference getDeltaModule_Change();
-
-	/**
-	 * Returns the meta object for class '{@link vavemodel.Change <em>Change</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Change</em>'.
-	 * @see vavemodel.Change
-	 * @generated
-	 */
-	EClass getChange();
+	EReference getDeltaModule_Diff();
 
 	/**
 	 * Returns the meta object for class '{@link vavemodel.Variable <em>Variable</em>}'.
@@ -1325,22 +1287,12 @@ public interface VavemodelPackage extends EPackage {
 		EAttribute DELTA_MODULE__DELTA_MODULE_ID = eINSTANCE.getDeltaModule_DeltaModuleID();
 
 		/**
-		 * The meta object literal for the '<em><b>Change</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Diff</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference DELTA_MODULE__CHANGE = eINSTANCE.getDeltaModule_Change();
-
-		/**
-		 * The meta object literal for the '{@link vavemodel.impl.ChangeImpl <em>Change</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see vavemodel.impl.ChangeImpl
-		 * @see vavemodel.impl.VavemodelPackageImpl#getChange()
-		 * @generated
-		 */
-		EClass CHANGE = eINSTANCE.getChange();
+		EReference DELTA_MODULE__DIFF = eINSTANCE.getDeltaModule_Diff();
 
 		/**
 		 * The meta object literal for the '{@link vavemodel.impl.VariableImpl <em>Variable</em>}' class.

@@ -2,16 +2,20 @@
  */
 package vavemodel.impl;
 
+import compare.ComparePackage;
+
+import compare.impl.ComparePackageImpl;
+
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.ecore.EcorePackage;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import vavemodel.BinaryExpression;
-import vavemodel.Change;
 import vavemodel.Conjunction;
 import vavemodel.Constraint;
 import vavemodel.DeltaModule;
@@ -78,13 +82,6 @@ public class VavemodelPackageImpl extends EPackageImpl implements VavemodelPacka
 	 * @generated
 	 */
 	private EClass deltaModuleEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass changeEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -210,11 +207,20 @@ public class VavemodelPackageImpl extends EPackageImpl implements VavemodelPacka
 
 		isInited = true;
 
+		// Initialize simple dependencies
+		EcorePackage.eINSTANCE.eClass();
+
+		// Obtain or create and register interdependencies
+		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ComparePackage.eNS_URI);
+		ComparePackageImpl theComparePackage = (ComparePackageImpl)(registeredPackage instanceof ComparePackageImpl ? registeredPackage : ComparePackage.eINSTANCE);
+
 		// Create package meta-data objects
 		theVavemodelPackage.createPackageContents();
+		theComparePackage.createPackageContents();
 
 		// Initialize created meta-data
 		theVavemodelPackage.initializePackageContents();
+		theComparePackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theVavemodelPackage.freeze();
@@ -430,18 +436,8 @@ public class VavemodelPackageImpl extends EPackageImpl implements VavemodelPacka
 	 * @generated
 	 */
 	@Override
-	public EReference getDeltaModule_Change() {
+	public EReference getDeltaModule_Diff() {
 		return (EReference)deltaModuleEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EClass getChange() {
-		return changeEClass;
 	}
 
 	/**
@@ -638,9 +634,7 @@ public class VavemodelPackageImpl extends EPackageImpl implements VavemodelPacka
 
 		deltaModuleEClass = createEClass(DELTA_MODULE);
 		createEAttribute(deltaModuleEClass, DELTA_MODULE__DELTA_MODULE_ID);
-		createEReference(deltaModuleEClass, DELTA_MODULE__CHANGE);
-
-		changeEClass = createEClass(CHANGE);
+		createEReference(deltaModuleEClass, DELTA_MODULE__DIFF);
 
 		variableEClass = createEClass(VARIABLE);
 		createEReference(variableEClass, VARIABLE__NAME);
@@ -692,6 +686,9 @@ public class VavemodelPackageImpl extends EPackageImpl implements VavemodelPacka
 		setNsPrefix(eNS_PREFIX);
 		setNsURI(eNS_URI);
 
+		// Obtain other dependent packages
+		ComparePackage theComparePackage = (ComparePackage)EPackage.Registry.INSTANCE.getEPackage(ComparePackage.eNS_URI);
+
 		// Create type parameters
 
 		// Set bounds for type parameters
@@ -733,9 +730,7 @@ public class VavemodelPackageImpl extends EPackageImpl implements VavemodelPacka
 
 		initEClass(deltaModuleEClass, DeltaModule.class, "DeltaModule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getDeltaModule_DeltaModuleID(), ecorePackage.getEDouble(), "deltaModuleID", null, 0, 1, DeltaModule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getDeltaModule_Change(), this.getChange(), null, "change", null, 1, -1, DeltaModule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(changeEClass, Change.class, "Change", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getDeltaModule_Diff(), theComparePackage.getDiff(), null, "diff", null, 0, -1, DeltaModule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(variableEClass, Variable.class, "Variable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getVariable_Name(), this.getVariant(), null, "name", null, 1, 1, Variable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

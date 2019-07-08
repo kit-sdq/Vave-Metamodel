@@ -1,29 +1,29 @@
 /**
  */
-package vavemodel.tests;
+package compare.tests;
+
+import compare.CompareFactory;
+import compare.MatchResource;
 
 import junit.framework.TestCase;
 
 import junit.textui.TestRunner;
 
-import vavemodel.Change;
-import vavemodel.VavemodelFactory;
-
 /**
  * <!-- begin-user-doc -->
- * A test case for the model object '<em><b>Change</b></em>'.
+ * A test case for the model object '<em><b>Match Resource</b></em>'.
  * <!-- end-user-doc -->
  * @generated
  */
-public class ChangeTest extends TestCase {
+public class MatchResourceTest extends TestCase {
 
 	/**
-	 * The fixture for this Change test case.
+	 * The fixture for this Match Resource test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected Change fixture = null;
+	protected MatchResource fixture = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -31,36 +31,36 @@ public class ChangeTest extends TestCase {
 	 * @generated
 	 */
 	public static void main(String[] args) {
-		TestRunner.run(ChangeTest.class);
+		TestRunner.run(MatchResourceTest.class);
 	}
 
 	/**
-	 * Constructs a new Change test case with the given name.
+	 * Constructs a new Match Resource test case with the given name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ChangeTest(String name) {
+	public MatchResourceTest(String name) {
 		super(name);
 	}
 
 	/**
-	 * Sets the fixture for this Change test case.
+	 * Sets the fixture for this Match Resource test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void setFixture(Change fixture) {
+	protected void setFixture(MatchResource fixture) {
 		this.fixture = fixture;
 	}
 
 	/**
-	 * Returns the fixture for this Change test case.
+	 * Returns the fixture for this Match Resource test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected Change getFixture() {
+	protected MatchResource getFixture() {
 		return fixture;
 	}
 
@@ -72,7 +72,7 @@ public class ChangeTest extends TestCase {
 	 */
 	@Override
 	protected void setUp() throws Exception {
-		setFixture(VavemodelFactory.eINSTANCE.createChange());
+		setFixture(CompareFactory.eINSTANCE.createMatchResource());
 	}
 
 	/**
@@ -86,4 +86,4 @@ public class ChangeTest extends TestCase {
 		setFixture(null);
 	}
 
-} //ChangeTest
+} //MatchResourceTest

@@ -40,10 +40,9 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DeltaModule">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="deltaModuleID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="change" lowerBound="1"
-        upperBound="-1" eType="#//Change" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="diff" upperBound="-1" eType="ecore:EClass compare.ecore#//Diff"
+        containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Change"/>
   <eClassifiers xsi:type="ecore:EClass" name="Variable" eSuperTypes="#//Expression">
     <eStructuralFeatures xsi:type="ecore:EReference" name="name" lowerBound="1" eType="#//Variant"/>
   </eClassifiers>

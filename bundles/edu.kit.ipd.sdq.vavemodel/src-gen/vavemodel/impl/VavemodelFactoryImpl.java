@@ -11,7 +11,6 @@ import org.eclipse.emf.ecore.impl.EFactoryImpl;
 
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
-import vavemodel.Change;
 import vavemodel.Conjunction;
 import vavemodel.Constraint;
 import vavemodel.DeltaModule;
@@ -77,7 +76,6 @@ public class VavemodelFactoryImpl extends EFactoryImpl implements VavemodelFacto
 			case VavemodelPackage.VARIATION_POINT: return createVariationPoint();
 			case VavemodelPackage.VERSION: return createVersion();
 			case VavemodelPackage.DELTA_MODULE: return createDeltaModule();
-			case VavemodelPackage.CHANGE: return createChange();
 			case VavemodelPackage.VARIABLE: return createVariable();
 			case VavemodelPackage.IMPLICATION: return createImplication();
 			case VavemodelPackage.DISJUNCTION: return createDisjunction();
@@ -183,17 +181,6 @@ public class VavemodelFactoryImpl extends EFactoryImpl implements VavemodelFacto
 	public DeltaModule createDeltaModule() {
 		DeltaModuleImpl deltaModule = new DeltaModuleImpl();
 		return deltaModule;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Change createChange() {
-		ChangeImpl change = new ChangeImpl();
-		return change;
 	}
 
 	/**

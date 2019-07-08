@@ -10,7 +10,6 @@ import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 import org.eclipse.emf.ecore.EObject;
 
 import vavemodel.BinaryExpression;
-import vavemodel.Change;
 import vavemodel.Conjunction;
 import vavemodel.Constraint;
 import vavemodel.DeltaModule;
@@ -106,10 +105,6 @@ public class VavemodelAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseDeltaModule(DeltaModule object) {
 				return createDeltaModuleAdapter();
-			}
-			@Override
-			public Adapter caseChange(Change object) {
-				return createChangeAdapter();
 			}
 			@Override
 			public Adapter caseVariable(Variable object) {
@@ -252,20 +247,6 @@ public class VavemodelAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createDeltaModuleAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link vavemodel.Change <em>Change</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see vavemodel.Change
-	 * @generated
-	 */
-	public Adapter createChangeAdapter() {
 		return null;
 	}
 

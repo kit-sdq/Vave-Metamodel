@@ -76,15 +76,6 @@ public interface VavemodelFactory extends EFactory {
 	DeltaModule createDeltaModule();
 
 	/**
-	 * Returns a new object of class '<em>Change</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Change</em>'.
-	 * @generated
-	 */
-	Change createChange();
-
-	/**
 	 * Returns a new object of class '<em>Variable</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

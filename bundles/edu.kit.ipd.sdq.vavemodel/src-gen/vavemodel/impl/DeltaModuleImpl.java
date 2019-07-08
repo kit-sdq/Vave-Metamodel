@@ -2,6 +2,8 @@
  */
 package vavemodel.impl;
 
+import compare.Diff;
+
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -18,7 +20,6 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
-import vavemodel.Change;
 import vavemodel.DeltaModule;
 import vavemodel.VavemodelPackage;
 
@@ -31,7 +32,7 @@ import vavemodel.VavemodelPackage;
  * </p>
  * <ul>
  *   <li>{@link vavemodel.impl.DeltaModuleImpl#getDeltaModuleID <em>Delta Module ID</em>}</li>
- *   <li>{@link vavemodel.impl.DeltaModuleImpl#getChange <em>Change</em>}</li>
+ *   <li>{@link vavemodel.impl.DeltaModuleImpl#getDiff <em>Diff</em>}</li>
  * </ul>
  *
  * @generated
@@ -58,14 +59,14 @@ public class DeltaModuleImpl extends MinimalEObjectImpl.Container implements Del
 	protected double deltaModuleID = DELTA_MODULE_ID_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getChange() <em>Change</em>}' containment reference list.
+	 * The cached value of the '{@link #getDiff() <em>Diff</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getChange()
+	 * @see #getDiff()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Change> change;
+	protected EList<Diff> diff;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -115,11 +116,11 @@ public class DeltaModuleImpl extends MinimalEObjectImpl.Container implements Del
 	 * @generated
 	 */
 	@Override
-	public EList<Change> getChange() {
-		if (change == null) {
-			change = new EObjectContainmentEList<Change>(Change.class, this, VavemodelPackage.DELTA_MODULE__CHANGE);
+	public EList<Diff> getDiff() {
+		if (diff == null) {
+			diff = new EObjectContainmentEList<Diff>(Diff.class, this, VavemodelPackage.DELTA_MODULE__DIFF);
 		}
-		return change;
+		return diff;
 	}
 
 	/**
@@ -130,8 +131,8 @@ public class DeltaModuleImpl extends MinimalEObjectImpl.Container implements Del
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case VavemodelPackage.DELTA_MODULE__CHANGE:
-				return ((InternalEList<?>)getChange()).basicRemove(otherEnd, msgs);
+			case VavemodelPackage.DELTA_MODULE__DIFF:
+				return ((InternalEList<?>)getDiff()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -146,8 +147,8 @@ public class DeltaModuleImpl extends MinimalEObjectImpl.Container implements Del
 		switch (featureID) {
 			case VavemodelPackage.DELTA_MODULE__DELTA_MODULE_ID:
 				return getDeltaModuleID();
-			case VavemodelPackage.DELTA_MODULE__CHANGE:
-				return getChange();
+			case VavemodelPackage.DELTA_MODULE__DIFF:
+				return getDiff();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -164,9 +165,9 @@ public class DeltaModuleImpl extends MinimalEObjectImpl.Container implements Del
 			case VavemodelPackage.DELTA_MODULE__DELTA_MODULE_ID:
 				setDeltaModuleID((Double)newValue);
 				return;
-			case VavemodelPackage.DELTA_MODULE__CHANGE:
-				getChange().clear();
-				getChange().addAll((Collection<? extends Change>)newValue);
+			case VavemodelPackage.DELTA_MODULE__DIFF:
+				getDiff().clear();
+				getDiff().addAll((Collection<? extends Diff>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -183,8 +184,8 @@ public class DeltaModuleImpl extends MinimalEObjectImpl.Container implements Del
 			case VavemodelPackage.DELTA_MODULE__DELTA_MODULE_ID:
 				setDeltaModuleID(DELTA_MODULE_ID_EDEFAULT);
 				return;
-			case VavemodelPackage.DELTA_MODULE__CHANGE:
-				getChange().clear();
+			case VavemodelPackage.DELTA_MODULE__DIFF:
+				getDiff().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -200,8 +201,8 @@ public class DeltaModuleImpl extends MinimalEObjectImpl.Container implements Del
 		switch (featureID) {
 			case VavemodelPackage.DELTA_MODULE__DELTA_MODULE_ID:
 				return deltaModuleID != DELTA_MODULE_ID_EDEFAULT;
-			case VavemodelPackage.DELTA_MODULE__CHANGE:
-				return change != null && !change.isEmpty();
+			case VavemodelPackage.DELTA_MODULE__DIFF:
+				return diff != null && !diff.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

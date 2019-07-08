@@ -1,7 +1,9 @@
 /**
  */
-package vavemodel.provider;
+package compare.provider;
 
+
+import compare.ComparePackage;
 
 import java.util.Collection;
 import java.util.List;
@@ -11,6 +13,7 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.ResourceLocator;
 
+import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
@@ -19,13 +22,15 @@ import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 
+import vavemodel.provider.VavemodelEditPlugin;
+
 /**
- * This is the item provider adapter for a {@link vavemodel.Change} object.
+ * This is the item provider adapter for a {@link compare.Equivalence} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class ChangeItemProvider 
+public class EquivalenceItemProvider 
 	extends ItemProviderAdapter
 	implements
 		IEditingDomainItemProvider,
@@ -39,7 +44,7 @@ public class ChangeItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ChangeItemProvider(AdapterFactory adapterFactory) {
+	public EquivalenceItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -54,19 +59,42 @@ public class ChangeItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addDifferencesPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This returns Change.gif.
+	 * This adds a property descriptor for the Differences feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addDifferencesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Equivalence_differences_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Equivalence_differences_feature", "_UI_Equivalence_type"),
+				 ComparePackage.Literals.EQUIVALENCE__DIFFERENCES,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This returns Equivalence.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Change"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/Equivalence"));
 	}
 
 	/**
@@ -77,7 +105,7 @@ public class ChangeItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_Change_type");
+		return getString("_UI_Equivalence_type");
 	}
 
 

@@ -210,29 +210,6 @@ public class VavemodelItemProviderAdapterFactory extends VavemodelAdapterFactory
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link vavemodel.Change} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ChangeItemProvider changeItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link vavemodel.Change}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createChangeAdapter() {
-		if (changeItemProvider == null) {
-			changeItemProvider = new ChangeItemProvider(this);
-		}
-
-		return changeItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link vavemodel.Variable} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -481,7 +458,6 @@ public class VavemodelItemProviderAdapterFactory extends VavemodelAdapterFactory
 		if (variationPointItemProvider != null) variationPointItemProvider.dispose();
 		if (versionItemProvider != null) versionItemProvider.dispose();
 		if (deltaModuleItemProvider != null) deltaModuleItemProvider.dispose();
-		if (changeItemProvider != null) changeItemProvider.dispose();
 		if (variableItemProvider != null) variableItemProvider.dispose();
 		if (implicationItemProvider != null) implicationItemProvider.dispose();
 		if (disjunctionItemProvider != null) disjunctionItemProvider.dispose();

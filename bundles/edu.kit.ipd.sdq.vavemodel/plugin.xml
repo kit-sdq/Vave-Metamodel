@@ -14,4 +14,12 @@
             genModel="model/vavemodel.genmodel"/>
    </extension>
 
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated vavemodel -->
+      <package
+            uri="http://www.eclipse.org/emf/compare"
+            class="compare.ComparePackage"
+            genModel="model/vavemodel.genmodel"/>
+   </extension>
+   
 </plugin>

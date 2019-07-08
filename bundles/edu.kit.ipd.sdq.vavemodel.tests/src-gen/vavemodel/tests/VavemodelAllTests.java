@@ -2,6 +2,8 @@
  */
 package vavemodel.tests;
 
+import compare.tests.CompareTests;
+
 import junit.framework.Test;
 import junit.framework.TestSuite;
 
@@ -31,6 +33,7 @@ public class VavemodelAllTests extends TestSuite {
 	 */
 	public static Test suite() {
 		TestSuite suite = new VavemodelAllTests("Vavemodel Tests");
+		suite.addTest(CompareTests.suite());
 		return suite;
 	}
 

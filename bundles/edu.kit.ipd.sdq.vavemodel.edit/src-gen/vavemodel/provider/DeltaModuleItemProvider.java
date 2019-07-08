@@ -3,6 +3,8 @@
 package vavemodel.provider;
 
 
+import compare.CompareFactory;
+
 import java.util.Collection;
 import java.util.List;
 
@@ -25,7 +27,6 @@ import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import vavemodel.DeltaModule;
-import vavemodel.VavemodelFactory;
 import vavemodel.VavemodelPackage;
 
 /**
@@ -102,7 +103,7 @@ public class DeltaModuleItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(VavemodelPackage.Literals.DELTA_MODULE__CHANGE);
+			childrenFeatures.add(VavemodelPackage.Literals.DELTA_MODULE__DIFF);
 		}
 		return childrenFeatures;
 	}
@@ -159,7 +160,7 @@ public class DeltaModuleItemProvider
 			case VavemodelPackage.DELTA_MODULE__DELTA_MODULE_ID:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case VavemodelPackage.DELTA_MODULE__CHANGE:
+			case VavemodelPackage.DELTA_MODULE__DIFF:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -179,8 +180,33 @@ public class DeltaModuleItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(VavemodelPackage.Literals.DELTA_MODULE__CHANGE,
-				 VavemodelFactory.eINSTANCE.createChange()));
+				(VavemodelPackage.Literals.DELTA_MODULE__DIFF,
+				 CompareFactory.eINSTANCE.createDiff()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(VavemodelPackage.Literals.DELTA_MODULE__DIFF,
+				 CompareFactory.eINSTANCE.createResourceAttachmentChange()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(VavemodelPackage.Literals.DELTA_MODULE__DIFF,
+				 CompareFactory.eINSTANCE.createResourceLocationChange()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(VavemodelPackage.Literals.DELTA_MODULE__DIFF,
+				 CompareFactory.eINSTANCE.createReferenceChange()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(VavemodelPackage.Literals.DELTA_MODULE__DIFF,
+				 CompareFactory.eINSTANCE.createAttributeChange()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(VavemodelPackage.Literals.DELTA_MODULE__DIFF,
+				 CompareFactory.eINSTANCE.createFeatureMapChange()));
 	}
 
 	/**
