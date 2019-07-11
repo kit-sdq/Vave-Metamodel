@@ -3,9 +3,7 @@
   <viewpoint:DAnalysis uid="_4Z5AAKO6Eem3b800uKMlBA" selectedViews="_4eDuUKO6Eem3b800uKMlBA _4eWpQKO6Eem3b800uKMlBA _4eiPcKO6Eem3b800uKMlBA _4ezVMKO6Eem3b800uKMlBA" version="14.1.0.201810161215">
     <semanticResources>vavemodel.ecore</semanticResources>
     <semanticResources>http://www.eclipse.org/emf/2002/Ecore</semanticResources>
-    <semanticResources>compare.ecore</semanticResources>
     <semanticResources>platform:/resource/org.eclipse.emf.ecore/model/Ecore.ecore</semanticResources>
-    <semanticResources>vavemodel.genmodel</semanticResources>
     <semanticResources>platform:/resource/org.eclipse.emf.ecore/model/Ecore.genmodel</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" uid="_4eDuUKO6Eem3b800uKMlBA">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
