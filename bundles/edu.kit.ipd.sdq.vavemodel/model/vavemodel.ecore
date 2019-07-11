@@ -31,17 +31,17 @@
     <eLiterals name="ORNONE" value="3"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Version">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="predecessor" eType="#//Version"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="successor" upperBound="-1"
-        eType="#//Version"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="versionID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="versionID" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="deltamodule" lowerBound="1"
         eType="#//DeltaModule" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="successor" upperBound="-1"
+        eType="#//Version" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DeltaModule">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="deltaModuleID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="diff" upperBound="-1" eType="ecore:EClass compare.ecore#//Diff"
-        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="deltaModuleID" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="oldVersionID" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="newVersionID" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="modelPath" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Variable" eSuperTypes="#//Expression">
     <eStructuralFeatures xsi:type="ecore:EReference" name="name" lowerBound="1" eType="#//Variant"/>

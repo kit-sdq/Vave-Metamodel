@@ -63,55 +63,9 @@ public class VersionItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addPredecessorPropertyDescriptor(object);
-			addSuccessorPropertyDescriptor(object);
 			addVersionIDPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Predecessor feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addPredecessorPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Version_predecessor_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Version_predecessor_feature", "_UI_Version_type"),
-				 VavemodelPackage.Literals.VERSION__PREDECESSOR,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Successor feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addSuccessorPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Version_successor_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Version_successor_feature", "_UI_Version_type"),
-				 VavemodelPackage.Literals.VERSION__SUCCESSOR,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
 	}
 
 	/**
@@ -131,7 +85,7 @@ public class VersionItemProvider
 				 true,
 				 false,
 				 false,
-				 ItemPropertyDescriptor.REAL_VALUE_IMAGE,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -149,6 +103,7 @@ public class VersionItemProvider
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(VavemodelPackage.Literals.VERSION__DELTAMODULE);
+			childrenFeatures.add(VavemodelPackage.Literals.VERSION__SUCCESSOR);
 		}
 		return childrenFeatures;
 	}
@@ -185,8 +140,10 @@ public class VersionItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		Version version = (Version)object;
-		return getString("_UI_Version_type") + " " + version.getVersionID();
+		String label = ((Version)object).getVersionID();
+		return label == null || label.length() == 0 ?
+			getString("_UI_Version_type") :
+			getString("_UI_Version_type") + " " + label;
 	}
 
 
@@ -206,6 +163,7 @@ public class VersionItemProvider
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case VavemodelPackage.VERSION__DELTAMODULE:
+			case VavemodelPackage.VERSION__SUCCESSOR:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -227,6 +185,11 @@ public class VersionItemProvider
 			(createChildParameter
 				(VavemodelPackage.Literals.VERSION__DELTAMODULE,
 				 VavemodelFactory.eINSTANCE.createDeltaModule()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(VavemodelPackage.Literals.VERSION__SUCCESSOR,
+				 VavemodelFactory.eINSTANCE.createVersion()));
 	}
 
 	/**

@@ -2,23 +2,12 @@
  */
 package vavemodel.impl;
 
-import compare.Diff;
-
-import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
 
 import vavemodel.DeltaModule;
 import vavemodel.VavemodelPackage;
@@ -32,7 +21,9 @@ import vavemodel.VavemodelPackage;
  * </p>
  * <ul>
  *   <li>{@link vavemodel.impl.DeltaModuleImpl#getDeltaModuleID <em>Delta Module ID</em>}</li>
- *   <li>{@link vavemodel.impl.DeltaModuleImpl#getDiff <em>Diff</em>}</li>
+ *   <li>{@link vavemodel.impl.DeltaModuleImpl#getOldVersionID <em>Old Version ID</em>}</li>
+ *   <li>{@link vavemodel.impl.DeltaModuleImpl#getNewVersionID <em>New Version ID</em>}</li>
+ *   <li>{@link vavemodel.impl.DeltaModuleImpl#getModelPath <em>Model Path</em>}</li>
  * </ul>
  *
  * @generated
@@ -46,7 +37,7 @@ public class DeltaModuleImpl extends MinimalEObjectImpl.Container implements Del
 	 * @generated
 	 * @ordered
 	 */
-	protected static final double DELTA_MODULE_ID_EDEFAULT = 0.0;
+	protected static final String DELTA_MODULE_ID_EDEFAULT = null;
 
 	/**
 	 * The cached value of the '{@link #getDeltaModuleID() <em>Delta Module ID</em>}' attribute.
@@ -56,17 +47,67 @@ public class DeltaModuleImpl extends MinimalEObjectImpl.Container implements Del
 	 * @generated
 	 * @ordered
 	 */
-	protected double deltaModuleID = DELTA_MODULE_ID_EDEFAULT;
+	protected String deltaModuleID = DELTA_MODULE_ID_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getDiff() <em>Diff</em>}' containment reference list.
+	 * The default value of the '{@link #getOldVersionID() <em>Old Version ID</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getDiff()
+	 * @see #getOldVersionID()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Diff> diff;
+	protected static final String OLD_VERSION_ID_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getOldVersionID() <em>Old Version ID</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOldVersionID()
+	 * @generated
+	 * @ordered
+	 */
+	protected String oldVersionID = OLD_VERSION_ID_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getNewVersionID() <em>New Version ID</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getNewVersionID()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String NEW_VERSION_ID_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getNewVersionID() <em>New Version ID</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getNewVersionID()
+	 * @generated
+	 * @ordered
+	 */
+	protected String newVersionID = NEW_VERSION_ID_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getModelPath() <em>Model Path</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getModelPath()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String MODEL_PATH_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getModelPath() <em>Model Path</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getModelPath()
+	 * @generated
+	 * @ordered
+	 */
+	protected String modelPath = MODEL_PATH_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -93,7 +134,7 @@ public class DeltaModuleImpl extends MinimalEObjectImpl.Container implements Del
 	 * @generated
 	 */
 	@Override
-	public double getDeltaModuleID() {
+	public String getDeltaModuleID() {
 		return deltaModuleID;
 	}
 
@@ -103,8 +144,8 @@ public class DeltaModuleImpl extends MinimalEObjectImpl.Container implements Del
 	 * @generated
 	 */
 	@Override
-	public void setDeltaModuleID(double newDeltaModuleID) {
-		double oldDeltaModuleID = deltaModuleID;
+	public void setDeltaModuleID(String newDeltaModuleID) {
+		String oldDeltaModuleID = deltaModuleID;
 		deltaModuleID = newDeltaModuleID;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, VavemodelPackage.DELTA_MODULE__DELTA_MODULE_ID, oldDeltaModuleID, deltaModuleID));
@@ -116,11 +157,8 @@ public class DeltaModuleImpl extends MinimalEObjectImpl.Container implements Del
 	 * @generated
 	 */
 	@Override
-	public EList<Diff> getDiff() {
-		if (diff == null) {
-			diff = new EObjectContainmentEList<Diff>(Diff.class, this, VavemodelPackage.DELTA_MODULE__DIFF);
-		}
-		return diff;
+	public String getOldVersionID() {
+		return oldVersionID;
 	}
 
 	/**
@@ -129,12 +167,57 @@ public class DeltaModuleImpl extends MinimalEObjectImpl.Container implements Del
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case VavemodelPackage.DELTA_MODULE__DIFF:
-				return ((InternalEList<?>)getDiff()).basicRemove(otherEnd, msgs);
-		}
-		return super.eInverseRemove(otherEnd, featureID, msgs);
+	public void setOldVersionID(String newOldVersionID) {
+		String oldOldVersionID = oldVersionID;
+		oldVersionID = newOldVersionID;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, VavemodelPackage.DELTA_MODULE__OLD_VERSION_ID, oldOldVersionID, oldVersionID));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getNewVersionID() {
+		return newVersionID;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setNewVersionID(String newNewVersionID) {
+		String oldNewVersionID = newVersionID;
+		newVersionID = newNewVersionID;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, VavemodelPackage.DELTA_MODULE__NEW_VERSION_ID, oldNewVersionID, newVersionID));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getModelPath() {
+		return modelPath;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setModelPath(String newModelPath) {
+		String oldModelPath = modelPath;
+		modelPath = newModelPath;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, VavemodelPackage.DELTA_MODULE__MODEL_PATH, oldModelPath, modelPath));
 	}
 
 	/**
@@ -147,8 +230,12 @@ public class DeltaModuleImpl extends MinimalEObjectImpl.Container implements Del
 		switch (featureID) {
 			case VavemodelPackage.DELTA_MODULE__DELTA_MODULE_ID:
 				return getDeltaModuleID();
-			case VavemodelPackage.DELTA_MODULE__DIFF:
-				return getDiff();
+			case VavemodelPackage.DELTA_MODULE__OLD_VERSION_ID:
+				return getOldVersionID();
+			case VavemodelPackage.DELTA_MODULE__NEW_VERSION_ID:
+				return getNewVersionID();
+			case VavemodelPackage.DELTA_MODULE__MODEL_PATH:
+				return getModelPath();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -158,16 +245,20 @@ public class DeltaModuleImpl extends MinimalEObjectImpl.Container implements Del
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case VavemodelPackage.DELTA_MODULE__DELTA_MODULE_ID:
-				setDeltaModuleID((Double)newValue);
+				setDeltaModuleID((String)newValue);
 				return;
-			case VavemodelPackage.DELTA_MODULE__DIFF:
-				getDiff().clear();
-				getDiff().addAll((Collection<? extends Diff>)newValue);
+			case VavemodelPackage.DELTA_MODULE__OLD_VERSION_ID:
+				setOldVersionID((String)newValue);
+				return;
+			case VavemodelPackage.DELTA_MODULE__NEW_VERSION_ID:
+				setNewVersionID((String)newValue);
+				return;
+			case VavemodelPackage.DELTA_MODULE__MODEL_PATH:
+				setModelPath((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -184,8 +275,14 @@ public class DeltaModuleImpl extends MinimalEObjectImpl.Container implements Del
 			case VavemodelPackage.DELTA_MODULE__DELTA_MODULE_ID:
 				setDeltaModuleID(DELTA_MODULE_ID_EDEFAULT);
 				return;
-			case VavemodelPackage.DELTA_MODULE__DIFF:
-				getDiff().clear();
+			case VavemodelPackage.DELTA_MODULE__OLD_VERSION_ID:
+				setOldVersionID(OLD_VERSION_ID_EDEFAULT);
+				return;
+			case VavemodelPackage.DELTA_MODULE__NEW_VERSION_ID:
+				setNewVersionID(NEW_VERSION_ID_EDEFAULT);
+				return;
+			case VavemodelPackage.DELTA_MODULE__MODEL_PATH:
+				setModelPath(MODEL_PATH_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -200,9 +297,13 @@ public class DeltaModuleImpl extends MinimalEObjectImpl.Container implements Del
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case VavemodelPackage.DELTA_MODULE__DELTA_MODULE_ID:
-				return deltaModuleID != DELTA_MODULE_ID_EDEFAULT;
-			case VavemodelPackage.DELTA_MODULE__DIFF:
-				return diff != null && !diff.isEmpty();
+				return DELTA_MODULE_ID_EDEFAULT == null ? deltaModuleID != null : !DELTA_MODULE_ID_EDEFAULT.equals(deltaModuleID);
+			case VavemodelPackage.DELTA_MODULE__OLD_VERSION_ID:
+				return OLD_VERSION_ID_EDEFAULT == null ? oldVersionID != null : !OLD_VERSION_ID_EDEFAULT.equals(oldVersionID);
+			case VavemodelPackage.DELTA_MODULE__NEW_VERSION_ID:
+				return NEW_VERSION_ID_EDEFAULT == null ? newVersionID != null : !NEW_VERSION_ID_EDEFAULT.equals(newVersionID);
+			case VavemodelPackage.DELTA_MODULE__MODEL_PATH:
+				return MODEL_PATH_EDEFAULT == null ? modelPath != null : !MODEL_PATH_EDEFAULT.equals(modelPath);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -219,6 +320,12 @@ public class DeltaModuleImpl extends MinimalEObjectImpl.Container implements Del
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (deltaModuleID: ");
 		result.append(deltaModuleID);
+		result.append(", oldVersionID: ");
+		result.append(oldVersionID);
+		result.append(", newVersionID: ");
+		result.append(newVersionID);
+		result.append(", modelPath: ");
+		result.append(modelPath);
 		result.append(')');
 		return result.toString();
 	}

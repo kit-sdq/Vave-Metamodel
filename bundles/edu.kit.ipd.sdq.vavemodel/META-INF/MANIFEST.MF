@@ -8,10 +8,7 @@ Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Automatic-Module-Name: edu.kit.ipd.sdq.vavemodel
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Export-Package: compare,
- compare.impl,
- compare.util,
- vavemodel,
+Export-Package: vavemodel,
  vavemodel.impl,
  vavemodel.util
 Require-Bundle: org.eclipse.core.runtime,

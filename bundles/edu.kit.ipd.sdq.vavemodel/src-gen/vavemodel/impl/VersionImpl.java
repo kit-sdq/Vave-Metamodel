@@ -15,7 +15,8 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 import vavemodel.DeltaModule;
 import vavemodel.VavemodelPackage;
@@ -29,35 +30,14 @@ import vavemodel.Version;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link vavemodel.impl.VersionImpl#getPredecessor <em>Predecessor</em>}</li>
- *   <li>{@link vavemodel.impl.VersionImpl#getSuccessor <em>Successor</em>}</li>
  *   <li>{@link vavemodel.impl.VersionImpl#getVersionID <em>Version ID</em>}</li>
  *   <li>{@link vavemodel.impl.VersionImpl#getDeltamodule <em>Deltamodule</em>}</li>
+ *   <li>{@link vavemodel.impl.VersionImpl#getSuccessor <em>Successor</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class VersionImpl extends MinimalEObjectImpl.Container implements Version {
-	/**
-	 * The cached value of the '{@link #getPredecessor() <em>Predecessor</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPredecessor()
-	 * @generated
-	 * @ordered
-	 */
-	protected Version predecessor;
-
-	/**
-	 * The cached value of the '{@link #getSuccessor() <em>Successor</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSuccessor()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Version> successor;
-
 	/**
 	 * The default value of the '{@link #getVersionID() <em>Version ID</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -66,7 +46,7 @@ public class VersionImpl extends MinimalEObjectImpl.Container implements Version
 	 * @generated
 	 * @ordered
 	 */
-	protected static final double VERSION_ID_EDEFAULT = 0.0;
+	protected static final String VERSION_ID_EDEFAULT = null;
 
 	/**
 	 * The cached value of the '{@link #getVersionID() <em>Version ID</em>}' attribute.
@@ -76,7 +56,7 @@ public class VersionImpl extends MinimalEObjectImpl.Container implements Version
 	 * @generated
 	 * @ordered
 	 */
-	protected double versionID = VERSION_ID_EDEFAULT;
+	protected String versionID = VERSION_ID_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getDeltamodule() <em>Deltamodule</em>}' containment reference.
@@ -87,6 +67,16 @@ public class VersionImpl extends MinimalEObjectImpl.Container implements Version
 	 * @ordered
 	 */
 	protected DeltaModule deltamodule;
+
+	/**
+	 * The cached value of the '{@link #getSuccessor() <em>Successor</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSuccessor()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Version> successor;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -113,60 +103,7 @@ public class VersionImpl extends MinimalEObjectImpl.Container implements Version
 	 * @generated
 	 */
 	@Override
-	public Version getPredecessor() {
-		if (predecessor != null && predecessor.eIsProxy()) {
-			InternalEObject oldPredecessor = (InternalEObject)predecessor;
-			predecessor = (Version)eResolveProxy(oldPredecessor);
-			if (predecessor != oldPredecessor) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, VavemodelPackage.VERSION__PREDECESSOR, oldPredecessor, predecessor));
-			}
-		}
-		return predecessor;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Version basicGetPredecessor() {
-		return predecessor;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setPredecessor(Version newPredecessor) {
-		Version oldPredecessor = predecessor;
-		predecessor = newPredecessor;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, VavemodelPackage.VERSION__PREDECESSOR, oldPredecessor, predecessor));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EList<Version> getSuccessor() {
-		if (successor == null) {
-			successor = new EObjectResolvingEList<Version>(Version.class, this, VavemodelPackage.VERSION__SUCCESSOR);
-		}
-		return successor;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public double getVersionID() {
+	public String getVersionID() {
 		return versionID;
 	}
 
@@ -176,8 +113,8 @@ public class VersionImpl extends MinimalEObjectImpl.Container implements Version
 	 * @generated
 	 */
 	@Override
-	public void setVersionID(double newVersionID) {
-		double oldVersionID = versionID;
+	public void setVersionID(String newVersionID) {
+		String oldVersionID = versionID;
 		versionID = newVersionID;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, VavemodelPackage.VERSION__VERSION_ID, oldVersionID, versionID));
@@ -234,10 +171,25 @@ public class VersionImpl extends MinimalEObjectImpl.Container implements Version
 	 * @generated
 	 */
 	@Override
+	public EList<Version> getSuccessor() {
+		if (successor == null) {
+			successor = new EObjectContainmentEList<Version>(Version.class, this, VavemodelPackage.VERSION__SUCCESSOR);
+		}
+		return successor;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case VavemodelPackage.VERSION__DELTAMODULE:
 				return basicSetDeltamodule(null, msgs);
+			case VavemodelPackage.VERSION__SUCCESSOR:
+				return ((InternalEList<?>)getSuccessor()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -250,15 +202,12 @@ public class VersionImpl extends MinimalEObjectImpl.Container implements Version
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case VavemodelPackage.VERSION__PREDECESSOR:
-				if (resolve) return getPredecessor();
-				return basicGetPredecessor();
-			case VavemodelPackage.VERSION__SUCCESSOR:
-				return getSuccessor();
 			case VavemodelPackage.VERSION__VERSION_ID:
 				return getVersionID();
 			case VavemodelPackage.VERSION__DELTAMODULE:
 				return getDeltamodule();
+			case VavemodelPackage.VERSION__SUCCESSOR:
+				return getSuccessor();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -272,18 +221,15 @@ public class VersionImpl extends MinimalEObjectImpl.Container implements Version
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case VavemodelPackage.VERSION__PREDECESSOR:
-				setPredecessor((Version)newValue);
+			case VavemodelPackage.VERSION__VERSION_ID:
+				setVersionID((String)newValue);
+				return;
+			case VavemodelPackage.VERSION__DELTAMODULE:
+				setDeltamodule((DeltaModule)newValue);
 				return;
 			case VavemodelPackage.VERSION__SUCCESSOR:
 				getSuccessor().clear();
 				getSuccessor().addAll((Collection<? extends Version>)newValue);
-				return;
-			case VavemodelPackage.VERSION__VERSION_ID:
-				setVersionID((Double)newValue);
-				return;
-			case VavemodelPackage.VERSION__DELTAMODULE:
-				setDeltamodule((DeltaModule)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -297,17 +243,14 @@ public class VersionImpl extends MinimalEObjectImpl.Container implements Version
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case VavemodelPackage.VERSION__PREDECESSOR:
-				setPredecessor((Version)null);
-				return;
-			case VavemodelPackage.VERSION__SUCCESSOR:
-				getSuccessor().clear();
-				return;
 			case VavemodelPackage.VERSION__VERSION_ID:
 				setVersionID(VERSION_ID_EDEFAULT);
 				return;
 			case VavemodelPackage.VERSION__DELTAMODULE:
 				setDeltamodule((DeltaModule)null);
+				return;
+			case VavemodelPackage.VERSION__SUCCESSOR:
+				getSuccessor().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -321,14 +264,12 @@ public class VersionImpl extends MinimalEObjectImpl.Container implements Version
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case VavemodelPackage.VERSION__PREDECESSOR:
-				return predecessor != null;
-			case VavemodelPackage.VERSION__SUCCESSOR:
-				return successor != null && !successor.isEmpty();
 			case VavemodelPackage.VERSION__VERSION_ID:
-				return versionID != VERSION_ID_EDEFAULT;
+				return VERSION_ID_EDEFAULT == null ? versionID != null : !VERSION_ID_EDEFAULT.equals(versionID);
 			case VavemodelPackage.VERSION__DELTAMODULE:
 				return deltamodule != null;
+			case VavemodelPackage.VERSION__SUCCESSOR:
+				return successor != null && !successor.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

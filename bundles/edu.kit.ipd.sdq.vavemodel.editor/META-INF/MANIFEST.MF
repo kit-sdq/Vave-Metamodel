@@ -9,8 +9,7 @@ Bundle-Activator: vavemodel.presentation.VavemodelEditorPlugin$Implementation
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Export-Package: compare.presentation,
- vavemodel.presentation
+Export-Package: vavemodel.presentation
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.core.resources;visibility:=reexport,
  edu.kit.ipd.sdq.vavemodel.edit;visibility:=reexport,

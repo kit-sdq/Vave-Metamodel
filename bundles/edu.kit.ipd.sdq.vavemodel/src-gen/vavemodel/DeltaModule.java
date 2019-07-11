@@ -2,10 +2,6 @@
  */
 package vavemodel;
 
-import compare.Diff;
-
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -18,7 +14,9 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link vavemodel.DeltaModule#getDeltaModuleID <em>Delta Module ID</em>}</li>
- *   <li>{@link vavemodel.DeltaModule#getDiff <em>Diff</em>}</li>
+ *   <li>{@link vavemodel.DeltaModule#getOldVersionID <em>Old Version ID</em>}</li>
+ *   <li>{@link vavemodel.DeltaModule#getNewVersionID <em>New Version ID</em>}</li>
+ *   <li>{@link vavemodel.DeltaModule#getModelPath <em>Model Path</em>}</li>
  * </ul>
  *
  * @see vavemodel.VavemodelPackage#getDeltaModule()
@@ -35,12 +33,12 @@ public interface DeltaModule extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Delta Module ID</em>' attribute.
-	 * @see #setDeltaModuleID(double)
+	 * @see #setDeltaModuleID(String)
 	 * @see vavemodel.VavemodelPackage#getDeltaModule_DeltaModuleID()
 	 * @model
 	 * @generated
 	 */
-	double getDeltaModuleID();
+	String getDeltaModuleID();
 
 	/**
 	 * Sets the value of the '{@link vavemodel.DeltaModule#getDeltaModuleID <em>Delta Module ID</em>}' attribute.
@@ -50,22 +48,84 @@ public interface DeltaModule extends EObject {
 	 * @see #getDeltaModuleID()
 	 * @generated
 	 */
-	void setDeltaModuleID(double value);
+	void setDeltaModuleID(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Diff</b></em>' containment reference list.
-	 * The list contents are of type {@link compare.Diff}.
+	 * Returns the value of the '<em><b>Old Version ID</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Diff</em>' containment reference list isn't clear,
+	 * If the meaning of the '<em>Old Version ID</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Diff</em>' containment reference list.
-	 * @see vavemodel.VavemodelPackage#getDeltaModule_Diff()
-	 * @model containment="true"
+	 * @return the value of the '<em>Old Version ID</em>' attribute.
+	 * @see #setOldVersionID(String)
+	 * @see vavemodel.VavemodelPackage#getDeltaModule_OldVersionID()
+	 * @model
 	 * @generated
 	 */
-	EList<Diff> getDiff();
+	String getOldVersionID();
+
+	/**
+	 * Sets the value of the '{@link vavemodel.DeltaModule#getOldVersionID <em>Old Version ID</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Old Version ID</em>' attribute.
+	 * @see #getOldVersionID()
+	 * @generated
+	 */
+	void setOldVersionID(String value);
+
+	/**
+	 * Returns the value of the '<em><b>New Version ID</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>New Version ID</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>New Version ID</em>' attribute.
+	 * @see #setNewVersionID(String)
+	 * @see vavemodel.VavemodelPackage#getDeltaModule_NewVersionID()
+	 * @model
+	 * @generated
+	 */
+	String getNewVersionID();
+
+	/**
+	 * Sets the value of the '{@link vavemodel.DeltaModule#getNewVersionID <em>New Version ID</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>New Version ID</em>' attribute.
+	 * @see #getNewVersionID()
+	 * @generated
+	 */
+	void setNewVersionID(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Model Path</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Model Path</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Model Path</em>' attribute.
+	 * @see #setModelPath(String)
+	 * @see vavemodel.VavemodelPackage#getDeltaModule_ModelPath()
+	 * @model
+	 * @generated
+	 */
+	String getModelPath();
+
+	/**
+	 * Sets the value of the '{@link vavemodel.DeltaModule#getModelPath <em>Model Path</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Model Path</em>' attribute.
+	 * @see #getModelPath()
+	 * @generated
+	 */
+	void setModelPath(String value);
 
 } // DeltaModule

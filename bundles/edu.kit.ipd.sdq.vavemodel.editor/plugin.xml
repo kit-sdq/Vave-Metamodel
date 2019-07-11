@@ -34,32 +34,4 @@
       </editor>
    </extension>
 
-   <extension point="org.eclipse.ui.newWizards">
-      <!-- @generated vavemodel -->
-      <category
-            id="org.eclipse.emf.ecore.Wizard.category.ID"
-            name="%_UI_Wizard_category"/>
-      <wizard
-            id="compare.presentation.CompareModelWizardID"
-            name="%_UI_CompareModelWizard_label"
-            class="compare.presentation.CompareModelWizard"
-            category="org.eclipse.emf.ecore.Wizard.category.ID"
-            icon="icons/full/obj16/CompareModelFile.gif">
-         <description>%_UI_CompareModelWizard_description</description>
-         <selection class="org.eclipse.core.resources.IResource"/>
-      </wizard>
-   </extension>
-
-   <extension point="org.eclipse.ui.editors">
-      <!-- @generated vavemodel -->
-      <editor
-            id="compare.presentation.CompareEditorID"
-            name="%_UI_CompareEditor_label"
-            icon="icons/full/obj16/CompareModelFile.gif"
-            extensions="compare"
-            class="compare.presentation.CompareEditor"
-            contributorClass="compare.presentation.CompareActionBarContributor">
-      </editor>
-   </extension>
-
 </plugin>

@@ -2,10 +2,6 @@
  */
 package vavemodel.impl;
 
-import compare.ComparePackage;
-
-import compare.impl.ComparePackageImpl;
-
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
@@ -210,17 +206,11 @@ public class VavemodelPackageImpl extends EPackageImpl implements VavemodelPacka
 		// Initialize simple dependencies
 		EcorePackage.eINSTANCE.eClass();
 
-		// Obtain or create and register interdependencies
-		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ComparePackage.eNS_URI);
-		ComparePackageImpl theComparePackage = (ComparePackageImpl)(registeredPackage instanceof ComparePackageImpl ? registeredPackage : ComparePackage.eINSTANCE);
-
 		// Create package meta-data objects
 		theVavemodelPackage.createPackageContents();
-		theComparePackage.createPackageContents();
 
 		// Initialize created meta-data
 		theVavemodelPackage.initializePackageContents();
-		theComparePackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theVavemodelPackage.freeze();
@@ -376,28 +366,8 @@ public class VavemodelPackageImpl extends EPackageImpl implements VavemodelPacka
 	 * @generated
 	 */
 	@Override
-	public EReference getVersion_Predecessor() {
-		return (EReference)versionEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getVersion_Successor() {
-		return (EReference)versionEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EAttribute getVersion_VersionID() {
-		return (EAttribute)versionEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)versionEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -407,7 +377,17 @@ public class VavemodelPackageImpl extends EPackageImpl implements VavemodelPacka
 	 */
 	@Override
 	public EReference getVersion_Deltamodule() {
-		return (EReference)versionEClass.getEStructuralFeatures().get(3);
+		return (EReference)versionEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getVersion_Successor() {
+		return (EReference)versionEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -436,8 +416,28 @@ public class VavemodelPackageImpl extends EPackageImpl implements VavemodelPacka
 	 * @generated
 	 */
 	@Override
-	public EReference getDeltaModule_Diff() {
-		return (EReference)deltaModuleEClass.getEStructuralFeatures().get(1);
+	public EAttribute getDeltaModule_OldVersionID() {
+		return (EAttribute)deltaModuleEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getDeltaModule_NewVersionID() {
+		return (EAttribute)deltaModuleEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getDeltaModule_ModelPath() {
+		return (EAttribute)deltaModuleEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -627,14 +627,15 @@ public class VavemodelPackageImpl extends EPackageImpl implements VavemodelPacka
 		createEReference(variationPointEClass, VARIATION_POINT__VARIANT);
 
 		versionEClass = createEClass(VERSION);
-		createEReference(versionEClass, VERSION__PREDECESSOR);
-		createEReference(versionEClass, VERSION__SUCCESSOR);
 		createEAttribute(versionEClass, VERSION__VERSION_ID);
 		createEReference(versionEClass, VERSION__DELTAMODULE);
+		createEReference(versionEClass, VERSION__SUCCESSOR);
 
 		deltaModuleEClass = createEClass(DELTA_MODULE);
 		createEAttribute(deltaModuleEClass, DELTA_MODULE__DELTA_MODULE_ID);
-		createEReference(deltaModuleEClass, DELTA_MODULE__DIFF);
+		createEAttribute(deltaModuleEClass, DELTA_MODULE__OLD_VERSION_ID);
+		createEAttribute(deltaModuleEClass, DELTA_MODULE__NEW_VERSION_ID);
+		createEAttribute(deltaModuleEClass, DELTA_MODULE__MODEL_PATH);
 
 		variableEClass = createEClass(VARIABLE);
 		createEReference(variableEClass, VARIABLE__NAME);
@@ -687,7 +688,7 @@ public class VavemodelPackageImpl extends EPackageImpl implements VavemodelPacka
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
-		ComparePackage theComparePackage = (ComparePackage)EPackage.Registry.INSTANCE.getEPackage(ComparePackage.eNS_URI);
+		EcorePackage theEcorePackage = (EcorePackage)EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
 
 		// Create type parameters
 
@@ -723,14 +724,15 @@ public class VavemodelPackageImpl extends EPackageImpl implements VavemodelPacka
 		initEReference(getVariationPoint_Variant(), this.getVariant(), null, "variant", null, 1, -1, VariationPoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(versionEClass, Version.class, "Version", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getVersion_Predecessor(), this.getVersion(), null, "predecessor", null, 0, 1, Version.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getVersion_Successor(), this.getVersion(), null, "successor", null, 0, -1, Version.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getVersion_VersionID(), ecorePackage.getEDouble(), "versionID", null, 0, 1, Version.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getVersion_VersionID(), theEcorePackage.getEString(), "versionID", null, 0, 1, Version.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getVersion_Deltamodule(), this.getDeltaModule(), null, "deltamodule", null, 1, 1, Version.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getVersion_Successor(), this.getVersion(), null, "successor", null, 0, -1, Version.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(deltaModuleEClass, DeltaModule.class, "DeltaModule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getDeltaModule_DeltaModuleID(), ecorePackage.getEDouble(), "deltaModuleID", null, 0, 1, DeltaModule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getDeltaModule_Diff(), theComparePackage.getDiff(), null, "diff", null, 0, -1, DeltaModule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDeltaModule_DeltaModuleID(), theEcorePackage.getEString(), "deltaModuleID", null, 0, 1, DeltaModule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDeltaModule_OldVersionID(), theEcorePackage.getEString(), "oldVersionID", null, 0, 1, DeltaModule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDeltaModule_NewVersionID(), theEcorePackage.getEString(), "newVersionID", null, 0, 1, DeltaModule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDeltaModule_ModelPath(), theEcorePackage.getEString(), "modelPath", null, 0, 1, DeltaModule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(variableEClass, Variable.class, "Variable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getVariable_Name(), this.getVariant(), null, "name", null, 1, 1, Variable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
