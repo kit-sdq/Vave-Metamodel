@@ -233,13 +233,22 @@ public interface VavemodelPackage extends EPackage {
 	int VARIATION_POINT__VARIANT = 1;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VARIATION_POINT__NAME = 2;
+
+	/**
 	 * The number of structural features of the '<em>Variation Point</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VARIATION_POINT_FEATURE_COUNT = 2;
+	int VARIATION_POINT_FEATURE_COUNT = 3;
 
 	/**
 	 * The number of operations of the '<em>Variation Point</em>' class.
@@ -872,6 +881,17 @@ public interface VavemodelPackage extends EPackage {
 	EReference getVariationPoint_Variant();
 
 	/**
+	 * Returns the meta object for the attribute '{@link vavemodel.VariationPoint#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see vavemodel.VariationPoint#getName()
+	 * @see #getVariationPoint()
+	 * @generated
+	 */
+	EAttribute getVariationPoint_Name();
+
+	/**
 	 * Returns the meta object for class '{@link vavemodel.Version <em>Version</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1245,6 +1265,14 @@ public interface VavemodelPackage extends EPackage {
 		 * @generated
 		 */
 		EReference VARIATION_POINT__VARIANT = eINSTANCE.getVariationPoint_Variant();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute VARIATION_POINT__NAME = eINSTANCE.getVariationPoint_Name();
 
 		/**
 		 * The meta object literal for the '{@link vavemodel.impl.VersionImpl <em>Version</em>}' class.

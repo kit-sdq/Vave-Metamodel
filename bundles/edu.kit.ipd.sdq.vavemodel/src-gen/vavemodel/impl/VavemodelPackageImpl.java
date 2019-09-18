@@ -356,6 +356,16 @@ public class VavemodelPackageImpl extends EPackageImpl implements VavemodelPacka
 	 * @generated
 	 */
 	@Override
+	public EAttribute getVariationPoint_Name() {
+		return (EAttribute)variationPointEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getVersion() {
 		return versionEClass;
 	}
@@ -625,6 +635,7 @@ public class VavemodelPackageImpl extends EPackageImpl implements VavemodelPacka
 		variationPointEClass = createEClass(VARIATION_POINT);
 		createEAttribute(variationPointEClass, VARIATION_POINT__TYPE);
 		createEReference(variationPointEClass, VARIATION_POINT__VARIANT);
+		createEAttribute(variationPointEClass, VARIATION_POINT__NAME);
 
 		versionEClass = createEClass(VERSION);
 		createEAttribute(versionEClass, VERSION__VERSION_ID);
@@ -722,6 +733,7 @@ public class VavemodelPackageImpl extends EPackageImpl implements VavemodelPacka
 		initEClass(variationPointEClass, VariationPoint.class, "VariationPoint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getVariationPoint_Type(), this.getGroupType(), "type", null, 0, 1, VariationPoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getVariationPoint_Variant(), this.getVariant(), null, "variant", null, 1, -1, VariationPoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getVariationPoint_Name(), theEcorePackage.getEString(), "name", null, 0, 1, VariationPoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(versionEClass, Version.class, "Version", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getVersion_VersionID(), theEcorePackage.getEString(), "versionID", null, 0, 1, Version.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
