@@ -277,7 +277,7 @@ public class VavemodelPackageImpl extends EPackageImpl implements VavemodelPacka
 	 */
 	@Override
 	public EAttribute getVariant_Name() {
-		return (EAttribute)variantEClass.getEStructuralFeatures().get(0);
+		return (EAttribute)variantEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -287,7 +287,7 @@ public class VavemodelPackageImpl extends EPackageImpl implements VavemodelPacka
 	 */
 	@Override
 	public EReference getVariant_Variationpoint() {
-		return (EReference)variantEClass.getEStructuralFeatures().get(1);
+		return (EReference)variantEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -297,7 +297,7 @@ public class VavemodelPackageImpl extends EPackageImpl implements VavemodelPacka
 	 */
 	@Override
 	public EReference getVariant_InitialVersion() {
-		return (EReference)variantEClass.getEStructuralFeatures().get(2);
+		return (EReference)variantEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -348,16 +348,6 @@ public class VavemodelPackageImpl extends EPackageImpl implements VavemodelPacka
 	@Override
 	public EReference getVariationPoint_Variant() {
 		return (EReference)variationPointEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getVariationPoint_Name() {
-		return (EAttribute)variationPointEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -625,9 +615,9 @@ public class VavemodelPackageImpl extends EPackageImpl implements VavemodelPacka
 		createEAttribute(systemEClass, SYSTEM__NAME);
 
 		variantEClass = createEClass(VARIANT);
-		createEAttribute(variantEClass, VARIANT__NAME);
 		createEReference(variantEClass, VARIANT__VARIATIONPOINT);
 		createEReference(variantEClass, VARIANT__INITIAL_VERSION);
+		createEAttribute(variantEClass, VARIANT__NAME);
 
 		constraintEClass = createEClass(CONSTRAINT);
 		createEReference(constraintEClass, CONSTRAINT__EXPRESSION);
@@ -635,7 +625,6 @@ public class VavemodelPackageImpl extends EPackageImpl implements VavemodelPacka
 		variationPointEClass = createEClass(VARIATION_POINT);
 		createEAttribute(variationPointEClass, VARIATION_POINT__TYPE);
 		createEReference(variationPointEClass, VARIATION_POINT__VARIANT);
-		createEAttribute(variationPointEClass, VARIATION_POINT__NAME);
 
 		versionEClass = createEClass(VERSION);
 		createEAttribute(versionEClass, VERSION__VERSION_ID);
@@ -723,9 +712,9 @@ public class VavemodelPackageImpl extends EPackageImpl implements VavemodelPacka
 		initEAttribute(getSystem_Name(), ecorePackage.getEString(), "name", null, 0, 1, vavemodel.System.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(variantEClass, Variant.class, "Variant", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getVariant_Name(), ecorePackage.getEString(), "name", null, 0, 1, Variant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getVariant_Variationpoint(), this.getVariationPoint(), null, "variationpoint", null, 0, -1, Variant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getVariant_InitialVersion(), this.getVersion(), null, "initialVersion", null, 1, 1, Variant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getVariant_Name(), theEcorePackage.getEString(), "name", null, 0, 1, Variant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(constraintEClass, Constraint.class, "Constraint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getConstraint_Expression(), this.getExpression(), null, "expression", null, 1, 1, Constraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -733,7 +722,6 @@ public class VavemodelPackageImpl extends EPackageImpl implements VavemodelPacka
 		initEClass(variationPointEClass, VariationPoint.class, "VariationPoint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getVariationPoint_Type(), this.getGroupType(), "type", null, 0, 1, VariationPoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getVariationPoint_Variant(), this.getVariant(), null, "variant", null, 1, -1, VariationPoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getVariationPoint_Name(), theEcorePackage.getEString(), "name", null, 0, 1, VariationPoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(versionEClass, Version.class, "Version", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getVersion_VersionID(), theEcorePackage.getEString(), "versionID", null, 0, 1, Version.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

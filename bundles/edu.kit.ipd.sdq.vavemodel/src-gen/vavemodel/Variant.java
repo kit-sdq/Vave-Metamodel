@@ -15,9 +15,9 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link vavemodel.Variant#getName <em>Name</em>}</li>
  *   <li>{@link vavemodel.Variant#getVariationpoint <em>Variationpoint</em>}</li>
  *   <li>{@link vavemodel.Variant#getInitialVersion <em>Initial Version</em>}</li>
+ *   <li>{@link vavemodel.Variant#getName <em>Name</em>}</li>
  * </ul>
  *
  * @see vavemodel.VavemodelPackage#getVariant()

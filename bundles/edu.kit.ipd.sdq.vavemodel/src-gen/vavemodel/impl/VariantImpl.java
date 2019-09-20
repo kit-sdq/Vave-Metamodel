@@ -31,34 +31,14 @@ import vavemodel.Version;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link vavemodel.impl.VariantImpl#getName <em>Name</em>}</li>
  *   <li>{@link vavemodel.impl.VariantImpl#getVariationpoint <em>Variationpoint</em>}</li>
  *   <li>{@link vavemodel.impl.VariantImpl#getInitialVersion <em>Initial Version</em>}</li>
+ *   <li>{@link vavemodel.impl.VariantImpl#getName <em>Name</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class VariantImpl extends MinimalEObjectImpl.Container implements Variant {
-	/**
-	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getName()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String NAME_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getName()
-	 * @generated
-	 * @ordered
-	 */
-	protected String name = NAME_EDEFAULT;
-
 	/**
 	 * The cached value of the '{@link #getVariationpoint() <em>Variationpoint</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -78,6 +58,26 @@ public class VariantImpl extends MinimalEObjectImpl.Container implements Variant
 	 * @ordered
 	 */
 	protected Version initialVersion;
+
+	/**
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String NAME_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String name = NAME_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -203,12 +203,12 @@ public class VariantImpl extends MinimalEObjectImpl.Container implements Variant
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case VavemodelPackage.VARIANT__NAME:
-				return getName();
 			case VavemodelPackage.VARIANT__VARIATIONPOINT:
 				return getVariationpoint();
 			case VavemodelPackage.VARIANT__INITIAL_VERSION:
 				return getInitialVersion();
+			case VavemodelPackage.VARIANT__NAME:
+				return getName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -222,15 +222,15 @@ public class VariantImpl extends MinimalEObjectImpl.Container implements Variant
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case VavemodelPackage.VARIANT__NAME:
-				setName((String)newValue);
-				return;
 			case VavemodelPackage.VARIANT__VARIATIONPOINT:
 				getVariationpoint().clear();
 				getVariationpoint().addAll((Collection<? extends VariationPoint>)newValue);
 				return;
 			case VavemodelPackage.VARIANT__INITIAL_VERSION:
 				setInitialVersion((Version)newValue);
+				return;
+			case VavemodelPackage.VARIANT__NAME:
+				setName((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -244,14 +244,14 @@ public class VariantImpl extends MinimalEObjectImpl.Container implements Variant
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case VavemodelPackage.VARIANT__NAME:
-				setName(NAME_EDEFAULT);
-				return;
 			case VavemodelPackage.VARIANT__VARIATIONPOINT:
 				getVariationpoint().clear();
 				return;
 			case VavemodelPackage.VARIANT__INITIAL_VERSION:
 				setInitialVersion((Version)null);
+				return;
+			case VavemodelPackage.VARIANT__NAME:
+				setName(NAME_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -265,12 +265,12 @@ public class VariantImpl extends MinimalEObjectImpl.Container implements Variant
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case VavemodelPackage.VARIANT__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case VavemodelPackage.VARIANT__VARIATIONPOINT:
 				return variationpoint != null && !variationpoint.isEmpty();
 			case VavemodelPackage.VARIANT__INITIAL_VERSION:
 				return initialVersion != null;
+			case VavemodelPackage.VARIANT__NAME:
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		}
 		return super.eIsSet(featureID);
 	}

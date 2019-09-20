@@ -23,6 +23,7 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+import vavemodel.GroupType;
 import vavemodel.VariationPoint;
 import vavemodel.VavemodelFactory;
 import vavemodel.VavemodelPackage;
@@ -63,7 +64,6 @@ public class VariationPointItemProvider
 			super.getPropertyDescriptors(object);
 
 			addTypePropertyDescriptor(object);
-			addNamePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -82,28 +82,6 @@ public class VariationPointItemProvider
 				 getString("_UI_VariationPoint_type_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_VariationPoint_type_feature", "_UI_VariationPoint_type"),
 				 VavemodelPackage.Literals.VARIATION_POINT__TYPE,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Name feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addNamePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_VariationPoint_name_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_VariationPoint_name_feature", "_UI_VariationPoint_type"),
-				 VavemodelPackage.Literals.VARIATION_POINT__NAME,
 				 true,
 				 false,
 				 false,
@@ -161,7 +139,8 @@ public class VariationPointItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((VariationPoint)object).getName();
+		GroupType labelValue = ((VariationPoint)object).getType();
+		String label = labelValue == null ? null : labelValue.toString();
 		return label == null || label.length() == 0 ?
 			getString("_UI_VariationPoint_type") :
 			getString("_UI_VariationPoint_type") + " " + label;
@@ -181,7 +160,6 @@ public class VariationPointItemProvider
 
 		switch (notification.getFeatureID(VariationPoint.class)) {
 			case VavemodelPackage.VARIATION_POINT__TYPE:
-			case VavemodelPackage.VARIATION_POINT__NAME:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case VavemodelPackage.VARIATION_POINT__VARIANT:

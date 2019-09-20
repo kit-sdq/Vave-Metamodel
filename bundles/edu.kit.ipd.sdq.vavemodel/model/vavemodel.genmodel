@@ -20,9 +20,9 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vavemodel.ecore#//System/name"/>
     </genClasses>
     <genClasses ecoreClass="vavemodel.ecore#//Variant">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vavemodel.ecore#//Variant/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference vavemodel.ecore#//Variant/variationpoint"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference vavemodel.ecore#//Variant/initialVersion"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vavemodel.ecore#//Variant/name"/>
     </genClasses>
     <genClasses ecoreClass="vavemodel.ecore#//Constraint">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference vavemodel.ecore#//Constraint/expression"/>
@@ -30,7 +30,6 @@
     <genClasses ecoreClass="vavemodel.ecore#//VariationPoint">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vavemodel.ecore#//VariationPoint/type"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference vavemodel.ecore#//VariationPoint/variant"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vavemodel.ecore#//VariationPoint/name"/>
     </genClasses>
     <genClasses ecoreClass="vavemodel.ecore#//Version">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vavemodel.ecore#//Version/versionID"/>

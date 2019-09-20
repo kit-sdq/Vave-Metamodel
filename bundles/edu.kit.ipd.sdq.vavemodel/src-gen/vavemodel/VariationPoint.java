@@ -17,7 +17,6 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link vavemodel.VariationPoint#getType <em>Type</em>}</li>
  *   <li>{@link vavemodel.VariationPoint#getVariant <em>Variant</em>}</li>
- *   <li>{@link vavemodel.VariationPoint#getName <em>Name</em>}</li>
  * </ul>
  *
  * @see vavemodel.VavemodelPackage#getVariationPoint()
@@ -69,31 +68,5 @@ public interface VariationPoint extends EObject {
 	 * @generated
 	 */
 	EList<Variant> getVariant();
-
-	/**
-	 * Returns the value of the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Name</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Name</em>' attribute.
-	 * @see #setName(String)
-	 * @see vavemodel.VavemodelPackage#getVariationPoint_Name()
-	 * @model
-	 * @generated
-	 */
-	String getName();
-
-	/**
-	 * Sets the value of the '{@link vavemodel.VariationPoint#getName <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Name</em>' attribute.
-	 * @see #getName()
-	 * @generated
-	 */
-	void setName(String value);
 
 } // VariationPoint

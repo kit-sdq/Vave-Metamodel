@@ -33,7 +33,6 @@ import vavemodel.VavemodelPackage;
  * <ul>
  *   <li>{@link vavemodel.impl.VariationPointImpl#getType <em>Type</em>}</li>
  *   <li>{@link vavemodel.impl.VariationPointImpl#getVariant <em>Variant</em>}</li>
- *   <li>{@link vavemodel.impl.VariationPointImpl#getName <em>Name</em>}</li>
  * </ul>
  *
  * @generated
@@ -68,26 +67,6 @@ public class VariationPointImpl extends MinimalEObjectImpl.Container implements 
 	 * @ordered
 	 */
 	protected EList<Variant> variant;
-
-	/**
-	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getName()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String NAME_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getName()
-	 * @generated
-	 * @ordered
-	 */
-	protected String name = NAME_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -150,29 +129,6 @@ public class VariationPointImpl extends MinimalEObjectImpl.Container implements 
 	 * @generated
 	 */
 	@Override
-	public String getName() {
-		return name;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setName(String newName) {
-		String oldName = name;
-		name = newName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, VavemodelPackage.VARIATION_POINT__NAME, oldName, name));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case VavemodelPackage.VARIATION_POINT__VARIANT:
@@ -193,8 +149,6 @@ public class VariationPointImpl extends MinimalEObjectImpl.Container implements 
 				return getType();
 			case VavemodelPackage.VARIATION_POINT__VARIANT:
 				return getVariant();
-			case VavemodelPackage.VARIATION_POINT__NAME:
-				return getName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -215,9 +169,6 @@ public class VariationPointImpl extends MinimalEObjectImpl.Container implements 
 				getVariant().clear();
 				getVariant().addAll((Collection<? extends Variant>)newValue);
 				return;
-			case VavemodelPackage.VARIATION_POINT__NAME:
-				setName((String)newValue);
-				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -236,9 +187,6 @@ public class VariationPointImpl extends MinimalEObjectImpl.Container implements 
 			case VavemodelPackage.VARIATION_POINT__VARIANT:
 				getVariant().clear();
 				return;
-			case VavemodelPackage.VARIATION_POINT__NAME:
-				setName(NAME_EDEFAULT);
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -255,8 +203,6 @@ public class VariationPointImpl extends MinimalEObjectImpl.Container implements 
 				return type != TYPE_EDEFAULT;
 			case VavemodelPackage.VARIATION_POINT__VARIANT:
 				return variant != null && !variant.isEmpty();
-			case VavemodelPackage.VARIATION_POINT__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -273,8 +219,6 @@ public class VariationPointImpl extends MinimalEObjectImpl.Container implements 
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (type: ");
 		result.append(type);
-		result.append(", name: ");
-		result.append(name);
 		result.append(')');
 		return result.toString();
 	}
