@@ -12,19 +12,20 @@ import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
 import vavemodel.Conjunction;
-import vavemodel.Constraint;
+import vavemodel.CrossTreeConstraint;
 import vavemodel.DeltaModule;
 import vavemodel.Disjunction;
 import vavemodel.Equivalence;
 import vavemodel.GroupType;
 import vavemodel.Implication;
+import vavemodel.Mapping;
 import vavemodel.Not;
+import vavemodel.Revision;
+import vavemodel.TreeConstraint;
 import vavemodel.Variable;
 import vavemodel.Variant;
-import vavemodel.VariationPoint;
 import vavemodel.VavemodelFactory;
 import vavemodel.VavemodelPackage;
-import vavemodel.Version;
 
 /**
  * <!-- begin-user-doc -->
@@ -72,9 +73,9 @@ public class VavemodelFactoryImpl extends EFactoryImpl implements VavemodelFacto
 		switch (eClass.getClassifierID()) {
 			case VavemodelPackage.SYSTEM: return createSystem();
 			case VavemodelPackage.VARIANT: return createVariant();
-			case VavemodelPackage.CONSTRAINT: return createConstraint();
-			case VavemodelPackage.VARIATION_POINT: return createVariationPoint();
-			case VavemodelPackage.VERSION: return createVersion();
+			case VavemodelPackage.CROSS_TREE_CONSTRAINT: return createCrossTreeConstraint();
+			case VavemodelPackage.TREE_CONSTRAINT: return createTreeConstraint();
+			case VavemodelPackage.REVISION: return createRevision();
 			case VavemodelPackage.DELTA_MODULE: return createDeltaModule();
 			case VavemodelPackage.VARIABLE: return createVariable();
 			case VavemodelPackage.IMPLICATION: return createImplication();
@@ -82,6 +83,7 @@ public class VavemodelFactoryImpl extends EFactoryImpl implements VavemodelFacto
 			case VavemodelPackage.EQUIVALENCE: return createEquivalence();
 			case VavemodelPackage.CONJUNCTION: return createConjunction();
 			case VavemodelPackage.NOT: return createNot();
+			case VavemodelPackage.MAPPING: return createMapping();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -145,9 +147,9 @@ public class VavemodelFactoryImpl extends EFactoryImpl implements VavemodelFacto
 	 * @generated
 	 */
 	@Override
-	public Constraint createConstraint() {
-		ConstraintImpl constraint = new ConstraintImpl();
-		return constraint;
+	public CrossTreeConstraint createCrossTreeConstraint() {
+		CrossTreeConstraintImpl crossTreeConstraint = new CrossTreeConstraintImpl();
+		return crossTreeConstraint;
 	}
 
 	/**
@@ -156,9 +158,9 @@ public class VavemodelFactoryImpl extends EFactoryImpl implements VavemodelFacto
 	 * @generated
 	 */
 	@Override
-	public VariationPoint createVariationPoint() {
-		VariationPointImpl variationPoint = new VariationPointImpl();
-		return variationPoint;
+	public TreeConstraint createTreeConstraint() {
+		TreeConstraintImpl treeConstraint = new TreeConstraintImpl();
+		return treeConstraint;
 	}
 
 	/**
@@ -167,9 +169,9 @@ public class VavemodelFactoryImpl extends EFactoryImpl implements VavemodelFacto
 	 * @generated
 	 */
 	@Override
-	public Version createVersion() {
-		VersionImpl version = new VersionImpl();
-		return version;
+	public Revision createRevision() {
+		RevisionImpl revision = new RevisionImpl();
+		return revision;
 	}
 
 	/**
@@ -247,6 +249,17 @@ public class VavemodelFactoryImpl extends EFactoryImpl implements VavemodelFacto
 	public Not createNot() {
 		NotImpl not = new NotImpl();
 		return not;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Mapping createMapping() {
+		MappingImpl mapping = new MappingImpl();
+		return mapping;
 	}
 
 	/**

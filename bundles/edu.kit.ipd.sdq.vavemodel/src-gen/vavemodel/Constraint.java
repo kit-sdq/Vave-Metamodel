@@ -2,6 +2,8 @@
  */
 package vavemodel;
 
+import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -13,34 +15,24 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link vavemodel.Constraint#getExpression <em>Expression</em>}</li>
+ *   <li>{@link vavemodel.Constraint#getOption <em>Option</em>}</li>
  * </ul>
  *
  * @see vavemodel.VavemodelPackage#getConstraint()
- * @model
+ * @model abstract="true"
  * @generated
  */
 public interface Constraint extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Expression</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Option</b></em>' reference list.
+	 * The list contents are of type {@link vavemodel.Option}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Expression</em>' containment reference.
-	 * @see #setExpression(Expression)
-	 * @see vavemodel.VavemodelPackage#getConstraint_Expression()
-	 * @model containment="true" required="true"
+	 * @return the value of the '<em>Option</em>' reference list.
+	 * @see vavemodel.VavemodelPackage#getConstraint_Option()
+	 * @model
 	 * @generated
 	 */
-	Expression getExpression();
-
-	/**
-	 * Sets the value of the '{@link vavemodel.Constraint#getExpression <em>Expression</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Expression</em>' containment reference.
-	 * @see #getExpression()
-	 * @generated
-	 */
-	void setExpression(Expression value);
+	EList<Option> getOption();
 
 } // Constraint

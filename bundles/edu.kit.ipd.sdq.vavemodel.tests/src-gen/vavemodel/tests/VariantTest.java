@@ -2,8 +2,6 @@
  */
 package vavemodel.tests;
 
-import junit.framework.TestCase;
-
 import junit.textui.TestRunner;
 
 import vavemodel.Variant;
@@ -15,15 +13,7 @@ import vavemodel.VavemodelFactory;
  * <!-- end-user-doc -->
  * @generated
  */
-public class VariantTest extends TestCase {
-
-	/**
-	 * The fixture for this Variant test case.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected Variant fixture = null;
+public class VariantTest extends OptionTest {
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -45,23 +35,14 @@ public class VariantTest extends TestCase {
 	}
 
 	/**
-	 * Sets the fixture for this Variant test case.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void setFixture(Variant fixture) {
-		this.fixture = fixture;
-	}
-
-	/**
 	 * Returns the fixture for this Variant test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected Variant getFixture() {
-		return fixture;
+		return (Variant)fixture;
 	}
 
 	/**

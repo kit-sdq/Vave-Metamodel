@@ -40,31 +40,31 @@ public interface VavemodelFactory extends EFactory {
 	Variant createVariant();
 
 	/**
-	 * Returns a new object of class '<em>Constraint</em>'.
+	 * Returns a new object of class '<em>Cross Tree Constraint</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Constraint</em>'.
+	 * @return a new object of class '<em>Cross Tree Constraint</em>'.
 	 * @generated
 	 */
-	Constraint createConstraint();
+	CrossTreeConstraint createCrossTreeConstraint();
 
 	/**
-	 * Returns a new object of class '<em>Variation Point</em>'.
+	 * Returns a new object of class '<em>Tree Constraint</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Variation Point</em>'.
+	 * @return a new object of class '<em>Tree Constraint</em>'.
 	 * @generated
 	 */
-	VariationPoint createVariationPoint();
+	TreeConstraint createTreeConstraint();
 
 	/**
-	 * Returns a new object of class '<em>Version</em>'.
+	 * Returns a new object of class '<em>Revision</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Version</em>'.
+	 * @return a new object of class '<em>Revision</em>'.
 	 * @generated
 	 */
-	Version createVersion();
+	Revision createRevision();
 
 	/**
 	 * Returns a new object of class '<em>Delta Module</em>'.
@@ -128,6 +128,15 @@ public interface VavemodelFactory extends EFactory {
 	 * @generated
 	 */
 	Not createNot();
+
+	/**
+	 * Returns a new object of class '<em>Mapping</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Mapping</em>'.
+	 * @generated
+	 */
+	Mapping createMapping();
 
 	/**
 	 * Returns the package supported by this factory.

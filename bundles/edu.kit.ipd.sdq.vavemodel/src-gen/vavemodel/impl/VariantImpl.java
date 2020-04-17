@@ -13,15 +13,14 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import vavemodel.Revision;
+import vavemodel.TreeConstraint;
 import vavemodel.Variant;
-import vavemodel.VariationPoint;
 import vavemodel.VavemodelPackage;
-import vavemodel.Version;
 
 /**
  * <!-- begin-user-doc -->
@@ -38,7 +37,7 @@ import vavemodel.Version;
  *
  * @generated
  */
-public class VariantImpl extends MinimalEObjectImpl.Container implements Variant {
+public class VariantImpl extends OptionImpl implements Variant {
 	/**
 	 * The cached value of the '{@link #getVariationpoint() <em>Variationpoint</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -47,7 +46,7 @@ public class VariantImpl extends MinimalEObjectImpl.Container implements Variant
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<VariationPoint> variationpoint;
+	protected EList<TreeConstraint> variationpoint;
 
 	/**
 	 * The cached value of the '{@link #getInitialVersion() <em>Initial Version</em>}' containment reference.
@@ -57,7 +56,7 @@ public class VariantImpl extends MinimalEObjectImpl.Container implements Variant
 	 * @generated
 	 * @ordered
 	 */
-	protected Version initialVersion;
+	protected Revision initialVersion;
 
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -104,9 +103,9 @@ public class VariantImpl extends MinimalEObjectImpl.Container implements Variant
 	 * @generated
 	 */
 	@Override
-	public EList<VariationPoint> getVariationpoint() {
+	public EList<TreeConstraint> getVariationpoint() {
 		if (variationpoint == null) {
-			variationpoint = new EObjectContainmentEList<VariationPoint>(VariationPoint.class, this, VavemodelPackage.VARIANT__VARIATIONPOINT);
+			variationpoint = new EObjectContainmentEList<TreeConstraint>(TreeConstraint.class, this, VavemodelPackage.VARIANT__VARIATIONPOINT);
 		}
 		return variationpoint;
 	}
@@ -117,7 +116,7 @@ public class VariantImpl extends MinimalEObjectImpl.Container implements Variant
 	 * @generated
 	 */
 	@Override
-	public Version getInitialVersion() {
+	public Revision getInitialVersion() {
 		return initialVersion;
 	}
 
@@ -126,8 +125,8 @@ public class VariantImpl extends MinimalEObjectImpl.Container implements Variant
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetInitialVersion(Version newInitialVersion, NotificationChain msgs) {
-		Version oldInitialVersion = initialVersion;
+	public NotificationChain basicSetInitialVersion(Revision newInitialVersion, NotificationChain msgs) {
+		Revision oldInitialVersion = initialVersion;
 		initialVersion = newInitialVersion;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, VavemodelPackage.VARIANT__INITIAL_VERSION, oldInitialVersion, newInitialVersion);
@@ -142,7 +141,7 @@ public class VariantImpl extends MinimalEObjectImpl.Container implements Variant
 	 * @generated
 	 */
 	@Override
-	public void setInitialVersion(Version newInitialVersion) {
+	public void setInitialVersion(Revision newInitialVersion) {
 		if (newInitialVersion != initialVersion) {
 			NotificationChain msgs = null;
 			if (initialVersion != null)
@@ -224,10 +223,10 @@ public class VariantImpl extends MinimalEObjectImpl.Container implements Variant
 		switch (featureID) {
 			case VavemodelPackage.VARIANT__VARIATIONPOINT:
 				getVariationpoint().clear();
-				getVariationpoint().addAll((Collection<? extends VariationPoint>)newValue);
+				getVariationpoint().addAll((Collection<? extends TreeConstraint>)newValue);
 				return;
 			case VavemodelPackage.VARIANT__INITIAL_VERSION:
-				setInitialVersion((Version)newValue);
+				setInitialVersion((Revision)newValue);
 				return;
 			case VavemodelPackage.VARIANT__NAME:
 				setName((String)newValue);
@@ -248,7 +247,7 @@ public class VariantImpl extends MinimalEObjectImpl.Container implements Variant
 				getVariationpoint().clear();
 				return;
 			case VavemodelPackage.VARIANT__INITIAL_VERSION:
-				setInitialVersion((Version)null);
+				setInitialVersion((Revision)null);
 				return;
 			case VavemodelPackage.VARIANT__NAME:
 				setName(NAME_EDEFAULT);

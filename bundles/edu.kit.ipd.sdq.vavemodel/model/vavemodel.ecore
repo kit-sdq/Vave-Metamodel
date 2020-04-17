@@ -3,23 +3,27 @@
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="vavemodel" nsURI="edu.kit.ipd.sdq.vavemodel" nsPrefix="vavemodel">
   <eClassifiers xsi:type="ecore:EClass" name="System">
     <eStructuralFeatures xsi:type="ecore:EReference" name="constraint" upperBound="-1"
-        eType="#//Constraint" containment="true"/>
+        eType="#//CrossTreeConstraint" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="variant" lowerBound="1"
         upperBound="-1" eType="#//Variant" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="mapping" upperBound="-1"
+        eType="#//Mapping" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="deltamodule" upperBound="-1"
+        eType="#//DeltaModule" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Variant">
+  <eClassifiers xsi:type="ecore:EClass" name="Variant" eSuperTypes="#//Option">
     <eStructuralFeatures xsi:type="ecore:EReference" name="variationpoint" upperBound="-1"
-        eType="#//VariationPoint" containment="true"/>
+        eType="#//TreeConstraint" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="initialVersion" lowerBound="1"
-        eType="#//Version" containment="true"/>
+        eType="#//Revision" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType ../../../../org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Constraint">
+  <eClassifiers xsi:type="ecore:EClass" name="CrossTreeConstraint" eSuperTypes="#//Constraint">
     <eStructuralFeatures xsi:type="ecore:EReference" name="expression" lowerBound="1"
         eType="#//Expression" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="VariationPoint">
+  <eClassifiers xsi:type="ecore:EClass" name="TreeConstraint" eSuperTypes="#//Constraint">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//GroupType"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="variant" lowerBound="1"
         upperBound="-1" eType="#//Variant" containment="true"/>
@@ -30,12 +34,10 @@
     <eLiterals name="XORNONE" value="2"/>
     <eLiterals name="ORNONE" value="3"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Version">
+  <eClassifiers xsi:type="ecore:EClass" name="Revision" eSuperTypes="#//Option">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="versionID" eType="ecore:EDataType ../../../../org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="deltamodule" lowerBound="1"
-        eType="#//DeltaModule" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="successor" upperBound="-1"
-        eType="#//Version" containment="true"/>
+        eType="#//Revision" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DeltaModule">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="deltaModuleID" eType="ecore:EDataType ../../../../org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
@@ -61,4 +63,15 @@
   <eClassifiers xsi:type="ecore:EClass" name="Equivalence" eSuperTypes="#//BinaryExpression"/>
   <eClassifiers xsi:type="ecore:EClass" name="Conjunction" eSuperTypes="#//BinaryExpression"/>
   <eClassifiers xsi:type="ecore:EClass" name="Not" eSuperTypes="#//UnaryExpression"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Constraint" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="option" upperBound="-1"
+        eType="#//Option"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Option" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Mapping">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="option" upperBound="-1"
+        eType="#//Option"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="deltamodule" lowerBound="1"
+        upperBound="-1" eType="#//DeltaModule"/>
+  </eClassifiers>
 </ecore:EPackage>

@@ -12,19 +12,22 @@ import org.eclipse.emf.ecore.EObject;
 import vavemodel.BinaryExpression;
 import vavemodel.Conjunction;
 import vavemodel.Constraint;
+import vavemodel.CrossTreeConstraint;
 import vavemodel.DeltaModule;
 import vavemodel.Disjunction;
 import vavemodel.Equivalence;
 import vavemodel.Expression;
 import vavemodel.Implication;
+import vavemodel.Mapping;
 import vavemodel.Not;
+import vavemodel.Option;
+import vavemodel.Revision;
 import vavemodel.Term;
+import vavemodel.TreeConstraint;
 import vavemodel.UnaryExpression;
 import vavemodel.Variable;
 import vavemodel.Variant;
-import vavemodel.VariationPoint;
 import vavemodel.VavemodelPackage;
-import vavemodel.Version;
 
 /**
  * <!-- begin-user-doc -->
@@ -91,16 +94,16 @@ public class VavemodelAdapterFactory extends AdapterFactoryImpl {
 				return createVariantAdapter();
 			}
 			@Override
-			public Adapter caseConstraint(Constraint object) {
-				return createConstraintAdapter();
+			public Adapter caseCrossTreeConstraint(CrossTreeConstraint object) {
+				return createCrossTreeConstraintAdapter();
 			}
 			@Override
-			public Adapter caseVariationPoint(VariationPoint object) {
-				return createVariationPointAdapter();
+			public Adapter caseTreeConstraint(TreeConstraint object) {
+				return createTreeConstraintAdapter();
 			}
 			@Override
-			public Adapter caseVersion(Version object) {
-				return createVersionAdapter();
+			public Adapter caseRevision(Revision object) {
+				return createRevisionAdapter();
 			}
 			@Override
 			public Adapter caseDeltaModule(DeltaModule object) {
@@ -145,6 +148,18 @@ public class VavemodelAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseNot(Not object) {
 				return createNotAdapter();
+			}
+			@Override
+			public Adapter caseConstraint(Constraint object) {
+				return createConstraintAdapter();
+			}
+			@Override
+			public Adapter caseOption(Option object) {
+				return createOptionAdapter();
+			}
+			@Override
+			public Adapter caseMapping(Mapping object) {
+				return createMappingAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -195,44 +210,44 @@ public class VavemodelAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link vavemodel.Constraint <em>Constraint</em>}'.
+	 * Creates a new adapter for an object of class '{@link vavemodel.CrossTreeConstraint <em>Cross Tree Constraint</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see vavemodel.Constraint
+	 * @see vavemodel.CrossTreeConstraint
 	 * @generated
 	 */
-	public Adapter createConstraintAdapter() {
+	public Adapter createCrossTreeConstraintAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link vavemodel.VariationPoint <em>Variation Point</em>}'.
+	 * Creates a new adapter for an object of class '{@link vavemodel.TreeConstraint <em>Tree Constraint</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see vavemodel.VariationPoint
+	 * @see vavemodel.TreeConstraint
 	 * @generated
 	 */
-	public Adapter createVariationPointAdapter() {
+	public Adapter createTreeConstraintAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link vavemodel.Version <em>Version</em>}'.
+	 * Creates a new adapter for an object of class '{@link vavemodel.Revision <em>Revision</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see vavemodel.Version
+	 * @see vavemodel.Revision
 	 * @generated
 	 */
-	public Adapter createVersionAdapter() {
+	public Adapter createRevisionAdapter() {
 		return null;
 	}
 
@@ -387,6 +402,48 @@ public class VavemodelAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createNotAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link vavemodel.Constraint <em>Constraint</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see vavemodel.Constraint
+	 * @generated
+	 */
+	public Adapter createConstraintAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link vavemodel.Option <em>Option</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see vavemodel.Option
+	 * @generated
+	 */
+	public Adapter createOptionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link vavemodel.Mapping <em>Mapping</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see vavemodel.Mapping
+	 * @generated
+	 */
+	public Adapter createMappingAdapter() {
 		return null;
 	}
 

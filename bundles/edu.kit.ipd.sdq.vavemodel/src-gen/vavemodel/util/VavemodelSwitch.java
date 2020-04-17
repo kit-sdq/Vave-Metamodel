@@ -10,19 +10,22 @@ import org.eclipse.emf.ecore.util.Switch;
 import vavemodel.BinaryExpression;
 import vavemodel.Conjunction;
 import vavemodel.Constraint;
+import vavemodel.CrossTreeConstraint;
 import vavemodel.DeltaModule;
 import vavemodel.Disjunction;
 import vavemodel.Equivalence;
 import vavemodel.Expression;
 import vavemodel.Implication;
+import vavemodel.Mapping;
 import vavemodel.Not;
+import vavemodel.Option;
+import vavemodel.Revision;
 import vavemodel.Term;
+import vavemodel.TreeConstraint;
 import vavemodel.UnaryExpression;
 import vavemodel.Variable;
 import vavemodel.Variant;
-import vavemodel.VariationPoint;
 import vavemodel.VavemodelPackage;
-import vavemodel.Version;
 
 /**
  * <!-- begin-user-doc -->
@@ -90,24 +93,28 @@ public class VavemodelSwitch<T> extends Switch<T> {
 			case VavemodelPackage.VARIANT: {
 				Variant variant = (Variant)theEObject;
 				T result = caseVariant(variant);
+				if (result == null) result = caseOption(variant);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case VavemodelPackage.CONSTRAINT: {
-				Constraint constraint = (Constraint)theEObject;
-				T result = caseConstraint(constraint);
+			case VavemodelPackage.CROSS_TREE_CONSTRAINT: {
+				CrossTreeConstraint crossTreeConstraint = (CrossTreeConstraint)theEObject;
+				T result = caseCrossTreeConstraint(crossTreeConstraint);
+				if (result == null) result = caseConstraint(crossTreeConstraint);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case VavemodelPackage.VARIATION_POINT: {
-				VariationPoint variationPoint = (VariationPoint)theEObject;
-				T result = caseVariationPoint(variationPoint);
+			case VavemodelPackage.TREE_CONSTRAINT: {
+				TreeConstraint treeConstraint = (TreeConstraint)theEObject;
+				T result = caseTreeConstraint(treeConstraint);
+				if (result == null) result = caseConstraint(treeConstraint);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case VavemodelPackage.VERSION: {
-				Version version = (Version)theEObject;
-				T result = caseVersion(version);
+			case VavemodelPackage.REVISION: {
+				Revision revision = (Revision)theEObject;
+				T result = caseRevision(revision);
+				if (result == null) result = caseOption(revision);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -199,6 +206,24 @@ public class VavemodelSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case VavemodelPackage.CONSTRAINT: {
+				Constraint constraint = (Constraint)theEObject;
+				T result = caseConstraint(constraint);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case VavemodelPackage.OPTION: {
+				Option option = (Option)theEObject;
+				T result = caseOption(option);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case VavemodelPackage.MAPPING: {
+				Mapping mapping = (Mapping)theEObject;
+				T result = caseMapping(mapping);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -234,47 +259,47 @@ public class VavemodelSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Constraint</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Cross Tree Constraint</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Constraint</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Cross Tree Constraint</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseConstraint(Constraint object) {
+	public T caseCrossTreeConstraint(CrossTreeConstraint object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Variation Point</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Tree Constraint</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Variation Point</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Tree Constraint</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseVariationPoint(VariationPoint object) {
+	public T caseTreeConstraint(TreeConstraint object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Version</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Revision</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Version</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Revision</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseVersion(Version object) {
+	public T caseRevision(Revision object) {
 		return null;
 	}
 
@@ -440,6 +465,51 @@ public class VavemodelSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseNot(Not object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Constraint</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Constraint</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseConstraint(Constraint object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Option</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Option</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseOption(Option object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Mapping</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Mapping</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseMapping(Mapping object) {
 		return null;
 	}
 

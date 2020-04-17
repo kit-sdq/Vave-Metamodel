@@ -18,7 +18,9 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
-import vavemodel.Constraint;
+import vavemodel.CrossTreeConstraint;
+import vavemodel.DeltaModule;
+import vavemodel.Mapping;
 import vavemodel.Variant;
 import vavemodel.VavemodelPackage;
 
@@ -33,6 +35,8 @@ import vavemodel.VavemodelPackage;
  *   <li>{@link vavemodel.impl.SystemImpl#getConstraint <em>Constraint</em>}</li>
  *   <li>{@link vavemodel.impl.SystemImpl#getVariant <em>Variant</em>}</li>
  *   <li>{@link vavemodel.impl.SystemImpl#getName <em>Name</em>}</li>
+ *   <li>{@link vavemodel.impl.SystemImpl#getMapping <em>Mapping</em>}</li>
+ *   <li>{@link vavemodel.impl.SystemImpl#getDeltamodule <em>Deltamodule</em>}</li>
  * </ul>
  *
  * @generated
@@ -46,7 +50,7 @@ public class SystemImpl extends MinimalEObjectImpl.Container implements vavemode
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Constraint> constraint;
+	protected EList<CrossTreeConstraint> constraint;
 
 	/**
 	 * The cached value of the '{@link #getVariant() <em>Variant</em>}' containment reference list.
@@ -79,6 +83,26 @@ public class SystemImpl extends MinimalEObjectImpl.Container implements vavemode
 	protected String name = NAME_EDEFAULT;
 
 	/**
+	 * The cached value of the '{@link #getMapping() <em>Mapping</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMapping()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Mapping> mapping;
+
+	/**
+	 * The cached value of the '{@link #getDeltamodule() <em>Deltamodule</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDeltamodule()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<DeltaModule> deltamodule;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -103,9 +127,9 @@ public class SystemImpl extends MinimalEObjectImpl.Container implements vavemode
 	 * @generated
 	 */
 	@Override
-	public EList<Constraint> getConstraint() {
+	public EList<CrossTreeConstraint> getConstraint() {
 		if (constraint == null) {
-			constraint = new EObjectContainmentEList<Constraint>(Constraint.class, this, VavemodelPackage.SYSTEM__CONSTRAINT);
+			constraint = new EObjectContainmentEList<CrossTreeConstraint>(CrossTreeConstraint.class, this, VavemodelPackage.SYSTEM__CONSTRAINT);
 		}
 		return constraint;
 	}
@@ -152,12 +176,42 @@ public class SystemImpl extends MinimalEObjectImpl.Container implements vavemode
 	 * @generated
 	 */
 	@Override
+	public EList<Mapping> getMapping() {
+		if (mapping == null) {
+			mapping = new EObjectContainmentEList<Mapping>(Mapping.class, this, VavemodelPackage.SYSTEM__MAPPING);
+		}
+		return mapping;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<DeltaModule> getDeltamodule() {
+		if (deltamodule == null) {
+			deltamodule = new EObjectContainmentEList<DeltaModule>(DeltaModule.class, this, VavemodelPackage.SYSTEM__DELTAMODULE);
+		}
+		return deltamodule;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case VavemodelPackage.SYSTEM__CONSTRAINT:
 				return ((InternalEList<?>)getConstraint()).basicRemove(otherEnd, msgs);
 			case VavemodelPackage.SYSTEM__VARIANT:
 				return ((InternalEList<?>)getVariant()).basicRemove(otherEnd, msgs);
+			case VavemodelPackage.SYSTEM__MAPPING:
+				return ((InternalEList<?>)getMapping()).basicRemove(otherEnd, msgs);
+			case VavemodelPackage.SYSTEM__DELTAMODULE:
+				return ((InternalEList<?>)getDeltamodule()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -176,6 +230,10 @@ public class SystemImpl extends MinimalEObjectImpl.Container implements vavemode
 				return getVariant();
 			case VavemodelPackage.SYSTEM__NAME:
 				return getName();
+			case VavemodelPackage.SYSTEM__MAPPING:
+				return getMapping();
+			case VavemodelPackage.SYSTEM__DELTAMODULE:
+				return getDeltamodule();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -191,7 +249,7 @@ public class SystemImpl extends MinimalEObjectImpl.Container implements vavemode
 		switch (featureID) {
 			case VavemodelPackage.SYSTEM__CONSTRAINT:
 				getConstraint().clear();
-				getConstraint().addAll((Collection<? extends Constraint>)newValue);
+				getConstraint().addAll((Collection<? extends CrossTreeConstraint>)newValue);
 				return;
 			case VavemodelPackage.SYSTEM__VARIANT:
 				getVariant().clear();
@@ -199,6 +257,14 @@ public class SystemImpl extends MinimalEObjectImpl.Container implements vavemode
 				return;
 			case VavemodelPackage.SYSTEM__NAME:
 				setName((String)newValue);
+				return;
+			case VavemodelPackage.SYSTEM__MAPPING:
+				getMapping().clear();
+				getMapping().addAll((Collection<? extends Mapping>)newValue);
+				return;
+			case VavemodelPackage.SYSTEM__DELTAMODULE:
+				getDeltamodule().clear();
+				getDeltamodule().addAll((Collection<? extends DeltaModule>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -221,6 +287,12 @@ public class SystemImpl extends MinimalEObjectImpl.Container implements vavemode
 			case VavemodelPackage.SYSTEM__NAME:
 				setName(NAME_EDEFAULT);
 				return;
+			case VavemodelPackage.SYSTEM__MAPPING:
+				getMapping().clear();
+				return;
+			case VavemodelPackage.SYSTEM__DELTAMODULE:
+				getDeltamodule().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -239,6 +311,10 @@ public class SystemImpl extends MinimalEObjectImpl.Container implements vavemode
 				return variant != null && !variant.isEmpty();
 			case VavemodelPackage.SYSTEM__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+			case VavemodelPackage.SYSTEM__MAPPING:
+				return mapping != null && !mapping.isEmpty();
+			case VavemodelPackage.SYSTEM__DELTAMODULE:
+				return deltamodule != null && !deltamodule.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
