@@ -786,17 +786,6 @@ public interface VavemodelPackage extends EPackage {
 	EClass getVariant();
 
 	/**
-	 * Returns the meta object for the attribute '{@link vavemodel.Variant#getName <em>Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see vavemodel.Variant#getName()
-	 * @see #getVariant()
-	 * @generated
-	 */
-	EAttribute getVariant_Name();
-
-	/**
 	 * Returns the meta object for the containment reference list '{@link vavemodel.Variant#getVariationpoint <em>Variationpoint</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -817,6 +806,17 @@ public interface VavemodelPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getVariant_InitialVersion();
+
+	/**
+	 * Returns the meta object for the attribute '{@link vavemodel.Variant#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see vavemodel.Variant#getName()
+	 * @see #getVariant()
+	 * @generated
+	 */
+	EAttribute getVariant_Name();
 
 	/**
 	 * Returns the meta object for class '{@link vavemodel.Constraint <em>Constraint</em>}'.
@@ -1179,14 +1179,6 @@ public interface VavemodelPackage extends EPackage {
 		EClass VARIANT = eINSTANCE.getVariant();
 
 		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute VARIANT__NAME = eINSTANCE.getVariant_Name();
-
-		/**
 		 * The meta object literal for the '<em><b>Variationpoint</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1201,6 +1193,14 @@ public interface VavemodelPackage extends EPackage {
 		 * @generated
 		 */
 		EReference VARIANT__INITIAL_VERSION = eINSTANCE.getVariant_InitialVersion();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute VARIANT__NAME = eINSTANCE.getVariant_Name();
 
 		/**
 		 * The meta object literal for the '{@link vavemodel.impl.ConstraintImpl <em>Constraint</em>}' class.

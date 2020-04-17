@@ -29,10 +29,6 @@ public interface System extends EObject {
 	 * Returns the value of the '<em><b>Constraint</b></em>' containment reference list.
 	 * The list contents are of type {@link vavemodel.Constraint}.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Constraint</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Constraint</em>' containment reference list.
 	 * @see vavemodel.VavemodelPackage#getSystem_Constraint()
@@ -45,10 +41,6 @@ public interface System extends EObject {
 	 * Returns the value of the '<em><b>Variant</b></em>' containment reference list.
 	 * The list contents are of type {@link vavemodel.Variant}.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Variant</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Variant</em>' containment reference list.
 	 * @see vavemodel.VavemodelPackage#getSystem_Variant()
@@ -60,10 +52,6 @@ public interface System extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Name</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)

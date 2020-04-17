@@ -276,16 +276,6 @@ public class VavemodelPackageImpl extends EPackageImpl implements VavemodelPacka
 	 * @generated
 	 */
 	@Override
-	public EAttribute getVariant_Name() {
-		return (EAttribute)variantEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EReference getVariant_Variationpoint() {
 		return (EReference)variantEClass.getEStructuralFeatures().get(0);
 	}
@@ -298,6 +288,16 @@ public class VavemodelPackageImpl extends EPackageImpl implements VavemodelPacka
 	@Override
 	public EReference getVariant_InitialVersion() {
 		return (EReference)variantEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getVariant_Name() {
+		return (EAttribute)variantEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**

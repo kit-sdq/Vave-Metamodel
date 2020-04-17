@@ -28,10 +28,6 @@ public interface Version extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Version ID</b></em>' attribute.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Version ID</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Version ID</em>' attribute.
 	 * @see #setVersionID(String)
@@ -54,10 +50,6 @@ public interface Version extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Deltamodule</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Deltamodule</em>' containment reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Deltamodule</em>' containment reference.
 	 * @see #setDeltamodule(DeltaModule)
@@ -81,10 +73,6 @@ public interface Version extends EObject {
 	 * Returns the value of the '<em><b>Successor</b></em>' containment reference list.
 	 * The list contents are of type {@link vavemodel.Version}.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Successor</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Successor</em>' containment reference list.
 	 * @see vavemodel.VavemodelPackage#getVersion_Successor()

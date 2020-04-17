@@ -4,7 +4,7 @@
     editorDirectory="/edu.kit.ipd.sdq.vavemodel.editor/src-gen" modelPluginID="edu.kit.ipd.sdq.vavemodel"
     modelName="Vavemodel" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     testsDirectory="/edu.kit.ipd.sdq.vavemodel.tests/src-gen" importerID="org.eclipse.emf.importer.ecore"
-    complianceLevel="8.0" copyrightFields="false" usedGenPackages="../../org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore"
+    complianceLevel="8.0" copyrightFields="false" usedGenPackages="../../../../org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore"
     operationReflection="true" importOrganizing="true">
   <foreignModel>vavemodel.ecore</foreignModel>
   <genPackages prefix="Vavemodel" disposableProviderFactory="true" ecorePackage="vavemodel.ecore#/">

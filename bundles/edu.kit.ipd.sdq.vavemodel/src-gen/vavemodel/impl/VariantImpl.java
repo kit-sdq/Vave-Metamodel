@@ -104,29 +104,6 @@ public class VariantImpl extends MinimalEObjectImpl.Container implements Variant
 	 * @generated
 	 */
 	@Override
-	public String getName() {
-		return name;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setName(String newName) {
-		String oldName = name;
-		name = newName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, VavemodelPackage.VARIANT__NAME, oldName, name));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EList<VariationPoint> getVariationpoint() {
 		if (variationpoint == null) {
 			variationpoint = new EObjectContainmentEList<VariationPoint>(VariationPoint.class, this, VavemodelPackage.VARIANT__VARIATIONPOINT);
@@ -177,6 +154,29 @@ public class VariantImpl extends MinimalEObjectImpl.Container implements Variant
 		}
 		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, VavemodelPackage.VARIANT__INITIAL_VERSION, newInitialVersion, newInitialVersion));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getName() {
+		return name;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setName(String newName) {
+		String oldName = name;
+		name = newName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, VavemodelPackage.VARIANT__NAME, oldName, name));
 	}
 
 	/**

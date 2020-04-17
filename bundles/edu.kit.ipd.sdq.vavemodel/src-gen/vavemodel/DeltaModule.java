@@ -27,10 +27,6 @@ public interface DeltaModule extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Delta Module ID</b></em>' attribute.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Delta Module ID</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Delta Module ID</em>' attribute.
 	 * @see #setDeltaModuleID(String)
@@ -53,10 +49,6 @@ public interface DeltaModule extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Old Version ID</b></em>' attribute.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Old Version ID</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Old Version ID</em>' attribute.
 	 * @see #setOldVersionID(String)
@@ -79,10 +71,6 @@ public interface DeltaModule extends EObject {
 	/**
 	 * Returns the value of the '<em><b>New Version ID</b></em>' attribute.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>New Version ID</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>New Version ID</em>' attribute.
 	 * @see #setNewVersionID(String)
@@ -105,10 +93,6 @@ public interface DeltaModule extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Model Path</b></em>' attribute.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Model Path</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Model Path</em>' attribute.
 	 * @see #setModelPath(String)

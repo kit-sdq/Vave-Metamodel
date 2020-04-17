@@ -25,10 +25,6 @@ public interface BinaryExpression extends Expression {
 	 * Returns the value of the '<em><b>Term</b></em>' containment reference list.
 	 * The list contents are of type {@link vavemodel.Term}.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Term</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Term</em>' containment reference list.
 	 * @see vavemodel.VavemodelPackage#getBinaryExpression_Term()
