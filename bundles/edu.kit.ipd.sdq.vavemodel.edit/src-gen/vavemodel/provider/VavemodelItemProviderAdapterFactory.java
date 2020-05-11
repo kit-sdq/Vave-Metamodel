@@ -118,72 +118,72 @@ public class VavemodelItemProviderAdapterFactory extends VavemodelAdapterFactory
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link vavemodel.Constraint} instances.
+	 * This keeps track of the one adapter used for all {@link vavemodel.CrossTreeConstraint} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ConstraintItemProvider constraintItemProvider;
+	protected CrossTreeConstraintItemProvider crossTreeConstraintItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link vavemodel.Constraint}.
+	 * This creates an adapter for a {@link vavemodel.CrossTreeConstraint}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createConstraintAdapter() {
-		if (constraintItemProvider == null) {
-			constraintItemProvider = new ConstraintItemProvider(this);
+	public Adapter createCrossTreeConstraintAdapter() {
+		if (crossTreeConstraintItemProvider == null) {
+			crossTreeConstraintItemProvider = new CrossTreeConstraintItemProvider(this);
 		}
 
-		return constraintItemProvider;
+		return crossTreeConstraintItemProvider;
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link vavemodel.VariationPoint} instances.
+	 * This keeps track of the one adapter used for all {@link vavemodel.TreeConstraint} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected VariationPointItemProvider variationPointItemProvider;
+	protected TreeConstraintItemProvider treeConstraintItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link vavemodel.VariationPoint}.
+	 * This creates an adapter for a {@link vavemodel.TreeConstraint}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createVariationPointAdapter() {
-		if (variationPointItemProvider == null) {
-			variationPointItemProvider = new VariationPointItemProvider(this);
+	public Adapter createTreeConstraintAdapter() {
+		if (treeConstraintItemProvider == null) {
+			treeConstraintItemProvider = new TreeConstraintItemProvider(this);
 		}
 
-		return variationPointItemProvider;
+		return treeConstraintItemProvider;
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link vavemodel.Version} instances.
+	 * This keeps track of the one adapter used for all {@link vavemodel.Revision} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected VersionItemProvider versionItemProvider;
+	protected RevisionItemProvider revisionItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link vavemodel.Version}.
+	 * This creates an adapter for a {@link vavemodel.Revision}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createVersionAdapter() {
-		if (versionItemProvider == null) {
-			versionItemProvider = new VersionItemProvider(this);
+	public Adapter createRevisionAdapter() {
+		if (revisionItemProvider == null) {
+			revisionItemProvider = new RevisionItemProvider(this);
 		}
 
-		return versionItemProvider;
+		return revisionItemProvider;
 	}
 
 	/**
@@ -348,6 +348,29 @@ public class VavemodelItemProviderAdapterFactory extends VavemodelAdapterFactory
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link vavemodel.Mapping} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected MappingItemProvider mappingItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link vavemodel.Mapping}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createMappingAdapter() {
+		if (mappingItemProvider == null) {
+			mappingItemProvider = new MappingItemProvider(this);
+		}
+
+		return mappingItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -454,9 +477,9 @@ public class VavemodelItemProviderAdapterFactory extends VavemodelAdapterFactory
 	public void dispose() {
 		if (systemItemProvider != null) systemItemProvider.dispose();
 		if (variantItemProvider != null) variantItemProvider.dispose();
-		if (constraintItemProvider != null) constraintItemProvider.dispose();
-		if (variationPointItemProvider != null) variationPointItemProvider.dispose();
-		if (versionItemProvider != null) versionItemProvider.dispose();
+		if (crossTreeConstraintItemProvider != null) crossTreeConstraintItemProvider.dispose();
+		if (treeConstraintItemProvider != null) treeConstraintItemProvider.dispose();
+		if (revisionItemProvider != null) revisionItemProvider.dispose();
 		if (deltaModuleItemProvider != null) deltaModuleItemProvider.dispose();
 		if (variableItemProvider != null) variableItemProvider.dispose();
 		if (implicationItemProvider != null) implicationItemProvider.dispose();
@@ -464,6 +487,7 @@ public class VavemodelItemProviderAdapterFactory extends VavemodelAdapterFactory
 		if (equivalenceItemProvider != null) equivalenceItemProvider.dispose();
 		if (conjunctionItemProvider != null) conjunctionItemProvider.dispose();
 		if (notItemProvider != null) notItemProvider.dispose();
+		if (mappingItemProvider != null) mappingItemProvider.dispose();
 	}
 
 }

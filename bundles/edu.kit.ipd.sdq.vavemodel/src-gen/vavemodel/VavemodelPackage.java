@@ -95,13 +95,31 @@ public interface VavemodelPackage extends EPackage {
 	int SYSTEM__NAME = 2;
 
 	/**
+	 * The feature id for the '<em><b>Mapping</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYSTEM__MAPPING = 3;
+
+	/**
+	 * The feature id for the '<em><b>Deltamodule</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYSTEM__DELTAMODULE = 4;
+
+	/**
 	 * The number of structural features of the '<em>System</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SYSTEM_FEATURE_COUNT = 3;
+	int SYSTEM_FEATURE_COUNT = 5;
 
 	/**
 	 * The number of operations of the '<em>System</em>' class.
@@ -111,6 +129,34 @@ public interface VavemodelPackage extends EPackage {
 	 * @ordered
 	 */
 	int SYSTEM_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link vavemodel.impl.OptionImpl <em>Option</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see vavemodel.impl.OptionImpl
+	 * @see vavemodel.impl.VavemodelPackageImpl#getOption()
+	 * @generated
+	 */
+	int OPTION = 17;
+
+	/**
+	 * The number of structural features of the '<em>Option</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPTION_FEATURE_COUNT = 0;
+
+	/**
+	 * The number of operations of the '<em>Option</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPTION_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link vavemodel.impl.VariantImpl <em>Variant</em>}' class.
@@ -129,7 +175,7 @@ public interface VavemodelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VARIANT__VARIATIONPOINT = 0;
+	int VARIANT__VARIATIONPOINT = OPTION_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Initial Version</b></em>' containment reference.
@@ -138,7 +184,7 @@ public interface VavemodelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VARIANT__INITIAL_VERSION = 1;
+	int VARIANT__INITIAL_VERSION = OPTION_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -147,7 +193,7 @@ public interface VavemodelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VARIANT__NAME = 2;
+	int VARIANT__NAME = OPTION_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Variant</em>' class.
@@ -156,7 +202,7 @@ public interface VavemodelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VARIANT_FEATURE_COUNT = 3;
+	int VARIANT_FEATURE_COUNT = OPTION_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of operations of the '<em>Variant</em>' class.
@@ -165,7 +211,7 @@ public interface VavemodelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VARIANT_OPERATION_COUNT = 0;
+	int VARIANT_OPERATION_COUNT = OPTION_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link vavemodel.impl.ConstraintImpl <em>Constraint</em>}' class.
@@ -175,16 +221,16 @@ public interface VavemodelPackage extends EPackage {
 	 * @see vavemodel.impl.VavemodelPackageImpl#getConstraint()
 	 * @generated
 	 */
-	int CONSTRAINT = 2;
+	int CONSTRAINT = 16;
 
 	/**
-	 * The feature id for the '<em><b>Expression</b></em>' containment reference.
+	 * The feature id for the '<em><b>Option</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONSTRAINT__EXPRESSION = 0;
+	int CONSTRAINT__OPTION = 0;
 
 	/**
 	 * The number of structural features of the '<em>Constraint</em>' class.
@@ -205,14 +251,69 @@ public interface VavemodelPackage extends EPackage {
 	int CONSTRAINT_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link vavemodel.impl.VariationPointImpl <em>Variation Point</em>}' class.
+	 * The meta object id for the '{@link vavemodel.impl.CrossTreeConstraintImpl <em>Cross Tree Constraint</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see vavemodel.impl.VariationPointImpl
-	 * @see vavemodel.impl.VavemodelPackageImpl#getVariationPoint()
+	 * @see vavemodel.impl.CrossTreeConstraintImpl
+	 * @see vavemodel.impl.VavemodelPackageImpl#getCrossTreeConstraint()
 	 * @generated
 	 */
-	int VARIATION_POINT = 3;
+	int CROSS_TREE_CONSTRAINT = 2;
+
+	/**
+	 * The feature id for the '<em><b>Option</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CROSS_TREE_CONSTRAINT__OPTION = CONSTRAINT__OPTION;
+
+	/**
+	 * The feature id for the '<em><b>Expression</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CROSS_TREE_CONSTRAINT__EXPRESSION = CONSTRAINT_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Cross Tree Constraint</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CROSS_TREE_CONSTRAINT_FEATURE_COUNT = CONSTRAINT_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Cross Tree Constraint</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CROSS_TREE_CONSTRAINT_OPERATION_COUNT = CONSTRAINT_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link vavemodel.impl.TreeConstraintImpl <em>Tree Constraint</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see vavemodel.impl.TreeConstraintImpl
+	 * @see vavemodel.impl.VavemodelPackageImpl#getTreeConstraint()
+	 * @generated
+	 */
+	int TREE_CONSTRAINT = 3;
+
+	/**
+	 * The feature id for the '<em><b>Option</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TREE_CONSTRAINT__OPTION = CONSTRAINT__OPTION;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -221,7 +322,7 @@ public interface VavemodelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VARIATION_POINT__TYPE = 0;
+	int TREE_CONSTRAINT__TYPE = CONSTRAINT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Variant</b></em>' containment reference list.
@@ -230,35 +331,35 @@ public interface VavemodelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VARIATION_POINT__VARIANT = 1;
+	int TREE_CONSTRAINT__VARIANT = CONSTRAINT_FEATURE_COUNT + 1;
 
 	/**
-	 * The number of structural features of the '<em>Variation Point</em>' class.
+	 * The number of structural features of the '<em>Tree Constraint</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VARIATION_POINT_FEATURE_COUNT = 2;
+	int TREE_CONSTRAINT_FEATURE_COUNT = CONSTRAINT_FEATURE_COUNT + 2;
 
 	/**
-	 * The number of operations of the '<em>Variation Point</em>' class.
+	 * The number of operations of the '<em>Tree Constraint</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VARIATION_POINT_OPERATION_COUNT = 0;
+	int TREE_CONSTRAINT_OPERATION_COUNT = CONSTRAINT_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link vavemodel.impl.VersionImpl <em>Version</em>}' class.
+	 * The meta object id for the '{@link vavemodel.impl.RevisionImpl <em>Revision</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see vavemodel.impl.VersionImpl
-	 * @see vavemodel.impl.VavemodelPackageImpl#getVersion()
+	 * @see vavemodel.impl.RevisionImpl
+	 * @see vavemodel.impl.VavemodelPackageImpl#getRevision()
 	 * @generated
 	 */
-	int VERSION = 4;
+	int REVISION = 4;
 
 	/**
 	 * The feature id for the '<em><b>Version ID</b></em>' attribute.
@@ -267,16 +368,7 @@ public interface VavemodelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VERSION__VERSION_ID = 0;
-
-	/**
-	 * The feature id for the '<em><b>Deltamodule</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VERSION__DELTAMODULE = 1;
+	int REVISION__VERSION_ID = OPTION_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Successor</b></em>' containment reference list.
@@ -285,25 +377,25 @@ public interface VavemodelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VERSION__SUCCESSOR = 2;
+	int REVISION__SUCCESSOR = OPTION_FEATURE_COUNT + 1;
 
 	/**
-	 * The number of structural features of the '<em>Version</em>' class.
+	 * The number of structural features of the '<em>Revision</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VERSION_FEATURE_COUNT = 3;
+	int REVISION_FEATURE_COUNT = OPTION_FEATURE_COUNT + 2;
 
 	/**
-	 * The number of operations of the '<em>Version</em>' class.
+	 * The number of operations of the '<em>Revision</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VERSION_OPERATION_COUNT = 0;
+	int REVISION_OPERATION_COUNT = OPTION_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link vavemodel.impl.DeltaModuleImpl <em>Delta Module</em>}' class.
@@ -722,6 +814,52 @@ public interface VavemodelPackage extends EPackage {
 	int NOT_OPERATION_COUNT = UNARY_EXPRESSION_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link vavemodel.impl.MappingImpl <em>Mapping</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see vavemodel.impl.MappingImpl
+	 * @see vavemodel.impl.VavemodelPackageImpl#getMapping()
+	 * @generated
+	 */
+	int MAPPING = 18;
+
+	/**
+	 * The feature id for the '<em><b>Option</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAPPING__OPTION = 0;
+
+	/**
+	 * The feature id for the '<em><b>Deltamodule</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAPPING__DELTAMODULE = 1;
+
+	/**
+	 * The number of structural features of the '<em>Mapping</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAPPING_FEATURE_COUNT = 2;
+
+	/**
+	 * The number of operations of the '<em>Mapping</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAPPING_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link vavemodel.GroupType <em>Group Type</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -729,7 +867,7 @@ public interface VavemodelPackage extends EPackage {
 	 * @see vavemodel.impl.VavemodelPackageImpl#getGroupType()
 	 * @generated
 	 */
-	int GROUP_TYPE = 16;
+	int GROUP_TYPE = 19;
 
 
 	/**
@@ -776,6 +914,28 @@ public interface VavemodelPackage extends EPackage {
 	EAttribute getSystem_Name();
 
 	/**
+	 * Returns the meta object for the containment reference list '{@link vavemodel.System#getMapping <em>Mapping</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Mapping</em>'.
+	 * @see vavemodel.System#getMapping()
+	 * @see #getSystem()
+	 * @generated
+	 */
+	EReference getSystem_Mapping();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link vavemodel.System#getDeltamodule <em>Deltamodule</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Deltamodule</em>'.
+	 * @see vavemodel.System#getDeltamodule()
+	 * @see #getSystem()
+	 * @generated
+	 */
+	EReference getSystem_Deltamodule();
+
+	/**
 	 * Returns the meta object for class '{@link vavemodel.Variant <em>Variant</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -819,100 +979,89 @@ public interface VavemodelPackage extends EPackage {
 	EAttribute getVariant_Name();
 
 	/**
-	 * Returns the meta object for class '{@link vavemodel.Constraint <em>Constraint</em>}'.
+	 * Returns the meta object for class '{@link vavemodel.CrossTreeConstraint <em>Cross Tree Constraint</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Constraint</em>'.
-	 * @see vavemodel.Constraint
+	 * @return the meta object for class '<em>Cross Tree Constraint</em>'.
+	 * @see vavemodel.CrossTreeConstraint
 	 * @generated
 	 */
-	EClass getConstraint();
+	EClass getCrossTreeConstraint();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link vavemodel.Constraint#getExpression <em>Expression</em>}'.
+	 * Returns the meta object for the containment reference '{@link vavemodel.CrossTreeConstraint#getExpression <em>Expression</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference '<em>Expression</em>'.
-	 * @see vavemodel.Constraint#getExpression()
-	 * @see #getConstraint()
+	 * @see vavemodel.CrossTreeConstraint#getExpression()
+	 * @see #getCrossTreeConstraint()
 	 * @generated
 	 */
-	EReference getConstraint_Expression();
+	EReference getCrossTreeConstraint_Expression();
 
 	/**
-	 * Returns the meta object for class '{@link vavemodel.VariationPoint <em>Variation Point</em>}'.
+	 * Returns the meta object for class '{@link vavemodel.TreeConstraint <em>Tree Constraint</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Variation Point</em>'.
-	 * @see vavemodel.VariationPoint
+	 * @return the meta object for class '<em>Tree Constraint</em>'.
+	 * @see vavemodel.TreeConstraint
 	 * @generated
 	 */
-	EClass getVariationPoint();
+	EClass getTreeConstraint();
 
 	/**
-	 * Returns the meta object for the attribute '{@link vavemodel.VariationPoint#getType <em>Type</em>}'.
+	 * Returns the meta object for the attribute '{@link vavemodel.TreeConstraint#getType <em>Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Type</em>'.
-	 * @see vavemodel.VariationPoint#getType()
-	 * @see #getVariationPoint()
+	 * @see vavemodel.TreeConstraint#getType()
+	 * @see #getTreeConstraint()
 	 * @generated
 	 */
-	EAttribute getVariationPoint_Type();
+	EAttribute getTreeConstraint_Type();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link vavemodel.VariationPoint#getVariant <em>Variant</em>}'.
+	 * Returns the meta object for the containment reference list '{@link vavemodel.TreeConstraint#getVariant <em>Variant</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Variant</em>'.
-	 * @see vavemodel.VariationPoint#getVariant()
-	 * @see #getVariationPoint()
+	 * @see vavemodel.TreeConstraint#getVariant()
+	 * @see #getTreeConstraint()
 	 * @generated
 	 */
-	EReference getVariationPoint_Variant();
+	EReference getTreeConstraint_Variant();
 
 	/**
-	 * Returns the meta object for class '{@link vavemodel.Version <em>Version</em>}'.
+	 * Returns the meta object for class '{@link vavemodel.Revision <em>Revision</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Version</em>'.
-	 * @see vavemodel.Version
+	 * @return the meta object for class '<em>Revision</em>'.
+	 * @see vavemodel.Revision
 	 * @generated
 	 */
-	EClass getVersion();
+	EClass getRevision();
 
 	/**
-	 * Returns the meta object for the attribute '{@link vavemodel.Version#getVersionID <em>Version ID</em>}'.
+	 * Returns the meta object for the attribute '{@link vavemodel.Revision#getVersionID <em>Version ID</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Version ID</em>'.
-	 * @see vavemodel.Version#getVersionID()
-	 * @see #getVersion()
+	 * @see vavemodel.Revision#getVersionID()
+	 * @see #getRevision()
 	 * @generated
 	 */
-	EAttribute getVersion_VersionID();
+	EAttribute getRevision_VersionID();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link vavemodel.Version#getDeltamodule <em>Deltamodule</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Deltamodule</em>'.
-	 * @see vavemodel.Version#getDeltamodule()
-	 * @see #getVersion()
-	 * @generated
-	 */
-	EReference getVersion_Deltamodule();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link vavemodel.Version#getSuccessor <em>Successor</em>}'.
+	 * Returns the meta object for the containment reference list '{@link vavemodel.Revision#getSuccessor <em>Successor</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Successor</em>'.
-	 * @see vavemodel.Version#getSuccessor()
-	 * @see #getVersion()
+	 * @see vavemodel.Revision#getSuccessor()
+	 * @see #getRevision()
 	 * @generated
 	 */
-	EReference getVersion_Successor();
+	EReference getRevision_Successor();
 
 	/**
 	 * Returns the meta object for class '{@link vavemodel.DeltaModule <em>Delta Module</em>}'.
@@ -1102,6 +1251,69 @@ public interface VavemodelPackage extends EPackage {
 	EClass getNot();
 
 	/**
+	 * Returns the meta object for class '{@link vavemodel.Constraint <em>Constraint</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Constraint</em>'.
+	 * @see vavemodel.Constraint
+	 * @generated
+	 */
+	EClass getConstraint();
+
+	/**
+	 * Returns the meta object for the reference list '{@link vavemodel.Constraint#getOption <em>Option</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Option</em>'.
+	 * @see vavemodel.Constraint#getOption()
+	 * @see #getConstraint()
+	 * @generated
+	 */
+	EReference getConstraint_Option();
+
+	/**
+	 * Returns the meta object for class '{@link vavemodel.Option <em>Option</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Option</em>'.
+	 * @see vavemodel.Option
+	 * @generated
+	 */
+	EClass getOption();
+
+	/**
+	 * Returns the meta object for class '{@link vavemodel.Mapping <em>Mapping</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Mapping</em>'.
+	 * @see vavemodel.Mapping
+	 * @generated
+	 */
+	EClass getMapping();
+
+	/**
+	 * Returns the meta object for the reference list '{@link vavemodel.Mapping#getOption <em>Option</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Option</em>'.
+	 * @see vavemodel.Mapping#getOption()
+	 * @see #getMapping()
+	 * @generated
+	 */
+	EReference getMapping_Option();
+
+	/**
+	 * Returns the meta object for the reference list '{@link vavemodel.Mapping#getDeltamodule <em>Deltamodule</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Deltamodule</em>'.
+	 * @see vavemodel.Mapping#getDeltamodule()
+	 * @see #getMapping()
+	 * @generated
+	 */
+	EReference getMapping_Deltamodule();
+
+	/**
 	 * Returns the meta object for enum '{@link vavemodel.GroupType <em>Group Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1169,6 +1381,22 @@ public interface VavemodelPackage extends EPackage {
 		EAttribute SYSTEM__NAME = eINSTANCE.getSystem_Name();
 
 		/**
+		 * The meta object literal for the '<em><b>Mapping</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SYSTEM__MAPPING = eINSTANCE.getSystem_Mapping();
+
+		/**
+		 * The meta object literal for the '<em><b>Deltamodule</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SYSTEM__DELTAMODULE = eINSTANCE.getSystem_Deltamodule();
+
+		/**
 		 * The meta object literal for the '{@link vavemodel.impl.VariantImpl <em>Variant</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1203,14 +1431,14 @@ public interface VavemodelPackage extends EPackage {
 		EAttribute VARIANT__NAME = eINSTANCE.getVariant_Name();
 
 		/**
-		 * The meta object literal for the '{@link vavemodel.impl.ConstraintImpl <em>Constraint</em>}' class.
+		 * The meta object literal for the '{@link vavemodel.impl.CrossTreeConstraintImpl <em>Cross Tree Constraint</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see vavemodel.impl.ConstraintImpl
-		 * @see vavemodel.impl.VavemodelPackageImpl#getConstraint()
+		 * @see vavemodel.impl.CrossTreeConstraintImpl
+		 * @see vavemodel.impl.VavemodelPackageImpl#getCrossTreeConstraint()
 		 * @generated
 		 */
-		EClass CONSTRAINT = eINSTANCE.getConstraint();
+		EClass CROSS_TREE_CONSTRAINT = eINSTANCE.getCrossTreeConstraint();
 
 		/**
 		 * The meta object literal for the '<em><b>Expression</b></em>' containment reference feature.
@@ -1218,17 +1446,17 @@ public interface VavemodelPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference CONSTRAINT__EXPRESSION = eINSTANCE.getConstraint_Expression();
+		EReference CROSS_TREE_CONSTRAINT__EXPRESSION = eINSTANCE.getCrossTreeConstraint_Expression();
 
 		/**
-		 * The meta object literal for the '{@link vavemodel.impl.VariationPointImpl <em>Variation Point</em>}' class.
+		 * The meta object literal for the '{@link vavemodel.impl.TreeConstraintImpl <em>Tree Constraint</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see vavemodel.impl.VariationPointImpl
-		 * @see vavemodel.impl.VavemodelPackageImpl#getVariationPoint()
+		 * @see vavemodel.impl.TreeConstraintImpl
+		 * @see vavemodel.impl.VavemodelPackageImpl#getTreeConstraint()
 		 * @generated
 		 */
-		EClass VARIATION_POINT = eINSTANCE.getVariationPoint();
+		EClass TREE_CONSTRAINT = eINSTANCE.getTreeConstraint();
 
 		/**
 		 * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
@@ -1236,7 +1464,7 @@ public interface VavemodelPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute VARIATION_POINT__TYPE = eINSTANCE.getVariationPoint_Type();
+		EAttribute TREE_CONSTRAINT__TYPE = eINSTANCE.getTreeConstraint_Type();
 
 		/**
 		 * The meta object literal for the '<em><b>Variant</b></em>' containment reference list feature.
@@ -1244,17 +1472,17 @@ public interface VavemodelPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference VARIATION_POINT__VARIANT = eINSTANCE.getVariationPoint_Variant();
+		EReference TREE_CONSTRAINT__VARIANT = eINSTANCE.getTreeConstraint_Variant();
 
 		/**
-		 * The meta object literal for the '{@link vavemodel.impl.VersionImpl <em>Version</em>}' class.
+		 * The meta object literal for the '{@link vavemodel.impl.RevisionImpl <em>Revision</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see vavemodel.impl.VersionImpl
-		 * @see vavemodel.impl.VavemodelPackageImpl#getVersion()
+		 * @see vavemodel.impl.RevisionImpl
+		 * @see vavemodel.impl.VavemodelPackageImpl#getRevision()
 		 * @generated
 		 */
-		EClass VERSION = eINSTANCE.getVersion();
+		EClass REVISION = eINSTANCE.getRevision();
 
 		/**
 		 * The meta object literal for the '<em><b>Version ID</b></em>' attribute feature.
@@ -1262,15 +1490,7 @@ public interface VavemodelPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute VERSION__VERSION_ID = eINSTANCE.getVersion_VersionID();
-
-		/**
-		 * The meta object literal for the '<em><b>Deltamodule</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference VERSION__DELTAMODULE = eINSTANCE.getVersion_Deltamodule();
+		EAttribute REVISION__VERSION_ID = eINSTANCE.getRevision_VersionID();
 
 		/**
 		 * The meta object literal for the '<em><b>Successor</b></em>' containment reference list feature.
@@ -1278,7 +1498,7 @@ public interface VavemodelPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference VERSION__SUCCESSOR = eINSTANCE.getVersion_Successor();
+		EReference REVISION__SUCCESSOR = eINSTANCE.getRevision_Successor();
 
 		/**
 		 * The meta object literal for the '{@link vavemodel.impl.DeltaModuleImpl <em>Delta Module</em>}' class.
@@ -1445,6 +1665,60 @@ public interface VavemodelPackage extends EPackage {
 		 * @generated
 		 */
 		EClass NOT = eINSTANCE.getNot();
+
+		/**
+		 * The meta object literal for the '{@link vavemodel.impl.ConstraintImpl <em>Constraint</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see vavemodel.impl.ConstraintImpl
+		 * @see vavemodel.impl.VavemodelPackageImpl#getConstraint()
+		 * @generated
+		 */
+		EClass CONSTRAINT = eINSTANCE.getConstraint();
+
+		/**
+		 * The meta object literal for the '<em><b>Option</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CONSTRAINT__OPTION = eINSTANCE.getConstraint_Option();
+
+		/**
+		 * The meta object literal for the '{@link vavemodel.impl.OptionImpl <em>Option</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see vavemodel.impl.OptionImpl
+		 * @see vavemodel.impl.VavemodelPackageImpl#getOption()
+		 * @generated
+		 */
+		EClass OPTION = eINSTANCE.getOption();
+
+		/**
+		 * The meta object literal for the '{@link vavemodel.impl.MappingImpl <em>Mapping</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see vavemodel.impl.MappingImpl
+		 * @see vavemodel.impl.VavemodelPackageImpl#getMapping()
+		 * @generated
+		 */
+		EClass MAPPING = eINSTANCE.getMapping();
+
+		/**
+		 * The meta object literal for the '<em><b>Option</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference MAPPING__OPTION = eINSTANCE.getMapping_Option();
+
+		/**
+		 * The meta object literal for the '<em><b>Deltamodule</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference MAPPING__DELTAMODULE = eINSTANCE.getMapping_Deltamodule();
 
 		/**
 		 * The meta object literal for the '{@link vavemodel.GroupType <em>Group Type</em>}' enum.

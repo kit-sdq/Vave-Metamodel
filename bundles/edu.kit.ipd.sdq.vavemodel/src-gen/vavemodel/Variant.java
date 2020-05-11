@@ -4,8 +4,6 @@ package vavemodel;
 
 import org.eclipse.emf.common.util.EList;
 
-import org.eclipse.emf.ecore.EObject;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Variant</b></em>'.
@@ -24,10 +22,10 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface Variant extends EObject {
+public interface Variant extends Option {
 	/**
 	 * Returns the value of the '<em><b>Variationpoint</b></em>' containment reference list.
-	 * The list contents are of type {@link vavemodel.VariationPoint}.
+	 * The list contents are of type {@link vavemodel.TreeConstraint}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Variationpoint</em>' containment reference list.
@@ -35,19 +33,19 @@ public interface Variant extends EObject {
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<VariationPoint> getVariationpoint();
+	EList<TreeConstraint> getVariationpoint();
 
 	/**
 	 * Returns the value of the '<em><b>Initial Version</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Initial Version</em>' containment reference.
-	 * @see #setInitialVersion(Version)
+	 * @see #setInitialVersion(Revision)
 	 * @see vavemodel.VavemodelPackage#getVariant_InitialVersion()
 	 * @model containment="true" required="true"
 	 * @generated
 	 */
-	Version getInitialVersion();
+	Revision getInitialVersion();
 
 	/**
 	 * Sets the value of the '{@link vavemodel.Variant#getInitialVersion <em>Initial Version</em>}' containment reference.
@@ -57,7 +55,7 @@ public interface Variant extends EObject {
 	 * @see #getInitialVersion()
 	 * @generated
 	 */
-	void setInitialVersion(Version value);
+	void setInitialVersion(Revision value);
 
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.
