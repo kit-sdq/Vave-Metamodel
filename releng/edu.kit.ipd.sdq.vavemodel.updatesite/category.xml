@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
-   <feature url="features/edu.kit.ipd.sdq.vavemodel.feature_1.1.0.qualifier.jar" id="edu.kit.ipd.sdq.vavemodel.feature" version="1.1.0.qualifier">
+   <feature url="features/edu.kit.ipd.sdq.vavemodel.feature_1.0.0.qualifier.jar" id="edu.kit.ipd.sdq.vavemodel.feature" version="1.0.0.qualifier">
       <category name="vavemodel"/>
    </feature>
-   <feature id="edu.kit.ipd.sdq.vavemodel.feature.source" version="1.1.0.qualifier">
+   <feature id="edu.kit.ipd.sdq.vavemodel.feature.source" version="1.0.0.qualifier">
       <category name="vavemodel"/>
    </feature>
    <category-def name="vavemodel" label="Vave Metamodel">
