@@ -3,7 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
 Bundle-SymbolicName: edu.kit.ipd.sdq.vavemodel.edit;singleton:=true
 Automatic-Module-Name: edu.kit.ipd.sdq.vavemodel.edit
-Bundle-Version: 1.0.0
+Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .
 Bundle-Activator: vavemodel.provider.VavemodelEditPlugin$Implementation
 Bundle-Vendor: %providerName
