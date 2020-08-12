@@ -95,26 +95,26 @@ public class VavemodelItemProviderAdapterFactory extends VavemodelAdapterFactory
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link vavemodel.Variant} instances.
+	 * This keeps track of the one adapter used for all {@link vavemodel.Feature} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected VariantItemProvider variantItemProvider;
+	protected FeatureItemProvider featureItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link vavemodel.Variant}.
+	 * This creates an adapter for a {@link vavemodel.Feature}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createVariantAdapter() {
-		if (variantItemProvider == null) {
-			variantItemProvider = new VariantItemProvider(this);
+	public Adapter createFeatureAdapter() {
+		if (featureItemProvider == null) {
+			featureItemProvider = new FeatureItemProvider(this);
 		}
 
-		return variantItemProvider;
+		return featureItemProvider;
 	}
 
 	/**
@@ -476,7 +476,7 @@ public class VavemodelItemProviderAdapterFactory extends VavemodelAdapterFactory
 	@Override
 	public void dispose() {
 		if (systemItemProvider != null) systemItemProvider.dispose();
-		if (variantItemProvider != null) variantItemProvider.dispose();
+		if (featureItemProvider != null) featureItemProvider.dispose();
 		if (crossTreeConstraintItemProvider != null) crossTreeConstraintItemProvider.dispose();
 		if (treeConstraintItemProvider != null) treeConstraintItemProvider.dispose();
 		if (revisionItemProvider != null) revisionItemProvider.dispose();

@@ -16,25 +16,24 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
-import vavemodel.GroupType;
-import vavemodel.TreeConstraint;
+import vavemodel.Feature;
 import vavemodel.VavemodelFactory;
 import vavemodel.VavemodelPackage;
 
 /**
- * This is the item provider adapter for a {@link vavemodel.TreeConstraint} object.
+ * This is the item provider adapter for a {@link vavemodel.Feature} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class TreeConstraintItemProvider extends ConstraintItemProvider {
+public class FeatureItemProvider extends OptionItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public TreeConstraintItemProvider(AdapterFactory adapterFactory) {
+	public FeatureItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -49,25 +48,25 @@ public class TreeConstraintItemProvider extends ConstraintItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addTypePropertyDescriptor(object);
+			addNamePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Type feature.
+	 * This adds a property descriptor for the Name feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addTypePropertyDescriptor(Object object) {
+	protected void addNamePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_TreeConstraint_type_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_TreeConstraint_type_feature", "_UI_TreeConstraint_type"),
-				 VavemodelPackage.Literals.TREE_CONSTRAINT__TYPE,
+				 getString("_UI_Feature_name_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Feature_name_feature", "_UI_Feature_type"),
+				 VavemodelPackage.Literals.FEATURE__NAME,
 				 true,
 				 false,
 				 false,
@@ -88,7 +87,8 @@ public class TreeConstraintItemProvider extends ConstraintItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(VavemodelPackage.Literals.TREE_CONSTRAINT__VARIANT);
+			childrenFeatures.add(VavemodelPackage.Literals.FEATURE__VARIATIONPOINT);
+			childrenFeatures.add(VavemodelPackage.Literals.FEATURE__INITIAL_VERSION);
 		}
 		return childrenFeatures;
 	}
@@ -107,14 +107,14 @@ public class TreeConstraintItemProvider extends ConstraintItemProvider {
 	}
 
 	/**
-	 * This returns TreeConstraint.gif.
+	 * This returns Feature.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/TreeConstraint"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/Feature"));
 	}
 
 	/**
@@ -125,11 +125,10 @@ public class TreeConstraintItemProvider extends ConstraintItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		GroupType labelValue = ((TreeConstraint)object).getType();
-		String label = labelValue == null ? null : labelValue.toString();
+		String label = ((Feature)object).getName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_TreeConstraint_type") :
-			getString("_UI_TreeConstraint_type") + " " + label;
+			getString("_UI_Feature_type") :
+			getString("_UI_Feature_type") + " " + label;
 	}
 
 
@@ -144,11 +143,12 @@ public class TreeConstraintItemProvider extends ConstraintItemProvider {
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(TreeConstraint.class)) {
-			case VavemodelPackage.TREE_CONSTRAINT__TYPE:
+		switch (notification.getFeatureID(Feature.class)) {
+			case VavemodelPackage.FEATURE__NAME:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case VavemodelPackage.TREE_CONSTRAINT__VARIANT:
+			case VavemodelPackage.FEATURE__VARIATIONPOINT:
+			case VavemodelPackage.FEATURE__INITIAL_VERSION:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -168,8 +168,13 @@ public class TreeConstraintItemProvider extends ConstraintItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
-				(VavemodelPackage.Literals.TREE_CONSTRAINT__VARIANT,
-				 VavemodelFactory.eINSTANCE.createFeature()));
+				(VavemodelPackage.Literals.FEATURE__VARIATIONPOINT,
+				 VavemodelFactory.eINSTANCE.createTreeConstraint()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(VavemodelPackage.Literals.FEATURE__INITIAL_VERSION,
+				 VavemodelFactory.eINSTANCE.createRevision()));
 	}
 
 }

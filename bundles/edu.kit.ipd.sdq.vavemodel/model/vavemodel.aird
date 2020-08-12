@@ -7,7 +7,7 @@
     <semanticResources>platform:/resource/org.eclipse.emf.ecore/model/Ecore.genmodel</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" uid="_4eDuUKO6Eem3b800uKMlBA">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_45BzEKO6Eem3b800uKMlBA" name="vavemodel class diagram" repPath="#_432uYKO6Eem3b800uKMlBA" changeId="ce2bd8f1-165c-4281-850b-d806aaffe735">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_45BzEKO6Eem3b800uKMlBA" name="vavemodel class diagram" repPath="#_432uYKO6Eem3b800uKMlBA" changeId="d9590852-9063-4e9e-8697-a7f3c949a79f">
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']"/>
         <target xmi:type="ecore:EPackage" href="vavemodel.ecore#/"/>
       </ownedRepresentationDescriptors>
@@ -753,16 +753,16 @@
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
       </ownedElements>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_5dfLAKO6Eem3b800uKMlBA" name="Variant" tooltipText="" outgoingEdges="_5eiT46O6Eem3b800uKMlBA _5ejiAKO6Eem3b800uKMlBA _0CbgCIDGEeqIZoAYwMoqyA" incomingEdges="_5ehFwKO6Eem3b800uKMlBA _5elXMKO6Eem3b800uKMlBA _5eoahqO6Eem3b800uKMlBA" width="12" height="10">
-      <target xmi:type="ecore:EClass" href="vavemodel.ecore#//Variant"/>
-      <semanticElements xmi:type="ecore:EClass" href="vavemodel.ecore#//Variant"/>
+    <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_5dfLAKO6Eem3b800uKMlBA" name="Feature" tooltipText="" outgoingEdges="_5eiT46O6Eem3b800uKMlBA _5ejiAKO6Eem3b800uKMlBA _0CbgCIDGEeqIZoAYwMoqyA" incomingEdges="_5ehFwKO6Eem3b800uKMlBA _5elXMKO6Eem3b800uKMlBA _5eoahqO6Eem3b800uKMlBA" width="12" height="10">
+      <target xmi:type="ecore:EClass" href="vavemodel.ecore#//Feature"/>
+      <semanticElements xmi:type="ecore:EClass" href="vavemodel.ecore#//Feature"/>
       <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_x_lVsoCKEeqIZoAYwMoqyA" borderSize="1" borderSizeComputationExpression="1" backgroundStyle="Liquid" foregroundColor="255,252,216">
         <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
       <ownedElements xmi:type="diagram:DNodeListElement" uid="_-6P30NujEem1POyWhNYicA" name="name : EString" tooltipText="">
-        <target xmi:type="ecore:EAttribute" href="vavemodel.ecore#//Variant/name"/>
-        <semanticElements xmi:type="ecore:EAttribute" href="vavemodel.ecore#//Variant/name"/>
+        <target xmi:type="ecore:EAttribute" href="vavemodel.ecore#//Feature/name"/>
+        <semanticElements xmi:type="ecore:EAttribute" href="vavemodel.ecore#//Feature/name"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_x_l8zICKEeqIZoAYwMoqyA" labelAlignment="LEFT">
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']/@style"/>
         </ownedStyle>
@@ -1007,8 +1007,8 @@
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']"/>
     </ownedDiagramElements>
     <ownedDiagramElements xmi:type="diagram:DEdge" uid="_5eiT46O6Eem3b800uKMlBA" name="[0..*] variationpoint" sourceNode="_5dfLAKO6Eem3b800uKMlBA" targetNode="_5dhnQaO6Eem3b800uKMlBA">
-      <target xmi:type="ecore:EReference" href="vavemodel.ecore#//Variant/variationpoint"/>
-      <semanticElements xmi:type="ecore:EReference" href="vavemodel.ecore#//Variant/variationpoint"/>
+      <target xmi:type="ecore:EReference" href="vavemodel.ecore#//Feature/variationpoint"/>
+      <semanticElements xmi:type="ecore:EReference" href="vavemodel.ecore#//Feature/variationpoint"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" uid="_5ei68KO6Eem3b800uKMlBA" description="_5ec0UKO6Eem3b800uKMlBA" sourceArrow="FillDiamond" routingStyle="manhattan" strokeColor="0,0,0">
         <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_5ei68qO6Eem3b800uKMlBA" showIcon="false">
           <customFeatures>labelSize</customFeatures>
@@ -1020,8 +1020,8 @@
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']"/>
     </ownedDiagramElements>
     <ownedDiagramElements xmi:type="diagram:DEdge" uid="_5ejiAKO6Eem3b800uKMlBA" name="[1..1] initialVersion" sourceNode="_5dfLAKO6Eem3b800uKMlBA" targetNode="_5dkDgaO6Eem3b800uKMlBA">
-      <target xmi:type="ecore:EReference" href="vavemodel.ecore#//Variant/initialVersion"/>
-      <semanticElements xmi:type="ecore:EReference" href="vavemodel.ecore#//Variant/initialVersion"/>
+      <target xmi:type="ecore:EReference" href="vavemodel.ecore#//Feature/initialVersion"/>
+      <semanticElements xmi:type="ecore:EReference" href="vavemodel.ecore#//Feature/initialVersion"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" uid="_5ejiAaO6Eem3b800uKMlBA" description="_5ehs0KO6Eem3b800uKMlBA" sourceArrow="FillDiamond" routingStyle="manhattan" strokeColor="0,0,0">
         <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_5ejiA6O6Eem3b800uKMlBA" showIcon="false">
           <customFeatures>labelSize</customFeatures>
@@ -1285,8 +1285,8 @@
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC%20ESupertypes']"/>
     </ownedDiagramElements>
     <ownedDiagramElements xmi:type="diagram:DEdge" uid="_0CbgCIDGEeqIZoAYwMoqyA" sourceNode="_5dfLAKO6Eem3b800uKMlBA" targetNode="_trBR8IDGEeqIZoAYwMoqyA">
-      <target xmi:type="ecore:EClass" href="vavemodel.ecore#//Variant"/>
-      <semanticElements xmi:type="ecore:EClass" href="vavemodel.ecore#//Variant"/>
+      <target xmi:type="ecore:EClass" href="vavemodel.ecore#//Feature"/>
+      <semanticElements xmi:type="ecore:EClass" href="vavemodel.ecore#//Feature"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" uid="_0CbgCYDGEeqIZoAYwMoqyA" targetArrow="InputClosedArrow" routingStyle="tree">
         <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC%20ESupertypes']/@style"/>
         <beginLabelStyle xmi:type="diagram:BeginLabelStyle" uid="_0CbgCoDGEeqIZoAYwMoqyA" showIcon="false">

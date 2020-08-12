@@ -5,14 +5,14 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="constraint" upperBound="-1"
         eType="#//CrossTreeConstraint" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="variant" lowerBound="1"
-        upperBound="-1" eType="#//Variant" containment="true"/>
+        upperBound="-1" eType="#//Feature" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="mapping" upperBound="-1"
         eType="#//Mapping" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="deltamodule" upperBound="-1"
         eType="#//DeltaModule" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Variant" eSuperTypes="#//Option">
+  <eClassifiers xsi:type="ecore:EClass" name="Feature" eSuperTypes="#//Option">
     <eStructuralFeatures xsi:type="ecore:EReference" name="variationpoint" upperBound="-1"
         eType="#//TreeConstraint" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="initialVersion" lowerBound="1"
@@ -26,7 +26,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="TreeConstraint" eSuperTypes="#//Constraint">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//GroupType"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="variant" lowerBound="1"
-        upperBound="-1" eType="#//Variant" containment="true"/>
+        upperBound="-1" eType="#//Feature" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="GroupType">
     <eLiterals name="XOR"/>
@@ -46,7 +46,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="modelPath" eType="ecore:EDataType ../../../../org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Variable" eSuperTypes="#//Expression">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="name" lowerBound="1" eType="#//Variant"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="name" lowerBound="1" eType="#//Feature"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Expression" abstract="true" eSuperTypes="#//Term"/>
   <eClassifiers xsi:type="ecore:EClass" name="Term" abstract="true" interface="true"/>

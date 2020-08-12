@@ -9,8 +9,8 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import vavemodel.Feature;
 import vavemodel.Variable;
-import vavemodel.Variant;
 import vavemodel.VavemodelPackage;
 
 /**
@@ -35,7 +35,7 @@ public class VariableImpl extends ExpressionImpl implements Variable {
 	 * @generated
 	 * @ordered
 	 */
-	protected Variant name;
+	protected Feature name;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -62,10 +62,10 @@ public class VariableImpl extends ExpressionImpl implements Variable {
 	 * @generated
 	 */
 	@Override
-	public Variant getName() {
+	public Feature getName() {
 		if (name != null && name.eIsProxy()) {
 			InternalEObject oldName = (InternalEObject)name;
-			name = (Variant)eResolveProxy(oldName);
+			name = (Feature)eResolveProxy(oldName);
 			if (name != oldName) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, VavemodelPackage.VARIABLE__NAME, oldName, name));
@@ -79,7 +79,7 @@ public class VariableImpl extends ExpressionImpl implements Variable {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Variant basicGetName() {
+	public Feature basicGetName() {
 		return name;
 	}
 
@@ -89,8 +89,8 @@ public class VariableImpl extends ExpressionImpl implements Variable {
 	 * @generated
 	 */
 	@Override
-	public void setName(Variant newName) {
-		Variant oldName = name;
+	public void setName(Feature newName) {
+		Feature oldName = name;
 		name = newName;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, VavemodelPackage.VARIABLE__NAME, oldName, name));
@@ -120,7 +120,7 @@ public class VariableImpl extends ExpressionImpl implements Variable {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case VavemodelPackage.VARIABLE__NAME:
-				setName((Variant)newValue);
+				setName((Feature)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -135,7 +135,7 @@ public class VariableImpl extends ExpressionImpl implements Variable {
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case VavemodelPackage.VARIABLE__NAME:
-				setName((Variant)null);
+				setName((Feature)null);
 				return;
 		}
 		super.eUnset(featureID);

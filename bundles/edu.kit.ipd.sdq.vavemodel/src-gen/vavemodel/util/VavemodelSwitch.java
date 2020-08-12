@@ -15,6 +15,7 @@ import vavemodel.DeltaModule;
 import vavemodel.Disjunction;
 import vavemodel.Equivalence;
 import vavemodel.Expression;
+import vavemodel.Feature;
 import vavemodel.Implication;
 import vavemodel.Mapping;
 import vavemodel.Not;
@@ -24,7 +25,6 @@ import vavemodel.Term;
 import vavemodel.TreeConstraint;
 import vavemodel.UnaryExpression;
 import vavemodel.Variable;
-import vavemodel.Variant;
 import vavemodel.VavemodelPackage;
 
 /**
@@ -90,10 +90,10 @@ public class VavemodelSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case VavemodelPackage.VARIANT: {
-				Variant variant = (Variant)theEObject;
-				T result = caseVariant(variant);
-				if (result == null) result = caseOption(variant);
+			case VavemodelPackage.FEATURE: {
+				Feature feature = (Feature)theEObject;
+				T result = caseFeature(feature);
+				if (result == null) result = caseOption(feature);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -244,17 +244,17 @@ public class VavemodelSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Variant</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Feature</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Variant</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Feature</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseVariant(Variant object) {
+	public T caseFeature(Feature object) {
 		return null;
 	}
 

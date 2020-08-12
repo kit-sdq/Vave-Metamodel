@@ -192,7 +192,7 @@ public class SystemItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(VavemodelPackage.Literals.SYSTEM__VARIANT,
-				 VavemodelFactory.eINSTANCE.createVariant()));
+				 VavemodelFactory.eINSTANCE.createFeature()));
 
 		newChildDescriptors.add
 			(createChildParameter

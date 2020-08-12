@@ -16,6 +16,7 @@ import vavemodel.CrossTreeConstraint;
 import vavemodel.DeltaModule;
 import vavemodel.Disjunction;
 import vavemodel.Equivalence;
+import vavemodel.Feature;
 import vavemodel.GroupType;
 import vavemodel.Implication;
 import vavemodel.Mapping;
@@ -23,7 +24,6 @@ import vavemodel.Not;
 import vavemodel.Revision;
 import vavemodel.TreeConstraint;
 import vavemodel.Variable;
-import vavemodel.Variant;
 import vavemodel.VavemodelFactory;
 import vavemodel.VavemodelPackage;
 
@@ -72,7 +72,7 @@ public class VavemodelFactoryImpl extends EFactoryImpl implements VavemodelFacto
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
 			case VavemodelPackage.SYSTEM: return createSystem();
-			case VavemodelPackage.VARIANT: return createVariant();
+			case VavemodelPackage.FEATURE: return createFeature();
 			case VavemodelPackage.CROSS_TREE_CONSTRAINT: return createCrossTreeConstraint();
 			case VavemodelPackage.TREE_CONSTRAINT: return createTreeConstraint();
 			case VavemodelPackage.REVISION: return createRevision();
@@ -136,9 +136,9 @@ public class VavemodelFactoryImpl extends EFactoryImpl implements VavemodelFacto
 	 * @generated
 	 */
 	@Override
-	public Variant createVariant() {
-		VariantImpl variant = new VariantImpl();
-		return variant;
+	public Feature createFeature() {
+		FeatureImpl feature = new FeatureImpl();
+		return feature;
 	}
 
 	/**

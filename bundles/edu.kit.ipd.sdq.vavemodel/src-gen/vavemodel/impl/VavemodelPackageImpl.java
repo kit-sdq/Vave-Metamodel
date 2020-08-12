@@ -19,6 +19,7 @@ import vavemodel.DeltaModule;
 import vavemodel.Disjunction;
 import vavemodel.Equivalence;
 import vavemodel.Expression;
+import vavemodel.Feature;
 import vavemodel.GroupType;
 import vavemodel.Implication;
 import vavemodel.Mapping;
@@ -29,7 +30,6 @@ import vavemodel.Term;
 import vavemodel.TreeConstraint;
 import vavemodel.UnaryExpression;
 import vavemodel.Variable;
-import vavemodel.Variant;
 import vavemodel.VavemodelFactory;
 import vavemodel.VavemodelPackage;
 
@@ -52,7 +52,7 @@ public class VavemodelPackageImpl extends EPackageImpl implements VavemodelPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass variantEClass = null;
+	private EClass featureEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -310,8 +310,8 @@ public class VavemodelPackageImpl extends EPackageImpl implements VavemodelPacka
 	 * @generated
 	 */
 	@Override
-	public EClass getVariant() {
-		return variantEClass;
+	public EClass getFeature() {
+		return featureEClass;
 	}
 
 	/**
@@ -320,8 +320,8 @@ public class VavemodelPackageImpl extends EPackageImpl implements VavemodelPacka
 	 * @generated
 	 */
 	@Override
-	public EReference getVariant_Variationpoint() {
-		return (EReference)variantEClass.getEStructuralFeatures().get(0);
+	public EReference getFeature_Variationpoint() {
+		return (EReference)featureEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -330,8 +330,8 @@ public class VavemodelPackageImpl extends EPackageImpl implements VavemodelPacka
 	 * @generated
 	 */
 	@Override
-	public EReference getVariant_InitialVersion() {
-		return (EReference)variantEClass.getEStructuralFeatures().get(1);
+	public EReference getFeature_InitialVersion() {
+		return (EReference)featureEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -340,8 +340,8 @@ public class VavemodelPackageImpl extends EPackageImpl implements VavemodelPacka
 	 * @generated
 	 */
 	@Override
-	public EAttribute getVariant_Name() {
-		return (EAttribute)variantEClass.getEStructuralFeatures().get(2);
+	public EAttribute getFeature_Name() {
+		return (EAttribute)featureEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -710,10 +710,10 @@ public class VavemodelPackageImpl extends EPackageImpl implements VavemodelPacka
 		createEReference(systemEClass, SYSTEM__MAPPING);
 		createEReference(systemEClass, SYSTEM__DELTAMODULE);
 
-		variantEClass = createEClass(VARIANT);
-		createEReference(variantEClass, VARIANT__VARIATIONPOINT);
-		createEReference(variantEClass, VARIANT__INITIAL_VERSION);
-		createEAttribute(variantEClass, VARIANT__NAME);
+		featureEClass = createEClass(FEATURE);
+		createEReference(featureEClass, FEATURE__VARIATIONPOINT);
+		createEReference(featureEClass, FEATURE__INITIAL_VERSION);
+		createEAttribute(featureEClass, FEATURE__NAME);
 
 		crossTreeConstraintEClass = createEClass(CROSS_TREE_CONSTRAINT);
 		createEReference(crossTreeConstraintEClass, CROSS_TREE_CONSTRAINT__EXPRESSION);
@@ -799,7 +799,7 @@ public class VavemodelPackageImpl extends EPackageImpl implements VavemodelPacka
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		variantEClass.getESuperTypes().add(this.getOption());
+		featureEClass.getESuperTypes().add(this.getOption());
 		crossTreeConstraintEClass.getESuperTypes().add(this.getConstraint());
 		treeConstraintEClass.getESuperTypes().add(this.getConstraint());
 		revisionEClass.getESuperTypes().add(this.getOption());
@@ -816,22 +816,22 @@ public class VavemodelPackageImpl extends EPackageImpl implements VavemodelPacka
 		// Initialize classes, features, and operations; add parameters
 		initEClass(systemEClass, vavemodel.System.class, "System", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getSystem_Constraint(), this.getCrossTreeConstraint(), null, "constraint", null, 0, -1, vavemodel.System.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getSystem_Variant(), this.getVariant(), null, "variant", null, 1, -1, vavemodel.System.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSystem_Variant(), this.getFeature(), null, "variant", null, 1, -1, vavemodel.System.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSystem_Name(), ecorePackage.getEString(), "name", null, 0, 1, vavemodel.System.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSystem_Mapping(), this.getMapping(), null, "mapping", null, 0, -1, vavemodel.System.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSystem_Deltamodule(), this.getDeltaModule(), null, "deltamodule", null, 0, -1, vavemodel.System.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(variantEClass, Variant.class, "Variant", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getVariant_Variationpoint(), this.getTreeConstraint(), null, "variationpoint", null, 0, -1, Variant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getVariant_InitialVersion(), this.getRevision(), null, "initialVersion", null, 1, 1, Variant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getVariant_Name(), theEcorePackage.getEString(), "name", null, 0, 1, Variant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(featureEClass, Feature.class, "Feature", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getFeature_Variationpoint(), this.getTreeConstraint(), null, "variationpoint", null, 0, -1, Feature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getFeature_InitialVersion(), this.getRevision(), null, "initialVersion", null, 1, 1, Feature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getFeature_Name(), theEcorePackage.getEString(), "name", null, 0, 1, Feature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(crossTreeConstraintEClass, CrossTreeConstraint.class, "CrossTreeConstraint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getCrossTreeConstraint_Expression(), this.getExpression(), null, "expression", null, 1, 1, CrossTreeConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(treeConstraintEClass, TreeConstraint.class, "TreeConstraint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getTreeConstraint_Type(), this.getGroupType(), "type", null, 0, 1, TreeConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getTreeConstraint_Variant(), this.getVariant(), null, "variant", null, 1, -1, TreeConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTreeConstraint_Variant(), this.getFeature(), null, "variant", null, 1, -1, TreeConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(revisionEClass, Revision.class, "Revision", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getRevision_VersionID(), theEcorePackage.getEString(), "versionID", null, 0, 1, Revision.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -844,7 +844,7 @@ public class VavemodelPackageImpl extends EPackageImpl implements VavemodelPacka
 		initEAttribute(getDeltaModule_ModelPath(), theEcorePackage.getEString(), "modelPath", null, 0, 1, DeltaModule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(variableEClass, Variable.class, "Variable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getVariable_Name(), this.getVariant(), null, "name", null, 1, 1, Variable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getVariable_Name(), this.getFeature(), null, "name", null, 1, 1, Variable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(expressionEClass, Expression.class, "Expression", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

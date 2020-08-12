@@ -17,6 +17,7 @@ import vavemodel.DeltaModule;
 import vavemodel.Disjunction;
 import vavemodel.Equivalence;
 import vavemodel.Expression;
+import vavemodel.Feature;
 import vavemodel.Implication;
 import vavemodel.Mapping;
 import vavemodel.Not;
@@ -26,7 +27,6 @@ import vavemodel.Term;
 import vavemodel.TreeConstraint;
 import vavemodel.UnaryExpression;
 import vavemodel.Variable;
-import vavemodel.Variant;
 import vavemodel.VavemodelPackage;
 
 /**
@@ -90,8 +90,8 @@ public class VavemodelAdapterFactory extends AdapterFactoryImpl {
 				return createSystemAdapter();
 			}
 			@Override
-			public Adapter caseVariant(Variant object) {
-				return createVariantAdapter();
+			public Adapter caseFeature(Feature object) {
+				return createFeatureAdapter();
 			}
 			@Override
 			public Adapter caseCrossTreeConstraint(CrossTreeConstraint object) {
@@ -196,16 +196,16 @@ public class VavemodelAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link vavemodel.Variant <em>Variant</em>}'.
+	 * Creates a new adapter for an object of class '{@link vavemodel.Feature <em>Feature</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see vavemodel.Variant
+	 * @see vavemodel.Feature
 	 * @generated
 	 */
-	public Adapter createVariantAdapter() {
+	public Adapter createFeatureAdapter() {
 		return null;
 	}
 

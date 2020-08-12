@@ -31,13 +31,13 @@ public interface VavemodelFactory extends EFactory {
 	System createSystem();
 
 	/**
-	 * Returns a new object of class '<em>Variant</em>'.
+	 * Returns a new object of class '<em>Feature</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Variant</em>'.
+	 * @return a new object of class '<em>Feature</em>'.
 	 * @generated
 	 */
-	Variant createVariant();
+	Feature createFeature();
 
 	/**
 	 * Returns a new object of class '<em>Cross Tree Constraint</em>'.

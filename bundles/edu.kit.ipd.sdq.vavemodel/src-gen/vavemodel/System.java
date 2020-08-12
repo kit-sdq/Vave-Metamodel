@@ -41,7 +41,7 @@ public interface System extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Variant</b></em>' containment reference list.
-	 * The list contents are of type {@link vavemodel.Variant}.
+	 * The list contents are of type {@link vavemodel.Feature}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Variant</em>' containment reference list.
@@ -49,7 +49,7 @@ public interface System extends EObject {
 	 * @model containment="true" required="true"
 	 * @generated
 	 */
-	EList<Variant> getVariant();
+	EList<Feature> getVariant();
 
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.

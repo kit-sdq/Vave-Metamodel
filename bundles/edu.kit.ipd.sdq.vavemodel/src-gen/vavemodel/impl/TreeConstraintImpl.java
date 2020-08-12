@@ -17,9 +17,9 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import vavemodel.Feature;
 import vavemodel.GroupType;
 import vavemodel.TreeConstraint;
-import vavemodel.Variant;
 import vavemodel.VavemodelPackage;
 
 /**
@@ -65,7 +65,7 @@ public class TreeConstraintImpl extends ConstraintImpl implements TreeConstraint
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Variant> variant;
+	protected EList<Feature> variant;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -115,9 +115,9 @@ public class TreeConstraintImpl extends ConstraintImpl implements TreeConstraint
 	 * @generated
 	 */
 	@Override
-	public EList<Variant> getVariant() {
+	public EList<Feature> getVariant() {
 		if (variant == null) {
-			variant = new EObjectContainmentEList<Variant>(Variant.class, this, VavemodelPackage.TREE_CONSTRAINT__VARIANT);
+			variant = new EObjectContainmentEList<Feature>(Feature.class, this, VavemodelPackage.TREE_CONSTRAINT__VARIANT);
 		}
 		return variant;
 	}
@@ -166,7 +166,7 @@ public class TreeConstraintImpl extends ConstraintImpl implements TreeConstraint
 				return;
 			case VavemodelPackage.TREE_CONSTRAINT__VARIANT:
 				getVariant().clear();
-				getVariant().addAll((Collection<? extends Variant>)newValue);
+				getVariant().addAll((Collection<? extends Feature>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);

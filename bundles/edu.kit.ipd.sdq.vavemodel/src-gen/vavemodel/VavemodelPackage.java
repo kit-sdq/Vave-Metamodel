@@ -159,14 +159,14 @@ public interface VavemodelPackage extends EPackage {
 	int OPTION_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link vavemodel.impl.VariantImpl <em>Variant</em>}' class.
+	 * The meta object id for the '{@link vavemodel.impl.FeatureImpl <em>Feature</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see vavemodel.impl.VariantImpl
-	 * @see vavemodel.impl.VavemodelPackageImpl#getVariant()
+	 * @see vavemodel.impl.FeatureImpl
+	 * @see vavemodel.impl.VavemodelPackageImpl#getFeature()
 	 * @generated
 	 */
-	int VARIANT = 1;
+	int FEATURE = 1;
 
 	/**
 	 * The feature id for the '<em><b>Variationpoint</b></em>' containment reference list.
@@ -175,7 +175,7 @@ public interface VavemodelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VARIANT__VARIATIONPOINT = OPTION_FEATURE_COUNT + 0;
+	int FEATURE__VARIATIONPOINT = OPTION_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Initial Version</b></em>' containment reference.
@@ -184,7 +184,7 @@ public interface VavemodelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VARIANT__INITIAL_VERSION = OPTION_FEATURE_COUNT + 1;
+	int FEATURE__INITIAL_VERSION = OPTION_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -193,25 +193,25 @@ public interface VavemodelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VARIANT__NAME = OPTION_FEATURE_COUNT + 2;
+	int FEATURE__NAME = OPTION_FEATURE_COUNT + 2;
 
 	/**
-	 * The number of structural features of the '<em>Variant</em>' class.
+	 * The number of structural features of the '<em>Feature</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VARIANT_FEATURE_COUNT = OPTION_FEATURE_COUNT + 3;
+	int FEATURE_FEATURE_COUNT = OPTION_FEATURE_COUNT + 3;
 
 	/**
-	 * The number of operations of the '<em>Variant</em>' class.
+	 * The number of operations of the '<em>Feature</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VARIANT_OPERATION_COUNT = OPTION_OPERATION_COUNT + 0;
+	int FEATURE_OPERATION_COUNT = OPTION_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link vavemodel.impl.ConstraintImpl <em>Constraint</em>}' class.
@@ -936,47 +936,47 @@ public interface VavemodelPackage extends EPackage {
 	EReference getSystem_Deltamodule();
 
 	/**
-	 * Returns the meta object for class '{@link vavemodel.Variant <em>Variant</em>}'.
+	 * Returns the meta object for class '{@link vavemodel.Feature <em>Feature</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Variant</em>'.
-	 * @see vavemodel.Variant
+	 * @return the meta object for class '<em>Feature</em>'.
+	 * @see vavemodel.Feature
 	 * @generated
 	 */
-	EClass getVariant();
+	EClass getFeature();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link vavemodel.Variant#getVariationpoint <em>Variationpoint</em>}'.
+	 * Returns the meta object for the containment reference list '{@link vavemodel.Feature#getVariationpoint <em>Variationpoint</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Variationpoint</em>'.
-	 * @see vavemodel.Variant#getVariationpoint()
-	 * @see #getVariant()
+	 * @see vavemodel.Feature#getVariationpoint()
+	 * @see #getFeature()
 	 * @generated
 	 */
-	EReference getVariant_Variationpoint();
+	EReference getFeature_Variationpoint();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link vavemodel.Variant#getInitialVersion <em>Initial Version</em>}'.
+	 * Returns the meta object for the containment reference '{@link vavemodel.Feature#getInitialVersion <em>Initial Version</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference '<em>Initial Version</em>'.
-	 * @see vavemodel.Variant#getInitialVersion()
-	 * @see #getVariant()
+	 * @see vavemodel.Feature#getInitialVersion()
+	 * @see #getFeature()
 	 * @generated
 	 */
-	EReference getVariant_InitialVersion();
+	EReference getFeature_InitialVersion();
 
 	/**
-	 * Returns the meta object for the attribute '{@link vavemodel.Variant#getName <em>Name</em>}'.
+	 * Returns the meta object for the attribute '{@link vavemodel.Feature#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see vavemodel.Variant#getName()
-	 * @see #getVariant()
+	 * @see vavemodel.Feature#getName()
+	 * @see #getFeature()
 	 * @generated
 	 */
-	EAttribute getVariant_Name();
+	EAttribute getFeature_Name();
 
 	/**
 	 * Returns the meta object for class '{@link vavemodel.CrossTreeConstraint <em>Cross Tree Constraint</em>}'.
@@ -1397,14 +1397,14 @@ public interface VavemodelPackage extends EPackage {
 		EReference SYSTEM__DELTAMODULE = eINSTANCE.getSystem_Deltamodule();
 
 		/**
-		 * The meta object literal for the '{@link vavemodel.impl.VariantImpl <em>Variant</em>}' class.
+		 * The meta object literal for the '{@link vavemodel.impl.FeatureImpl <em>Feature</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see vavemodel.impl.VariantImpl
-		 * @see vavemodel.impl.VavemodelPackageImpl#getVariant()
+		 * @see vavemodel.impl.FeatureImpl
+		 * @see vavemodel.impl.VavemodelPackageImpl#getFeature()
 		 * @generated
 		 */
-		EClass VARIANT = eINSTANCE.getVariant();
+		EClass FEATURE = eINSTANCE.getFeature();
 
 		/**
 		 * The meta object literal for the '<em><b>Variationpoint</b></em>' containment reference list feature.
@@ -1412,7 +1412,7 @@ public interface VavemodelPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference VARIANT__VARIATIONPOINT = eINSTANCE.getVariant_Variationpoint();
+		EReference FEATURE__VARIATIONPOINT = eINSTANCE.getFeature_Variationpoint();
 
 		/**
 		 * The meta object literal for the '<em><b>Initial Version</b></em>' containment reference feature.
@@ -1420,7 +1420,7 @@ public interface VavemodelPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference VARIANT__INITIAL_VERSION = eINSTANCE.getVariant_InitialVersion();
+		EReference FEATURE__INITIAL_VERSION = eINSTANCE.getFeature_InitialVersion();
 
 		/**
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -1428,7 +1428,7 @@ public interface VavemodelPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute VARIANT__NAME = eINSTANCE.getVariant_Name();
+		EAttribute FEATURE__NAME = eINSTANCE.getFeature_Name();
 
 		/**
 		 * The meta object literal for the '{@link vavemodel.impl.CrossTreeConstraintImpl <em>Cross Tree Constraint</em>}' class.

@@ -25,12 +25,12 @@ public interface Variable extends Expression {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Name</em>' reference.
-	 * @see #setName(Variant)
+	 * @see #setName(Feature)
 	 * @see vavemodel.VavemodelPackage#getVariable_Name()
 	 * @model required="true"
 	 * @generated
 	 */
-	Variant getName();
+	Feature getName();
 
 	/**
 	 * Sets the value of the '{@link vavemodel.Variable#getName <em>Name</em>}' reference.
@@ -40,6 +40,6 @@ public interface Variable extends Expression {
 	 * @see #getName()
 	 * @generated
 	 */
-	void setName(Variant value);
+	void setName(Feature value);
 
 } // Variable

@@ -20,8 +20,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 import vavemodel.CrossTreeConstraint;
 import vavemodel.DeltaModule;
+import vavemodel.Feature;
 import vavemodel.Mapping;
-import vavemodel.Variant;
 import vavemodel.VavemodelPackage;
 
 /**
@@ -60,7 +60,7 @@ public class SystemImpl extends MinimalEObjectImpl.Container implements vavemode
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Variant> variant;
+	protected EList<Feature> variant;
 
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -140,9 +140,9 @@ public class SystemImpl extends MinimalEObjectImpl.Container implements vavemode
 	 * @generated
 	 */
 	@Override
-	public EList<Variant> getVariant() {
+	public EList<Feature> getVariant() {
 		if (variant == null) {
-			variant = new EObjectContainmentEList<Variant>(Variant.class, this, VavemodelPackage.SYSTEM__VARIANT);
+			variant = new EObjectContainmentEList<Feature>(Feature.class, this, VavemodelPackage.SYSTEM__VARIANT);
 		}
 		return variant;
 	}
@@ -253,7 +253,7 @@ public class SystemImpl extends MinimalEObjectImpl.Container implements vavemode
 				return;
 			case VavemodelPackage.SYSTEM__VARIANT:
 				getVariant().clear();
-				getVariant().addAll((Collection<? extends Variant>)newValue);
+				getVariant().addAll((Collection<? extends Feature>)newValue);
 				return;
 			case VavemodelPackage.SYSTEM__NAME:
 				setName((String)newValue);

@@ -49,7 +49,7 @@ public interface TreeConstraint extends Constraint {
 
 	/**
 	 * Returns the value of the '<em><b>Variant</b></em>' containment reference list.
-	 * The list contents are of type {@link vavemodel.Variant}.
+	 * The list contents are of type {@link vavemodel.Feature}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Variant</em>' containment reference list.
@@ -57,6 +57,6 @@ public interface TreeConstraint extends Constraint {
 	 * @model containment="true" required="true"
 	 * @generated
 	 */
-	EList<Variant> getVariant();
+	EList<Feature> getVariant();
 
 } // TreeConstraint
