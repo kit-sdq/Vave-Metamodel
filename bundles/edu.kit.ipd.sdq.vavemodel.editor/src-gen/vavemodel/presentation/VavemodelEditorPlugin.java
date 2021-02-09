@@ -42,7 +42,6 @@ public final class VavemodelEditorPlugin extends EMFPlugin {
 	public VavemodelEditorPlugin() {
 		super
 			(new ResourceLocator [] {
-				EcoreEditPlugin.INSTANCE,
 			});
 	}
 

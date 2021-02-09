@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
-    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/Vave-Metamodel/src-gen" editDirectory="/Vave-Metamodel.edit/src-gen"
-    editorDirectory="/Vave-Metamodel.editor/src-gen" modelPluginID="Vave-Metamodel"
-    modelName="Vavemodel" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
-    testsDirectory="/Vave-Metamodel.tests/src-gen" importerID="org.eclipse.emf.importer.ecore"
-    complianceLevel="8.0" copyrightFields="false" usedGenPackages="../../../../org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/edu.kit.ipd.sdq.vavemodel/src-gen" editDirectory="/edu.kit.ipd.sdq.vavemodel.edit/src-gen"
+    editorDirectory="/edu.kit.ipd.sdq.vavemodel.editor/src-gen" modelPluginID="edu.kit.ipd.sdq.vavemodel"
+    modelName="Vavemodel" generateSchema="true" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    testsDirectory="/edu.kit.ipd.sdq.vavemodel.tests/src-gen" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="8.0" copyrightFields="false" editPluginID="edu.kit.ipd.sdq.vavemodel.edit"
     operationReflection="true" importOrganizing="true">
   <foreignModel>vavemodel.ecore</foreignModel>
   <genPackages prefix="Vavemodel" disposableProviderFactory="true" ecorePackage="vavemodel.ecore#/">
@@ -34,15 +34,10 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference vavemodel.ecore#//TreeConstraint/variant"/>
     </genClasses>
     <genClasses ecoreClass="vavemodel.ecore#//Revision">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vavemodel.ecore#//Revision/versionID"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference vavemodel.ecore#//Revision/successor"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vavemodel.ecore#//Revision/revisionID"/>
     </genClasses>
-    <genClasses ecoreClass="vavemodel.ecore#//DeltaModule">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vavemodel.ecore#//DeltaModule/deltaModuleID"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vavemodel.ecore#//DeltaModule/oldVersionID"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vavemodel.ecore#//DeltaModule/newVersionID"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vavemodel.ecore#//DeltaModule/modelPath"/>
-    </genClasses>
+    <genClasses ecoreClass="vavemodel.ecore#//DeltaModule"/>
     <genClasses ecoreClass="vavemodel.ecore#//Variable">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference vavemodel.ecore#//Variable/name"/>
     </genClasses>

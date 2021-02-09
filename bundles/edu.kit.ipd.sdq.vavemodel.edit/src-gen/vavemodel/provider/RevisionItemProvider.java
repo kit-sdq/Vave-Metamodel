@@ -48,25 +48,25 @@ public class RevisionItemProvider extends OptionItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addVersionIDPropertyDescriptor(object);
+			addRevisionIDPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Version ID feature.
+	 * This adds a property descriptor for the Revision ID feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addVersionIDPropertyDescriptor(Object object) {
+	protected void addRevisionIDPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Revision_versionID_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Revision_versionID_feature", "_UI_Revision_type"),
-				 VavemodelPackage.Literals.REVISION__VERSION_ID,
+				 getString("_UI_Revision_revisionID_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Revision_revisionID_feature", "_UI_Revision_type"),
+				 VavemodelPackage.Literals.REVISION__REVISION_ID,
 				 true,
 				 false,
 				 false,
@@ -124,7 +124,7 @@ public class RevisionItemProvider extends OptionItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Revision)object).getVersionID();
+		String label = ((Revision)object).getRevisionID();
 		return label == null || label.length() == 0 ?
 			getString("_UI_Revision_type") :
 			getString("_UI_Revision_type") + " " + label;
@@ -143,7 +143,7 @@ public class RevisionItemProvider extends OptionItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Revision.class)) {
-			case VavemodelPackage.REVISION__VERSION_ID:
+			case VavemodelPackage.REVISION__REVISION_ID:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case VavemodelPackage.REVISION__SUCCESSOR:

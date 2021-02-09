@@ -10,7 +10,8 @@
       <!-- @generated vavemodel -->
       <package
             uri="edu.kit.ipd.sdq.vavemodel"
-            class="vavemodel.VavemodelPackage"/>
+            class="vavemodel.VavemodelPackage"
+            genModel="model/vavemodel.genmodel"/>
    </extension>
 
 </plugin>

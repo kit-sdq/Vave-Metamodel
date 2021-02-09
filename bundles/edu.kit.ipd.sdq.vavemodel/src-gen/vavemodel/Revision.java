@@ -13,8 +13,8 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link vavemodel.Revision#getVersionID <em>Version ID</em>}</li>
  *   <li>{@link vavemodel.Revision#getSuccessor <em>Successor</em>}</li>
+ *   <li>{@link vavemodel.Revision#getRevisionID <em>Revision ID</em>}</li>
  * </ul>
  *
  * @see vavemodel.VavemodelPackage#getRevision()
@@ -22,28 +22,6 @@ import org.eclipse.emf.common.util.EList;
  * @generated
  */
 public interface Revision extends Option {
-	/**
-	 * Returns the value of the '<em><b>Version ID</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Version ID</em>' attribute.
-	 * @see #setVersionID(String)
-	 * @see vavemodel.VavemodelPackage#getRevision_VersionID()
-	 * @model
-	 * @generated
-	 */
-	String getVersionID();
-
-	/**
-	 * Sets the value of the '{@link vavemodel.Revision#getVersionID <em>Version ID</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Version ID</em>' attribute.
-	 * @see #getVersionID()
-	 * @generated
-	 */
-	void setVersionID(String value);
-
 	/**
 	 * Returns the value of the '<em><b>Successor</b></em>' containment reference list.
 	 * The list contents are of type {@link vavemodel.Revision}.
@@ -55,5 +33,27 @@ public interface Revision extends Option {
 	 * @generated
 	 */
 	EList<Revision> getSuccessor();
+
+	/**
+	 * Returns the value of the '<em><b>Revision ID</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Revision ID</em>' attribute.
+	 * @see #setRevisionID(String)
+	 * @see vavemodel.VavemodelPackage#getRevision_RevisionID()
+	 * @model
+	 * @generated
+	 */
+	String getRevisionID();
+
+	/**
+	 * Sets the value of the '{@link vavemodel.Revision#getRevisionID <em>Revision ID</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Revision ID</em>' attribute.
+	 * @see #getRevisionID()
+	 * @generated
+	 */
+	void setRevisionID(String value);
 
 } // Revision

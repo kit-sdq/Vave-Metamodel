@@ -7,7 +7,6 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-import org.eclipse.emf.ecore.EcorePackage;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
@@ -227,9 +226,6 @@ public class VavemodelPackageImpl extends EPackageImpl implements VavemodelPacka
 
 		isInited = true;
 
-		// Initialize simple dependencies
-		EcorePackage.eINSTANCE.eClass();
-
 		// Create package meta-data objects
 		theVavemodelPackage.createPackageContents();
 
@@ -410,8 +406,8 @@ public class VavemodelPackageImpl extends EPackageImpl implements VavemodelPacka
 	 * @generated
 	 */
 	@Override
-	public EAttribute getRevision_VersionID() {
-		return (EAttribute)revisionEClass.getEStructuralFeatures().get(0);
+	public EReference getRevision_Successor() {
+		return (EReference)revisionEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -420,8 +416,8 @@ public class VavemodelPackageImpl extends EPackageImpl implements VavemodelPacka
 	 * @generated
 	 */
 	@Override
-	public EReference getRevision_Successor() {
-		return (EReference)revisionEClass.getEStructuralFeatures().get(1);
+	public EAttribute getRevision_RevisionID() {
+		return (EAttribute)revisionEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -432,46 +428,6 @@ public class VavemodelPackageImpl extends EPackageImpl implements VavemodelPacka
 	@Override
 	public EClass getDeltaModule() {
 		return deltaModuleEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getDeltaModule_DeltaModuleID() {
-		return (EAttribute)deltaModuleEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getDeltaModule_OldVersionID() {
-		return (EAttribute)deltaModuleEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getDeltaModule_NewVersionID() {
-		return (EAttribute)deltaModuleEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getDeltaModule_ModelPath() {
-		return (EAttribute)deltaModuleEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -723,14 +679,10 @@ public class VavemodelPackageImpl extends EPackageImpl implements VavemodelPacka
 		createEReference(treeConstraintEClass, TREE_CONSTRAINT__VARIANT);
 
 		revisionEClass = createEClass(REVISION);
-		createEAttribute(revisionEClass, REVISION__VERSION_ID);
 		createEReference(revisionEClass, REVISION__SUCCESSOR);
+		createEAttribute(revisionEClass, REVISION__REVISION_ID);
 
 		deltaModuleEClass = createEClass(DELTA_MODULE);
-		createEAttribute(deltaModuleEClass, DELTA_MODULE__DELTA_MODULE_ID);
-		createEAttribute(deltaModuleEClass, DELTA_MODULE__OLD_VERSION_ID);
-		createEAttribute(deltaModuleEClass, DELTA_MODULE__NEW_VERSION_ID);
-		createEAttribute(deltaModuleEClass, DELTA_MODULE__MODEL_PATH);
 
 		variableEClass = createEClass(VARIABLE);
 		createEReference(variableEClass, VARIABLE__NAME);
@@ -791,9 +743,6 @@ public class VavemodelPackageImpl extends EPackageImpl implements VavemodelPacka
 		setNsPrefix(eNS_PREFIX);
 		setNsURI(eNS_URI);
 
-		// Obtain other dependent packages
-		EcorePackage theEcorePackage = (EcorePackage)EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
-
 		// Create type parameters
 
 		// Set bounds for type parameters
@@ -824,7 +773,7 @@ public class VavemodelPackageImpl extends EPackageImpl implements VavemodelPacka
 		initEClass(featureEClass, Feature.class, "Feature", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getFeature_Variationpoint(), this.getTreeConstraint(), null, "variationpoint", null, 0, -1, Feature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getFeature_InitialVersion(), this.getRevision(), null, "initialVersion", null, 1, 1, Feature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getFeature_Name(), theEcorePackage.getEString(), "name", null, 0, 1, Feature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getFeature_Name(), ecorePackage.getEString(), "name", null, 0, 1, Feature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(crossTreeConstraintEClass, CrossTreeConstraint.class, "CrossTreeConstraint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getCrossTreeConstraint_Expression(), this.getExpression(), null, "expression", null, 1, 1, CrossTreeConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -834,14 +783,10 @@ public class VavemodelPackageImpl extends EPackageImpl implements VavemodelPacka
 		initEReference(getTreeConstraint_Variant(), this.getFeature(), null, "variant", null, 1, -1, TreeConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(revisionEClass, Revision.class, "Revision", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getRevision_VersionID(), theEcorePackage.getEString(), "versionID", null, 0, 1, Revision.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRevision_Successor(), this.getRevision(), null, "successor", null, 0, -1, Revision.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getRevision_RevisionID(), ecorePackage.getEString(), "revisionID", null, 0, 1, Revision.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(deltaModuleEClass, DeltaModule.class, "DeltaModule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getDeltaModule_DeltaModuleID(), theEcorePackage.getEString(), "deltaModuleID", null, 0, 1, DeltaModule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getDeltaModule_OldVersionID(), theEcorePackage.getEString(), "oldVersionID", null, 0, 1, DeltaModule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getDeltaModule_NewVersionID(), theEcorePackage.getEString(), "newVersionID", null, 0, 1, DeltaModule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getDeltaModule_ModelPath(), theEcorePackage.getEString(), "modelPath", null, 0, 1, DeltaModule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(variableEClass, Variable.class, "Variable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getVariable_Name(), this.getFeature(), null, "name", null, 1, 1, Variable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
