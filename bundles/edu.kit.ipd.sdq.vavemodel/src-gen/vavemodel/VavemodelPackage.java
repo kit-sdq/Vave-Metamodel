@@ -362,22 +362,22 @@ public interface VavemodelPackage extends EPackage {
 	int REVISION = 4;
 
 	/**
-	 * The feature id for the '<em><b>Version ID</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REVISION__VERSION_ID = OPTION_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Successor</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REVISION__SUCCESSOR = OPTION_FEATURE_COUNT + 1;
+	int REVISION__SUCCESSOR = OPTION_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Revision ID</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REVISION__REVISION_ID = OPTION_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Revision</em>' class.
@@ -408,49 +408,13 @@ public interface VavemodelPackage extends EPackage {
 	int DELTA_MODULE = 5;
 
 	/**
-	 * The feature id for the '<em><b>Delta Module ID</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DELTA_MODULE__DELTA_MODULE_ID = 0;
-
-	/**
-	 * The feature id for the '<em><b>Old Version ID</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DELTA_MODULE__OLD_VERSION_ID = 1;
-
-	/**
-	 * The feature id for the '<em><b>New Version ID</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DELTA_MODULE__NEW_VERSION_ID = 2;
-
-	/**
-	 * The feature id for the '<em><b>Model Path</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DELTA_MODULE__MODEL_PATH = 3;
-
-	/**
 	 * The number of structural features of the '<em>Delta Module</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DELTA_MODULE_FEATURE_COUNT = 4;
+	int DELTA_MODULE_FEATURE_COUNT = 0;
 
 	/**
 	 * The number of operations of the '<em>Delta Module</em>' class.
@@ -1042,17 +1006,6 @@ public interface VavemodelPackage extends EPackage {
 	EClass getRevision();
 
 	/**
-	 * Returns the meta object for the attribute '{@link vavemodel.Revision#getVersionID <em>Version ID</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Version ID</em>'.
-	 * @see vavemodel.Revision#getVersionID()
-	 * @see #getRevision()
-	 * @generated
-	 */
-	EAttribute getRevision_VersionID();
-
-	/**
 	 * Returns the meta object for the containment reference list '{@link vavemodel.Revision#getSuccessor <em>Successor</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1064,6 +1017,17 @@ public interface VavemodelPackage extends EPackage {
 	EReference getRevision_Successor();
 
 	/**
+	 * Returns the meta object for the attribute '{@link vavemodel.Revision#getRevisionID <em>Revision ID</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Revision ID</em>'.
+	 * @see vavemodel.Revision#getRevisionID()
+	 * @see #getRevision()
+	 * @generated
+	 */
+	EAttribute getRevision_RevisionID();
+
+	/**
 	 * Returns the meta object for class '{@link vavemodel.DeltaModule <em>Delta Module</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1072,50 +1036,6 @@ public interface VavemodelPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getDeltaModule();
-
-	/**
-	 * Returns the meta object for the attribute '{@link vavemodel.DeltaModule#getDeltaModuleID <em>Delta Module ID</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Delta Module ID</em>'.
-	 * @see vavemodel.DeltaModule#getDeltaModuleID()
-	 * @see #getDeltaModule()
-	 * @generated
-	 */
-	EAttribute getDeltaModule_DeltaModuleID();
-
-	/**
-	 * Returns the meta object for the attribute '{@link vavemodel.DeltaModule#getOldVersionID <em>Old Version ID</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Old Version ID</em>'.
-	 * @see vavemodel.DeltaModule#getOldVersionID()
-	 * @see #getDeltaModule()
-	 * @generated
-	 */
-	EAttribute getDeltaModule_OldVersionID();
-
-	/**
-	 * Returns the meta object for the attribute '{@link vavemodel.DeltaModule#getNewVersionID <em>New Version ID</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>New Version ID</em>'.
-	 * @see vavemodel.DeltaModule#getNewVersionID()
-	 * @see #getDeltaModule()
-	 * @generated
-	 */
-	EAttribute getDeltaModule_NewVersionID();
-
-	/**
-	 * Returns the meta object for the attribute '{@link vavemodel.DeltaModule#getModelPath <em>Model Path</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Model Path</em>'.
-	 * @see vavemodel.DeltaModule#getModelPath()
-	 * @see #getDeltaModule()
-	 * @generated
-	 */
-	EAttribute getDeltaModule_ModelPath();
 
 	/**
 	 * Returns the meta object for class '{@link vavemodel.Variable <em>Variable</em>}'.
@@ -1485,20 +1405,20 @@ public interface VavemodelPackage extends EPackage {
 		EClass REVISION = eINSTANCE.getRevision();
 
 		/**
-		 * The meta object literal for the '<em><b>Version ID</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute REVISION__VERSION_ID = eINSTANCE.getRevision_VersionID();
-
-		/**
 		 * The meta object literal for the '<em><b>Successor</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference REVISION__SUCCESSOR = eINSTANCE.getRevision_Successor();
+
+		/**
+		 * The meta object literal for the '<em><b>Revision ID</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute REVISION__REVISION_ID = eINSTANCE.getRevision_RevisionID();
 
 		/**
 		 * The meta object literal for the '{@link vavemodel.impl.DeltaModuleImpl <em>Delta Module</em>}' class.
@@ -1509,38 +1429,6 @@ public interface VavemodelPackage extends EPackage {
 		 * @generated
 		 */
 		EClass DELTA_MODULE = eINSTANCE.getDeltaModule();
-
-		/**
-		 * The meta object literal for the '<em><b>Delta Module ID</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute DELTA_MODULE__DELTA_MODULE_ID = eINSTANCE.getDeltaModule_DeltaModuleID();
-
-		/**
-		 * The meta object literal for the '<em><b>Old Version ID</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute DELTA_MODULE__OLD_VERSION_ID = eINSTANCE.getDeltaModule_OldVersionID();
-
-		/**
-		 * The meta object literal for the '<em><b>New Version ID</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute DELTA_MODULE__NEW_VERSION_ID = eINSTANCE.getDeltaModule_NewVersionID();
-
-		/**
-		 * The meta object literal for the '<em><b>Model Path</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute DELTA_MODULE__MODEL_PATH = eINSTANCE.getDeltaModule_ModelPath();
 
 		/**
 		 * The meta object literal for the '{@link vavemodel.impl.VariableImpl <em>Variable</em>}' class.

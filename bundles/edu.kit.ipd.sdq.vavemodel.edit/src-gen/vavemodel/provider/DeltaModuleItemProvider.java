@@ -10,20 +10,13 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.ResourceLocator;
-
-import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
-import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
-import org.eclipse.emf.edit.provider.ViewerNotification;
-
-import vavemodel.DeltaModule;
-import vavemodel.VavemodelPackage;
 
 /**
  * This is the item provider adapter for a {@link vavemodel.DeltaModule} object.
@@ -60,100 +53,8 @@ public class DeltaModuleItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addDeltaModuleIDPropertyDescriptor(object);
-			addOldVersionIDPropertyDescriptor(object);
-			addNewVersionIDPropertyDescriptor(object);
-			addModelPathPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Delta Module ID feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addDeltaModuleIDPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_DeltaModule_deltaModuleID_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DeltaModule_deltaModuleID_feature", "_UI_DeltaModule_type"),
-				 VavemodelPackage.Literals.DELTA_MODULE__DELTA_MODULE_ID,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Old Version ID feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addOldVersionIDPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_DeltaModule_oldVersionID_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DeltaModule_oldVersionID_feature", "_UI_DeltaModule_type"),
-				 VavemodelPackage.Literals.DELTA_MODULE__OLD_VERSION_ID,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the New Version ID feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addNewVersionIDPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_DeltaModule_newVersionID_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DeltaModule_newVersionID_feature", "_UI_DeltaModule_type"),
-				 VavemodelPackage.Literals.DELTA_MODULE__NEW_VERSION_ID,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Model Path feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addModelPathPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_DeltaModule_modelPath_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DeltaModule_modelPath_feature", "_UI_DeltaModule_type"),
-				 VavemodelPackage.Literals.DELTA_MODULE__MODEL_PATH,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
 	}
 
 	/**
@@ -175,10 +76,7 @@ public class DeltaModuleItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((DeltaModule)object).getDeltaModuleID();
-		return label == null || label.length() == 0 ?
-			getString("_UI_DeltaModule_type") :
-			getString("_UI_DeltaModule_type") + " " + label;
+		return getString("_UI_DeltaModule_type");
 	}
 
 
@@ -192,15 +90,6 @@ public class DeltaModuleItemProvider
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
-
-		switch (notification.getFeatureID(DeltaModule.class)) {
-			case VavemodelPackage.DELTA_MODULE__DELTA_MODULE_ID:
-			case VavemodelPackage.DELTA_MODULE__OLD_VERSION_ID:
-			case VavemodelPackage.DELTA_MODULE__NEW_VERSION_ID:
-			case VavemodelPackage.DELTA_MODULE__MODEL_PATH:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
-		}
 		super.notifyChanged(notification);
 	}
 
