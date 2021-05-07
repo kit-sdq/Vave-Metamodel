@@ -29,8 +29,8 @@ public abstract class BinaryExpressionTest extends ExpressionTest {
 	 * @generated
 	 */
 	@Override
-	protected BinaryExpression getFixture() {
-		return (BinaryExpression)fixture;
+	protected BinaryExpression<?> getFixture() {
+		return (BinaryExpression<?>)fixture;
 	}
 
 } //BinaryExpressionTest

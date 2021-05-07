@@ -5,6 +5,7 @@ package vavemodel.impl;
 import org.eclipse.emf.ecore.EClass;
 
 import vavemodel.Not;
+import vavemodel.Option;
 import vavemodel.VavemodelPackage;
 
 /**
@@ -14,7 +15,7 @@ import vavemodel.VavemodelPackage;
  *
  * @generated
  */
-public class NotImpl extends UnaryExpressionImpl implements Not {
+public class NotImpl<T extends Option> extends UnaryExpressionImpl<T> implements Not<T> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

@@ -58,13 +58,13 @@ public interface VavemodelFactory extends EFactory {
 	TreeConstraint createTreeConstraint();
 
 	/**
-	 * Returns a new object of class '<em>Revision</em>'.
+	 * Returns a new object of class '<em>Feature Revision</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Revision</em>'.
+	 * @return a new object of class '<em>Feature Revision</em>'.
 	 * @generated
 	 */
-	Revision createRevision();
+	FeatureRevision createFeatureRevision();
 
 	/**
 	 * Returns a new object of class '<em>Delta Module</em>'.
@@ -82,7 +82,7 @@ public interface VavemodelFactory extends EFactory {
 	 * @return a new object of class '<em>Variable</em>'.
 	 * @generated
 	 */
-	Variable createVariable();
+	<T extends Option> Variable<T> createVariable();
 
 	/**
 	 * Returns a new object of class '<em>Implication</em>'.
@@ -91,7 +91,7 @@ public interface VavemodelFactory extends EFactory {
 	 * @return a new object of class '<em>Implication</em>'.
 	 * @generated
 	 */
-	Implication createImplication();
+	<T extends Option> Implication<T> createImplication();
 
 	/**
 	 * Returns a new object of class '<em>Disjunction</em>'.
@@ -100,7 +100,7 @@ public interface VavemodelFactory extends EFactory {
 	 * @return a new object of class '<em>Disjunction</em>'.
 	 * @generated
 	 */
-	Disjunction createDisjunction();
+	<T extends Option> Disjunction<T> createDisjunction();
 
 	/**
 	 * Returns a new object of class '<em>Equivalence</em>'.
@@ -109,7 +109,7 @@ public interface VavemodelFactory extends EFactory {
 	 * @return a new object of class '<em>Equivalence</em>'.
 	 * @generated
 	 */
-	Equivalence createEquivalence();
+	<T extends Option> Equivalence<T> createEquivalence();
 
 	/**
 	 * Returns a new object of class '<em>Conjunction</em>'.
@@ -118,7 +118,7 @@ public interface VavemodelFactory extends EFactory {
 	 * @return a new object of class '<em>Conjunction</em>'.
 	 * @generated
 	 */
-	Conjunction createConjunction();
+	<T extends Option> Conjunction<T> createConjunction();
 
 	/**
 	 * Returns a new object of class '<em>Not</em>'.
@@ -127,7 +127,7 @@ public interface VavemodelFactory extends EFactory {
 	 * @return a new object of class '<em>Not</em>'.
 	 * @generated
 	 */
-	Not createNot();
+	<T extends Option> Not<T> createNot();
 
 	/**
 	 * Returns a new object of class '<em>Mapping</em>'.
@@ -137,6 +137,15 @@ public interface VavemodelFactory extends EFactory {
 	 * @generated
 	 */
 	Mapping createMapping();
+
+	/**
+	 * Returns a new object of class '<em>System Revision</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>System Revision</em>'.
+	 * @generated
+	 */
+	SystemRevision createSystemRevision();
 
 	/**
 	 * Returns the package supported by this factory.

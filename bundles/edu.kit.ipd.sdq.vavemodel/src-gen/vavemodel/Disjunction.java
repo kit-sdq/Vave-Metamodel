@@ -13,5 +13,5 @@ package vavemodel;
  * @model
  * @generated
  */
-public interface Disjunction extends BinaryExpression {
+public interface Disjunction<T extends Option> extends BinaryExpression<T> {
 } // Disjunction

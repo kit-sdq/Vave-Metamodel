@@ -8,8 +8,6 @@ import org.eclipse.emf.common.ui.EclipseUIPlugin;
 
 import org.eclipse.emf.common.util.ResourceLocator;
 
-import org.eclipse.emf.ecore.provider.EcoreEditPlugin;
-
 /**
  * This is the central singleton for the Vavemodel editor plugin.
  * <!-- begin-user-doc -->

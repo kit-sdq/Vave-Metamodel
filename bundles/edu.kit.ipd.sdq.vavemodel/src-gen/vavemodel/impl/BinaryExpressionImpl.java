@@ -15,6 +15,7 @@ import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import vavemodel.BinaryExpression;
+import vavemodel.Option;
 import vavemodel.Term;
 import vavemodel.VavemodelPackage;
 
@@ -31,7 +32,7 @@ import vavemodel.VavemodelPackage;
  *
  * @generated
  */
-public abstract class BinaryExpressionImpl extends ExpressionImpl implements BinaryExpression {
+public abstract class BinaryExpressionImpl<T extends Option> extends ExpressionImpl<T> implements BinaryExpression<T> {
 	/**
 	 * The cached value of the '{@link #getTerm() <em>Term</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -40,7 +41,7 @@ public abstract class BinaryExpressionImpl extends ExpressionImpl implements Bin
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Term> term;
+	protected EList<Term<T>> term;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -67,9 +68,9 @@ public abstract class BinaryExpressionImpl extends ExpressionImpl implements Bin
 	 * @generated
 	 */
 	@Override
-	public EList<Term> getTerm() {
+	public EList<Term<T>> getTerm() {
 		if (term == null) {
-			term = new EObjectContainmentEList<Term>(Term.class, this, VavemodelPackage.BINARY_EXPRESSION__TERM);
+			term = new EObjectContainmentEList<Term<T>>(Term.class, this, VavemodelPackage.BINARY_EXPRESSION__TERM);
 		}
 		return term;
 	}
@@ -113,7 +114,7 @@ public abstract class BinaryExpressionImpl extends ExpressionImpl implements Bin
 		switch (featureID) {
 			case VavemodelPackage.BINARY_EXPRESSION__TERM:
 				getTerm().clear();
-				getTerm().addAll((Collection<? extends Term>)newValue);
+				getTerm().addAll((Collection<? extends Term<T>>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);

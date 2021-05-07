@@ -16,10 +16,11 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link vavemodel.System#getConstraint <em>Constraint</em>}</li>
- *   <li>{@link vavemodel.System#getVariant <em>Variant</em>}</li>
  *   <li>{@link vavemodel.System#getName <em>Name</em>}</li>
  *   <li>{@link vavemodel.System#getMapping <em>Mapping</em>}</li>
  *   <li>{@link vavemodel.System#getDeltamodule <em>Deltamodule</em>}</li>
+ *   <li>{@link vavemodel.System#getFeature <em>Feature</em>}</li>
+ *   <li>{@link vavemodel.System#getSystemrevision <em>Systemrevision</em>}</li>
  * </ul>
  *
  * @see vavemodel.VavemodelPackage#getSystem()
@@ -38,18 +39,6 @@ public interface System extends EObject {
 	 * @generated
 	 */
 	EList<CrossTreeConstraint> getConstraint();
-
-	/**
-	 * Returns the value of the '<em><b>Variant</b></em>' containment reference list.
-	 * The list contents are of type {@link vavemodel.Feature}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Variant</em>' containment reference list.
-	 * @see vavemodel.VavemodelPackage#getSystem_Variant()
-	 * @model containment="true" required="true"
-	 * @generated
-	 */
-	EList<Feature> getVariant();
 
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.
@@ -96,5 +85,29 @@ public interface System extends EObject {
 	 * @generated
 	 */
 	EList<DeltaModule> getDeltamodule();
+
+	/**
+	 * Returns the value of the '<em><b>Feature</b></em>' containment reference list.
+	 * The list contents are of type {@link vavemodel.Feature}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Feature</em>' containment reference list.
+	 * @see vavemodel.VavemodelPackage#getSystem_Feature()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<Feature> getFeature();
+
+	/**
+	 * Returns the value of the '<em><b>Systemrevision</b></em>' containment reference list.
+	 * The list contents are of type {@link vavemodel.SystemRevision}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Systemrevision</em>' containment reference list.
+	 * @see vavemodel.VavemodelPackage#getSystem_Systemrevision()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<SystemRevision> getSystemrevision();
 
 } // System

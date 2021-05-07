@@ -9,11 +9,18 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EStructuralFeature;
 
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
+import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
+import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.IItemPropertySource;
+import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
+import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import vavemodel.Feature;
@@ -26,7 +33,7 @@ import vavemodel.VavemodelPackage;
  * <!-- end-user-doc -->
  * @generated
  */
-public class FeatureItemProvider extends OptionItemProvider {
+public class FeatureItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -87,8 +94,8 @@ public class FeatureItemProvider extends OptionItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(VavemodelPackage.Literals.FEATURE__VARIATIONPOINT);
-			childrenFeatures.add(VavemodelPackage.Literals.FEATURE__INITIAL_VERSION);
+			childrenFeatures.add(VavemodelPackage.Literals.FEATURE__TREECONSTRAINT);
+			childrenFeatures.add(VavemodelPackage.Literals.FEATURE__FEATUREREVISION);
 		}
 		return childrenFeatures;
 	}
@@ -147,8 +154,8 @@ public class FeatureItemProvider extends OptionItemProvider {
 			case VavemodelPackage.FEATURE__NAME:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case VavemodelPackage.FEATURE__VARIATIONPOINT:
-			case VavemodelPackage.FEATURE__INITIAL_VERSION:
+			case VavemodelPackage.FEATURE__TREECONSTRAINT:
+			case VavemodelPackage.FEATURE__FEATUREREVISION:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -168,13 +175,24 @@ public class FeatureItemProvider extends OptionItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
-				(VavemodelPackage.Literals.FEATURE__VARIATIONPOINT,
+				(VavemodelPackage.Literals.FEATURE__TREECONSTRAINT,
 				 VavemodelFactory.eINSTANCE.createTreeConstraint()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(VavemodelPackage.Literals.FEATURE__INITIAL_VERSION,
-				 VavemodelFactory.eINSTANCE.createRevision()));
+				(VavemodelPackage.Literals.FEATURE__FEATUREREVISION,
+				 VavemodelFactory.eINSTANCE.createFeatureRevision()));
+	}
+
+	/**
+	 * Return the resource locator for this item provider's resources.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ResourceLocator getResourceLocator() {
+		return VavemodelEditPlugin.INSTANCE;
 	}
 
 }

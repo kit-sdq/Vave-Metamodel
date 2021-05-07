@@ -5,6 +5,7 @@ package vavemodel.impl;
 import org.eclipse.emf.ecore.EClass;
 
 import vavemodel.Conjunction;
+import vavemodel.Option;
 import vavemodel.VavemodelPackage;
 
 /**
@@ -14,7 +15,7 @@ import vavemodel.VavemodelPackage;
  *
  * @generated
  */
-public class ConjunctionImpl extends BinaryExpressionImpl implements Conjunction {
+public class ConjunctionImpl<T extends Option> extends BinaryExpressionImpl<T> implements Conjunction<T> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

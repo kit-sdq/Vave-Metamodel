@@ -41,8 +41,8 @@ public class EquivalenceTest extends BinaryExpressionTest {
 	 * @generated
 	 */
 	@Override
-	protected Equivalence getFixture() {
-		return (Equivalence)fixture;
+	protected Equivalence<?> getFixture() {
+		return (Equivalence<?>)fixture;
 	}
 
 	/**

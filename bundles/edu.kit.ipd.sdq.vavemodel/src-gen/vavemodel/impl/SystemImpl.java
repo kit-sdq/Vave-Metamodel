@@ -22,6 +22,7 @@ import vavemodel.CrossTreeConstraint;
 import vavemodel.DeltaModule;
 import vavemodel.Feature;
 import vavemodel.Mapping;
+import vavemodel.SystemRevision;
 import vavemodel.VavemodelPackage;
 
 /**
@@ -33,10 +34,11 @@ import vavemodel.VavemodelPackage;
  * </p>
  * <ul>
  *   <li>{@link vavemodel.impl.SystemImpl#getConstraint <em>Constraint</em>}</li>
- *   <li>{@link vavemodel.impl.SystemImpl#getVariant <em>Variant</em>}</li>
  *   <li>{@link vavemodel.impl.SystemImpl#getName <em>Name</em>}</li>
  *   <li>{@link vavemodel.impl.SystemImpl#getMapping <em>Mapping</em>}</li>
  *   <li>{@link vavemodel.impl.SystemImpl#getDeltamodule <em>Deltamodule</em>}</li>
+ *   <li>{@link vavemodel.impl.SystemImpl#getFeature <em>Feature</em>}</li>
+ *   <li>{@link vavemodel.impl.SystemImpl#getSystemrevision <em>Systemrevision</em>}</li>
  * </ul>
  *
  * @generated
@@ -51,16 +53,6 @@ public class SystemImpl extends MinimalEObjectImpl.Container implements vavemode
 	 * @ordered
 	 */
 	protected EList<CrossTreeConstraint> constraint;
-
-	/**
-	 * The cached value of the '{@link #getVariant() <em>Variant</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getVariant()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Feature> variant;
 
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -103,6 +95,26 @@ public class SystemImpl extends MinimalEObjectImpl.Container implements vavemode
 	protected EList<DeltaModule> deltamodule;
 
 	/**
+	 * The cached value of the '{@link #getFeature() <em>Feature</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFeature()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Feature> feature;
+
+	/**
+	 * The cached value of the '{@link #getSystemrevision() <em>Systemrevision</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSystemrevision()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<SystemRevision> systemrevision;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -132,19 +144,6 @@ public class SystemImpl extends MinimalEObjectImpl.Container implements vavemode
 			constraint = new EObjectContainmentEList<CrossTreeConstraint>(CrossTreeConstraint.class, this, VavemodelPackage.SYSTEM__CONSTRAINT);
 		}
 		return constraint;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EList<Feature> getVariant() {
-		if (variant == null) {
-			variant = new EObjectContainmentEList<Feature>(Feature.class, this, VavemodelPackage.SYSTEM__VARIANT);
-		}
-		return variant;
 	}
 
 	/**
@@ -202,16 +201,44 @@ public class SystemImpl extends MinimalEObjectImpl.Container implements vavemode
 	 * @generated
 	 */
 	@Override
+	public EList<Feature> getFeature() {
+		if (feature == null) {
+			feature = new EObjectContainmentEList<Feature>(Feature.class, this, VavemodelPackage.SYSTEM__FEATURE);
+		}
+		return feature;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<SystemRevision> getSystemrevision() {
+		if (systemrevision == null) {
+			systemrevision = new EObjectContainmentEList<SystemRevision>(SystemRevision.class, this, VavemodelPackage.SYSTEM__SYSTEMREVISION);
+		}
+		return systemrevision;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case VavemodelPackage.SYSTEM__CONSTRAINT:
 				return ((InternalEList<?>)getConstraint()).basicRemove(otherEnd, msgs);
-			case VavemodelPackage.SYSTEM__VARIANT:
-				return ((InternalEList<?>)getVariant()).basicRemove(otherEnd, msgs);
 			case VavemodelPackage.SYSTEM__MAPPING:
 				return ((InternalEList<?>)getMapping()).basicRemove(otherEnd, msgs);
 			case VavemodelPackage.SYSTEM__DELTAMODULE:
 				return ((InternalEList<?>)getDeltamodule()).basicRemove(otherEnd, msgs);
+			case VavemodelPackage.SYSTEM__FEATURE:
+				return ((InternalEList<?>)getFeature()).basicRemove(otherEnd, msgs);
+			case VavemodelPackage.SYSTEM__SYSTEMREVISION:
+				return ((InternalEList<?>)getSystemrevision()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -226,14 +253,16 @@ public class SystemImpl extends MinimalEObjectImpl.Container implements vavemode
 		switch (featureID) {
 			case VavemodelPackage.SYSTEM__CONSTRAINT:
 				return getConstraint();
-			case VavemodelPackage.SYSTEM__VARIANT:
-				return getVariant();
 			case VavemodelPackage.SYSTEM__NAME:
 				return getName();
 			case VavemodelPackage.SYSTEM__MAPPING:
 				return getMapping();
 			case VavemodelPackage.SYSTEM__DELTAMODULE:
 				return getDeltamodule();
+			case VavemodelPackage.SYSTEM__FEATURE:
+				return getFeature();
+			case VavemodelPackage.SYSTEM__SYSTEMREVISION:
+				return getSystemrevision();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -251,10 +280,6 @@ public class SystemImpl extends MinimalEObjectImpl.Container implements vavemode
 				getConstraint().clear();
 				getConstraint().addAll((Collection<? extends CrossTreeConstraint>)newValue);
 				return;
-			case VavemodelPackage.SYSTEM__VARIANT:
-				getVariant().clear();
-				getVariant().addAll((Collection<? extends Feature>)newValue);
-				return;
 			case VavemodelPackage.SYSTEM__NAME:
 				setName((String)newValue);
 				return;
@@ -265,6 +290,14 @@ public class SystemImpl extends MinimalEObjectImpl.Container implements vavemode
 			case VavemodelPackage.SYSTEM__DELTAMODULE:
 				getDeltamodule().clear();
 				getDeltamodule().addAll((Collection<? extends DeltaModule>)newValue);
+				return;
+			case VavemodelPackage.SYSTEM__FEATURE:
+				getFeature().clear();
+				getFeature().addAll((Collection<? extends Feature>)newValue);
+				return;
+			case VavemodelPackage.SYSTEM__SYSTEMREVISION:
+				getSystemrevision().clear();
+				getSystemrevision().addAll((Collection<? extends SystemRevision>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -281,9 +314,6 @@ public class SystemImpl extends MinimalEObjectImpl.Container implements vavemode
 			case VavemodelPackage.SYSTEM__CONSTRAINT:
 				getConstraint().clear();
 				return;
-			case VavemodelPackage.SYSTEM__VARIANT:
-				getVariant().clear();
-				return;
 			case VavemodelPackage.SYSTEM__NAME:
 				setName(NAME_EDEFAULT);
 				return;
@@ -292,6 +322,12 @@ public class SystemImpl extends MinimalEObjectImpl.Container implements vavemode
 				return;
 			case VavemodelPackage.SYSTEM__DELTAMODULE:
 				getDeltamodule().clear();
+				return;
+			case VavemodelPackage.SYSTEM__FEATURE:
+				getFeature().clear();
+				return;
+			case VavemodelPackage.SYSTEM__SYSTEMREVISION:
+				getSystemrevision().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -307,14 +343,16 @@ public class SystemImpl extends MinimalEObjectImpl.Container implements vavemode
 		switch (featureID) {
 			case VavemodelPackage.SYSTEM__CONSTRAINT:
 				return constraint != null && !constraint.isEmpty();
-			case VavemodelPackage.SYSTEM__VARIANT:
-				return variant != null && !variant.isEmpty();
 			case VavemodelPackage.SYSTEM__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case VavemodelPackage.SYSTEM__MAPPING:
 				return mapping != null && !mapping.isEmpty();
 			case VavemodelPackage.SYSTEM__DELTAMODULE:
 				return deltamodule != null && !deltamodule.isEmpty();
+			case VavemodelPackage.SYSTEM__FEATURE:
+				return feature != null && !feature.isEmpty();
+			case VavemodelPackage.SYSTEM__SYSTEMREVISION:
+				return systemrevision != null && !systemrevision.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

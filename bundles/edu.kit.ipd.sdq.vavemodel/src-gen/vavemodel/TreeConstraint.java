@@ -14,7 +14,7 @@ import org.eclipse.emf.common.util.EList;
  * </p>
  * <ul>
  *   <li>{@link vavemodel.TreeConstraint#getType <em>Type</em>}</li>
- *   <li>{@link vavemodel.TreeConstraint#getVariant <em>Variant</em>}</li>
+ *   <li>{@link vavemodel.TreeConstraint#getFeature <em>Feature</em>}</li>
  * </ul>
  *
  * @see vavemodel.VavemodelPackage#getTreeConstraint()
@@ -48,15 +48,15 @@ public interface TreeConstraint extends Constraint {
 	void setType(GroupType value);
 
 	/**
-	 * Returns the value of the '<em><b>Variant</b></em>' containment reference list.
+	 * Returns the value of the '<em><b>Feature</b></em>' containment reference list.
 	 * The list contents are of type {@link vavemodel.Feature}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Variant</em>' containment reference list.
-	 * @see vavemodel.VavemodelPackage#getTreeConstraint_Variant()
+	 * @return the value of the '<em>Feature</em>' containment reference list.
+	 * @see vavemodel.VavemodelPackage#getTreeConstraint_Feature()
 	 * @model containment="true" required="true"
 	 * @generated
 	 */
-	EList<Feature> getVariant();
+	EList<Feature> getFeature();
 
 } // TreeConstraint

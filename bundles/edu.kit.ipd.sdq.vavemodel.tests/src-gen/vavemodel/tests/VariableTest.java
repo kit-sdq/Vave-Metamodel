@@ -41,8 +41,8 @@ public class VariableTest extends ExpressionTest {
 	 * @generated
 	 */
 	@Override
-	protected Variable getFixture() {
-		return (Variable)fixture;
+	protected Variable<?> getFixture() {
+		return (Variable<?>)fixture;
 	}
 
 	/**

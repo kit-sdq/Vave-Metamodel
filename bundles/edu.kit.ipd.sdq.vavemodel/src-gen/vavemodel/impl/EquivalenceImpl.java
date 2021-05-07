@@ -5,6 +5,7 @@ package vavemodel.impl;
 import org.eclipse.emf.ecore.EClass;
 
 import vavemodel.Equivalence;
+import vavemodel.Option;
 import vavemodel.VavemodelPackage;
 
 /**
@@ -14,7 +15,7 @@ import vavemodel.VavemodelPackage;
  *
  * @generated
  */
-public class EquivalenceImpl extends BinaryExpressionImpl implements Equivalence {
+public class EquivalenceImpl<T extends Option> extends BinaryExpressionImpl<T> implements Equivalence<T> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

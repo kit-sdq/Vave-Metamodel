@@ -25,7 +25,7 @@ import org.eclipse.emf.ecore.EObject;
 public interface Constraint extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Option</b></em>' reference list.
-	 * The list contents are of type {@link vavemodel.Option}.
+	 * The list contents are of type {@link vavemodel.FeatureOption}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Option</em>' reference list.
@@ -33,6 +33,6 @@ public interface Constraint extends EObject {
 	 * @model
 	 * @generated
 	 */
-	EList<Option> getOption();
+	EList<FeatureOption> getOption();
 
 } // Constraint

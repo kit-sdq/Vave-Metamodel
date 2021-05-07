@@ -13,5 +13,5 @@ package vavemodel;
  * @model
  * @generated
  */
-public interface Equivalence extends BinaryExpression {
+public interface Equivalence<T extends Option> extends BinaryExpression<T> {
 } // Equivalence

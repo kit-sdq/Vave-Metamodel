@@ -41,8 +41,8 @@ public class ConjunctionTest extends BinaryExpressionTest {
 	 * @generated
 	 */
 	@Override
-	protected Conjunction getFixture() {
-		return (Conjunction)fixture;
+	protected Conjunction<?> getFixture() {
+		return (Conjunction<?>)fixture;
 	}
 
 	/**

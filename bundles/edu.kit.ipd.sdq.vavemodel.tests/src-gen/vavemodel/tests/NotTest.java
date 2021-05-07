@@ -41,8 +41,8 @@ public class NotTest extends UnaryExpressionTest {
 	 * @generated
 	 */
 	@Override
-	protected Not getFixture() {
-		return (Not)fixture;
+	protected Not<?> getFixture() {
+		return (Not<?>)fixture;
 	}
 
 	/**

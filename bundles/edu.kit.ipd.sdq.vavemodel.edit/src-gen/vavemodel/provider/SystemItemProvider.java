@@ -102,9 +102,10 @@ public class SystemItemProvider
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(VavemodelPackage.Literals.SYSTEM__CONSTRAINT);
-			childrenFeatures.add(VavemodelPackage.Literals.SYSTEM__VARIANT);
 			childrenFeatures.add(VavemodelPackage.Literals.SYSTEM__MAPPING);
 			childrenFeatures.add(VavemodelPackage.Literals.SYSTEM__DELTAMODULE);
+			childrenFeatures.add(VavemodelPackage.Literals.SYSTEM__FEATURE);
+			childrenFeatures.add(VavemodelPackage.Literals.SYSTEM__SYSTEMREVISION);
 		}
 		return childrenFeatures;
 	}
@@ -164,9 +165,10 @@ public class SystemItemProvider
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case VavemodelPackage.SYSTEM__CONSTRAINT:
-			case VavemodelPackage.SYSTEM__VARIANT:
 			case VavemodelPackage.SYSTEM__MAPPING:
 			case VavemodelPackage.SYSTEM__DELTAMODULE:
+			case VavemodelPackage.SYSTEM__FEATURE:
+			case VavemodelPackage.SYSTEM__SYSTEMREVISION:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -191,11 +193,6 @@ public class SystemItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(VavemodelPackage.Literals.SYSTEM__VARIANT,
-				 VavemodelFactory.eINSTANCE.createFeature()));
-
-		newChildDescriptors.add
-			(createChildParameter
 				(VavemodelPackage.Literals.SYSTEM__MAPPING,
 				 VavemodelFactory.eINSTANCE.createMapping()));
 
@@ -203,6 +200,16 @@ public class SystemItemProvider
 			(createChildParameter
 				(VavemodelPackage.Literals.SYSTEM__DELTAMODULE,
 				 VavemodelFactory.eINSTANCE.createDeltaModule()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(VavemodelPackage.Literals.SYSTEM__FEATURE,
+				 VavemodelFactory.eINSTANCE.createFeature()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(VavemodelPackage.Literals.SYSTEM__SYSTEMREVISION,
+				 VavemodelFactory.eINSTANCE.createSystemRevision()));
 	}
 
 	/**

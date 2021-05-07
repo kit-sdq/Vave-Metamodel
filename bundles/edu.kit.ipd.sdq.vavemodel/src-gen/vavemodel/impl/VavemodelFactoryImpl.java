@@ -17,11 +17,13 @@ import vavemodel.DeltaModule;
 import vavemodel.Disjunction;
 import vavemodel.Equivalence;
 import vavemodel.Feature;
+import vavemodel.FeatureRevision;
 import vavemodel.GroupType;
 import vavemodel.Implication;
 import vavemodel.Mapping;
 import vavemodel.Not;
-import vavemodel.Revision;
+import vavemodel.Option;
+import vavemodel.SystemRevision;
 import vavemodel.TreeConstraint;
 import vavemodel.Variable;
 import vavemodel.VavemodelFactory;
@@ -75,7 +77,7 @@ public class VavemodelFactoryImpl extends EFactoryImpl implements VavemodelFacto
 			case VavemodelPackage.FEATURE: return createFeature();
 			case VavemodelPackage.CROSS_TREE_CONSTRAINT: return createCrossTreeConstraint();
 			case VavemodelPackage.TREE_CONSTRAINT: return createTreeConstraint();
-			case VavemodelPackage.REVISION: return createRevision();
+			case VavemodelPackage.FEATURE_REVISION: return createFeatureRevision();
 			case VavemodelPackage.DELTA_MODULE: return createDeltaModule();
 			case VavemodelPackage.VARIABLE: return createVariable();
 			case VavemodelPackage.IMPLICATION: return createImplication();
@@ -84,6 +86,7 @@ public class VavemodelFactoryImpl extends EFactoryImpl implements VavemodelFacto
 			case VavemodelPackage.CONJUNCTION: return createConjunction();
 			case VavemodelPackage.NOT: return createNot();
 			case VavemodelPackage.MAPPING: return createMapping();
+			case VavemodelPackage.SYSTEM_REVISION: return createSystemRevision();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -169,9 +172,9 @@ public class VavemodelFactoryImpl extends EFactoryImpl implements VavemodelFacto
 	 * @generated
 	 */
 	@Override
-	public Revision createRevision() {
-		RevisionImpl revision = new RevisionImpl();
-		return revision;
+	public FeatureRevision createFeatureRevision() {
+		FeatureRevisionImpl featureRevision = new FeatureRevisionImpl();
+		return featureRevision;
 	}
 
 	/**
@@ -191,8 +194,8 @@ public class VavemodelFactoryImpl extends EFactoryImpl implements VavemodelFacto
 	 * @generated
 	 */
 	@Override
-	public Variable createVariable() {
-		VariableImpl variable = new VariableImpl();
+	public <T extends Option> Variable<T> createVariable() {
+		VariableImpl<T> variable = new VariableImpl<T>();
 		return variable;
 	}
 
@@ -202,8 +205,8 @@ public class VavemodelFactoryImpl extends EFactoryImpl implements VavemodelFacto
 	 * @generated
 	 */
 	@Override
-	public Implication createImplication() {
-		ImplicationImpl implication = new ImplicationImpl();
+	public <T extends Option> Implication<T> createImplication() {
+		ImplicationImpl<T> implication = new ImplicationImpl<T>();
 		return implication;
 	}
 
@@ -213,8 +216,8 @@ public class VavemodelFactoryImpl extends EFactoryImpl implements VavemodelFacto
 	 * @generated
 	 */
 	@Override
-	public Disjunction createDisjunction() {
-		DisjunctionImpl disjunction = new DisjunctionImpl();
+	public <T extends Option> Disjunction<T> createDisjunction() {
+		DisjunctionImpl<T> disjunction = new DisjunctionImpl<T>();
 		return disjunction;
 	}
 
@@ -224,8 +227,8 @@ public class VavemodelFactoryImpl extends EFactoryImpl implements VavemodelFacto
 	 * @generated
 	 */
 	@Override
-	public Equivalence createEquivalence() {
-		EquivalenceImpl equivalence = new EquivalenceImpl();
+	public <T extends Option> Equivalence<T> createEquivalence() {
+		EquivalenceImpl<T> equivalence = new EquivalenceImpl<T>();
 		return equivalence;
 	}
 
@@ -235,8 +238,8 @@ public class VavemodelFactoryImpl extends EFactoryImpl implements VavemodelFacto
 	 * @generated
 	 */
 	@Override
-	public Conjunction createConjunction() {
-		ConjunctionImpl conjunction = new ConjunctionImpl();
+	public <T extends Option> Conjunction<T> createConjunction() {
+		ConjunctionImpl<T> conjunction = new ConjunctionImpl<T>();
 		return conjunction;
 	}
 
@@ -246,8 +249,8 @@ public class VavemodelFactoryImpl extends EFactoryImpl implements VavemodelFacto
 	 * @generated
 	 */
 	@Override
-	public Not createNot() {
-		NotImpl not = new NotImpl();
+	public <T extends Option> Not<T> createNot() {
+		NotImpl<T> not = new NotImpl<T>();
 		return not;
 	}
 
@@ -260,6 +263,17 @@ public class VavemodelFactoryImpl extends EFactoryImpl implements VavemodelFacto
 	public Mapping createMapping() {
 		MappingImpl mapping = new MappingImpl();
 		return mapping;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public SystemRevision createSystemRevision() {
+		SystemRevisionImpl systemRevision = new SystemRevisionImpl();
+		return systemRevision;
 	}
 
 	/**

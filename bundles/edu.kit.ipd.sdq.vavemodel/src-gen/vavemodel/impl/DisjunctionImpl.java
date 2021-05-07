@@ -5,6 +5,7 @@ package vavemodel.impl;
 import org.eclipse.emf.ecore.EClass;
 
 import vavemodel.Disjunction;
+import vavemodel.Option;
 import vavemodel.VavemodelPackage;
 
 /**
@@ -14,7 +15,7 @@ import vavemodel.VavemodelPackage;
  *
  * @generated
  */
-public class DisjunctionImpl extends BinaryExpressionImpl implements Disjunction {
+public class DisjunctionImpl<T extends Option> extends BinaryExpressionImpl<T> implements Disjunction<T> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
