@@ -4,20 +4,22 @@
   <eClassifiers xsi:type="ecore:EClass" name="System">
     <eStructuralFeatures xsi:type="ecore:EReference" name="constraint" upperBound="-1"
         eType="#//CrossTreeConstraint" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="variant" lowerBound="1"
-        upperBound="-1" eType="#//Feature" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="mapping" upperBound="-1"
         eType="#//Mapping" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="deltamodule" upperBound="-1"
         eType="#//DeltaModule" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="feature" upperBound="-1"
+        eType="#//Feature" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="systemrevision" upperBound="-1"
+        eType="#//SystemRevision" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Feature" eSuperTypes="#//Option">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="variationpoint" upperBound="-1"
-        eType="#//TreeConstraint" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="initialVersion" lowerBound="1"
-        eType="#//Revision" containment="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Feature">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="treeconstraint" upperBound="-1"
+        eType="#//TreeConstraint" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="featurerevision" upperBound="-1"
+        eType="#//FeatureRevision" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="CrossTreeConstraint" eSuperTypes="#//Constraint">
     <eStructuralFeatures xsi:type="ecore:EReference" name="expression" lowerBound="1"
@@ -25,7 +27,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TreeConstraint" eSuperTypes="#//Constraint">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//GroupType"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="variant" lowerBound="1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="feature" lowerBound="1"
         upperBound="-1" eType="#//Feature" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="GroupType">
@@ -34,33 +36,102 @@
     <eLiterals name="XORNONE" value="2"/>
     <eLiterals name="ORNONE" value="3"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Revision" eSuperTypes="#//Option">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="successor" upperBound="-1"
-        eType="#//Revision" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="revisionID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  <eClassifiers xsi:type="ecore:EClass" name="FeatureRevision" eSuperTypes="#//Revision"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DeltaModule">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="deltamodule" upperBound="-1"
+        eType="#//DeltaModule"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="DeltaModule"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Variable" eSuperTypes="#//Expression">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="name" lowerBound="1" eType="#//Feature"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Variable">
+    <eTypeParameters name="T">
+      <eBounds eClassifier="#//Option"/>
+    </eTypeParameters>
+    <eGenericSuperTypes eClassifier="#//Expression">
+      <eTypeArguments eTypeParameter="#//Variable/T"/>
+    </eGenericSuperTypes>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Expression" abstract="true" eSuperTypes="#//Term"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Term" abstract="true" interface="true"/>
-  <eClassifiers xsi:type="ecore:EClass" name="BinaryExpression" abstract="true" eSuperTypes="#//Expression">
+  <eClassifiers xsi:type="ecore:EClass" name="Expression" abstract="true">
+    <eTypeParameters name="T">
+      <eBounds eClassifier="#//Option"/>
+    </eTypeParameters>
+    <eGenericSuperTypes eClassifier="#//Term">
+      <eTypeArguments eTypeParameter="#//Expression/T"/>
+    </eGenericSuperTypes>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Term" abstract="true" interface="true">
+    <eTypeParameters name="T">
+      <eBounds eClassifier="#//Option"/>
+    </eTypeParameters>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BinaryExpression" abstract="true">
+    <eTypeParameters name="T">
+      <eBounds eClassifier="#//Option"/>
+    </eTypeParameters>
     <eStructuralFeatures xsi:type="ecore:EReference" name="term" lowerBound="2" upperBound="2"
-        eType="#//Term" containment="true"/>
+        containment="true">
+      <eGenericType eClassifier="#//Term">
+        <eTypeArguments eTypeParameter="#//BinaryExpression/T"/>
+      </eGenericType>
+    </eStructuralFeatures>
+    <eGenericSuperTypes eClassifier="#//Expression">
+      <eTypeArguments eTypeParameter="#//BinaryExpression/T"/>
+    </eGenericSuperTypes>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="UnaryExpression" abstract="true" eSuperTypes="#//Expression">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="term" lowerBound="1" eType="#//Term"
-        containment="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="UnaryExpression" abstract="true">
+    <eTypeParameters name="T">
+      <eBounds eClassifier="#//Option"/>
+    </eTypeParameters>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="term" lowerBound="1" containment="true">
+      <eGenericType eClassifier="#//Term">
+        <eTypeArguments eTypeParameter="#//UnaryExpression/T"/>
+      </eGenericType>
+    </eStructuralFeatures>
+    <eGenericSuperTypes eClassifier="#//Expression">
+      <eTypeArguments eTypeParameter="#//UnaryExpression/T"/>
+    </eGenericSuperTypes>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Implication" eSuperTypes="#//BinaryExpression"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Disjunction" eSuperTypes="#//BinaryExpression"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Equivalence" eSuperTypes="#//BinaryExpression"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Conjunction" eSuperTypes="#//BinaryExpression"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Not" eSuperTypes="#//UnaryExpression"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Implication">
+    <eTypeParameters name="T">
+      <eBounds eClassifier="#//Option"/>
+    </eTypeParameters>
+    <eGenericSuperTypes eClassifier="#//BinaryExpression">
+      <eTypeArguments eTypeParameter="#//Implication/T"/>
+    </eGenericSuperTypes>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Disjunction">
+    <eTypeParameters name="T">
+      <eBounds eClassifier="#//Option"/>
+    </eTypeParameters>
+    <eGenericSuperTypes eClassifier="#//BinaryExpression">
+      <eTypeArguments eTypeParameter="#//Disjunction/T"/>
+    </eGenericSuperTypes>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Equivalence">
+    <eTypeParameters name="T">
+      <eBounds eClassifier="#//Option"/>
+    </eTypeParameters>
+    <eGenericSuperTypes eClassifier="#//BinaryExpression">
+      <eTypeArguments eTypeParameter="#//Equivalence/T"/>
+    </eGenericSuperTypes>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Conjunction">
+    <eTypeParameters name="T">
+      <eBounds eClassifier="#//Option"/>
+    </eTypeParameters>
+    <eGenericSuperTypes eClassifier="#//BinaryExpression">
+      <eTypeArguments eTypeParameter="#//Conjunction/T"/>
+    </eGenericSuperTypes>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Not">
+    <eTypeParameters name="T">
+      <eBounds eClassifier="#//Option"/>
+    </eTypeParameters>
+    <eGenericSuperTypes eClassifier="#//UnaryExpression">
+      <eTypeArguments eTypeParameter="#//Not/T"/>
+    </eGenericSuperTypes>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Constraint" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EReference" name="option" upperBound="-1"
-        eType="#//Option"/>
+        eType="#//FeatureOption"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Option" abstract="true"/>
   <eClassifiers xsi:type="ecore:EClass" name="Mapping">
@@ -68,5 +139,19 @@
         eType="#//Option"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="deltamodule" lowerBound="1"
         upperBound="-1" eType="#//DeltaModule"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Revision" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="successors" upperBound="-1"
+        eType="#//Revision" eOpposite="#//Revision/predecessors"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="predecessors" upperBound="-1"
+        eType="#//Revision" eOpposite="#//Revision/successors"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="revisionID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FeatureOption" abstract="true" eSuperTypes="#//Option"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SystemRevision" eSuperTypes="#//Option #//Revision">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="enablesoptions" upperBound="-1"
+        eType="#//FeatureOption"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="enablesconstraints" upperBound="-1"
+        eType="#//CrossTreeConstraint"/>
   </eClassifiers>
 </ecore:EPackage>

@@ -7,6 +7,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import vavemodel.Expression;
+import vavemodel.Option;
 import vavemodel.VavemodelPackage;
 
 /**
@@ -16,7 +17,7 @@ import vavemodel.VavemodelPackage;
  *
  * @generated
  */
-public abstract class ExpressionImpl extends MinimalEObjectImpl.Container implements Expression {
+public abstract class ExpressionImpl<T extends Option> extends MinimalEObjectImpl.Container implements Expression<T> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

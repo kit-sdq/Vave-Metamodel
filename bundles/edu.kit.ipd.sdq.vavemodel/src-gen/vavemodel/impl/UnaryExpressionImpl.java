@@ -10,6 +10,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import vavemodel.Option;
 import vavemodel.Term;
 import vavemodel.UnaryExpression;
 import vavemodel.VavemodelPackage;
@@ -27,7 +28,7 @@ import vavemodel.VavemodelPackage;
  *
  * @generated
  */
-public abstract class UnaryExpressionImpl extends ExpressionImpl implements UnaryExpression {
+public abstract class UnaryExpressionImpl<T extends Option> extends ExpressionImpl<T> implements UnaryExpression<T> {
 	/**
 	 * The cached value of the '{@link #getTerm() <em>Term</em>}' containment reference.
 	 * <!-- begin-user-doc -->
@@ -36,7 +37,7 @@ public abstract class UnaryExpressionImpl extends ExpressionImpl implements Unar
 	 * @generated
 	 * @ordered
 	 */
-	protected Term term;
+	protected Term<T> term;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -63,7 +64,7 @@ public abstract class UnaryExpressionImpl extends ExpressionImpl implements Unar
 	 * @generated
 	 */
 	@Override
-	public Term getTerm() {
+	public Term<T> getTerm() {
 		return term;
 	}
 
@@ -72,8 +73,8 @@ public abstract class UnaryExpressionImpl extends ExpressionImpl implements Unar
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetTerm(Term newTerm, NotificationChain msgs) {
-		Term oldTerm = term;
+	public NotificationChain basicSetTerm(Term<T> newTerm, NotificationChain msgs) {
+		Term<T> oldTerm = term;
 		term = newTerm;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, VavemodelPackage.UNARY_EXPRESSION__TERM, oldTerm, newTerm);
@@ -88,7 +89,7 @@ public abstract class UnaryExpressionImpl extends ExpressionImpl implements Unar
 	 * @generated
 	 */
 	@Override
-	public void setTerm(Term newTerm) {
+	public void setTerm(Term<T> newTerm) {
 		if (newTerm != term) {
 			NotificationChain msgs = null;
 			if (term != null)
@@ -135,11 +136,12 @@ public abstract class UnaryExpressionImpl extends ExpressionImpl implements Unar
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case VavemodelPackage.UNARY_EXPRESSION__TERM:
-				setTerm((Term)newValue);
+				setTerm((Term<T>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -154,7 +156,7 @@ public abstract class UnaryExpressionImpl extends ExpressionImpl implements Unar
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case VavemodelPackage.UNARY_EXPRESSION__TERM:
-				setTerm((Term)null);
+				setTerm((Term<T>)null);
 				return;
 		}
 		super.eUnset(featureID);

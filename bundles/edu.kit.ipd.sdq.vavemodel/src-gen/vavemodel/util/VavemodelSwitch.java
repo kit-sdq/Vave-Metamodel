@@ -16,11 +16,14 @@ import vavemodel.Disjunction;
 import vavemodel.Equivalence;
 import vavemodel.Expression;
 import vavemodel.Feature;
+import vavemodel.FeatureOption;
+import vavemodel.FeatureRevision;
 import vavemodel.Implication;
 import vavemodel.Mapping;
 import vavemodel.Not;
 import vavemodel.Option;
 import vavemodel.Revision;
+import vavemodel.SystemRevision;
 import vavemodel.Term;
 import vavemodel.TreeConstraint;
 import vavemodel.UnaryExpression;
@@ -40,7 +43,7 @@ import vavemodel.VavemodelPackage;
  * @see vavemodel.VavemodelPackage
  * @generated
  */
-public class VavemodelSwitch<T> extends Switch<T> {
+public class VavemodelSwitch<T1> extends Switch<T1> {
 	/**
 	 * The cached model package
 	 * <!-- begin-user-doc -->
@@ -82,88 +85,87 @@ public class VavemodelSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	@Override
-	protected T doSwitch(int classifierID, EObject theEObject) {
+	protected T1 doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
 			case VavemodelPackage.SYSTEM: {
 				vavemodel.System system = (vavemodel.System)theEObject;
-				T result = caseSystem(system);
+				T1 result = caseSystem(system);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case VavemodelPackage.FEATURE: {
 				Feature feature = (Feature)theEObject;
-				T result = caseFeature(feature);
-				if (result == null) result = caseOption(feature);
+				T1 result = caseFeature(feature);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case VavemodelPackage.CROSS_TREE_CONSTRAINT: {
 				CrossTreeConstraint crossTreeConstraint = (CrossTreeConstraint)theEObject;
-				T result = caseCrossTreeConstraint(crossTreeConstraint);
+				T1 result = caseCrossTreeConstraint(crossTreeConstraint);
 				if (result == null) result = caseConstraint(crossTreeConstraint);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case VavemodelPackage.TREE_CONSTRAINT: {
 				TreeConstraint treeConstraint = (TreeConstraint)theEObject;
-				T result = caseTreeConstraint(treeConstraint);
+				T1 result = caseTreeConstraint(treeConstraint);
 				if (result == null) result = caseConstraint(treeConstraint);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case VavemodelPackage.REVISION: {
-				Revision revision = (Revision)theEObject;
-				T result = caseRevision(revision);
-				if (result == null) result = caseOption(revision);
+			case VavemodelPackage.FEATURE_REVISION: {
+				FeatureRevision featureRevision = (FeatureRevision)theEObject;
+				T1 result = caseFeatureRevision(featureRevision);
+				if (result == null) result = caseRevision(featureRevision);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case VavemodelPackage.DELTA_MODULE: {
 				DeltaModule deltaModule = (DeltaModule)theEObject;
-				T result = caseDeltaModule(deltaModule);
+				T1 result = caseDeltaModule(deltaModule);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case VavemodelPackage.VARIABLE: {
-				Variable variable = (Variable)theEObject;
-				T result = caseVariable(variable);
+				Variable<?> variable = (Variable<?>)theEObject;
+				T1 result = caseVariable(variable);
 				if (result == null) result = caseExpression(variable);
 				if (result == null) result = caseTerm(variable);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case VavemodelPackage.EXPRESSION: {
-				Expression expression = (Expression)theEObject;
-				T result = caseExpression(expression);
+				Expression<?> expression = (Expression<?>)theEObject;
+				T1 result = caseExpression(expression);
 				if (result == null) result = caseTerm(expression);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case VavemodelPackage.TERM: {
-				Term term = (Term)theEObject;
-				T result = caseTerm(term);
+				Term<?> term = (Term<?>)theEObject;
+				T1 result = caseTerm(term);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case VavemodelPackage.BINARY_EXPRESSION: {
-				BinaryExpression binaryExpression = (BinaryExpression)theEObject;
-				T result = caseBinaryExpression(binaryExpression);
+				BinaryExpression<?> binaryExpression = (BinaryExpression<?>)theEObject;
+				T1 result = caseBinaryExpression(binaryExpression);
 				if (result == null) result = caseExpression(binaryExpression);
 				if (result == null) result = caseTerm(binaryExpression);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case VavemodelPackage.UNARY_EXPRESSION: {
-				UnaryExpression unaryExpression = (UnaryExpression)theEObject;
-				T result = caseUnaryExpression(unaryExpression);
+				UnaryExpression<?> unaryExpression = (UnaryExpression<?>)theEObject;
+				T1 result = caseUnaryExpression(unaryExpression);
 				if (result == null) result = caseExpression(unaryExpression);
 				if (result == null) result = caseTerm(unaryExpression);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case VavemodelPackage.IMPLICATION: {
-				Implication implication = (Implication)theEObject;
-				T result = caseImplication(implication);
+				Implication<?> implication = (Implication<?>)theEObject;
+				T1 result = caseImplication(implication);
 				if (result == null) result = caseBinaryExpression(implication);
 				if (result == null) result = caseExpression(implication);
 				if (result == null) result = caseTerm(implication);
@@ -171,8 +173,8 @@ public class VavemodelSwitch<T> extends Switch<T> {
 				return result;
 			}
 			case VavemodelPackage.DISJUNCTION: {
-				Disjunction disjunction = (Disjunction)theEObject;
-				T result = caseDisjunction(disjunction);
+				Disjunction<?> disjunction = (Disjunction<?>)theEObject;
+				T1 result = caseDisjunction(disjunction);
 				if (result == null) result = caseBinaryExpression(disjunction);
 				if (result == null) result = caseExpression(disjunction);
 				if (result == null) result = caseTerm(disjunction);
@@ -180,8 +182,8 @@ public class VavemodelSwitch<T> extends Switch<T> {
 				return result;
 			}
 			case VavemodelPackage.EQUIVALENCE: {
-				Equivalence equivalence = (Equivalence)theEObject;
-				T result = caseEquivalence(equivalence);
+				Equivalence<?> equivalence = (Equivalence<?>)theEObject;
+				T1 result = caseEquivalence(equivalence);
 				if (result == null) result = caseBinaryExpression(equivalence);
 				if (result == null) result = caseExpression(equivalence);
 				if (result == null) result = caseTerm(equivalence);
@@ -189,8 +191,8 @@ public class VavemodelSwitch<T> extends Switch<T> {
 				return result;
 			}
 			case VavemodelPackage.CONJUNCTION: {
-				Conjunction conjunction = (Conjunction)theEObject;
-				T result = caseConjunction(conjunction);
+				Conjunction<?> conjunction = (Conjunction<?>)theEObject;
+				T1 result = caseConjunction(conjunction);
 				if (result == null) result = caseBinaryExpression(conjunction);
 				if (result == null) result = caseExpression(conjunction);
 				if (result == null) result = caseTerm(conjunction);
@@ -198,8 +200,8 @@ public class VavemodelSwitch<T> extends Switch<T> {
 				return result;
 			}
 			case VavemodelPackage.NOT: {
-				Not not = (Not)theEObject;
-				T result = caseNot(not);
+				Not<?> not = (Not<?>)theEObject;
+				T1 result = caseNot(not);
 				if (result == null) result = caseUnaryExpression(not);
 				if (result == null) result = caseExpression(not);
 				if (result == null) result = caseTerm(not);
@@ -208,19 +210,40 @@ public class VavemodelSwitch<T> extends Switch<T> {
 			}
 			case VavemodelPackage.CONSTRAINT: {
 				Constraint constraint = (Constraint)theEObject;
-				T result = caseConstraint(constraint);
+				T1 result = caseConstraint(constraint);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case VavemodelPackage.OPTION: {
 				Option option = (Option)theEObject;
-				T result = caseOption(option);
+				T1 result = caseOption(option);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case VavemodelPackage.MAPPING: {
 				Mapping mapping = (Mapping)theEObject;
-				T result = caseMapping(mapping);
+				T1 result = caseMapping(mapping);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case VavemodelPackage.REVISION: {
+				Revision revision = (Revision)theEObject;
+				T1 result = caseRevision(revision);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case VavemodelPackage.FEATURE_OPTION: {
+				FeatureOption featureOption = (FeatureOption)theEObject;
+				T1 result = caseFeatureOption(featureOption);
+				if (result == null) result = caseOption(featureOption);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case VavemodelPackage.SYSTEM_REVISION: {
+				SystemRevision systemRevision = (SystemRevision)theEObject;
+				T1 result = caseSystemRevision(systemRevision);
+				if (result == null) result = caseOption(systemRevision);
+				if (result == null) result = caseRevision(systemRevision);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -239,7 +262,7 @@ public class VavemodelSwitch<T> extends Switch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseSystem(vavemodel.System object) {
+	public T1 caseSystem(vavemodel.System object) {
 		return null;
 	}
 
@@ -254,7 +277,7 @@ public class VavemodelSwitch<T> extends Switch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseFeature(Feature object) {
+	public T1 caseFeature(Feature object) {
 		return null;
 	}
 
@@ -269,7 +292,7 @@ public class VavemodelSwitch<T> extends Switch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseCrossTreeConstraint(CrossTreeConstraint object) {
+	public T1 caseCrossTreeConstraint(CrossTreeConstraint object) {
 		return null;
 	}
 
@@ -284,7 +307,22 @@ public class VavemodelSwitch<T> extends Switch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseTreeConstraint(TreeConstraint object) {
+	public T1 caseTreeConstraint(TreeConstraint object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Feature Revision</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Feature Revision</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T1 caseFeatureRevision(FeatureRevision object) {
 		return null;
 	}
 
@@ -299,7 +337,37 @@ public class VavemodelSwitch<T> extends Switch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseRevision(Revision object) {
+	public T1 caseRevision(Revision object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Feature Option</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Feature Option</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T1 caseFeatureOption(FeatureOption object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>System Revision</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>System Revision</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T1 caseSystemRevision(SystemRevision object) {
 		return null;
 	}
 
@@ -314,7 +382,7 @@ public class VavemodelSwitch<T> extends Switch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseDeltaModule(DeltaModule object) {
+	public T1 caseDeltaModule(DeltaModule object) {
 		return null;
 	}
 
@@ -329,7 +397,7 @@ public class VavemodelSwitch<T> extends Switch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseVariable(Variable object) {
+	public <T extends Option> T1 caseVariable(Variable<T> object) {
 		return null;
 	}
 
@@ -344,7 +412,7 @@ public class VavemodelSwitch<T> extends Switch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseExpression(Expression object) {
+	public <T extends Option> T1 caseExpression(Expression<T> object) {
 		return null;
 	}
 
@@ -359,7 +427,7 @@ public class VavemodelSwitch<T> extends Switch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseTerm(Term object) {
+	public <T extends Option> T1 caseTerm(Term<T> object) {
 		return null;
 	}
 
@@ -374,7 +442,7 @@ public class VavemodelSwitch<T> extends Switch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseBinaryExpression(BinaryExpression object) {
+	public <T extends Option> T1 caseBinaryExpression(BinaryExpression<T> object) {
 		return null;
 	}
 
@@ -389,7 +457,7 @@ public class VavemodelSwitch<T> extends Switch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseUnaryExpression(UnaryExpression object) {
+	public <T extends Option> T1 caseUnaryExpression(UnaryExpression<T> object) {
 		return null;
 	}
 
@@ -404,7 +472,7 @@ public class VavemodelSwitch<T> extends Switch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseImplication(Implication object) {
+	public <T extends Option> T1 caseImplication(Implication<T> object) {
 		return null;
 	}
 
@@ -419,7 +487,7 @@ public class VavemodelSwitch<T> extends Switch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseDisjunction(Disjunction object) {
+	public <T extends Option> T1 caseDisjunction(Disjunction<T> object) {
 		return null;
 	}
 
@@ -434,7 +502,7 @@ public class VavemodelSwitch<T> extends Switch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseEquivalence(Equivalence object) {
+	public <T extends Option> T1 caseEquivalence(Equivalence<T> object) {
 		return null;
 	}
 
@@ -449,7 +517,7 @@ public class VavemodelSwitch<T> extends Switch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseConjunction(Conjunction object) {
+	public <T extends Option> T1 caseConjunction(Conjunction<T> object) {
 		return null;
 	}
 
@@ -464,7 +532,7 @@ public class VavemodelSwitch<T> extends Switch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseNot(Not object) {
+	public <T extends Option> T1 caseNot(Not<T> object) {
 		return null;
 	}
 
@@ -479,7 +547,7 @@ public class VavemodelSwitch<T> extends Switch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseConstraint(Constraint object) {
+	public T1 caseConstraint(Constraint object) {
 		return null;
 	}
 
@@ -494,7 +562,7 @@ public class VavemodelSwitch<T> extends Switch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseOption(Option object) {
+	public T1 caseOption(Option object) {
 		return null;
 	}
 
@@ -509,7 +577,7 @@ public class VavemodelSwitch<T> extends Switch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseMapping(Mapping object) {
+	public T1 caseMapping(Mapping object) {
 		return null;
 	}
 
@@ -525,7 +593,7 @@ public class VavemodelSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	@Override
-	public T defaultCase(EObject object) {
+	public T1 defaultCase(EObject object) {
 		return null;
 	}
 

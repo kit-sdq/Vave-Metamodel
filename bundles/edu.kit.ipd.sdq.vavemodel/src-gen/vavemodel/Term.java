@@ -14,5 +14,5 @@ import org.eclipse.emf.ecore.EObject;
  * @model interface="true" abstract="true"
  * @generated
  */
-public interface Term extends EObject {
+public interface Term<T extends Option> extends EObject {
 } // Term

@@ -164,26 +164,26 @@ public class VavemodelItemProviderAdapterFactory extends VavemodelAdapterFactory
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link vavemodel.Revision} instances.
+	 * This keeps track of the one adapter used for all {@link vavemodel.FeatureRevision} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected RevisionItemProvider revisionItemProvider;
+	protected FeatureRevisionItemProvider featureRevisionItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link vavemodel.Revision}.
+	 * This creates an adapter for a {@link vavemodel.FeatureRevision}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createRevisionAdapter() {
-		if (revisionItemProvider == null) {
-			revisionItemProvider = new RevisionItemProvider(this);
+	public Adapter createFeatureRevisionAdapter() {
+		if (featureRevisionItemProvider == null) {
+			featureRevisionItemProvider = new FeatureRevisionItemProvider(this);
 		}
 
-		return revisionItemProvider;
+		return featureRevisionItemProvider;
 	}
 
 	/**
@@ -371,6 +371,29 @@ public class VavemodelItemProviderAdapterFactory extends VavemodelAdapterFactory
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link vavemodel.SystemRevision} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected SystemRevisionItemProvider systemRevisionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link vavemodel.SystemRevision}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createSystemRevisionAdapter() {
+		if (systemRevisionItemProvider == null) {
+			systemRevisionItemProvider = new SystemRevisionItemProvider(this);
+		}
+
+		return systemRevisionItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -479,7 +502,7 @@ public class VavemodelItemProviderAdapterFactory extends VavemodelAdapterFactory
 		if (featureItemProvider != null) featureItemProvider.dispose();
 		if (crossTreeConstraintItemProvider != null) crossTreeConstraintItemProvider.dispose();
 		if (treeConstraintItemProvider != null) treeConstraintItemProvider.dispose();
-		if (revisionItemProvider != null) revisionItemProvider.dispose();
+		if (featureRevisionItemProvider != null) featureRevisionItemProvider.dispose();
 		if (deltaModuleItemProvider != null) deltaModuleItemProvider.dispose();
 		if (variableItemProvider != null) variableItemProvider.dispose();
 		if (implicationItemProvider != null) implicationItemProvider.dispose();
@@ -488,6 +511,7 @@ public class VavemodelItemProviderAdapterFactory extends VavemodelAdapterFactory
 		if (conjunctionItemProvider != null) conjunctionItemProvider.dispose();
 		if (notItemProvider != null) notItemProvider.dispose();
 		if (mappingItemProvider != null) mappingItemProvider.dispose();
+		if (systemRevisionItemProvider != null) systemRevisionItemProvider.dispose();
 	}
 
 }

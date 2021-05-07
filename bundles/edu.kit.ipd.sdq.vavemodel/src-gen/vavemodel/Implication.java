@@ -13,5 +13,5 @@ package vavemodel;
  * @model
  * @generated
  */
-public interface Implication extends BinaryExpression {
+public interface Implication<T extends Option> extends BinaryExpression<T> {
 } // Implication

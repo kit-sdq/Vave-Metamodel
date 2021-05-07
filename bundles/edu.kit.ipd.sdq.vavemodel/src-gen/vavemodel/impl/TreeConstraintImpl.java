@@ -31,7 +31,7 @@ import vavemodel.VavemodelPackage;
  * </p>
  * <ul>
  *   <li>{@link vavemodel.impl.TreeConstraintImpl#getType <em>Type</em>}</li>
- *   <li>{@link vavemodel.impl.TreeConstraintImpl#getVariant <em>Variant</em>}</li>
+ *   <li>{@link vavemodel.impl.TreeConstraintImpl#getFeature <em>Feature</em>}</li>
  * </ul>
  *
  * @generated
@@ -58,14 +58,14 @@ public class TreeConstraintImpl extends ConstraintImpl implements TreeConstraint
 	protected GroupType type = TYPE_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getVariant() <em>Variant</em>}' containment reference list.
+	 * The cached value of the '{@link #getFeature() <em>Feature</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getVariant()
+	 * @see #getFeature()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Feature> variant;
+	protected EList<Feature> feature;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -115,11 +115,11 @@ public class TreeConstraintImpl extends ConstraintImpl implements TreeConstraint
 	 * @generated
 	 */
 	@Override
-	public EList<Feature> getVariant() {
-		if (variant == null) {
-			variant = new EObjectContainmentEList<Feature>(Feature.class, this, VavemodelPackage.TREE_CONSTRAINT__VARIANT);
+	public EList<Feature> getFeature() {
+		if (feature == null) {
+			feature = new EObjectContainmentEList<Feature>(Feature.class, this, VavemodelPackage.TREE_CONSTRAINT__FEATURE);
 		}
-		return variant;
+		return feature;
 	}
 
 	/**
@@ -130,8 +130,8 @@ public class TreeConstraintImpl extends ConstraintImpl implements TreeConstraint
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case VavemodelPackage.TREE_CONSTRAINT__VARIANT:
-				return ((InternalEList<?>)getVariant()).basicRemove(otherEnd, msgs);
+			case VavemodelPackage.TREE_CONSTRAINT__FEATURE:
+				return ((InternalEList<?>)getFeature()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -146,8 +146,8 @@ public class TreeConstraintImpl extends ConstraintImpl implements TreeConstraint
 		switch (featureID) {
 			case VavemodelPackage.TREE_CONSTRAINT__TYPE:
 				return getType();
-			case VavemodelPackage.TREE_CONSTRAINT__VARIANT:
-				return getVariant();
+			case VavemodelPackage.TREE_CONSTRAINT__FEATURE:
+				return getFeature();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -164,9 +164,9 @@ public class TreeConstraintImpl extends ConstraintImpl implements TreeConstraint
 			case VavemodelPackage.TREE_CONSTRAINT__TYPE:
 				setType((GroupType)newValue);
 				return;
-			case VavemodelPackage.TREE_CONSTRAINT__VARIANT:
-				getVariant().clear();
-				getVariant().addAll((Collection<? extends Feature>)newValue);
+			case VavemodelPackage.TREE_CONSTRAINT__FEATURE:
+				getFeature().clear();
+				getFeature().addAll((Collection<? extends Feature>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -183,8 +183,8 @@ public class TreeConstraintImpl extends ConstraintImpl implements TreeConstraint
 			case VavemodelPackage.TREE_CONSTRAINT__TYPE:
 				setType(TYPE_EDEFAULT);
 				return;
-			case VavemodelPackage.TREE_CONSTRAINT__VARIANT:
-				getVariant().clear();
+			case VavemodelPackage.TREE_CONSTRAINT__FEATURE:
+				getFeature().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -200,8 +200,8 @@ public class TreeConstraintImpl extends ConstraintImpl implements TreeConstraint
 		switch (featureID) {
 			case VavemodelPackage.TREE_CONSTRAINT__TYPE:
 				return type != TYPE_EDEFAULT;
-			case VavemodelPackage.TREE_CONSTRAINT__VARIANT:
-				return variant != null && !variant.isEmpty();
+			case VavemodelPackage.TREE_CONSTRAINT__FEATURE:
+				return feature != null && !feature.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

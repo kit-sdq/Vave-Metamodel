@@ -2,6 +2,8 @@
  */
 package vavemodel.tests;
 
+import junit.framework.TestCase;
+
 import junit.textui.TestRunner;
 
 import vavemodel.Feature;
@@ -13,7 +15,15 @@ import vavemodel.VavemodelFactory;
  * <!-- end-user-doc -->
  * @generated
  */
-public class FeatureTest extends OptionTest {
+public class FeatureTest extends TestCase {
+
+	/**
+	 * The fixture for this Feature test case.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected Feature fixture = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -35,14 +45,23 @@ public class FeatureTest extends OptionTest {
 	}
 
 	/**
+	 * Sets the fixture for this Feature test case.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void setFixture(Feature fixture) {
+		this.fixture = fixture;
+	}
+
+	/**
 	 * Returns the fixture for this Feature test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	protected Feature getFixture() {
-		return (Feature)fixture;
+		return fixture;
 	}
 
 	/**

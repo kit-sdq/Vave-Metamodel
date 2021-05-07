@@ -5,9 +5,11 @@ package vavemodel.impl;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
+import org.eclipse.emf.ecore.EGenericType;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
+import org.eclipse.emf.ecore.ETypeParameter;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import vavemodel.BinaryExpression;
@@ -19,12 +21,15 @@ import vavemodel.Disjunction;
 import vavemodel.Equivalence;
 import vavemodel.Expression;
 import vavemodel.Feature;
+import vavemodel.FeatureOption;
+import vavemodel.FeatureRevision;
 import vavemodel.GroupType;
 import vavemodel.Implication;
 import vavemodel.Mapping;
 import vavemodel.Not;
 import vavemodel.Option;
 import vavemodel.Revision;
+import vavemodel.SystemRevision;
 import vavemodel.Term;
 import vavemodel.TreeConstraint;
 import vavemodel.UnaryExpression;
@@ -72,7 +77,28 @@ public class VavemodelPackageImpl extends EPackageImpl implements VavemodelPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass featureRevisionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EClass revisionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass featureOptionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass systemRevisionEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -266,18 +292,8 @@ public class VavemodelPackageImpl extends EPackageImpl implements VavemodelPacka
 	 * @generated
 	 */
 	@Override
-	public EReference getSystem_Variant() {
-		return (EReference)systemEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EAttribute getSystem_Name() {
-		return (EAttribute)systemEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)systemEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -287,7 +303,7 @@ public class VavemodelPackageImpl extends EPackageImpl implements VavemodelPacka
 	 */
 	@Override
 	public EReference getSystem_Mapping() {
-		return (EReference)systemEClass.getEStructuralFeatures().get(3);
+		return (EReference)systemEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -297,7 +313,27 @@ public class VavemodelPackageImpl extends EPackageImpl implements VavemodelPacka
 	 */
 	@Override
 	public EReference getSystem_Deltamodule() {
+		return (EReference)systemEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getSystem_Feature() {
 		return (EReference)systemEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getSystem_Systemrevision() {
+		return (EReference)systemEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -316,8 +352,8 @@ public class VavemodelPackageImpl extends EPackageImpl implements VavemodelPacka
 	 * @generated
 	 */
 	@Override
-	public EReference getFeature_Variationpoint() {
-		return (EReference)featureEClass.getEStructuralFeatures().get(0);
+	public EAttribute getFeature_Name() {
+		return (EAttribute)featureEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -326,7 +362,7 @@ public class VavemodelPackageImpl extends EPackageImpl implements VavemodelPacka
 	 * @generated
 	 */
 	@Override
-	public EReference getFeature_InitialVersion() {
+	public EReference getFeature_Treeconstraint() {
 		return (EReference)featureEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -336,8 +372,8 @@ public class VavemodelPackageImpl extends EPackageImpl implements VavemodelPacka
 	 * @generated
 	 */
 	@Override
-	public EAttribute getFeature_Name() {
-		return (EAttribute)featureEClass.getEStructuralFeatures().get(2);
+	public EReference getFeature_Featurerevision() {
+		return (EReference)featureEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -386,8 +422,18 @@ public class VavemodelPackageImpl extends EPackageImpl implements VavemodelPacka
 	 * @generated
 	 */
 	@Override
-	public EReference getTreeConstraint_Variant() {
+	public EReference getTreeConstraint_Feature() {
 		return (EReference)treeConstraintEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getFeatureRevision() {
+		return featureRevisionEClass;
 	}
 
 	/**
@@ -406,7 +452,7 @@ public class VavemodelPackageImpl extends EPackageImpl implements VavemodelPacka
 	 * @generated
 	 */
 	@Override
-	public EReference getRevision_Successor() {
+	public EReference getRevision_Successors() {
 		return (EReference)revisionEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -416,8 +462,58 @@ public class VavemodelPackageImpl extends EPackageImpl implements VavemodelPacka
 	 * @generated
 	 */
 	@Override
+	public EReference getRevision_Predecessors() {
+		return (EReference)revisionEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EAttribute getRevision_RevisionID() {
-		return (EAttribute)revisionEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)revisionEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getFeatureOption() {
+		return featureOptionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getSystemRevision() {
+		return systemRevisionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getSystemRevision_Enablesoptions() {
+		return (EReference)systemRevisionEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getSystemRevision_Enablesconstraints() {
+		return (EReference)systemRevisionEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -436,8 +532,8 @@ public class VavemodelPackageImpl extends EPackageImpl implements VavemodelPacka
 	 * @generated
 	 */
 	@Override
-	public EClass getVariable() {
-		return variableEClass;
+	public EReference getDeltaModule_Deltamodule() {
+		return (EReference)deltaModuleEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -446,8 +542,8 @@ public class VavemodelPackageImpl extends EPackageImpl implements VavemodelPacka
 	 * @generated
 	 */
 	@Override
-	public EReference getVariable_Name() {
-		return (EReference)variableEClass.getEStructuralFeatures().get(0);
+	public EClass getVariable() {
+		return variableEClass;
 	}
 
 	/**
@@ -661,31 +757,30 @@ public class VavemodelPackageImpl extends EPackageImpl implements VavemodelPacka
 		// Create classes and their features
 		systemEClass = createEClass(SYSTEM);
 		createEReference(systemEClass, SYSTEM__CONSTRAINT);
-		createEReference(systemEClass, SYSTEM__VARIANT);
 		createEAttribute(systemEClass, SYSTEM__NAME);
 		createEReference(systemEClass, SYSTEM__MAPPING);
 		createEReference(systemEClass, SYSTEM__DELTAMODULE);
+		createEReference(systemEClass, SYSTEM__FEATURE);
+		createEReference(systemEClass, SYSTEM__SYSTEMREVISION);
 
 		featureEClass = createEClass(FEATURE);
-		createEReference(featureEClass, FEATURE__VARIATIONPOINT);
-		createEReference(featureEClass, FEATURE__INITIAL_VERSION);
 		createEAttribute(featureEClass, FEATURE__NAME);
+		createEReference(featureEClass, FEATURE__TREECONSTRAINT);
+		createEReference(featureEClass, FEATURE__FEATUREREVISION);
 
 		crossTreeConstraintEClass = createEClass(CROSS_TREE_CONSTRAINT);
 		createEReference(crossTreeConstraintEClass, CROSS_TREE_CONSTRAINT__EXPRESSION);
 
 		treeConstraintEClass = createEClass(TREE_CONSTRAINT);
 		createEAttribute(treeConstraintEClass, TREE_CONSTRAINT__TYPE);
-		createEReference(treeConstraintEClass, TREE_CONSTRAINT__VARIANT);
+		createEReference(treeConstraintEClass, TREE_CONSTRAINT__FEATURE);
 
-		revisionEClass = createEClass(REVISION);
-		createEReference(revisionEClass, REVISION__SUCCESSOR);
-		createEAttribute(revisionEClass, REVISION__REVISION_ID);
+		featureRevisionEClass = createEClass(FEATURE_REVISION);
 
 		deltaModuleEClass = createEClass(DELTA_MODULE);
+		createEReference(deltaModuleEClass, DELTA_MODULE__DELTAMODULE);
 
 		variableEClass = createEClass(VARIABLE);
-		createEReference(variableEClass, VARIABLE__NAME);
 
 		expressionEClass = createEClass(EXPRESSION);
 
@@ -716,6 +811,17 @@ public class VavemodelPackageImpl extends EPackageImpl implements VavemodelPacka
 		createEReference(mappingEClass, MAPPING__OPTION);
 		createEReference(mappingEClass, MAPPING__DELTAMODULE);
 
+		revisionEClass = createEClass(REVISION);
+		createEReference(revisionEClass, REVISION__SUCCESSORS);
+		createEReference(revisionEClass, REVISION__PREDECESSORS);
+		createEAttribute(revisionEClass, REVISION__REVISION_ID);
+
+		featureOptionEClass = createEClass(FEATURE_OPTION);
+
+		systemRevisionEClass = createEClass(SYSTEM_REVISION);
+		createEReference(systemRevisionEClass, SYSTEM_REVISION__ENABLESOPTIONS);
+		createEReference(systemRevisionEClass, SYSTEM_REVISION__ENABLESCONSTRAINTS);
+
 		// Create enums
 		groupTypeEEnum = createEEnum(GROUP_TYPE);
 	}
@@ -744,62 +850,126 @@ public class VavemodelPackageImpl extends EPackageImpl implements VavemodelPacka
 		setNsURI(eNS_URI);
 
 		// Create type parameters
+		ETypeParameter variableEClass_T = addETypeParameter(variableEClass, "T");
+		ETypeParameter expressionEClass_T = addETypeParameter(expressionEClass, "T");
+		ETypeParameter termEClass_T = addETypeParameter(termEClass, "T");
+		ETypeParameter binaryExpressionEClass_T = addETypeParameter(binaryExpressionEClass, "T");
+		ETypeParameter unaryExpressionEClass_T = addETypeParameter(unaryExpressionEClass, "T");
+		ETypeParameter implicationEClass_T = addETypeParameter(implicationEClass, "T");
+		ETypeParameter disjunctionEClass_T = addETypeParameter(disjunctionEClass, "T");
+		ETypeParameter equivalenceEClass_T = addETypeParameter(equivalenceEClass, "T");
+		ETypeParameter conjunctionEClass_T = addETypeParameter(conjunctionEClass, "T");
+		ETypeParameter notEClass_T = addETypeParameter(notEClass, "T");
 
 		// Set bounds for type parameters
+		EGenericType g1 = createEGenericType(this.getOption());
+		variableEClass_T.getEBounds().add(g1);
+		g1 = createEGenericType(this.getOption());
+		expressionEClass_T.getEBounds().add(g1);
+		g1 = createEGenericType(this.getOption());
+		termEClass_T.getEBounds().add(g1);
+		g1 = createEGenericType(this.getOption());
+		binaryExpressionEClass_T.getEBounds().add(g1);
+		g1 = createEGenericType(this.getOption());
+		unaryExpressionEClass_T.getEBounds().add(g1);
+		g1 = createEGenericType(this.getOption());
+		implicationEClass_T.getEBounds().add(g1);
+		g1 = createEGenericType(this.getOption());
+		disjunctionEClass_T.getEBounds().add(g1);
+		g1 = createEGenericType(this.getOption());
+		equivalenceEClass_T.getEBounds().add(g1);
+		g1 = createEGenericType(this.getOption());
+		conjunctionEClass_T.getEBounds().add(g1);
+		g1 = createEGenericType(this.getOption());
+		notEClass_T.getEBounds().add(g1);
 
 		// Add supertypes to classes
-		featureEClass.getESuperTypes().add(this.getOption());
 		crossTreeConstraintEClass.getESuperTypes().add(this.getConstraint());
 		treeConstraintEClass.getESuperTypes().add(this.getConstraint());
-		revisionEClass.getESuperTypes().add(this.getOption());
-		variableEClass.getESuperTypes().add(this.getExpression());
-		expressionEClass.getESuperTypes().add(this.getTerm());
-		binaryExpressionEClass.getESuperTypes().add(this.getExpression());
-		unaryExpressionEClass.getESuperTypes().add(this.getExpression());
-		implicationEClass.getESuperTypes().add(this.getBinaryExpression());
-		disjunctionEClass.getESuperTypes().add(this.getBinaryExpression());
-		equivalenceEClass.getESuperTypes().add(this.getBinaryExpression());
-		conjunctionEClass.getESuperTypes().add(this.getBinaryExpression());
-		notEClass.getESuperTypes().add(this.getUnaryExpression());
+		featureRevisionEClass.getESuperTypes().add(this.getRevision());
+		g1 = createEGenericType(this.getExpression());
+		EGenericType g2 = createEGenericType(variableEClass_T);
+		g1.getETypeArguments().add(g2);
+		variableEClass.getEGenericSuperTypes().add(g1);
+		g1 = createEGenericType(this.getTerm());
+		g2 = createEGenericType(expressionEClass_T);
+		g1.getETypeArguments().add(g2);
+		expressionEClass.getEGenericSuperTypes().add(g1);
+		g1 = createEGenericType(this.getExpression());
+		g2 = createEGenericType(binaryExpressionEClass_T);
+		g1.getETypeArguments().add(g2);
+		binaryExpressionEClass.getEGenericSuperTypes().add(g1);
+		g1 = createEGenericType(this.getExpression());
+		g2 = createEGenericType(unaryExpressionEClass_T);
+		g1.getETypeArguments().add(g2);
+		unaryExpressionEClass.getEGenericSuperTypes().add(g1);
+		g1 = createEGenericType(this.getBinaryExpression());
+		g2 = createEGenericType(implicationEClass_T);
+		g1.getETypeArguments().add(g2);
+		implicationEClass.getEGenericSuperTypes().add(g1);
+		g1 = createEGenericType(this.getBinaryExpression());
+		g2 = createEGenericType(disjunctionEClass_T);
+		g1.getETypeArguments().add(g2);
+		disjunctionEClass.getEGenericSuperTypes().add(g1);
+		g1 = createEGenericType(this.getBinaryExpression());
+		g2 = createEGenericType(equivalenceEClass_T);
+		g1.getETypeArguments().add(g2);
+		equivalenceEClass.getEGenericSuperTypes().add(g1);
+		g1 = createEGenericType(this.getBinaryExpression());
+		g2 = createEGenericType(conjunctionEClass_T);
+		g1.getETypeArguments().add(g2);
+		conjunctionEClass.getEGenericSuperTypes().add(g1);
+		g1 = createEGenericType(this.getUnaryExpression());
+		g2 = createEGenericType(notEClass_T);
+		g1.getETypeArguments().add(g2);
+		notEClass.getEGenericSuperTypes().add(g1);
+		featureOptionEClass.getESuperTypes().add(this.getOption());
+		systemRevisionEClass.getESuperTypes().add(this.getOption());
+		systemRevisionEClass.getESuperTypes().add(this.getRevision());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(systemEClass, vavemodel.System.class, "System", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getSystem_Constraint(), this.getCrossTreeConstraint(), null, "constraint", null, 0, -1, vavemodel.System.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getSystem_Variant(), this.getFeature(), null, "variant", null, 1, -1, vavemodel.System.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSystem_Name(), ecorePackage.getEString(), "name", null, 0, 1, vavemodel.System.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSystem_Mapping(), this.getMapping(), null, "mapping", null, 0, -1, vavemodel.System.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSystem_Deltamodule(), this.getDeltaModule(), null, "deltamodule", null, 0, -1, vavemodel.System.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSystem_Feature(), this.getFeature(), null, "feature", null, 0, -1, vavemodel.System.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSystem_Systemrevision(), this.getSystemRevision(), null, "systemrevision", null, 0, -1, vavemodel.System.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(featureEClass, Feature.class, "Feature", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getFeature_Variationpoint(), this.getTreeConstraint(), null, "variationpoint", null, 0, -1, Feature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getFeature_InitialVersion(), this.getRevision(), null, "initialVersion", null, 1, 1, Feature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFeature_Name(), ecorePackage.getEString(), "name", null, 0, 1, Feature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getFeature_Treeconstraint(), this.getTreeConstraint(), null, "treeconstraint", null, 0, -1, Feature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getFeature_Featurerevision(), this.getFeatureRevision(), null, "featurerevision", null, 0, -1, Feature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(crossTreeConstraintEClass, CrossTreeConstraint.class, "CrossTreeConstraint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getCrossTreeConstraint_Expression(), this.getExpression(), null, "expression", null, 1, 1, CrossTreeConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(treeConstraintEClass, TreeConstraint.class, "TreeConstraint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getTreeConstraint_Type(), this.getGroupType(), "type", null, 0, 1, TreeConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getTreeConstraint_Variant(), this.getFeature(), null, "variant", null, 1, -1, TreeConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTreeConstraint_Feature(), this.getFeature(), null, "feature", null, 1, -1, TreeConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(revisionEClass, Revision.class, "Revision", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getRevision_Successor(), this.getRevision(), null, "successor", null, 0, -1, Revision.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getRevision_RevisionID(), ecorePackage.getEString(), "revisionID", null, 0, 1, Revision.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(featureRevisionEClass, FeatureRevision.class, "FeatureRevision", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(deltaModuleEClass, DeltaModule.class, "DeltaModule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getDeltaModule_Deltamodule(), this.getDeltaModule(), null, "deltamodule", null, 0, -1, DeltaModule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(variableEClass, Variable.class, "Variable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getVariable_Name(), this.getFeature(), null, "name", null, 1, 1, Variable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(expressionEClass, Expression.class, "Expression", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(termEClass, Term.class, "Term", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(binaryExpressionEClass, BinaryExpression.class, "BinaryExpression", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getBinaryExpression_Term(), this.getTerm(), null, "term", null, 2, 2, BinaryExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		g1 = createEGenericType(this.getTerm());
+		g2 = createEGenericType(binaryExpressionEClass_T);
+		g1.getETypeArguments().add(g2);
+		initEReference(getBinaryExpression_Term(), g1, null, "term", null, 2, 2, BinaryExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(unaryExpressionEClass, UnaryExpression.class, "UnaryExpression", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getUnaryExpression_Term(), this.getTerm(), null, "term", null, 1, 1, UnaryExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		g1 = createEGenericType(this.getTerm());
+		g2 = createEGenericType(unaryExpressionEClass_T);
+		g1.getETypeArguments().add(g2);
+		initEReference(getUnaryExpression_Term(), g1, null, "term", null, 1, 1, UnaryExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(implicationEClass, Implication.class, "Implication", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -812,13 +982,24 @@ public class VavemodelPackageImpl extends EPackageImpl implements VavemodelPacka
 		initEClass(notEClass, Not.class, "Not", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(constraintEClass, Constraint.class, "Constraint", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getConstraint_Option(), this.getOption(), null, "option", null, 0, -1, Constraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getConstraint_Option(), this.getFeatureOption(), null, "option", null, 0, -1, Constraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(optionEClass, Option.class, "Option", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(mappingEClass, Mapping.class, "Mapping", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getMapping_Option(), this.getOption(), null, "option", null, 0, -1, Mapping.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMapping_Deltamodule(), this.getDeltaModule(), null, "deltamodule", null, 1, -1, Mapping.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(revisionEClass, Revision.class, "Revision", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getRevision_Successors(), this.getRevision(), this.getRevision_Predecessors(), "successors", null, 0, -1, Revision.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRevision_Predecessors(), this.getRevision(), this.getRevision_Successors(), "predecessors", null, 0, -1, Revision.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getRevision_RevisionID(), ecorePackage.getEInt(), "revisionID", null, 0, 1, Revision.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(featureOptionEClass, FeatureOption.class, "FeatureOption", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(systemRevisionEClass, SystemRevision.class, "SystemRevision", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getSystemRevision_Enablesoptions(), this.getFeatureOption(), null, "enablesoptions", null, 0, -1, SystemRevision.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSystemRevision_Enablesconstraints(), this.getCrossTreeConstraint(), null, "enablesconstraints", null, 0, -1, SystemRevision.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(groupTypeEEnum, GroupType.class, "GroupType");

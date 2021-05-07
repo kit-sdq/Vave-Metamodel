@@ -5,6 +5,7 @@ package vavemodel.impl;
 import org.eclipse.emf.ecore.EClass;
 
 import vavemodel.Implication;
+import vavemodel.Option;
 import vavemodel.VavemodelPackage;
 
 /**
@@ -14,7 +15,7 @@ import vavemodel.VavemodelPackage;
  *
  * @generated
  */
-public class ImplicationImpl extends BinaryExpressionImpl implements Implication {
+public class ImplicationImpl<T extends Option> extends BinaryExpressionImpl<T> implements Implication<T> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

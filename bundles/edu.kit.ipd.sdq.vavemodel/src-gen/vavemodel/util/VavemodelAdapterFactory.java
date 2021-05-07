@@ -18,11 +18,14 @@ import vavemodel.Disjunction;
 import vavemodel.Equivalence;
 import vavemodel.Expression;
 import vavemodel.Feature;
+import vavemodel.FeatureOption;
+import vavemodel.FeatureRevision;
 import vavemodel.Implication;
 import vavemodel.Mapping;
 import vavemodel.Not;
 import vavemodel.Option;
 import vavemodel.Revision;
+import vavemodel.SystemRevision;
 import vavemodel.Term;
 import vavemodel.TreeConstraint;
 import vavemodel.UnaryExpression;
@@ -102,51 +105,51 @@ public class VavemodelAdapterFactory extends AdapterFactoryImpl {
 				return createTreeConstraintAdapter();
 			}
 			@Override
-			public Adapter caseRevision(Revision object) {
-				return createRevisionAdapter();
+			public Adapter caseFeatureRevision(FeatureRevision object) {
+				return createFeatureRevisionAdapter();
 			}
 			@Override
 			public Adapter caseDeltaModule(DeltaModule object) {
 				return createDeltaModuleAdapter();
 			}
 			@Override
-			public Adapter caseVariable(Variable object) {
+			public <T extends Option> Adapter caseVariable(Variable<T> object) {
 				return createVariableAdapter();
 			}
 			@Override
-			public Adapter caseExpression(Expression object) {
+			public <T extends Option> Adapter caseExpression(Expression<T> object) {
 				return createExpressionAdapter();
 			}
 			@Override
-			public Adapter caseTerm(Term object) {
+			public <T extends Option> Adapter caseTerm(Term<T> object) {
 				return createTermAdapter();
 			}
 			@Override
-			public Adapter caseBinaryExpression(BinaryExpression object) {
+			public <T extends Option> Adapter caseBinaryExpression(BinaryExpression<T> object) {
 				return createBinaryExpressionAdapter();
 			}
 			@Override
-			public Adapter caseUnaryExpression(UnaryExpression object) {
+			public <T extends Option> Adapter caseUnaryExpression(UnaryExpression<T> object) {
 				return createUnaryExpressionAdapter();
 			}
 			@Override
-			public Adapter caseImplication(Implication object) {
+			public <T extends Option> Adapter caseImplication(Implication<T> object) {
 				return createImplicationAdapter();
 			}
 			@Override
-			public Adapter caseDisjunction(Disjunction object) {
+			public <T extends Option> Adapter caseDisjunction(Disjunction<T> object) {
 				return createDisjunctionAdapter();
 			}
 			@Override
-			public Adapter caseEquivalence(Equivalence object) {
+			public <T extends Option> Adapter caseEquivalence(Equivalence<T> object) {
 				return createEquivalenceAdapter();
 			}
 			@Override
-			public Adapter caseConjunction(Conjunction object) {
+			public <T extends Option> Adapter caseConjunction(Conjunction<T> object) {
 				return createConjunctionAdapter();
 			}
 			@Override
-			public Adapter caseNot(Not object) {
+			public <T extends Option> Adapter caseNot(Not<T> object) {
 				return createNotAdapter();
 			}
 			@Override
@@ -160,6 +163,18 @@ public class VavemodelAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseMapping(Mapping object) {
 				return createMappingAdapter();
+			}
+			@Override
+			public Adapter caseRevision(Revision object) {
+				return createRevisionAdapter();
+			}
+			@Override
+			public Adapter caseFeatureOption(FeatureOption object) {
+				return createFeatureOptionAdapter();
+			}
+			@Override
+			public Adapter caseSystemRevision(SystemRevision object) {
+				return createSystemRevisionAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -238,6 +253,20 @@ public class VavemodelAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link vavemodel.FeatureRevision <em>Feature Revision</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see vavemodel.FeatureRevision
+	 * @generated
+	 */
+	public Adapter createFeatureRevisionAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link vavemodel.Revision <em>Revision</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -248,6 +277,34 @@ public class VavemodelAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createRevisionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link vavemodel.FeatureOption <em>Feature Option</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see vavemodel.FeatureOption
+	 * @generated
+	 */
+	public Adapter createFeatureOptionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link vavemodel.SystemRevision <em>System Revision</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see vavemodel.SystemRevision
+	 * @generated
+	 */
+	public Adapter createSystemRevisionAdapter() {
 		return null;
 	}
 

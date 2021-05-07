@@ -13,5 +13,5 @@ package vavemodel;
  * @model
  * @generated
  */
-public interface Not extends UnaryExpression {
+public interface Not<T extends Option> extends UnaryExpression<T> {
 } // Not

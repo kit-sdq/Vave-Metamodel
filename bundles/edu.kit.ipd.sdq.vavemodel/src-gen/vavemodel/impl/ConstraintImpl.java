@@ -13,7 +13,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 import vavemodel.Constraint;
-import vavemodel.Option;
+import vavemodel.FeatureOption;
 import vavemodel.VavemodelPackage;
 
 /**
@@ -38,7 +38,7 @@ public abstract class ConstraintImpl extends MinimalEObjectImpl.Container implem
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Option> option;
+	protected EList<FeatureOption> option;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -65,9 +65,9 @@ public abstract class ConstraintImpl extends MinimalEObjectImpl.Container implem
 	 * @generated
 	 */
 	@Override
-	public EList<Option> getOption() {
+	public EList<FeatureOption> getOption() {
 		if (option == null) {
-			option = new EObjectResolvingEList<Option>(Option.class, this, VavemodelPackage.CONSTRAINT__OPTION);
+			option = new EObjectResolvingEList<FeatureOption>(FeatureOption.class, this, VavemodelPackage.CONSTRAINT__OPTION);
 		}
 		return option;
 	}
@@ -97,7 +97,7 @@ public abstract class ConstraintImpl extends MinimalEObjectImpl.Container implem
 		switch (featureID) {
 			case VavemodelPackage.CONSTRAINT__OPTION:
 				getOption().clear();
-				getOption().addAll((Collection<? extends Option>)newValue);
+				getOption().addAll((Collection<? extends FeatureOption>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);

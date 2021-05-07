@@ -88,7 +88,7 @@ public class TreeConstraintItemProvider extends ConstraintItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(VavemodelPackage.Literals.TREE_CONSTRAINT__VARIANT);
+			childrenFeatures.add(VavemodelPackage.Literals.TREE_CONSTRAINT__FEATURE);
 		}
 		return childrenFeatures;
 	}
@@ -148,7 +148,7 @@ public class TreeConstraintItemProvider extends ConstraintItemProvider {
 			case VavemodelPackage.TREE_CONSTRAINT__TYPE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case VavemodelPackage.TREE_CONSTRAINT__VARIANT:
+			case VavemodelPackage.TREE_CONSTRAINT__FEATURE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -168,7 +168,7 @@ public class TreeConstraintItemProvider extends ConstraintItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
-				(VavemodelPackage.Literals.TREE_CONSTRAINT__VARIANT,
+				(VavemodelPackage.Literals.TREE_CONSTRAINT__FEATURE,
 				 VavemodelFactory.eINSTANCE.createFeature()));
 	}
 

@@ -20,7 +20,7 @@ public abstract class ExpressionTest extends TestCase {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected Expression fixture = null;
+	protected Expression<?> fixture = null;
 
 	/**
 	 * Constructs a new Expression test case with the given name.
@@ -38,7 +38,7 @@ public abstract class ExpressionTest extends TestCase {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void setFixture(Expression fixture) {
+	protected void setFixture(Expression<?> fixture) {
 		this.fixture = fixture;
 	}
 
@@ -48,7 +48,7 @@ public abstract class ExpressionTest extends TestCase {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected Expression getFixture() {
+	protected Expression<?> getFixture() {
 		return fixture;
 	}
 

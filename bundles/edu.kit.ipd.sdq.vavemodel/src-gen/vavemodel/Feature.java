@@ -3,6 +3,7 @@
 package vavemodel;
 
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -13,50 +14,16 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link vavemodel.Feature#getVariationpoint <em>Variationpoint</em>}</li>
- *   <li>{@link vavemodel.Feature#getInitialVersion <em>Initial Version</em>}</li>
  *   <li>{@link vavemodel.Feature#getName <em>Name</em>}</li>
+ *   <li>{@link vavemodel.Feature#getTreeconstraint <em>Treeconstraint</em>}</li>
+ *   <li>{@link vavemodel.Feature#getFeaturerevision <em>Featurerevision</em>}</li>
  * </ul>
  *
  * @see vavemodel.VavemodelPackage#getFeature()
  * @model
  * @generated
  */
-public interface Feature extends Option {
-	/**
-	 * Returns the value of the '<em><b>Variationpoint</b></em>' containment reference list.
-	 * The list contents are of type {@link vavemodel.TreeConstraint}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Variationpoint</em>' containment reference list.
-	 * @see vavemodel.VavemodelPackage#getFeature_Variationpoint()
-	 * @model containment="true"
-	 * @generated
-	 */
-	EList<TreeConstraint> getVariationpoint();
-
-	/**
-	 * Returns the value of the '<em><b>Initial Version</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Initial Version</em>' containment reference.
-	 * @see #setInitialVersion(Revision)
-	 * @see vavemodel.VavemodelPackage#getFeature_InitialVersion()
-	 * @model containment="true" required="true"
-	 * @generated
-	 */
-	Revision getInitialVersion();
-
-	/**
-	 * Sets the value of the '{@link vavemodel.Feature#getInitialVersion <em>Initial Version</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Initial Version</em>' containment reference.
-	 * @see #getInitialVersion()
-	 * @generated
-	 */
-	void setInitialVersion(Revision value);
-
+public interface Feature extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -78,5 +45,29 @@ public interface Feature extends Option {
 	 * @generated
 	 */
 	void setName(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Treeconstraint</b></em>' containment reference list.
+	 * The list contents are of type {@link vavemodel.TreeConstraint}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Treeconstraint</em>' containment reference list.
+	 * @see vavemodel.VavemodelPackage#getFeature_Treeconstraint()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<TreeConstraint> getTreeconstraint();
+
+	/**
+	 * Returns the value of the '<em><b>Featurerevision</b></em>' containment reference list.
+	 * The list contents are of type {@link vavemodel.FeatureRevision}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Featurerevision</em>' containment reference list.
+	 * @see vavemodel.VavemodelPackage#getFeature_Featurerevision()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<FeatureRevision> getFeaturerevision();
 
 } // Feature

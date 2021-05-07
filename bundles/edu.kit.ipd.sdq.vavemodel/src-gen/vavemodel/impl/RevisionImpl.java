@@ -14,7 +14,8 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import vavemodel.Revision;
@@ -28,22 +29,33 @@ import vavemodel.VavemodelPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link vavemodel.impl.RevisionImpl#getSuccessor <em>Successor</em>}</li>
+ *   <li>{@link vavemodel.impl.RevisionImpl#getSuccessors <em>Successors</em>}</li>
+ *   <li>{@link vavemodel.impl.RevisionImpl#getPredecessors <em>Predecessors</em>}</li>
  *   <li>{@link vavemodel.impl.RevisionImpl#getRevisionID <em>Revision ID</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class RevisionImpl extends OptionImpl implements Revision {
+public abstract class RevisionImpl extends MinimalEObjectImpl.Container implements Revision {
 	/**
-	 * The cached value of the '{@link #getSuccessor() <em>Successor</em>}' containment reference list.
+	 * The cached value of the '{@link #getSuccessors() <em>Successors</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getSuccessor()
+	 * @see #getSuccessors()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Revision> successor;
+	protected EList<Revision> successors;
+
+	/**
+	 * The cached value of the '{@link #getPredecessors() <em>Predecessors</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPredecessors()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Revision> predecessors;
 
 	/**
 	 * The default value of the '{@link #getRevisionID() <em>Revision ID</em>}' attribute.
@@ -53,7 +65,7 @@ public class RevisionImpl extends OptionImpl implements Revision {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String REVISION_ID_EDEFAULT = null;
+	protected static final int REVISION_ID_EDEFAULT = 0;
 
 	/**
 	 * The cached value of the '{@link #getRevisionID() <em>Revision ID</em>}' attribute.
@@ -63,7 +75,7 @@ public class RevisionImpl extends OptionImpl implements Revision {
 	 * @generated
 	 * @ordered
 	 */
-	protected String revisionID = REVISION_ID_EDEFAULT;
+	protected int revisionID = REVISION_ID_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -90,11 +102,11 @@ public class RevisionImpl extends OptionImpl implements Revision {
 	 * @generated
 	 */
 	@Override
-	public EList<Revision> getSuccessor() {
-		if (successor == null) {
-			successor = new EObjectContainmentEList<Revision>(Revision.class, this, VavemodelPackage.REVISION__SUCCESSOR);
+	public EList<Revision> getSuccessors() {
+		if (successors == null) {
+			successors = new EObjectWithInverseResolvingEList.ManyInverse<Revision>(Revision.class, this, VavemodelPackage.REVISION__SUCCESSORS, VavemodelPackage.REVISION__PREDECESSORS);
 		}
-		return successor;
+		return successors;
 	}
 
 	/**
@@ -103,7 +115,20 @@ public class RevisionImpl extends OptionImpl implements Revision {
 	 * @generated
 	 */
 	@Override
-	public String getRevisionID() {
+	public EList<Revision> getPredecessors() {
+		if (predecessors == null) {
+			predecessors = new EObjectWithInverseResolvingEList.ManyInverse<Revision>(Revision.class, this, VavemodelPackage.REVISION__PREDECESSORS, VavemodelPackage.REVISION__SUCCESSORS);
+		}
+		return predecessors;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int getRevisionID() {
 		return revisionID;
 	}
 
@@ -113,8 +138,8 @@ public class RevisionImpl extends OptionImpl implements Revision {
 	 * @generated
 	 */
 	@Override
-	public void setRevisionID(String newRevisionID) {
-		String oldRevisionID = revisionID;
+	public void setRevisionID(int newRevisionID) {
+		int oldRevisionID = revisionID;
 		revisionID = newRevisionID;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, VavemodelPackage.REVISION__REVISION_ID, oldRevisionID, revisionID));
@@ -125,11 +150,30 @@ public class RevisionImpl extends OptionImpl implements Revision {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case VavemodelPackage.REVISION__SUCCESSORS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getSuccessors()).basicAdd(otherEnd, msgs);
+			case VavemodelPackage.REVISION__PREDECESSORS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getPredecessors()).basicAdd(otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case VavemodelPackage.REVISION__SUCCESSOR:
-				return ((InternalEList<?>)getSuccessor()).basicRemove(otherEnd, msgs);
+			case VavemodelPackage.REVISION__SUCCESSORS:
+				return ((InternalEList<?>)getSuccessors()).basicRemove(otherEnd, msgs);
+			case VavemodelPackage.REVISION__PREDECESSORS:
+				return ((InternalEList<?>)getPredecessors()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -142,8 +186,10 @@ public class RevisionImpl extends OptionImpl implements Revision {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case VavemodelPackage.REVISION__SUCCESSOR:
-				return getSuccessor();
+			case VavemodelPackage.REVISION__SUCCESSORS:
+				return getSuccessors();
+			case VavemodelPackage.REVISION__PREDECESSORS:
+				return getPredecessors();
 			case VavemodelPackage.REVISION__REVISION_ID:
 				return getRevisionID();
 		}
@@ -159,12 +205,16 @@ public class RevisionImpl extends OptionImpl implements Revision {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case VavemodelPackage.REVISION__SUCCESSOR:
-				getSuccessor().clear();
-				getSuccessor().addAll((Collection<? extends Revision>)newValue);
+			case VavemodelPackage.REVISION__SUCCESSORS:
+				getSuccessors().clear();
+				getSuccessors().addAll((Collection<? extends Revision>)newValue);
+				return;
+			case VavemodelPackage.REVISION__PREDECESSORS:
+				getPredecessors().clear();
+				getPredecessors().addAll((Collection<? extends Revision>)newValue);
 				return;
 			case VavemodelPackage.REVISION__REVISION_ID:
-				setRevisionID((String)newValue);
+				setRevisionID((Integer)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -178,8 +228,11 @@ public class RevisionImpl extends OptionImpl implements Revision {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case VavemodelPackage.REVISION__SUCCESSOR:
-				getSuccessor().clear();
+			case VavemodelPackage.REVISION__SUCCESSORS:
+				getSuccessors().clear();
+				return;
+			case VavemodelPackage.REVISION__PREDECESSORS:
+				getPredecessors().clear();
 				return;
 			case VavemodelPackage.REVISION__REVISION_ID:
 				setRevisionID(REVISION_ID_EDEFAULT);
@@ -196,10 +249,12 @@ public class RevisionImpl extends OptionImpl implements Revision {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case VavemodelPackage.REVISION__SUCCESSOR:
-				return successor != null && !successor.isEmpty();
+			case VavemodelPackage.REVISION__SUCCESSORS:
+				return successors != null && !successors.isEmpty();
+			case VavemodelPackage.REVISION__PREDECESSORS:
+				return predecessors != null && !predecessors.isEmpty();
 			case VavemodelPackage.REVISION__REVISION_ID:
-				return REVISION_ID_EDEFAULT == null ? revisionID != null : !REVISION_ID_EDEFAULT.equals(revisionID);
+				return revisionID != REVISION_ID_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}

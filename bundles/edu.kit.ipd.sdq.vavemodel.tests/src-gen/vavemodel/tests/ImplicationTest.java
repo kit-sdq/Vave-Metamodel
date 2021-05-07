@@ -41,8 +41,8 @@ public class ImplicationTest extends BinaryExpressionTest {
 	 * @generated
 	 */
 	@Override
-	protected Implication getFixture() {
-		return (Implication)fixture;
+	protected Implication<?> getFixture() {
+		return (Implication<?>)fixture;
 	}
 
 	/**

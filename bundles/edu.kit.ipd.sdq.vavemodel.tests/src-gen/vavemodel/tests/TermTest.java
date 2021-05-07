@@ -20,7 +20,7 @@ public abstract class TermTest extends TestCase {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected Term fixture = null;
+	protected Term<?> fixture = null;
 
 	/**
 	 * Constructs a new Term test case with the given name.
@@ -38,7 +38,7 @@ public abstract class TermTest extends TestCase {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void setFixture(Term fixture) {
+	protected void setFixture(Term<?> fixture) {
 		this.fixture = fixture;
 	}
 
@@ -48,7 +48,7 @@ public abstract class TermTest extends TestCase {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected Term getFixture() {
+	protected Term<?> getFixture() {
 		return fixture;
 	}
 

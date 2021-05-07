@@ -13,5 +13,5 @@ package vavemodel;
  * @model abstract="true"
  * @generated
  */
-public interface Expression extends Term {
+public interface Expression<T extends Option> extends Term<T> {
 } // Expression

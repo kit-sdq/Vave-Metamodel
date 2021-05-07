@@ -19,7 +19,7 @@ package vavemodel;
  * @model abstract="true"
  * @generated
  */
-public interface UnaryExpression extends Expression {
+public interface UnaryExpression<T extends Option> extends Expression<T> {
 	/**
 	 * Returns the value of the '<em><b>Term</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
@@ -30,7 +30,7 @@ public interface UnaryExpression extends Expression {
 	 * @model containment="true" required="true"
 	 * @generated
 	 */
-	Term getTerm();
+	Term<T> getTerm();
 
 	/**
 	 * Sets the value of the '{@link vavemodel.UnaryExpression#getTerm <em>Term</em>}' containment reference.
@@ -40,6 +40,6 @@ public interface UnaryExpression extends Expression {
 	 * @see #getTerm()
 	 * @generated
 	 */
-	void setTerm(Term value);
+	void setTerm(Term<T> value);
 
 } // UnaryExpression

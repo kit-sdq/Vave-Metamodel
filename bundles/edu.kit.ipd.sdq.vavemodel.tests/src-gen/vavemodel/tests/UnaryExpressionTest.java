@@ -29,8 +29,8 @@ public abstract class UnaryExpressionTest extends ExpressionTest {
 	 * @generated
 	 */
 	@Override
-	protected UnaryExpression getFixture() {
-		return (UnaryExpression)fixture;
+	protected UnaryExpression<?> getFixture() {
+		return (UnaryExpression<?>)fixture;
 	}
 
 } //UnaryExpressionTest
