@@ -30,7 +30,7 @@ public interface CrossTreeConstraint extends Constraint {
 	 * @model containment="true" required="true"
 	 * @generated
 	 */
-	Expression getExpression();
+	Expression<FeatureOption> getExpression();
 
 	/**
 	 * Sets the value of the '{@link vavemodel.CrossTreeConstraint#getExpression <em>Expression</em>}' containment reference.
@@ -40,6 +40,6 @@ public interface CrossTreeConstraint extends Constraint {
 	 * @see #getExpression()
 	 * @generated
 	 */
-	void setExpression(Expression value);
+	void setExpression(Expression<FeatureOption> value);
 
 } // CrossTreeConstraint

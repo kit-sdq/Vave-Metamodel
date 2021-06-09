@@ -14,7 +14,6 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -38,7 +37,7 @@ import vavemodel.VavemodelPackage;
  *
  * @generated
  */
-public class FeatureImpl extends MinimalEObjectImpl.Container implements Feature {
+public class FeatureImpl extends FeatureOptionImpl implements Feature {
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->

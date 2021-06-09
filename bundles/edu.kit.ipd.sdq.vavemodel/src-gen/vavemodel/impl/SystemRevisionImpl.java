@@ -18,7 +18,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
-import vavemodel.CrossTreeConstraint;
+import vavemodel.Constraint;
 import vavemodel.FeatureOption;
 import vavemodel.Revision;
 import vavemodel.SystemRevision;
@@ -100,7 +100,7 @@ public class SystemRevisionImpl extends OptionImpl implements SystemRevision {
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<CrossTreeConstraint> enablesconstraints;
+	protected EList<Constraint> enablesconstraints;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -189,9 +189,9 @@ public class SystemRevisionImpl extends OptionImpl implements SystemRevision {
 	 * @generated
 	 */
 	@Override
-	public EList<CrossTreeConstraint> getEnablesconstraints() {
+	public EList<Constraint> getEnablesconstraints() {
 		if (enablesconstraints == null) {
-			enablesconstraints = new EObjectResolvingEList<CrossTreeConstraint>(CrossTreeConstraint.class, this, VavemodelPackage.SYSTEM_REVISION__ENABLESCONSTRAINTS);
+			enablesconstraints = new EObjectResolvingEList<Constraint>(Constraint.class, this, VavemodelPackage.SYSTEM_REVISION__ENABLESCONSTRAINTS);
 		}
 		return enablesconstraints;
 	}
@@ -277,7 +277,7 @@ public class SystemRevisionImpl extends OptionImpl implements SystemRevision {
 				return;
 			case VavemodelPackage.SYSTEM_REVISION__ENABLESCONSTRAINTS:
 				getEnablesconstraints().clear();
-				getEnablesconstraints().addAll((Collection<? extends CrossTreeConstraint>)newValue);
+				getEnablesconstraints().addAll((Collection<? extends Constraint>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);

@@ -150,6 +150,52 @@ public interface VavemodelPackage extends EPackage {
 	int OPTION = 17;
 
 	/**
+	 * The number of structural features of the '<em>Option</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPTION_FEATURE_COUNT = 0;
+
+	/**
+	 * The number of operations of the '<em>Option</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPTION_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link vavemodel.impl.FeatureOptionImpl <em>Feature Option</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see vavemodel.impl.FeatureOptionImpl
+	 * @see vavemodel.impl.VavemodelPackageImpl#getFeatureOption()
+	 * @generated
+	 */
+	int FEATURE_OPTION = 20;
+
+	/**
+	 * The number of structural features of the '<em>Feature Option</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FEATURE_OPTION_FEATURE_COUNT = OPTION_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Feature Option</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FEATURE_OPTION_OPERATION_COUNT = OPTION_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link vavemodel.impl.FeatureImpl <em>Feature</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -166,7 +212,7 @@ public interface VavemodelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FEATURE__NAME = 0;
+	int FEATURE__NAME = FEATURE_OPTION_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Treeconstraint</b></em>' containment reference list.
@@ -175,7 +221,7 @@ public interface VavemodelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FEATURE__TREECONSTRAINT = 1;
+	int FEATURE__TREECONSTRAINT = FEATURE_OPTION_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Featurerevision</b></em>' containment reference list.
@@ -184,7 +230,7 @@ public interface VavemodelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FEATURE__FEATUREREVISION = 2;
+	int FEATURE__FEATUREREVISION = FEATURE_OPTION_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Feature</em>' class.
@@ -193,7 +239,7 @@ public interface VavemodelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FEATURE_FEATURE_COUNT = 3;
+	int FEATURE_FEATURE_COUNT = FEATURE_OPTION_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of operations of the '<em>Feature</em>' class.
@@ -202,7 +248,7 @@ public interface VavemodelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FEATURE_OPERATION_COUNT = 0;
+	int FEATURE_OPERATION_COUNT = FEATURE_OPTION_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link vavemodel.impl.ConstraintImpl <em>Constraint</em>}' class.
@@ -215,22 +261,13 @@ public interface VavemodelPackage extends EPackage {
 	int CONSTRAINT = 16;
 
 	/**
-	 * The feature id for the '<em><b>Option</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONSTRAINT__OPTION = 0;
-
-	/**
 	 * The number of structural features of the '<em>Constraint</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONSTRAINT_FEATURE_COUNT = 1;
+	int CONSTRAINT_FEATURE_COUNT = 0;
 
 	/**
 	 * The number of operations of the '<em>Constraint</em>' class.
@@ -250,15 +287,6 @@ public interface VavemodelPackage extends EPackage {
 	 * @generated
 	 */
 	int CROSS_TREE_CONSTRAINT = 2;
-
-	/**
-	 * The feature id for the '<em><b>Option</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CROSS_TREE_CONSTRAINT__OPTION = CONSTRAINT__OPTION;
 
 	/**
 	 * The feature id for the '<em><b>Expression</b></em>' containment reference.
@@ -296,15 +324,6 @@ public interface VavemodelPackage extends EPackage {
 	 * @generated
 	 */
 	int TREE_CONSTRAINT = 3;
-
-	/**
-	 * The feature id for the '<em><b>Option</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TREE_CONSTRAINT__OPTION = CONSTRAINT__OPTION;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -472,13 +491,22 @@ public interface VavemodelPackage extends EPackage {
 	int DELTA_MODULE__DELTAMODULE = 0;
 
 	/**
+	 * The feature id for the '<em><b>Change</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DELTA_MODULE__CHANGE = 1;
+
+	/**
 	 * The number of structural features of the '<em>Delta Module</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DELTA_MODULE_FEATURE_COUNT = 1;
+	int DELTA_MODULE_FEATURE_COUNT = 2;
 
 	/**
 	 * The number of operations of the '<em>Delta Module</em>' class.
@@ -556,13 +584,22 @@ public interface VavemodelPackage extends EPackage {
 	int VARIABLE = 6;
 
 	/**
+	 * The feature id for the '<em><b>Option</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VARIABLE__OPTION = EXPRESSION_FEATURE_COUNT + 0;
+
+	/**
 	 * The number of structural features of the '<em>Variable</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VARIABLE_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 0;
+	int VARIABLE_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Variable</em>' class.
@@ -833,24 +870,6 @@ public interface VavemodelPackage extends EPackage {
 	int NOT_OPERATION_COUNT = UNARY_EXPRESSION_OPERATION_COUNT + 0;
 
 	/**
-	 * The number of structural features of the '<em>Option</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OPTION_FEATURE_COUNT = 0;
-
-	/**
-	 * The number of operations of the '<em>Option</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OPTION_OPERATION_COUNT = 0;
-
-	/**
 	 * The meta object id for the '{@link vavemodel.impl.MappingImpl <em>Mapping</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -895,34 +914,6 @@ public interface VavemodelPackage extends EPackage {
 	 * @ordered
 	 */
 	int MAPPING_OPERATION_COUNT = 0;
-
-	/**
-	 * The meta object id for the '{@link vavemodel.impl.FeatureOptionImpl <em>Feature Option</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see vavemodel.impl.FeatureOptionImpl
-	 * @see vavemodel.impl.VavemodelPackageImpl#getFeatureOption()
-	 * @generated
-	 */
-	int FEATURE_OPTION = 20;
-
-	/**
-	 * The number of structural features of the '<em>Feature Option</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FEATURE_OPTION_FEATURE_COUNT = OPTION_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>Feature Option</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FEATURE_OPTION_OPERATION_COUNT = OPTION_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link vavemodel.impl.SystemRevisionImpl <em>System Revision</em>}' class.
@@ -1191,91 +1182,6 @@ public interface VavemodelPackage extends EPackage {
 	EClass getFeatureRevision();
 
 	/**
-	 * Returns the meta object for class '{@link vavemodel.Revision <em>Revision</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Revision</em>'.
-	 * @see vavemodel.Revision
-	 * @generated
-	 */
-	EClass getRevision();
-
-	/**
-	 * Returns the meta object for the reference list '{@link vavemodel.Revision#getSuccessors <em>Successors</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Successors</em>'.
-	 * @see vavemodel.Revision#getSuccessors()
-	 * @see #getRevision()
-	 * @generated
-	 */
-	EReference getRevision_Successors();
-
-	/**
-	 * Returns the meta object for the reference list '{@link vavemodel.Revision#getPredecessors <em>Predecessors</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Predecessors</em>'.
-	 * @see vavemodel.Revision#getPredecessors()
-	 * @see #getRevision()
-	 * @generated
-	 */
-	EReference getRevision_Predecessors();
-
-	/**
-	 * Returns the meta object for the attribute '{@link vavemodel.Revision#getRevisionID <em>Revision ID</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Revision ID</em>'.
-	 * @see vavemodel.Revision#getRevisionID()
-	 * @see #getRevision()
-	 * @generated
-	 */
-	EAttribute getRevision_RevisionID();
-
-	/**
-	 * Returns the meta object for class '{@link vavemodel.FeatureOption <em>Feature Option</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Feature Option</em>'.
-	 * @see vavemodel.FeatureOption
-	 * @generated
-	 */
-	EClass getFeatureOption();
-
-	/**
-	 * Returns the meta object for class '{@link vavemodel.SystemRevision <em>System Revision</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>System Revision</em>'.
-	 * @see vavemodel.SystemRevision
-	 * @generated
-	 */
-	EClass getSystemRevision();
-
-	/**
-	 * Returns the meta object for the reference list '{@link vavemodel.SystemRevision#getEnablesoptions <em>Enablesoptions</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Enablesoptions</em>'.
-	 * @see vavemodel.SystemRevision#getEnablesoptions()
-	 * @see #getSystemRevision()
-	 * @generated
-	 */
-	EReference getSystemRevision_Enablesoptions();
-
-	/**
-	 * Returns the meta object for the reference list '{@link vavemodel.SystemRevision#getEnablesconstraints <em>Enablesconstraints</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Enablesconstraints</em>'.
-	 * @see vavemodel.SystemRevision#getEnablesconstraints()
-	 * @see #getSystemRevision()
-	 * @generated
-	 */
-	EReference getSystemRevision_Enablesconstraints();
-
-	/**
 	 * Returns the meta object for class '{@link vavemodel.DeltaModule <em>Delta Module</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1297,6 +1203,17 @@ public interface VavemodelPackage extends EPackage {
 	EReference getDeltaModule_Deltamodule();
 
 	/**
+	 * Returns the meta object for the containment reference list '{@link vavemodel.DeltaModule#getChange <em>Change</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Change</em>'.
+	 * @see vavemodel.DeltaModule#getChange()
+	 * @see #getDeltaModule()
+	 * @generated
+	 */
+	EReference getDeltaModule_Change();
+
+	/**
 	 * Returns the meta object for class '{@link vavemodel.Variable <em>Variable</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1305,6 +1222,17 @@ public interface VavemodelPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getVariable();
+
+	/**
+	 * Returns the meta object for the reference '{@link vavemodel.Variable#getOption <em>Option</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Option</em>'.
+	 * @see vavemodel.Variable#getOption()
+	 * @see #getVariable()
+	 * @generated
+	 */
+	EReference getVariable_Option();
 
 	/**
 	 * Returns the meta object for class '{@link vavemodel.Expression <em>Expression</em>}'.
@@ -1429,17 +1357,6 @@ public interface VavemodelPackage extends EPackage {
 	EClass getConstraint();
 
 	/**
-	 * Returns the meta object for the reference list '{@link vavemodel.Constraint#getOption <em>Option</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Option</em>'.
-	 * @see vavemodel.Constraint#getOption()
-	 * @see #getConstraint()
-	 * @generated
-	 */
-	EReference getConstraint_Option();
-
-	/**
 	 * Returns the meta object for class '{@link vavemodel.Option <em>Option</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1480,6 +1397,91 @@ public interface VavemodelPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getMapping_Deltamodule();
+
+	/**
+	 * Returns the meta object for class '{@link vavemodel.Revision <em>Revision</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Revision</em>'.
+	 * @see vavemodel.Revision
+	 * @generated
+	 */
+	EClass getRevision();
+
+	/**
+	 * Returns the meta object for the reference list '{@link vavemodel.Revision#getSuccessors <em>Successors</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Successors</em>'.
+	 * @see vavemodel.Revision#getSuccessors()
+	 * @see #getRevision()
+	 * @generated
+	 */
+	EReference getRevision_Successors();
+
+	/**
+	 * Returns the meta object for the reference list '{@link vavemodel.Revision#getPredecessors <em>Predecessors</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Predecessors</em>'.
+	 * @see vavemodel.Revision#getPredecessors()
+	 * @see #getRevision()
+	 * @generated
+	 */
+	EReference getRevision_Predecessors();
+
+	/**
+	 * Returns the meta object for the attribute '{@link vavemodel.Revision#getRevisionID <em>Revision ID</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Revision ID</em>'.
+	 * @see vavemodel.Revision#getRevisionID()
+	 * @see #getRevision()
+	 * @generated
+	 */
+	EAttribute getRevision_RevisionID();
+
+	/**
+	 * Returns the meta object for class '{@link vavemodel.FeatureOption <em>Feature Option</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Feature Option</em>'.
+	 * @see vavemodel.FeatureOption
+	 * @generated
+	 */
+	EClass getFeatureOption();
+
+	/**
+	 * Returns the meta object for class '{@link vavemodel.SystemRevision <em>System Revision</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>System Revision</em>'.
+	 * @see vavemodel.SystemRevision
+	 * @generated
+	 */
+	EClass getSystemRevision();
+
+	/**
+	 * Returns the meta object for the reference list '{@link vavemodel.SystemRevision#getEnablesoptions <em>Enablesoptions</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Enablesoptions</em>'.
+	 * @see vavemodel.SystemRevision#getEnablesoptions()
+	 * @see #getSystemRevision()
+	 * @generated
+	 */
+	EReference getSystemRevision_Enablesoptions();
+
+	/**
+	 * Returns the meta object for the reference list '{@link vavemodel.SystemRevision#getEnablesconstraints <em>Enablesconstraints</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Enablesconstraints</em>'.
+	 * @see vavemodel.SystemRevision#getEnablesconstraints()
+	 * @see #getSystemRevision()
+	 * @generated
+	 */
+	EReference getSystemRevision_Enablesconstraints();
 
 	/**
 	 * Returns the meta object for enum '{@link vavemodel.GroupType <em>Group Type</em>}'.
@@ -1661,76 +1663,6 @@ public interface VavemodelPackage extends EPackage {
 		EClass FEATURE_REVISION = eINSTANCE.getFeatureRevision();
 
 		/**
-		 * The meta object literal for the '{@link vavemodel.impl.RevisionImpl <em>Revision</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see vavemodel.impl.RevisionImpl
-		 * @see vavemodel.impl.VavemodelPackageImpl#getRevision()
-		 * @generated
-		 */
-		EClass REVISION = eINSTANCE.getRevision();
-
-		/**
-		 * The meta object literal for the '<em><b>Successors</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference REVISION__SUCCESSORS = eINSTANCE.getRevision_Successors();
-
-		/**
-		 * The meta object literal for the '<em><b>Predecessors</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference REVISION__PREDECESSORS = eINSTANCE.getRevision_Predecessors();
-
-		/**
-		 * The meta object literal for the '<em><b>Revision ID</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute REVISION__REVISION_ID = eINSTANCE.getRevision_RevisionID();
-
-		/**
-		 * The meta object literal for the '{@link vavemodel.impl.FeatureOptionImpl <em>Feature Option</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see vavemodel.impl.FeatureOptionImpl
-		 * @see vavemodel.impl.VavemodelPackageImpl#getFeatureOption()
-		 * @generated
-		 */
-		EClass FEATURE_OPTION = eINSTANCE.getFeatureOption();
-
-		/**
-		 * The meta object literal for the '{@link vavemodel.impl.SystemRevisionImpl <em>System Revision</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see vavemodel.impl.SystemRevisionImpl
-		 * @see vavemodel.impl.VavemodelPackageImpl#getSystemRevision()
-		 * @generated
-		 */
-		EClass SYSTEM_REVISION = eINSTANCE.getSystemRevision();
-
-		/**
-		 * The meta object literal for the '<em><b>Enablesoptions</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference SYSTEM_REVISION__ENABLESOPTIONS = eINSTANCE.getSystemRevision_Enablesoptions();
-
-		/**
-		 * The meta object literal for the '<em><b>Enablesconstraints</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference SYSTEM_REVISION__ENABLESCONSTRAINTS = eINSTANCE.getSystemRevision_Enablesconstraints();
-
-		/**
 		 * The meta object literal for the '{@link vavemodel.impl.DeltaModuleImpl <em>Delta Module</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1749,6 +1681,14 @@ public interface VavemodelPackage extends EPackage {
 		EReference DELTA_MODULE__DELTAMODULE = eINSTANCE.getDeltaModule_Deltamodule();
 
 		/**
+		 * The meta object literal for the '<em><b>Change</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DELTA_MODULE__CHANGE = eINSTANCE.getDeltaModule_Change();
+
+		/**
 		 * The meta object literal for the '{@link vavemodel.impl.VariableImpl <em>Variable</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1757,6 +1697,14 @@ public interface VavemodelPackage extends EPackage {
 		 * @generated
 		 */
 		EClass VARIABLE = eINSTANCE.getVariable();
+
+		/**
+		 * The meta object literal for the '<em><b>Option</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference VARIABLE__OPTION = eINSTANCE.getVariable_Option();
 
 		/**
 		 * The meta object literal for the '{@link vavemodel.impl.ExpressionImpl <em>Expression</em>}' class.
@@ -1875,14 +1823,6 @@ public interface VavemodelPackage extends EPackage {
 		EClass CONSTRAINT = eINSTANCE.getConstraint();
 
 		/**
-		 * The meta object literal for the '<em><b>Option</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference CONSTRAINT__OPTION = eINSTANCE.getConstraint_Option();
-
-		/**
 		 * The meta object literal for the '{@link vavemodel.impl.OptionImpl <em>Option</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1917,6 +1857,76 @@ public interface VavemodelPackage extends EPackage {
 		 * @generated
 		 */
 		EReference MAPPING__DELTAMODULE = eINSTANCE.getMapping_Deltamodule();
+
+		/**
+		 * The meta object literal for the '{@link vavemodel.impl.RevisionImpl <em>Revision</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see vavemodel.impl.RevisionImpl
+		 * @see vavemodel.impl.VavemodelPackageImpl#getRevision()
+		 * @generated
+		 */
+		EClass REVISION = eINSTANCE.getRevision();
+
+		/**
+		 * The meta object literal for the '<em><b>Successors</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference REVISION__SUCCESSORS = eINSTANCE.getRevision_Successors();
+
+		/**
+		 * The meta object literal for the '<em><b>Predecessors</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference REVISION__PREDECESSORS = eINSTANCE.getRevision_Predecessors();
+
+		/**
+		 * The meta object literal for the '<em><b>Revision ID</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute REVISION__REVISION_ID = eINSTANCE.getRevision_RevisionID();
+
+		/**
+		 * The meta object literal for the '{@link vavemodel.impl.FeatureOptionImpl <em>Feature Option</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see vavemodel.impl.FeatureOptionImpl
+		 * @see vavemodel.impl.VavemodelPackageImpl#getFeatureOption()
+		 * @generated
+		 */
+		EClass FEATURE_OPTION = eINSTANCE.getFeatureOption();
+
+		/**
+		 * The meta object literal for the '{@link vavemodel.impl.SystemRevisionImpl <em>System Revision</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see vavemodel.impl.SystemRevisionImpl
+		 * @see vavemodel.impl.VavemodelPackageImpl#getSystemRevision()
+		 * @generated
+		 */
+		EClass SYSTEM_REVISION = eINSTANCE.getSystemRevision();
+
+		/**
+		 * The meta object literal for the '<em><b>Enablesoptions</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SYSTEM_REVISION__ENABLESOPTIONS = eINSTANCE.getSystemRevision_Enablesoptions();
+
+		/**
+		 * The meta object literal for the '<em><b>Enablesconstraints</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SYSTEM_REVISION__ENABLESCONSTRAINTS = eINSTANCE.getSystemRevision_Enablesconstraints();
 
 		/**
 		 * The meta object literal for the '{@link vavemodel.GroupType <em>Group Type</em>}' enum.

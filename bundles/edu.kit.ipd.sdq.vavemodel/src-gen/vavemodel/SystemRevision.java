@@ -36,7 +36,7 @@ public interface SystemRevision extends Option, Revision {
 
 	/**
 	 * Returns the value of the '<em><b>Enablesconstraints</b></em>' reference list.
-	 * The list contents are of type {@link vavemodel.CrossTreeConstraint}.
+	 * The list contents are of type {@link vavemodel.Constraint}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Enablesconstraints</em>' reference list.
@@ -44,6 +44,6 @@ public interface SystemRevision extends Option, Revision {
 	 * @model
 	 * @generated
 	 */
-	EList<CrossTreeConstraint> getEnablesconstraints();
+	EList<Constraint> getEnablesconstraints();
 
 } // SystemRevision

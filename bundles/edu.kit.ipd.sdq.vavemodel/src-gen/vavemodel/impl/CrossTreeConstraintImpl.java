@@ -12,6 +12,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import vavemodel.CrossTreeConstraint;
 import vavemodel.Expression;
+import vavemodel.FeatureOption;
 import vavemodel.VavemodelPackage;
 
 /**
@@ -36,7 +37,7 @@ public class CrossTreeConstraintImpl extends ConstraintImpl implements CrossTree
 	 * @generated
 	 * @ordered
 	 */
-	protected Expression expression;
+	protected Expression<FeatureOption> expression;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -63,7 +64,7 @@ public class CrossTreeConstraintImpl extends ConstraintImpl implements CrossTree
 	 * @generated
 	 */
 	@Override
-	public Expression getExpression() {
+	public Expression<FeatureOption> getExpression() {
 		return expression;
 	}
 
@@ -72,8 +73,8 @@ public class CrossTreeConstraintImpl extends ConstraintImpl implements CrossTree
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetExpression(Expression newExpression, NotificationChain msgs) {
-		Expression oldExpression = expression;
+	public NotificationChain basicSetExpression(Expression<FeatureOption> newExpression, NotificationChain msgs) {
+		Expression<FeatureOption> oldExpression = expression;
 		expression = newExpression;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, VavemodelPackage.CROSS_TREE_CONSTRAINT__EXPRESSION, oldExpression, newExpression);
@@ -88,7 +89,7 @@ public class CrossTreeConstraintImpl extends ConstraintImpl implements CrossTree
 	 * @generated
 	 */
 	@Override
-	public void setExpression(Expression newExpression) {
+	public void setExpression(Expression<FeatureOption> newExpression) {
 		if (newExpression != expression) {
 			NotificationChain msgs = null;
 			if (expression != null)
@@ -135,11 +136,12 @@ public class CrossTreeConstraintImpl extends ConstraintImpl implements CrossTree
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case VavemodelPackage.CROSS_TREE_CONSTRAINT__EXPRESSION:
-				setExpression((Expression)newValue);
+				setExpression((Expression<FeatureOption>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -154,7 +156,7 @@ public class CrossTreeConstraintImpl extends ConstraintImpl implements CrossTree
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case VavemodelPackage.CROSS_TREE_CONSTRAINT__EXPRESSION:
-				setExpression((Expression)null);
+				setExpression((Expression<FeatureOption>)null);
 				return;
 		}
 		super.eUnset(featureID);
